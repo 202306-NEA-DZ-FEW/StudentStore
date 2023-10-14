@@ -2,12 +2,19 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
-
+import { db } from "@/util/firebase";
+import { collection, getDocs } from "firebase/firestore";
 import Layout from "@/layout/Layout";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
-
+    const colRef = collection(db, "products");
+    getDocs(colRef).then((snapshot) => {
+        let products = [];
+        snapshot.docs.forEach((doc) =>
+            products.push({ ...doc.data(), id: doc.id })
+        );
+    });
     return (
         <Layout>
             <p>{t("test")}</p>
