@@ -2,28 +2,20 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
-import { useEffect } from "react";
-import { firebase } from "../../firebase/firebase.js";
-import { db } from "../../firebase/firebase.js";
+
+import { db } from "../util/firebase.js";
 import { collection, getDocs } from "firebase/firestore";
 
 import Layout from "@/layout/Layout";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
-
-    useEffect(() => {
-        // Firebase is connected, log a message to the console
-        console.log("Firebase is connected successfully!");
-    }, []);
-
     const colRef = collection(db, "products");
     getDocs(colRef).then((snapshot) => {
         let products = [];
         snapshot.docs.forEach((doc) =>
             products.push({ ...doc.data(), id: doc.id })
         );
-        console.log(products);
     });
 
     return (
