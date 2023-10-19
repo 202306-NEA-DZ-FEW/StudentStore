@@ -17,7 +17,11 @@ const SearchBar = () => {
             setLoading(false);
             return;
         }
-        q = query(collection(db, "products"), where("name", ">=", searchTerm));
+        // Use array-contains for case-insensitive search
+        q = query(
+            collection(db, "products"),
+            where("name", "array-contains", searchTerm.toLowerCase())
+        );
         try {
             const querySnapshot = await getDocs(q);
             const productsArray = [];
@@ -37,6 +41,11 @@ const SearchBar = () => {
         handleSearch();
     }, [searchTerm]);
 
+    // Determine if products not found message should be shown
+    const showNoProductsMessage =
+        !loading && searchTerm.trim() !== "" && products.length === 0;
+    const showResultsContainer = products.length > 0;
+
     return (
         <div className='relative mx-auto max-w-md'>
             <div className='input-wrapper'>
@@ -52,18 +61,37 @@ const SearchBar = () => {
                 </div>
             </div>
 
-            {loading && <p>Loading...</p>}
-            {!loading && products.length > 0 && (
-                <ul>
-                    {products.map((product) => (
-                        <li key={product.id}>
-                            {product.name} - ${product.price} -{" "}
-                            {product.category}
-                        </li>
-                    ))}
-                </ul>
+            {showResultsContainer && (
+                <div className='product-container bg-white bg-opacity-80 rounded-lg shadow-lg p-4 absolute left-0 right-0'>
+                    <ul>
+                        {products.map((product) => (
+                            <li key={product.id}>
+                                {product.name
+                                    .split(new RegExp(`(${searchTerm})`, "gi"))
+                                    .map((text, index) =>
+                                        text.toLowerCase() ===
+                                        searchTerm.toLowerCase() ? (
+                                            <span
+                                                key={index}
+                                                className='text-blue-500'
+                                            >
+                                                {text}
+                                            </span>
+                                        ) : (
+                                            text
+                                        )
+                                    )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             )}
-            {!loading && products.length === 0 && <p>No products found.</p>}
+
+            {showNoProductsMessage && (
+                <p className='text-white bg-gray-500 p-2 rounded'>
+                    No products found.
+                </p>
+            )}
         </div>
     );
 };

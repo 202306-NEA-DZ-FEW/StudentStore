@@ -38,8 +38,5 @@ exports[`renders correctly 1`] = `
       </svg>
     </div>
   </div>
-  <p>
-    No products found.
-  </p>
 </div>
 `;
