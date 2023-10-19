@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
@@ -8,18 +9,22 @@ import { collection, getDocs } from "firebase/firestore";
 import Layout from "@/layout/Layout";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { Firestore } from "firebase/firestore";
+import { onSnapshot } from "firebase/firestore";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
     const colRef = collection(db, "products");
-    getDocs(colRef).then((snapshot) => {
-        let products = [];
-        snapshot.docs.forEach((doc) =>
-            products.push({ ...doc.data(), id: doc.id })
-        );
-    });
+    useEffect(() => {
+        onSnapshot(colRef, (snapshot) => {
+            let products = [];
+            snapshot.docs.forEach((doc) => {
+                products.push({ ...doc.data(), id: doc.id });
+            });
+            console.log(products);
+        });
+    }, []);
     return (
-        <>
+        <div>
             <Layout>
                 <p>{t("test")}</p>
                 <div
@@ -38,7 +43,7 @@ export default function HomePage() {
                 </div>
             </Layout>
             <SearchBar />
-        </>
+        </div>
     );
 }
 

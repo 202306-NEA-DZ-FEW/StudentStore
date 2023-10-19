@@ -24,7 +24,6 @@ const SearchBar = () => {
             querySnapshot.forEach((doc) => {
                 productsArray.push({ id: doc.id, ...doc.data() });
             });
-
             setProducts(productsArray);
             setLoading(false);
         } catch (error) {
@@ -40,15 +39,17 @@ const SearchBar = () => {
 
     return (
         <div className='relative mx-auto max-w-md'>
-            <input
-                type='text'
-                placeholder='Search here...'
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className='w-full border border-gray-300 rounded-full py-2 px-4 pl-8 focus:outline-none'
-            />
-            <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'>
-                <ImSearch />
+            <div className='input-wrapper'>
+                <input
+                    type='text'
+                    placeholder='Search here...'
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className='w-full border border-gray-300 rounded-full py-2 px-4 pl-8 focus:outline-none'
+                />
+                <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'>
+                    <ImSearch />
+                </div>
             </div>
 
             {loading && <p>Loading...</p>}
