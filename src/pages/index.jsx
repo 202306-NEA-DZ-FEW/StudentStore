@@ -4,8 +4,6 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 
-import ProductCard from "@/components/ProductCard/ProductCard";
-
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
 
@@ -20,7 +18,6 @@ export default function HomePage() {
     });
     return (
         <Layout>
-            <ProductCard />
             <p>{t("test")}</p>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
