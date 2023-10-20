@@ -5,6 +5,7 @@ import * as React from "react";
 import { db } from "@/util/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Layout from "@/layout/Layout";
+import FeaturedUniversities from "@/components/FeaturedUniversities/FeaturedUniversities";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -16,17 +17,26 @@ export default function HomePage() {
         );
     });
     return (
-        <Layout>
-            <p>{t("test")}</p>
-            <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-                <Link href='/' locale='en'>
-                    English
-                </Link>
-                <Link href='/' locale='ar'>
-                    العربية
-                </Link>
-            </div>
-        </Layout>
+        <div>
+            <Layout>
+                <p>{t("test")}</p>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "20px",
+                    }}
+                >
+                    <Link href='/' locale='en'>
+                        English
+                    </Link>
+                    <Link href='/' locale='ar'>
+                        العربية
+                    </Link>
+                </div>
+            </Layout>
+            <FeaturedUniversities />
+        </div>
     );
 }
 

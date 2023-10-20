@@ -2,3 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 @import "daisyui/dist/full.css";
+
+/* styles.css */
+.university-logo {
+    width: 50px;
+    height: 50px;
+    background-color: #32314d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+    .university-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .university-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .university-logo {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+@keyframes moveLogo {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-moveLogo {
+    animation: moveLogo 4s linear infinite;
+}
+
+.university-logos-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    /* Prevents the container from shrinking and wrapping */
+    overflow-x: auto;
+    /* Add horizontal scrollbar if logos overflow the container */
+}
