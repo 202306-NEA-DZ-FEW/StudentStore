@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="bg-[#F1F6FA] py-12"
+>
+  <div
+    className="container mx-auto university-logos-container flex flex-wrap justify-center items-center"
+  >
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="arkansas Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/arkansas.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="CIT Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/CaliforniaIT.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Duke Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/duke.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="glasgow Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/glasgow.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="MIT Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/mit.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Nottingham Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/Nottingham.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Oxford Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/oxford.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Princeton Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/princeton.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Purdue Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/purdue.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Stanford Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/stanford.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Columbia Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/columbia.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Chicago Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/chicago.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Brown Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/brown.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="glasgow Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/glasgow1.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="liverpool Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/liverpool.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="Pennsylvania Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/Pennsylvania.svg"
+        width={90}
+      />
+    </div>
+    <div
+      className=" bg-transparentp-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 mx-2 my-2 animate-moveLogo"
+    >
+      <img
+        alt="UIA Logo"
+        className="object-contain rounded-full"
+        height={90}
+        src="/UIA.svg"
+        width={90}
+      />
+    </div>
+  </div>
+</div>
+`;
