@@ -1,13 +1,18 @@
+import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
-import { db } from "@/util/firebase";
-import { collection, getDocs } from "firebase/firestore";
+
+import ProductCard from "@/components/ProductCard/ProductCard";
+
 import Layout from "@/layout/Layout";
+
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { onSnapshot } from "firebase/firestore";
+import { db } from "@/util/firebase";
+
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -22,6 +27,7 @@ export default function HomePage() {
         });
     }, []);
     return (
+
         <div>
             <Layout>
                 <p>{t("test")}</p>
@@ -42,6 +48,7 @@ export default function HomePage() {
             </Layout>
             <SearchBar />
         </div>
+
     );
 }
 
