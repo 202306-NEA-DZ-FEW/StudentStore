@@ -4,11 +4,9 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 import { db } from "@/util/firebase";
-import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, getDocs } from "firebase/firestore";
 import Layout from "@/layout/Layout";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import { Firestore } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
 
 export default function HomePage() {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ImSearch } from "react-icons/im";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, onSnapshot } from "firebase/firestore";
 import { db } from "@/util/firebase";
 
 const SearchBar = () => {
@@ -18,22 +18,21 @@ const SearchBar = () => {
             return;
         }
         // Use array-contains for case-insensitive search
-        q = query(
-            collection(db, "products"),
-            where("name", "array-contains", searchTerm.toLowerCase())
-        );
-        try {
-            const querySnapshot = await getDocs(q);
+        q = query(collection(db, "products"));
+
+        onSnapshot(q, (snapshot) => {
             const productsArray = [];
-            querySnapshot.forEach((doc) => {
-                productsArray.push({ id: doc.id, ...doc.data() });
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                if (
+                    data.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                    productsArray.push({ id: doc.id, ...data });
+                }
             });
             setProducts(productsArray);
             setLoading(false);
-        } catch (error) {
-            console.error("Error getting products: ", error);
-            setLoading(false);
-        }
+        });
     };
 
     useEffect(() => {
