@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
+>
+  <ul
+    className="p-4 md:p-0 md:flex md:justify-around lg:p- lg:flex lg:justify-around lg:w-[75%] lg:mx-auto "
+  >
+    <li>
+      <a
+        className="capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        All Categories
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Electronics
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Books
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Gaming
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Clothes
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Shoes
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Food
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Transportation
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Furniture
+      </a>
+    </li>
+  </ul>
+</div>
+`;
