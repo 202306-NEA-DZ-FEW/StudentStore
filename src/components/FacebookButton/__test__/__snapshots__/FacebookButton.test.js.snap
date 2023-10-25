@@ -27,9 +27,7 @@ exports[`renders correctly 1`] = `
     </svg>
     <p
       className="text-md mx-2 mr-4 font-semibold"
-    >
-      Facebook
-    </p>
+    />
   </button>
 </div>
 `;

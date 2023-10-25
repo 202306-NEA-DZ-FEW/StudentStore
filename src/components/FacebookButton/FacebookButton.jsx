@@ -20,7 +20,7 @@ export default function FacebookButton({ children }) {
                 onClick={signInWithFacebook}
             >
                 <BsFacebook className='text-2xl' />
-                <p className='text-md mx-2 mr-4 font-semibold'>Facebook</p>
+                <p className='text-md mx-2 mr-4 font-semibold'>{children}</p>
             </button>
         </div>
     );
