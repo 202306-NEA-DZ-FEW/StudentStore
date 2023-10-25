@@ -12,7 +12,7 @@ const SearchBar = () => {
         setLoading(true);
         let q;
         if (searchTerm.trim() === "") {
-            // If the search term is empty, do not perform a search
+            // If the search term is empty, do not perform a search.
             setProducts([]);
             setLoading(false);
             return;

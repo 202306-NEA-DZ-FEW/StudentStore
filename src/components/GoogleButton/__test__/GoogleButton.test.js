@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import SearchBar from "../SearchBar";
+import GoogleButton from "../GoogleButton";
 
 jest.mock("../../../util/firebase", () => {
     return {
@@ -8,6 +8,6 @@ jest.mock("../../../util/firebase", () => {
 });
 
 it("renders correctly", () => {
-    const tree = renderer.create(<SearchBar />).toJSON();
+    const tree = renderer.create(<GoogleButton />).toJSON();
     expect(tree).toMatchSnapshot();
 });
