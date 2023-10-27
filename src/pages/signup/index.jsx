@@ -2,6 +2,16 @@ import Button from "@/components/Buttons/Button";
 import FacebookButton from "@/components/FacebookButton/FacebookButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
+import { auth, db } from "@/util/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+    collection,
+    doc,
+    getDocs,
+    query,
+    setDoc,
+    where,
+} from "firebase/firestore";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -19,8 +29,64 @@ export default function SignUp() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     }
+    function checkEmailExists(email) {
+        const usersCollection = collection(db, "userinfo");
+        const q = query(usersCollection, where("email", "==", email));
+
+        return getDocs(q).then((querySnapshot) => {
+            return !querySnapshot.empty;
+        });
+    }
     function handleSignUp(event) {
         event.preventDefault();
+        checkEmailExists(formData.email)
+            .then((emailExists) => {
+                if (emailExists) {
+                    // The email already exists in Firestore, show an error message
+                    alert("email already exist");
+                } else {
+                    // The email is not in Firestore, proceed with user registration
+                    createUserWithEmailAndPassword(
+                        auth,
+                        formData.email,
+                        formData.password
+                    )
+                        .then((userCredential) => {
+                            // Registration successful, you can add user data to Firestore here
+                            const colRef = doc(
+                                db,
+                                "userinfo",
+                                userCredential.user.uid
+                            );
+                            setDoc(colRef, {
+                                userName: formData.userName,
+                                surname: formData.surname,
+                                email: formData.email,
+                                password: formData.password,
+                                school: formData.school,
+                            })
+                                .then(() => {
+                                    console.log(
+                                        "User data added to Firestore."
+                                    );
+                                })
+                                .catch((error) => {
+                                    console.error(
+                                        "Error adding user data to Firestore:",
+                                        error
+                                    );
+                                });
+                        })
+                        .catch((error) => {
+                            if (error.code === "auth/email-already-in-use") {
+                                alert("Email already in use");
+                            }
+                        });
+                }
+            })
+            .catch((error) => {
+                console.error("Error checking email existence:", error);
+            });
     }
     return (
         <div>
