@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 @import "daisyui/dist/full.css";
+
+.input-style {
+    background-color: white;
+    color: #585785;
+    padding: auto 1rem;
+    width: 100%;
+
+    border-radius: 8px;
+    border: solid 1px #585785;
+}
+
+.input-style::placeholder {
+    color: #585785;
+    opacity: 0.65;
+}
+
+.empty-image-container {
+    background-image: url("/Image.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.placeholder-center::placeholder {
+    text-align: center;
+    transform: translateY(140%);
+}
