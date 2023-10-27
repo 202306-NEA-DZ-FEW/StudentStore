@@ -4,11 +4,9 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 
-import ProductCard from "@/components/ProductCard/ProductCard";
-import SearchBar from "@/components/SearchBar/SearchBar";
-
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
+import Language from "@/components/Language/Language";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -21,8 +19,6 @@ export default function HomePage() {
     });
     return (
         <Layout>
-            <ProductCard />
-            <SearchBar />
             <p>{t("test")}</p>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
@@ -32,6 +28,7 @@ export default function HomePage() {
                     العربية
                 </Link>
             </div>
+            <Language />
         </Layout>
     );
 }

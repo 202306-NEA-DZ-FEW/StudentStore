@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
@@ -16,4 +17,6 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const imgDB = getStorage(app);
 // Initialize Firebase Authentication and get a reference to the service
-// export const auth = getAuth(app);
+
+export const auth = getAuth(app);
+
