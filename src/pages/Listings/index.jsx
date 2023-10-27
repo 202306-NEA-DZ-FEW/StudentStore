@@ -1,6 +1,118 @@
+import classNames from "classnames";
+import { addDoc, collection } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Image from "next/image";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
+import { db, imgDB } from "@/util/firebase";
 
 const Listings = () => {
+    const [imageFiles, setImageFiles] = useState([]);
+    const [formData, setFormData] = useState({
+        type: "",
+        category: "",
+        title: "",
+        description: "",
+        price: "",
+        location: "",
+        imgUrl: [],
+    });
+
+    const handleChange = (e) => {
+        const { value, name, type } = e.target;
+        if (type === "file") {
+            const file = e.target.files[0];
+            const files = e.target.files;
+            // reject if the image is selected twice
+            const selectedFileNames = formData.imgUrl.map(
+                (imgFile) => imgFile.name
+            );
+            for (const file of files) {
+                const fileName = file.name;
+                // Check if the file with the same name has already been selected
+                if (selectedFileNames.includes(fileName)) {
+                    toast.warning(
+                        "Image with the same name has already been selected."
+                    );
+                    e.target.value = "";
+                    return;
+                }
+            }
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const fileUrl = event.target.result;
+                setImageFiles((prevImageFiles) => [...prevImageFiles, fileUrl]);
+            };
+            reader.readAsDataURL(file);
+            const updatedImgUrl = [...formData.imgUrl];
+            for (let i = 0; i < files.length; i++) {
+                updatedImgUrl.push(files[i]);
+            }
+            if (updatedImgUrl.length > 4) {
+                toast.warning("You can only upload a maximum of 4 images.");
+                return;
+            }
+            setFormData({ ...formData, imgUrl: updatedImgUrl });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // Check if any required fields are empty
+        if (
+            !formData.type ||
+            !formData.category ||
+            !formData.title ||
+            !formData.description ||
+            !formData.price ||
+            !formData.location ||
+            formData.imgUrl.length === 0
+        ) {
+            toast.error("Please fill in all required fields.");
+            return;
+        }
+        try {
+            const valuesRef = collection(db, "products");
+            const docData = {
+                type: formData.type,
+                category: formData.category,
+                title: formData.title,
+                description: formData.description,
+                price: `${formData.price}$`,
+                location: formData.location,
+                imgUrl: [],
+            };
+            //
+            for (const imageFile of formData.imgUrl) {
+                const imgsRef = ref(imgDB, `Images/${imageFile.name}`);
+                const snapshot = await uploadBytes(imgsRef, imageFile);
+                const downloadURL = await getDownloadURL(snapshot.ref);
+                docData.imgUrl.push(downloadURL); // Push the download URL to the array
+            }
+            await addDoc(valuesRef, docData);
+            toast.success("Data Added successfully");
+            //reset form inputs after submitting
+            setFormData({
+                type: "",
+                category: "",
+                title: "",
+                description: "",
+                price: "",
+                location: "",
+                imgUrl: [],
+            });
+            // Clear the image files
+            setImageFiles([]);
+        } catch (error) {
+            toast.error("Error adding data: ", error);
+            console.error("Error adding data: ", error);
+        }
+    };
     return (
         <div className='bg-[#F1F6FA] p-6'>
             <div className='mb-8 sm:mb-12 '>
@@ -12,55 +124,104 @@ const Listings = () => {
 
             <div className='flex flex-col  gap-6 sm:gap-6 sm:flex-col md:flex-col  md:justify-center lg:flex-row lg:justify-between'>
                 <div className='grid grid-cols-3 grid-rows-4 md:flex lg:grid lg:grid-rows-3  w-full sm:w-full md:w-full lg:w-1/2  justify-between  gap-4'>
-                    <div className='col-span-3 row-span-3 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4]  border rounded-md border-[#979797]'>
-                        <Image
-                            className='object-cover  w-full h-full '
-                            src=''
-                            width={1100}
-                            height={1000}
-                            alt='product image'
-                        />
+                    <div
+                        className={classNames(
+                            "col-span-3 row-span-3 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4]  border rounded-md border-[#979797]",
+                            { "empty-image-container": !imageFiles[0] }
+                        )}
+                    >
+                        {imageFiles[0] ? (
+                            <Image
+                                className='object-cover  w-full h-full '
+                                src={imageFiles[0]}
+                                width={1100}
+                                height={1000}
+                                alt='product image'
+                            />
+                        ) : (
+                            <div className='empty-image-container'></div>
+                        )}
                     </div>
-                    <div className=' col-span-3 row-span-1  md:w-[40%] lg:w-full rounded-md gap-4'>
+                    <div className=' col-span-3 row-span-1    md:w-[40%] lg:w-full rounded-md gap-4'>
                         <div className='flex justify-between  gap-4 md:grid md:grid-cols-2 md:grid-rows-3 sm:gap-6  lg:flex   '>
-                            <div className='col-span-2 row-span-1 md:row-span-2 w-full  bg-[#EEF2F4] h-20 sm:h-28 md:h-64 lg:h-28  border rounded-md border-[#979797] overflow-hidden'>
-                                <Image
-                                    className='object-cover w-full h-full rounded-md '
-                                    src=''
-                                    width={1600}
-                                    height={1000}
-                                    alt='product image'
-                                />
+                            <div
+                                className={classNames(
+                                    "col-span-2 row-span-1 md:row-span-2 w-full  bg-[#EEF2F4] h-20 sm:h-28 md:h-64 lg:h-28  border rounded-md border-[#979797] overflow-hidden",
+                                    {
+                                        "empty-image-container bg-[#EEF2F4] lg:bg-[#D1DBE3]":
+                                            !imageFiles[1],
+                                    }
+                                )}
+                            >
+                                {imageFiles[1] ? (
+                                    <Image
+                                        className='object-cover w-full h-full rounded-md '
+                                        src={imageFiles[1]}
+                                        width={1600}
+                                        height={1000}
+                                        alt='product image'
+                                    />
+                                ) : (
+                                    <div className='empty-image-container'></div>
+                                )}
                             </div>
 
-                            <div className='w-full col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28  border rounded-md border-[#979797] overflow-hidden'>
-                                <Image
-                                    className='object-cover w-full h-full '
-                                    src=''
-                                    width={1600}
-                                    height={1000}
-                                    alt='product image'
-                                />
+                            <div
+                                className={classNames(
+                                    "w-full col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28  border rounded-md border-[#979797] overflow-hidden",
+                                    {
+                                        "empty-image-container bg-[#EEF2F4] lg:bg-[#D1DBE3]":
+                                            !imageFiles[2],
+                                    }
+                                )}
+                            >
+                                {imageFiles[2] ? (
+                                    <Image
+                                        className='object-cover w-full h-full '
+                                        src={imageFiles[2]}
+                                        width={1600}
+                                        height={1000}
+                                        alt='product image'
+                                    />
+                                ) : (
+                                    <div className='empty-image-container'></div>
+                                )}
                             </div>
-                            <div className='col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28  w-full border  rounded-md border-[#979797] overflow-hidden lg:w-full'>
-                                <Image
-                                    className='object-cover w-full h-full '
-                                    src=''
-                                    width={1600}
-                                    height={1000}
-                                    alt='product image'
-                                />
+                            <div
+                                className={classNames(
+                                    "col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28  w-full border  rounded-md border-[#979797] overflow-hidden lg:w-full",
+                                    {
+                                        "empty-image-container bg-[#EEF2F4] lg:bg-[#D1DBE3]":
+                                            !imageFiles[3],
+                                    }
+                                )}
+                            >
+                                {imageFiles[3] ? (
+                                    <Image
+                                        className='object-cover w-full h-full '
+                                        src={imageFiles[3]}
+                                        width={1600}
+                                        height={1000}
+                                        alt='product image'
+                                    />
+                                ) : (
+                                    <div className='empty-image-container'></div>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
-                <form className=' grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 '>
+                <form
+                    onSubmit={handleSubmit}
+                    className=' grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 '
+                >
                     <div className='col-span-4 row-span-1 md:col-span-2 '>
                         <select
                             className='select select-bordered  input-style'
                             name='type'
-                            value=''
-                            onChange=''
+                            value={formData.type}
+                            onChange={handleChange}
+                            id=''
                         >
                             <option value='' disabled selected>
                                 Type(Product, service)
@@ -73,16 +234,23 @@ const Listings = () => {
                         <select
                             className='select select-bordered  input-style  '
                             name='category'
-                            value=''
-                            onChange=''
+                            value={formData.category}
+                            onChange={handleChange}
+                            id=''
                         >
                             <option value='' disabled selected>
                                 Category
                             </option>
-                            <option value='electronics'>electronics</option>
-                            <option value='books'>books</option>
-                            <option value='gaming'>gaming</option>
-                            <option value='shoes'>shoes</option>
+                            <option value='electronics'>Electronics</option>
+                            <option value='books'>Books</option>
+                            <option value='gaming'>Gaming</option>
+                            <option value='clothes'>Clothes</option>
+                            <option value='shoes'>Shoes</option>
+                            <option value='food'>Food</option>
+                            <option value='transportation'>
+                                Transportation
+                            </option>
+                            <option value='furniture'>Furniture</option>
                         </select>
                     </div>
                     <div className='col-span-4 row-span-1 '>
@@ -90,8 +258,8 @@ const Listings = () => {
                             className=' input input-bordered input-style '
                             type='text'
                             name='title'
-                            value=''
-                            onChange=''
+                            value={formData.title}
+                            onChange={handleChange}
                             placeholder='Product name'
                         />
                     </div>
@@ -101,32 +269,36 @@ const Listings = () => {
                             className='input input-bordered py-2  h-full  input-style placeholder-center placeholder:text-center'
                             placeholder='Description'
                             name='description'
-                            value=''
-                            onChange=''
+                            value={formData.description}
+                            onChange={handleChange}
                         />
                     </div>
                     <input
                         type='text'
                         name='location'
-                        value=''
-                        onChange=''
+                        value={formData.location}
+                        onChange={handleChange}
                         placeholder='Location'
                         className='input input-bordered col-span-2 row-span-1 input-style '
                     />
-
                     <input
                         type='number'
                         name='price'
-                        value=''
+                        value={formData.price}
                         placeholder='Price'
                         className='input input-bordered col-span-2 row-span-1 input-style '
-                        onChange=''
+                        onChange={handleChange}
                     />
                     <div className='col-span-4 row-span-1 flex gap-4 mt-4'>
                         <label className=' w-full h-full items-center  justify-center relative inline-flex bg-[#585785] text-white py-2  rounded-lg cursor-pointer shimmer'>
                             <span>Upload Images</span>
-                            <input type='file' onChange='' className='hidden' />
+                            <input
+                                type='file'
+                                onChange={handleChange}
+                                className='hidden'
+                            />
                         </label>
+
                         <button
                             type='submit'
                             className='w-full h-full text-white bg-[#FF8A57] rounded-lg '
@@ -136,6 +308,7 @@ const Listings = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };
