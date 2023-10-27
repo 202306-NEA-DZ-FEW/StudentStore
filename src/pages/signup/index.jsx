@@ -16,6 +16,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function SignUp() {
+    // create a state for handelling validation errors
+    const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
         userName: "",
         surname: "",
@@ -87,6 +89,73 @@ export default function SignUp() {
             .catch((error) => {
                 console.error("Error checking email existence:", error);
             });
+        // setting an empty object to fill it with text if the condition is applied and pass it to the state
+        const validationErrors = {};
+        // regex variables
+        const nameAndSurnameRegEx = /^[a-z ]+$/i;
+        const nameAndSurnameLengthRegEx = /^.{3,24}$/;
+        const emailRegEx = /^\w+@\w+(\.\w{2,4})+$/;
+        const schoolNameRegEx = /^[A-Za-z\s&,.':()/-]+$/;
+        const schoolNameLengthRegEx = /^.{3,}$/;
+        const passwordRegEx =
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+        // name validation
+        if (!formData.userName.trim()) {
+            validationErrors.userName = "Please enter your name";
+        } else if (!nameAndSurnameRegEx.test(formData.userName)) {
+            validationErrors.userName =
+                "Your name can only contain letters and spaces";
+        } else if (!nameAndSurnameLengthRegEx.test(formData.userName)) {
+            validationErrors.userName =
+                "Your name must be between 3 and 24 characters";
+        }
+
+        // surname validation
+        if (!formData.surname.trim()) {
+            validationErrors.surname = "Please enter your surname";
+        } else if (!nameAndSurnameRegEx.test(formData.surname)) {
+            validationErrors.surname =
+                "Your surname can only contain letters and spaces";
+        } else if (!nameAndSurnameLengthRegEx.test(formData.surname)) {
+            validationErrors.surname =
+                "Your surname must be between 3 and 24 characters";
+        }
+        // email validation
+        if (!formData.email.trim()) {
+            validationErrors.email = "Please enter your email";
+        } else if (!emailRegEx.test(formData.email)) {
+            validationErrors.email = "Please enter a valid email address";
+        }
+        // school validation
+        if (!formData.school.trim()) {
+            validationErrors.school = "Please enter your school";
+        } else if (!schoolNameRegEx.test(formData.school)) {
+            validationErrors.school =
+                "Your school name can only contain letters, spaces, and common symbols";
+        } else if (!schoolNameLengthRegEx.test(formData.school)) {
+            validationErrors.school =
+                "Your school name must be at least 3 characters";
+        }
+        // password validation
+        if (!formData.password.trim()) {
+            validationErrors.password = "Please enter password";
+        } else if (formData.password.length < 8) {
+            validationErrors.password =
+                "Your password must be at least 8 characters";
+        } else if (!passwordRegEx.test(formData.password)) {
+            validationErrors.password =
+                "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+        }
+        // confirm password validation
+        if (!formData.confirm_password.trim()) {
+            validationErrors.confirm_password = "Please confirm your password";
+        } else if (formData.confirm_password !== formData.password) {
+            validationErrors.confirm_password =
+                "Passwords do not match. Please try again";
+        }
+        setErrors(validationErrors);
+        // delete later
+        console.log(formData);
     }
     return (
         <div>
@@ -103,7 +172,7 @@ export default function SignUp() {
                         value={formData.userName}
                         onChange={handleChange}
                     />
-
+                    {errors.userName && <span>{errors.userName}</span>}
                     <input
                         type='text'
                         placeholder='Surname'
@@ -111,7 +180,7 @@ export default function SignUp() {
                         value={formData.surname}
                         onChange={handleChange}
                     />
-
+                    {errors.surname && <span>{errors.surname}</span>}
                     <input
                         type='email'
                         placeholder='E-mail Addres'
@@ -119,7 +188,7 @@ export default function SignUp() {
                         value={formData.email}
                         onChange={handleChange}
                     />
-
+                    {errors.email && <span>{errors.email}</span>}
                     <input
                         type='text'
                         placeholder='School Name'
@@ -127,7 +196,7 @@ export default function SignUp() {
                         value={formData.school}
                         onChange={handleChange}
                     />
-
+                    {errors.school && <span>{errors.school}</span>}
                     <input
                         type='password'
                         placeholder='Password'
@@ -135,7 +204,7 @@ export default function SignUp() {
                         value={formData.password}
                         onChange={handleChange}
                     />
-
+                    {errors.password && <span>{errors.password}</span>}
                     <input
                         type='password'
                         placeholder='Re-enter Password'
@@ -143,12 +212,12 @@ export default function SignUp() {
                         value={formData.confirm_password}
                         onChange={handleChange}
                     />
-
+                    {errors.confirm_password && (
+                        <span>{errors.confirm_password}</span>
+                    )}
                     <Button
                         onClick={handleSignUp}
-                        className={
-                            "bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]"
-                        }
+                        className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'
                     >
                         Sign-up
                     </Button>
