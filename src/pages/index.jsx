@@ -7,6 +7,8 @@ import * as React from "react";
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
 import Language from "@/components/Language/Language";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import ProductCard from "@/components/ProductCard/ProductCard";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -29,6 +31,9 @@ export default function HomePage() {
                 </Link>
             </div>
             <Language />
+            <SearchBar />
+            <ProductCard />
+            <Link href='/Listings'>go to listings</Link>
         </Layout>
     );
 }
