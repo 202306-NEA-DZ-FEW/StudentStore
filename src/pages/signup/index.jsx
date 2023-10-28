@@ -16,9 +16,14 @@ import {
     where,
 } from "firebase/firestore";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
+    // using useRouter to redirect him to products page
+    const route = useRouter();
     // create a state for handelling validation errors
     const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
@@ -47,10 +52,10 @@ export default function SignUp() {
         checkEmailExists(formData.email)
             .then((emailExists) => {
                 if (emailExists) {
-                    // The email already exists in Firestore, show an error message
-                    alert("email already exist");
+                    // The email already exists in Firestore, show an error message using toastify
+                    toast.error("email already exist");
                 } else {
-                    // The email is not in Firestore, proceed with user registration
+                    // if The email is not in Firestore, now we can continue with the signup process
                     createUserWithEmailAndPassword(
                         auth,
                         formData.email,
@@ -58,36 +63,12 @@ export default function SignUp() {
                     )
                         .then((userCredential) => {
                             // Registration successful, you can add user data to Firestore here
+                            toast.warning("Please wait");
                             const colRef = doc(
                                 db,
                                 "userinfo",
                                 userCredential.user.uid
                             );
-                            sendEmailVerification(auth.currentUser)
-                                .then(() => {
-                                    console.log(`Email verification sent!`);
-                                })
-                                .catch((error) =>
-                                    console.log(error, "email does not exist")
-                                );
-
-                            // onAuthStateChanged(auth, (user) => {
-                            //     if (user) {
-                            //         if (user.emailVerified) {
-                            //             // The user's email is verified, so you can allow access to your app.
-                            //             console.log("Email is verified");
-                            //             // Proceed with your application logic.
-                            //         } else {
-                            //             // The user's email is not yet verified. You can choose to restrict access.
-                            //             console.log(
-                            //                 "Email is not verified. Access restricted."
-                            //             );
-                            //         }
-                            //     } else {
-                            //         // No user is signed in
-                            //         console.log("No user signed in");
-                            //     }
-                            // });
                             setDoc(colRef, {
                                 userName: formData.userName,
                                 surname: formData.surname,
@@ -96,9 +77,8 @@ export default function SignUp() {
                                 school: formData.school,
                             })
                                 .then(() => {
-                                    console.log(
-                                        "User data added to Firestore."
-                                    );
+                                    // after the user data is added to the firestore now we will redirect the user to the product page i am using / but later we will chnage it with the products page path
+                                    route.push("/");
                                 })
                                 .catch((error) => {
                                     console.error(
@@ -108,8 +88,9 @@ export default function SignUp() {
                                 });
                         })
                         .catch((error) => {
+                            // i added this condition to prevent console log error when we try to submit the same email
                             if (error.code === "auth/email-already-in-use") {
-                                alert("Email already in use");
+                                toast.error("Email already in use");
                             }
                         });
                 }
@@ -184,6 +165,14 @@ export default function SignUp() {
         // setErrors(validationErrors);
         // // delete later
         // console.log(formData);
+        setFormData({
+            userName: "",
+            surname: "",
+            email: "",
+            school: "",
+            password: "",
+            confirm_password: "",
+        });
     }
     return (
         <div>
@@ -270,6 +259,7 @@ export default function SignUp() {
                     </Button>
                 </Link>
             </div>
+            <ToastContainer />
         </div>
     );
 }
