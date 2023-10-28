@@ -3,7 +3,10 @@ import FacebookButton from "@/components/FacebookButton/FacebookButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
 import { auth, db } from "@/util/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+} from "firebase/auth";
 import {
     collection,
     doc,
@@ -60,6 +63,31 @@ export default function SignUp() {
                                 "userinfo",
                                 userCredential.user.uid
                             );
+                            sendEmailVerification(auth.currentUser)
+                                .then(() => {
+                                    console.log(`Email verification sent!`);
+                                })
+                                .catch((error) =>
+                                    console.log(error, "email does not exist")
+                                );
+
+                            // onAuthStateChanged(auth, (user) => {
+                            //     if (user) {
+                            //         if (user.emailVerified) {
+                            //             // The user's email is verified, so you can allow access to your app.
+                            //             console.log("Email is verified");
+                            //             // Proceed with your application logic.
+                            //         } else {
+                            //             // The user's email is not yet verified. You can choose to restrict access.
+                            //             console.log(
+                            //                 "Email is not verified. Access restricted."
+                            //             );
+                            //         }
+                            //     } else {
+                            //         // No user is signed in
+                            //         console.log("No user signed in");
+                            //     }
+                            // });
                             setDoc(colRef, {
                                 userName: formData.userName,
                                 surname: formData.surname,
@@ -92,70 +120,70 @@ export default function SignUp() {
         // setting an empty object to fill it with text if the condition is applied and pass it to the state
         const validationErrors = {};
         // regex variables
-        const nameAndSurnameRegEx = /^[a-z ]+$/i;
-        const nameAndSurnameLengthRegEx = /^.{3,24}$/;
-        const emailRegEx = /^\w+@\w+(\.\w{2,4})+$/;
-        const schoolNameRegEx = /^[A-Za-z\s&,.':()/-]+$/;
-        const schoolNameLengthRegEx = /^.{3,}$/;
-        const passwordRegEx =
-            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
-        // name validation
-        if (!formData.userName.trim()) {
-            validationErrors.userName = "Please enter your name";
-        } else if (!nameAndSurnameRegEx.test(formData.userName)) {
-            validationErrors.userName =
-                "Your name can only contain letters and spaces";
-        } else if (!nameAndSurnameLengthRegEx.test(formData.userName)) {
-            validationErrors.userName =
-                "Your name must be between 3 and 24 characters";
-        }
+        // const nameAndSurnameRegEx = /^[a-z ]+$/i;
+        // const nameAndSurnameLengthRegEx = /^.{3,24}$/;
+        // const emailRegEx = /^\w+@\w+(\.\w{2,4})+$/;
+        // const schoolNameRegEx = /^[A-Za-z\s&,.':()/-]+$/;
+        // const schoolNameLengthRegEx = /^.{3,}$/;
+        // const passwordRegEx =
+        //     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+        // // name validation
+        // if (!formData.userName.trim()) {
+        //     validationErrors.userName = "Please enter your name";
+        // } else if (!nameAndSurnameRegEx.test(formData.userName)) {
+        //     validationErrors.userName =
+        //         "Your name can only contain letters and spaces";
+        // } else if (!nameAndSurnameLengthRegEx.test(formData.userName)) {
+        //     validationErrors.userName =
+        //         "Your name must be between 3 and 24 characters";
+        // }
 
-        // surname validation
-        if (!formData.surname.trim()) {
-            validationErrors.surname = "Please enter your surname";
-        } else if (!nameAndSurnameRegEx.test(formData.surname)) {
-            validationErrors.surname =
-                "Your surname can only contain letters and spaces";
-        } else if (!nameAndSurnameLengthRegEx.test(formData.surname)) {
-            validationErrors.surname =
-                "Your surname must be between 3 and 24 characters";
-        }
-        // email validation
-        if (!formData.email.trim()) {
-            validationErrors.email = "Please enter your email";
-        } else if (!emailRegEx.test(formData.email)) {
-            validationErrors.email = "Please enter a valid email address";
-        }
-        // school validation
-        if (!formData.school.trim()) {
-            validationErrors.school = "Please enter your school";
-        } else if (!schoolNameRegEx.test(formData.school)) {
-            validationErrors.school =
-                "Your school name can only contain letters, spaces, and common symbols";
-        } else if (!schoolNameLengthRegEx.test(formData.school)) {
-            validationErrors.school =
-                "Your school name must be at least 3 characters";
-        }
-        // password validation
-        if (!formData.password.trim()) {
-            validationErrors.password = "Please enter password";
-        } else if (formData.password.length < 8) {
-            validationErrors.password =
-                "Your password must be at least 8 characters";
-        } else if (!passwordRegEx.test(formData.password)) {
-            validationErrors.password =
-                "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
-        }
-        // confirm password validation
-        if (!formData.confirm_password.trim()) {
-            validationErrors.confirm_password = "Please confirm your password";
-        } else if (formData.confirm_password !== formData.password) {
-            validationErrors.confirm_password =
-                "Passwords do not match. Please try again";
-        }
-        setErrors(validationErrors);
-        // delete later
-        console.log(formData);
+        // // surname validation
+        // if (!formData.surname.trim()) {
+        //     validationErrors.surname = "Please enter your surname";
+        // } else if (!nameAndSurnameRegEx.test(formData.surname)) {
+        //     validationErrors.surname =
+        //         "Your surname can only contain letters and spaces";
+        // } else if (!nameAndSurnameLengthRegEx.test(formData.surname)) {
+        //     validationErrors.surname =
+        //         "Your surname must be between 3 and 24 characters";
+        // }
+        // // email validation
+        // if (!formData.email.trim()) {
+        //     validationErrors.email = "Please enter your email";
+        // } else if (!emailRegEx.test(formData.email)) {
+        //     validationErrors.email = "Please enter a valid email address";
+        // }
+        // // school validation
+        // if (!formData.school.trim()) {
+        //     validationErrors.school = "Please enter your school";
+        // } else if (!schoolNameRegEx.test(formData.school)) {
+        //     validationErrors.school =
+        //         "Your school name can only contain letters, spaces, and common symbols";
+        // } else if (!schoolNameLengthRegEx.test(formData.school)) {
+        //     validationErrors.school =
+        //         "Your school name must be at least 3 characters";
+        // }
+        // // password validation
+        // if (!formData.password.trim()) {
+        //     validationErrors.password = "Please enter password";
+        // } else if (formData.password.length < 8) {
+        //     validationErrors.password =
+        //         "Your password must be at least 8 characters";
+        // } else if (!passwordRegEx.test(formData.password)) {
+        //     validationErrors.password =
+        //         "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+        // }
+        // // confirm password validation
+        // if (!formData.confirm_password.trim()) {
+        //     validationErrors.confirm_password = "Please confirm your password";
+        // } else if (formData.confirm_password !== formData.password) {
+        //     validationErrors.confirm_password =
+        //         "Passwords do not match. Please try again";
+        // }
+        // setErrors(validationErrors);
+        // // delete later
+        // console.log(formData);
     }
     return (
         <div>
