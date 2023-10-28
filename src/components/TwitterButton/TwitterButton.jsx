@@ -2,7 +2,7 @@ import { auth } from "@/util/firebase";
 import { TwitterAuthProvider, signInWithPopup } from "firebase/auth";
 import { BsTwitter } from "react-icons/bs";
 
-export default function TwitterButon({ children }) {
+export default function TwitterButton({ children }) {
     function signInWithTwitter() {
         const provider = new TwitterAuthProvider();
         signInWithPopup(auth, provider)
