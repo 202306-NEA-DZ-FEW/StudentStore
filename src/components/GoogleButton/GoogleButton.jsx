@@ -1,13 +1,24 @@
-import { auth } from "@/util/firebase";
+import { auth, db } from "@/util/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 import { BsGoogle } from "react-icons/bs";
 
 export default function GoogleButton({ children }) {
     function signInWithGoogle() {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
-            .then((result) => {
-                console.log(result);
+            .then((cred) => {
+                console.log(cred.user);
+                const user = cred.user;
+                const userRef = doc(db, "userinfo", user.uid);
+                setDoc(userRef, {
+                    name: user.displayName,
+                    email: user.email,
+                    phone: user.phoneNumber,
+                    photo: user.photoURL,
+                }).then(() => {
+                    console.log("User data added to Firestore");
+                });
             })
             .catch((error) => {
                 console.log(error);
