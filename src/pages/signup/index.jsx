@@ -3,10 +3,7 @@ import FacebookButton from "@/components/FacebookButton/FacebookButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
 import { auth, db } from "@/util/firebase";
-import {
-    createUserWithEmailAndPassword,
-    sendEmailVerification,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import {
     collection,
     doc,
@@ -20,8 +17,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 export default function SignUp() {
+    const { t } = useTranslation("signup");
     // using useRouter to redirect him to products page
     const route = useRouter();
     // create a state for handelling validation errors
@@ -261,4 +260,13 @@ export default function SignUp() {
             <ToastContainer />
         </div>
     );
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "signup"])),
+            // Will be passed to the page component as props
+        },
+    };
 }
