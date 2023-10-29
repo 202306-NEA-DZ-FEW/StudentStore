@@ -19,8 +19,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import Layout from "@/layout/Layout";
 export default function SignUp() {
-    const { t } = useTranslation("signup");
+    const { t } = useTranslation("sign");
     // using useRouter to redirect him to products page
     const route = useRouter();
     // create a state for handelling validation errors
@@ -173,99 +174,103 @@ export default function SignUp() {
         });
     }
     return (
-        <div>
-            {/* container for image to add later */}
-            <div></div>
-            {/* form container */}
+        <Layout>
             <div>
-                <h1>Sign Up</h1>
-                <form className='flex flex-col'>
-                    <input
-                        type='text'
-                        placeholder='Name'
-                        name='userName'
-                        value={formData.userName}
-                        onChange={handleChange}
-                    />
-                    {errors.userName && <span>{errors.userName}</span>}
-                    <input
-                        type='text'
-                        placeholder='Surname'
-                        name='surname'
-                        value={formData.surname}
-                        onChange={handleChange}
-                    />
-                    {errors.surname && <span>{errors.surname}</span>}
-                    <input
-                        type='email'
-                        placeholder='E-mail Addres'
-                        name='email'
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                    {errors.email && <span>{errors.email}</span>}
-                    <input
-                        type='text'
-                        placeholder='School Name'
-                        name='school'
-                        value={formData.school}
-                        onChange={handleChange}
-                    />
-                    {errors.school && <span>{errors.school}</span>}
-                    <input
-                        type='password'
-                        placeholder='Password'
-                        name='password'
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                    {errors.password && <span>{errors.password}</span>}
-                    <input
-                        type='password'
-                        placeholder='Re-enter Password'
-                        name='confirm_password'
-                        value={formData.confirm_password}
-                        onChange={handleChange}
-                    />
-                    {errors.confirm_password && (
-                        <span>{errors.confirm_password}</span>
-                    )}
-                    <Button
-                        onClick={handleSignUp}
-                        className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'
-                    >
-                        Sign-up
-                    </Button>
-                </form>
-                {/* devider */}
-                <div className='relative flex py-5 items-center'>
-                    <div className='flex-grow border-t border-[#9DAFBD]'></div>
-                    <span className='flex-shrink mx-4 text-[#9DAFBD]'>Or</span>
-                    <div className='flex-grow border-t border-[#9DAFBD]'></div>
+                {/* container for image to add later */}
+                <div></div>
+                {/* form container */}
+                <div>
+                    <h1>{t("sign-up")}</h1>
+                    <form className='flex flex-col'>
+                        <input
+                            type='text'
+                            placeholder={t("name")}
+                            name='userName'
+                            value={formData.userName}
+                            onChange={handleChange}
+                        />
+                        {errors.userName && <span>{errors.userName}</span>}
+                        <input
+                            type='text'
+                            placeholder={t("surname")}
+                            name='surname'
+                            value={formData.surname}
+                            onChange={handleChange}
+                        />
+                        {errors.surname && <span>{errors.surname}</span>}
+                        <input
+                            type='email'
+                            placeholder={t("email")}
+                            name='email'
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        {errors.email && <span>{errors.email}</span>}
+                        <input
+                            type='text'
+                            placeholder={t("school")}
+                            name='school'
+                            value={formData.school}
+                            onChange={handleChange}
+                        />
+                        {errors.school && <span>{errors.school}</span>}
+                        <input
+                            type='password'
+                            placeholder={t("password")}
+                            name='password'
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
+                        {errors.password && <span>{errors.password}</span>}
+                        <input
+                            type='password'
+                            placeholder={t("re-enter password")}
+                            name='confirm_password'
+                            value={formData.confirm_password}
+                            onChange={handleChange}
+                        />
+                        {errors.confirm_password && (
+                            <span>{errors.confirm_password}</span>
+                        )}
+                        <Button
+                            onClick={handleSignUp}
+                            className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'
+                        >
+                            {t("sign-up")}
+                        </Button>
+                    </form>
+                    {/* devider */}
+                    <div className='relative flex py-5 items-center'>
+                        <div className='flex-grow border-t border-[#9DAFBD]'></div>
+                        <span className='flex-shrink mx-4 text-[#9DAFBD]'>
+                            {t("or")}
+                        </span>
+                        <div className='flex-grow border-t border-[#9DAFBD]'></div>
+                    </div>
+                    <h3 className='text-center'>{t("sign-up with")}</h3>
+                    {/* sign up with socials */}
+                    <div className='flex justify-center gap-2 mt-7'>
+                        <GoogleButton>{t("google")}</GoogleButton>
+                        <FacebookButton>{t("facebook")}</FacebookButton>
+                        <TwitterButton>{t("twitter")}</TwitterButton>
+                    </div>
+                    <h2> {t("already have an account?")}</h2>
+                    <Link href='/' className='block'>
+                        <Button className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'>
+                            {t("sign-in")}
+                        </Button>
+                    </Link>
                 </div>
-                <h3 className='text-center'>sign-up with</h3>
-                {/* sign up with socials */}
-                <div className='flex justify-center gap-2 mt-7'>
-                    <GoogleButton>Google</GoogleButton>
-                    <FacebookButton>Facebook</FacebookButton>
-                    <TwitterButton>Twitter</TwitterButton>
-                </div>
-                <h2>Already have an account</h2>
-                <Link href='/' className='block'>
-                    <Button className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'>
-                        sign-in
-                    </Button>
-                </Link>
+                <ToastContainer />
             </div>
-            <ToastContainer />
-        </div>
+        </Layout>
     );
 }
 
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "signup"])),
+            ...(await serverSideTranslations(locale, ["common", "sign"])),
             // Will be passed to the page component as props
         },
     };
