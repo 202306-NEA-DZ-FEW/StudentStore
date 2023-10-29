@@ -20,6 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "@/layout/Layout";
+import Image from "next/image";
 export default function SignUp() {
     const { t } = useTranslation("sign");
     // using useRouter to redirect him to products page
@@ -63,7 +64,7 @@ export default function SignUp() {
                     )
                         .then((userCredential) => {
                             // Registration successful, you can add user data to Firestore here
-                            toast.warning("Please wait");
+                            toast.loading("Please wait");
                             const colRef = doc(
                                 db,
                                 "userinfo",
@@ -173,93 +174,123 @@ export default function SignUp() {
             confirm_password: "",
         });
     }
+    // signup bg style
+    const signupbg = {
+        backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%), url(/signup-bg.jpg)`,
+    };
     return (
         <Layout>
-            <div>
+            <div
+                style={signupbg}
+                className='min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
+            >
                 {/* container for image to add later */}
-                <div></div>
+                <div className='lg:w-3/6 lg:py-16 lg:px-16'>
+                    <Image
+                        src='/hands_box.png'
+                        height={500}
+                        width={500}
+                        layout='responsive'
+                        className='hidden lg:block'
+                    />
+                </div>
                 {/* form container */}
-                <div>
-                    <h1>{t("sign-up")}</h1>
-                    <form className='flex flex-col'>
-                        <input
-                            type='text'
-                            placeholder={t("name")}
-                            name='userName'
-                            value={formData.userName}
-                            onChange={handleChange}
-                        />
-                        {errors.userName && <span>{errors.userName}</span>}
-                        <input
-                            type='text'
-                            placeholder={t("surname")}
-                            name='surname'
-                            value={formData.surname}
-                            onChange={handleChange}
-                        />
-                        {errors.surname && <span>{errors.surname}</span>}
-                        <input
-                            type='email'
-                            placeholder={t("email")}
-                            name='email'
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        {errors.email && <span>{errors.email}</span>}
-                        <input
-                            type='text'
-                            placeholder={t("school")}
-                            name='school'
-                            value={formData.school}
-                            onChange={handleChange}
-                        />
-                        {errors.school && <span>{errors.school}</span>}
-                        <input
-                            type='password'
-                            placeholder={t("password")}
-                            name='password'
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
-                        {errors.password && <span>{errors.password}</span>}
-                        <input
-                            type='password'
-                            placeholder={t("re-enter password")}
-                            name='confirm_password'
-                            value={formData.confirm_password}
-                            onChange={handleChange}
-                        />
-                        {errors.confirm_password && (
-                            <span>{errors.confirm_password}</span>
-                        )}
-                        <Button
-                            onClick={handleSignUp}
-                            className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'
-                        >
+                <div className='py-10 lg:w-3/6 lg:px-10'>
+                    <div className='lg:w-[60%] mx-auto'>
+                        <h1 className='text-[#7874F2] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-7xl'>
                             {t("sign-up")}
-                        </Button>
-                    </form>
-                    {/* devider */}
-                    <div className='relative flex py-5 items-center'>
-                        <div className='flex-grow border-t border-[#9DAFBD]'></div>
-                        <span className='flex-shrink mx-4 text-[#9DAFBD]'>
-                            {t("or")}
-                        </span>
-                        <div className='flex-grow border-t border-[#9DAFBD]'></div>
+                        </h1>
+                        <form>
+                            <input
+                                type='text'
+                                placeholder={t("name")}
+                                name='userName'
+                                value={formData.userName}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.userName && <span>{errors.userName}</span>}
+                            <input
+                                type='text'
+                                placeholder={t("surname")}
+                                name='surname'
+                                value={formData.surname}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.surname && <span>{errors.surname}</span>}
+                            <input
+                                type='email'
+                                placeholder={t("email")}
+                                name='email'
+                                value={formData.email}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.email && <span>{errors.email}</span>}
+                            <input
+                                type='text'
+                                placeholder={t("school")}
+                                name='school'
+                                value={formData.school}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.school && <span>{errors.school}</span>}
+                            <input
+                                type='password'
+                                placeholder={t("password")}
+                                name='password'
+                                value={formData.password}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.password && <span>{errors.password}</span>}
+                            <input
+                                type='password'
+                                placeholder={t("re-enter password")}
+                                name='confirm_password'
+                                value={formData.confirm_password}
+                                onChange={handleChange}
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                            />
+                            {errors.confirm_password && (
+                                <span>{errors.confirm_password}</span>
+                            )}
+                            <Button
+                                onClick={handleSignUp}
+                                className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-7 mb-5'
+                            >
+                                {t("sign-up")}
+                            </Button>
+                        </form>
+                        {/* devider */}
+                        <div className='relative flex items-center'>
+                            <div className='flex-grow border-t border-[#a7b8c4]'></div>
+                            <span className='flex-shrink mx-4 text-[#a7b8c4]'>
+                                {t("or")}
+                            </span>
+                            <div className='flex-grow border-t border-[#a7b8c4]'></div>
+                        </div>
+                        <h3 className='text-center text-[#647581] mt-1'>
+                            {t("sign-up with")}
+                        </h3>
+                        {/* sign up with socials */}
+                        <div className='flex justify-center gap-2 mt-7'>
+                            <GoogleButton>{t("google")}</GoogleButton>
+                            <FacebookButton>{t("facebook")}</FacebookButton>
+                            <TwitterButton>{t("twitter")}</TwitterButton>
+                        </div>
+                        <h2 className='mt-5 text-[#647581]'>
+                            {" "}
+                            {t("already have an account?")}
+                        </h2>
+                        <Link href='/' className='block'>
+                            <Button className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-3 py-1 px-10'>
+                                {t("sign-in")}
+                            </Button>
+                        </Link>
                     </div>
-                    <h3 className='text-center'>{t("sign-up with")}</h3>
-                    {/* sign up with socials */}
-                    <div className='flex justify-center gap-2 mt-7'>
-                        <GoogleButton>{t("google")}</GoogleButton>
-                        <FacebookButton>{t("facebook")}</FacebookButton>
-                        <TwitterButton>{t("twitter")}</TwitterButton>
-                    </div>
-                    <h2> {t("already have an account?")}</h2>
-                    <Link href='/' className='block'>
-                        <Button className='bg-[#7874F2] border-[#7874f2] hover:text-[#7874f2] hover:border-[#7874f2]'>
-                            {t("sign-in")}
-                        </Button>
-                    </Link>
                 </div>
                 <ToastContainer />
             </div>
