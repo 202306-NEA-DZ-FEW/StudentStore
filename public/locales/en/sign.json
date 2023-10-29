@@ -3,7 +3,7 @@
     "sign-up": "Sign-Up",
     "name": "Name",
     "surname": "Surname",
-    "email": "E-mail Adress",
+    "email": "Email Adress",
     "school": "School Name",
     "password": "Password",
     "re-enter password": "Re-enter Password",
@@ -13,5 +13,8 @@
     "facebook": "Facebook",
     "twitter": "Twitter",
     "already have an account?": "Already have an account?",
-    "sign-in": "Sign-In"
+    "sign-in": "Sign-In",
+    "forgot password": "Forgot password?",
+    "sign-in with": "Sign-In with",
+    "dont have an account": "Don't have an account?"
 }

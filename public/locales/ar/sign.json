@@ -1,0 +1,20 @@
+{
+    "language": "ar",
+    "sign-up": "إنشاء حساب",
+    "name": "الإسم",
+    "surname": "اللقب",
+    "email": "البريد الإلكتروني",
+    "school": "اسم المدرسة",
+    "password": "كلمة المرور",
+    "re-enter password": "إعادة إدخال كلمة المرور",
+    "or": "أو",
+    "sign-up with": "التسجيل باستخدام",
+    "google": "جوجل",
+    "facebook": "فيسبوك",
+    "twitter": "تويتر",
+    "already have an account?": "هل لديك حساب بالفعل؟",
+    "sign-in": "تسجيل الدخول",
+    "forgot password": "نسيت كلمة المرور؟",
+    "sign-in with": "تسجيل الدخول باستخدام",
+    "dont have an account": "ليس لديك حساب؟"
+}
