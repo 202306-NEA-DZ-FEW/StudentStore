@@ -71,6 +71,13 @@ export default function SignUp() {
                                 userCredential.user.uid
                             );
                             setDoc(colRef, {
+                                address: {
+                                    country: "",
+                                    city: "",
+                                    zipcode: "",
+                                    street: "",
+                                },
+                                gender: "",
                                 name: formData.userName,
                                 surname: formData.surname,
                                 email: formData.email,
@@ -197,7 +204,7 @@ export default function SignUp() {
                 {/* form container */}
                 <div className='py-10 lg:w-3/6 lg:px-10'>
                     <div className='lg:w-[60%] mx-auto'>
-                        <h1 className='text-[#7874F2] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-7xl'>
+                        <h1 className='text-[#7874F2] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-7xl'>
                             {t("sign-up")}
                         </h1>
                         <form>
@@ -207,65 +214,87 @@ export default function SignUp() {
                                 name='userName'
                                 value={formData.userName}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            {errors.userName && <span>{errors.userName}</span>}
+                            {errors.userName && (
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.userName}
+                                </span>
+                            )}
                             <input
                                 type='text'
                                 placeholder={t("surname")}
                                 name='surname'
                                 value={formData.surname}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            {errors.surname && <span>{errors.surname}</span>}
+                            {errors.surname && (
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.surname}
+                                </span>
+                            )}
                             <input
                                 type='email'
                                 placeholder={t("email")}
                                 name='email'
                                 value={formData.email}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            {errors.email && <span>{errors.email}</span>}
+                            {errors.email && (
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.email}
+                                </span>
+                            )}
                             <input
                                 type='text'
                                 placeholder={t("school")}
                                 name='school'
                                 value={formData.school}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            {errors.school && <span>{errors.school}</span>}
+                            {errors.school && (
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.school}
+                                </span>
+                            )}
                             <input
                                 type='password'
                                 placeholder={t("password")}
                                 name='password'
                                 value={formData.password}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            {errors.password && <span>{errors.password}</span>}
+                            {errors.password && (
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.password}
+                                </span>
+                            )}
                             <input
                                 type='password'
                                 placeholder={t("re-enter password")}
                                 name='confirm_password'
                                 value={formData.confirm_password}
                                 onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-full mb-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
                             {errors.confirm_password && (
-                                <span>{errors.confirm_password}</span>
+                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                    {errors.confirm_password}
+                                </span>
                             )}
                             <Button
                                 onClick={handleSignUp}
-                                className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-7 mb-5'
+                                className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-7 mb-5 block mx-auto'
                             >
                                 {t("sign-up")}
                             </Button>
                         </form>
                         {/* devider */}
-                        <div className='relative flex items-center'>
+                        <div className='relative flex items-center w-[80%] mx-auto md:w-[100%] lg:w-full'>
                             <div className='flex-grow border-t border-[#a7b8c4]'></div>
                             <span className='flex-shrink mx-4 text-[#a7b8c4]'>
                                 {t("or")}
@@ -276,7 +305,7 @@ export default function SignUp() {
                             {t("sign-up with")}
                         </h3>
                         {/* sign up with socials */}
-                        <div className='flex justify-center gap-2 mt-7'>
+                        <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
                             <GoogleButton>{t("google")}</GoogleButton>
                             <FacebookButton>{t("facebook")}</FacebookButton>
                             <TwitterButton>{t("twitter")}</TwitterButton>

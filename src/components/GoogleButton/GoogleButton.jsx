@@ -2,8 +2,9 @@ import { auth, db } from "@/util/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { BsGoogle } from "react-icons/bs";
+import { twMerge } from "tailwind-merge";
 
-export default function GoogleButton({ children }) {
+export default function GoogleButton({ children, className }) {
     function signInWithGoogle() {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
@@ -27,11 +28,16 @@ export default function GoogleButton({ children }) {
     return (
         <div>
             <button
-                className='border-[#F26F6F] text-[#F26F6F] border p-1 flex gap-1 items-center rounded-[22px]'
+                className={twMerge(
+                    "border-[#F26F6F] text-[#F26F6F] border p-1 flex gap-1 items-center rounded-[22px]",
+                    className
+                )}
                 onClick={signInWithGoogle}
             >
                 <BsGoogle className='text-2xl' />
-                <p className='text-md mx-2 mr-4 font-semibold'>{children}</p>
+                <p className='text-md mx-1  font-semibold lg:mx-2 lg:mr-4'>
+                    {children}
+                </p>
             </button>
         </div>
     );
