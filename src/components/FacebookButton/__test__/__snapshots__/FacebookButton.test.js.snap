@@ -29,5 +29,8 @@ exports[`renders correctly 1`] = `
       className="text-md mx-1 font-semibold lg:mx-2 lg:mr-4"
     />
   </button>
+  <div
+    className="Toastify"
+  />
 </div>
 `;

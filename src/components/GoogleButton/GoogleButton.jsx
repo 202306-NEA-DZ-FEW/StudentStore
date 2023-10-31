@@ -1,24 +1,37 @@
 import { auth, db } from "@/util/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { useRouter } from "next/router";
 import { BsGoogle } from "react-icons/bs";
+import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
 export default function GoogleButton({ children, className }) {
+    const route = useRouter();
     function signInWithGoogle() {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
             .then((cred) => {
-                console.log(cred.user);
                 const user = cred.user;
                 const userRef = doc(db, "userinfo", user.uid);
+                toast.loading("Please wait");
                 setDoc(userRef, {
+                    address: {
+                        country: "",
+                        city: "",
+                        zipcode: "",
+                        street: "",
+                    },
+                    gender: "",
                     name: user.displayName,
+                    surname: "",
                     email: user.email,
+                    password: "",
+                    school: "",
                     phone: user.phoneNumber,
                     photo: user.photoURL,
                 }).then(() => {
-                    console.log("User data added to Firestore");
+                    route.push("/");
                 });
             })
             .catch((error) => {
@@ -39,6 +52,7 @@ export default function GoogleButton({ children, className }) {
                     {children}
                 </p>
             </button>
+            <ToastContainer />
         </div>
     );
 }
