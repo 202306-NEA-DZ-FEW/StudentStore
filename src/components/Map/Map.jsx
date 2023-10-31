@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import getLatLng from "../../util/coordinates.js";
 import firebase from "../../util/firebase.js";
 import "firebase/firestore";
 
@@ -38,17 +39,23 @@ const Map = () => {
         const fetchData = async () => {
             try {
                 const firestore = firebase.firestore();
-                const studentRef = firestore.collection("Student").doc("5");
+                const studentRef = firestore.collection("products").doc("1");
                 const doc = await studentRef.get();
 
                 if (doc.exists) {
                     const studentData = doc.data();
-                    setLocation(studentData.location);
+                    const { city, country } = studentData.location;
+                    const { latitude, longitude } = await getLatLng(
+                        city,
+                        country
+                    );
+                    setLocation({ latitude, longitude, city, country });
                 } else {
                     console.log("No such document!");
                 }
             } catch (error) {
                 console.error("Error fetching location data:", error);
+                console.error(error.response);
             }
         };
 
