@@ -65,6 +65,7 @@ export default function SignUp() {
                         .then((userCredential) => {
                             // Registration successful, you can add user data to Firestore here
                             toast.loading("Please wait");
+                            console.log(userCredential);
                             const colRef = doc(
                                 db,
                                 "userinfo",
@@ -84,6 +85,7 @@ export default function SignUp() {
                                 password: formData.password,
                                 school: formData.school,
                                 phone: "",
+                                photo: "",
                             })
                                 .then(() => {
                                     // after the user data is added to the firestore now we will redirect the user to the product page i am using / but later we will chnage it with the products page path
@@ -195,6 +197,7 @@ export default function SignUp() {
                 <div className='lg:w-3/6 lg:py-16 lg:px-16'>
                     <Image
                         src='/hands_box.png'
+                        alt='hands box image'
                         height={500}
                         width={500}
                         layout='responsive'

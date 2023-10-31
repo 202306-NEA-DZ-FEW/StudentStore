@@ -16,7 +16,7 @@ export default function FacebookButton({ children }) {
     return (
         <div>
             <button
-                className='border-[#485DCF] text-[#485DCF] border p-1 flex gap-1 items-center rounded-[22px]'
+                className='border-[#485DCF] text-[#485DCF] border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]'
                 onClick={signInWithFacebook}
             >
                 <BsFacebook className='text-2xl' />

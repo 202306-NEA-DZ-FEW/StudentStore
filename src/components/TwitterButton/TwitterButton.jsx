@@ -16,7 +16,7 @@ export default function TwitterButton({ children }) {
     return (
         <div>
             <button
-                className='border-[#28C7FA] text-[#28C7FA]  border p-1 flex gap-1 items-center rounded-[22px]'
+                className='border-[#28C7FA] text-[#28C7FA]  border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]'
                 onClick={signInWithTwitter}
             >
                 <BsTwitter className='text-2xl ml-1' />

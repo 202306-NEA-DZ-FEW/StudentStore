@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <div>
   <button
-    className="border-[#F26F6F] text-[#F26F6F] border p-1 flex gap-1 items-center rounded-[22px]"
+    className="border-[#F26F6F] text-[#F26F6F] border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]"
     onClick={[Function]}
   >
     <svg
