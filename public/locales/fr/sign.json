@@ -1,0 +1,20 @@
+{
+    "language": "fr",
+    "sign-up": "S'inscrire",
+    "name": "Prénom",
+    "surname": "Nom",
+    "email": "Adresse e-mail",
+    "school": "Nom de l'école",
+    "password": "Mot de passe",
+    "re-enter password": "Re-saisir le mot de passe",
+    "or": "Ou",
+    "sign-up with": "S'inscrire avec",
+    "google": "Google",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "already have an account?": "Vous avez déjà un compte ?",
+    "sign-in": "Se connecter",
+    "forgot password": "Mot de passe oublié ?",
+    "sign-in with": "Se connecter avec",
+    "dont have an account": "Vous n'avez pas de compte ?"
+}

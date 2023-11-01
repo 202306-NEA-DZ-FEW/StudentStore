@@ -1,0 +1,20 @@
+{
+    "language": "en",
+    "sign-up": "Sign-Up",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email Adress",
+    "school": "School Name",
+    "password": "Password",
+    "re-enter password": "Re-enter Password",
+    "or": "Or",
+    "sign-up with": "Sign-Up with",
+    "google": "Google",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "already have an account?": "Already have an account?",
+    "sign-in": "Sign-In",
+    "forgot password": "Forgot password?",
+    "sign-in with": "Sign-In with",
+    "dont have an account": "Don't have an account?"
+}
