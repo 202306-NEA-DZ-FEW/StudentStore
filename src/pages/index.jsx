@@ -9,7 +9,7 @@ import { db } from "@/util/firebase";
 import Language from "@/components/Language/Language";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import ProductCard from "@/components/ProductCard/ProductCard";
-
+import splashpage from "./splashpage";
 export default function HomePage() {
     const { t } = useTranslation("common");
     const colRef = collection(db, "products");
@@ -31,6 +31,7 @@ export default function HomePage() {
                 </Link>
             </div>
             <Language />
+            <Link href='/splashpage'>go to splashpage</Link>
             <SearchBar />
             <ProductCard />
             <Link href='/Listings'>go to listings</Link>
