@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { withTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedIn } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
 function Footer({ t }) {
@@ -93,7 +93,7 @@ function Footer({ t }) {
                         <FaFacebook size={48} style={{ color: "#1877f2" }} />
                     </a>
                     <a href='#' className='mr-2'>
-                        <FaTwitter size={48} style={{ color: "#1da1f2" }} />
+                        <FaLinkedIn size={48} style={{ color: "#1da1f2" }} />
                     </a>
                     <a href='#'>
                         <FaInstagram size={48} style={{ color: "#bc2a8d" }} />
