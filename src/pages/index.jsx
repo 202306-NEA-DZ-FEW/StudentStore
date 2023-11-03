@@ -35,8 +35,8 @@ export default function HomePage() {
             <Language />
             <SearchBar />
             <ProductCard />
-            <Footer />
             <Link href='/Listings'>go to listings</Link>
+            <Footer />
         </Layout>
     );
 }

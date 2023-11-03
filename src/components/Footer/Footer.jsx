@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { withTranslation } from "next-i18next";
-import { useEffect, useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedIn } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
 function Footer({ t }) {
@@ -89,33 +89,55 @@ function Footer({ t }) {
                 </div>
 
                 <div className='absolute md:flex justify-between bottom-64 right-0 lg:right-96 lg:top-64'>
-                    <a href='#' className='mr-2'>
-                        <FaFacebook size={48} style={{ color: "#1877f2" }} />
+                    <a
+                        href='https://web.facebook.com/recodedofficial'
+                        className='mr-4'
+                    >
+                        <FaFacebook size={64} style={{ color: "#1877f2" }} />
                     </a>
-                    <a href='#' className='mr-2'>
-                        <FaLinkedIn size={48} style={{ color: "#1da1f2" }} />
+                    <a
+                        href='https://www.linkedin.com/school/re-coded/'
+                        className='mr-4'
+                    >
+                        <FaLinkedin size={64} style={{ color: "#0077B5" }} />
                     </a>
-                    <a href='#'>
-                        <FaInstagram size={48} style={{ color: "#bc2a8d" }} />
+                    <a
+                        href='https://www.instagram.com/recodedofficial/'
+                        className='mr-4'
+                    >
+                        <FaInstagram size={64} style={{ color: "#bc2a8d" }} />
                     </a>
-                </div>
-
-                <div className='flex justify-center items-center h-36 pt-14'>
-                    {showArrow && (
-                        <button
-                            onClick={goToTop}
-                            style={{
-                                display: "inline-block",
-                                background: "none",
-                                border: "none",
-                                cursor: "pointer",
-                            }}
-                        >
-                            <IoIosArrowUp size={32} color='white' />
-                        </button>
-                    )}
                 </div>
             </div>
+
+            {showArrow && (
+                <div className='fixed bottom-4 right-4 lg:top-1/2 lg-left-1/2 lg-translate-y-[-50%] lg-translate-x-[-50%]'>
+                    <button
+                        onClick={goToTop}
+                        style={{
+                            display: "inline-block",
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            zIndex: 999,
+                            margin: "8px",
+                        }}
+                    >
+                        <IoIosArrowUp size={48} color='white' />
+                    </button>
+                </div>
+            )}
+
+            {showArrow && (
+                <div className='flex justify-end h-36 pt-32 lg:pt-14 lg:rtl:ml-0 rtl:ml-56'>
+                    <h2 className='m-0 font-poppins text-white font-bold md:text-2xl lg:text-2xl pt-2 lg:pt-7'>
+                        {t("scroll-up")}
+                    </h2>
+                    <button onClick={goToTop} className='ml-2 mr-5 lg:mr-0'>
+                        <IoIosArrowUp size={45} color='white' />
+                    </button>
+                </div>
+            )}
         </footer>
     );
 }
