@@ -1,6 +1,12 @@
 import renderer from "react-test-renderer";
 
-import Footer from "../Footer"; // Adjust the import path as needed
+import Footer from "../Footer";
+
+jest.mock("next/router", () => ({
+    useRouter: () => ({
+        pathname: "/",
+    }),
+}));
 
 it("renders correctly", () => {
     const tree = renderer

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { withTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
 function Footer({ t }) {
+    const router = useRouter();
+
     const [showArrow, setShowArrow] = useState(false);
     const [isInsideFooter, setIsInsideFooter] = useState(true);
 
@@ -23,7 +26,6 @@ function Footer({ t }) {
             setShowArrow(false);
         }
 
-        // Check if the scroll arrow is inside or outside the footer
         const footer = document.querySelector("footer");
         const scrollArrow = document.querySelector(".scroll-arrow");
         if (footer && scrollArrow) {
@@ -46,6 +48,10 @@ function Footer({ t }) {
 
     const arrowColor = isInsideFooter ? "white" : "#585785";
 
+    const navigateToPage = (path) => {
+        router.push(path);
+    };
+
     return (
         <footer className='dir-rtl'>
             <div className='relative lg:flex lg:justify-evenly bg-[#32314C] w-full h-full break-all mt-auto pb-32'>
@@ -63,12 +69,14 @@ function Footer({ t }) {
                 <div className='pl-14 pt-5 md:pt-14 rtl:w-96 rtl:mr-[150px] rtl:sm:mr-[400px] rtl:lg:mr-[0px]'>
                     <ul className='font-poppins text-white font-bold text-2xl'>
                         <li>
-                            <Link
-                                href='/about'
+                            <a
                                 className='hover:underline hover:text-orange'
+                                onClick={() =>
+                                    navigateToPage("/AboutUs/AboutUs")
+                                }
                             >
                                 {t("About us")}
-                            </Link>
+                            </a>
                         </li>
                         <li>
                             <h2 className='pt-4'>{t("Contact-us")}</h2>
@@ -85,20 +93,22 @@ function Footer({ t }) {
                 <div className='pl-14 pt-10 md:pt-14 rtl:w-96 rtl:mr-[150px] rtl:sm:mr-[400px] rtl:lg:mr-[0px]'>
                     <ul className='font-poppins text-white font-bold text-2xl'>
                         <li className='mb-4'>
-                            <Link
-                                href='/listing'
+                            <a
                                 className='hover:underline hover:text-orange'
+                                onClick={() => navigateToPage("/Listings")}
                             >
                                 {t("Start selling")}
-                            </Link>
+                            </a>
                         </li>
                         <li className='mb-4'>
-                            <Link
-                                href='/'
+                            <a
                                 className='hover:underline hover:text-orange'
+                                onClick={() =>
+                                    navigateToPage("/AllProducts/AllProducts")
+                                }
                             >
                                 {t("Buy products")}
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>

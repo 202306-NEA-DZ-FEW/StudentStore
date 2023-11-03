@@ -43,10 +43,7 @@ exports[`renders correctly 1`] = `
         <li>
           <a
             className="hover:underline hover:text-orange"
-            href="/about"
             onClick={[Function]}
-            onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             About us
           </a>
@@ -85,10 +82,7 @@ exports[`renders correctly 1`] = `
         >
           <a
             className="hover:underline hover:text-orange"
-            href="/listing"
             onClick={[Function]}
-            onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Start selling
           </a>
@@ -98,10 +92,7 @@ exports[`renders correctly 1`] = `
         >
           <a
             className="hover:underline hover:text-orange"
-            href="/"
             onClick={[Function]}
-            onMouseEnter={[Function]}
-            onTouchStart={[Function]}
           >
             Buy products
           </a>
