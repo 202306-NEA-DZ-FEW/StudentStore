@@ -7,6 +7,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Footer({ t }) {
     const [showArrow, setShowArrow] = useState(false);
+    const [isInsideFooter, setIsInsideFooter] = useState(true);
 
     const goToTop = () => {
         window.scrollTo({
@@ -15,21 +16,35 @@ function Footer({ t }) {
         });
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 200) {
-                setShowArrow(true);
-            } else {
-                setShowArrow(false);
-            }
-        };
+    const handleScroll = () => {
+        if (window.scrollY > 200) {
+            setShowArrow(true);
+        } else {
+            setShowArrow(false);
+        }
 
+        // Check if the scroll arrow is inside or outside the footer
+        const footer = document.querySelector("footer");
+        const scrollArrow = document.querySelector(".scroll-arrow");
+        if (footer && scrollArrow) {
+            const footerRect = footer.getBoundingClientRect();
+            const scrollArrowRect = scrollArrow.getBoundingClientRect();
+            setIsInsideFooter(
+                scrollArrowRect.top >= footerRect.top &&
+                    scrollArrowRect.bottom <= footerRect.bottom
+            );
+        }
+    };
+
+    useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const arrowColor = isInsideFooter ? "white" : "#585785";
 
     return (
         <footer className='dir-rtl'>
@@ -88,7 +103,7 @@ function Footer({ t }) {
                     </ul>
                 </div>
 
-                <div className='absolute md:flex justify-between bottom-64 right-0 lg:right-96 lg:top-64'>
+                <div className='absolute md:flex justify-between bottom-64 right-[30px] lg:right-96 lg:top-64'>
                     <a
                         href='https://web.facebook.com/recodedofficial'
                         className='mr-4'
@@ -111,7 +126,7 @@ function Footer({ t }) {
             </div>
 
             {showArrow && (
-                <div className='fixed bottom-4 right-4 lg:top-1/2 lg-left-1/2 lg-translate-y-[-50%] lg-translate-x-[-50%]'>
+                <div className='fixed bottom-4 right-4'>
                     <button
                         onClick={goToTop}
                         style={{
@@ -121,20 +136,11 @@ function Footer({ t }) {
                             cursor: "pointer",
                             zIndex: 999,
                             margin: "8px",
+                            color: arrowColor,
                         }}
+                        className='scroll-arrow'
                     >
-                        <IoIosArrowUp size={48} color='white' />
-                    </button>
-                </div>
-            )}
-
-            {showArrow && (
-                <div className='flex justify-end h-36 pt-32 lg:pt-14 lg:rtl:ml-0 rtl:ml-56'>
-                    <h2 className='m-0 font-poppins text-white font-bold md:text-2xl lg:text-2xl pt-2 lg:pt-7'>
-                        {t("scroll-up")}
-                    </h2>
-                    <button onClick={goToTop} className='ml-2 mr-5 lg:mr-0'>
-                        <IoIosArrowUp size={45} color='white' />
+                        <IoIosArrowUp size={48} color={arrowColor} />
                     </button>
                 </div>
             )}
