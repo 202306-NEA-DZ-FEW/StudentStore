@@ -1,80 +1,70 @@
 import React from "react";
 import Image from "next/image";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import AnimatedCounter from "@/components/AnimatedCounter/AnimatedCounter";
+import Link from "next/link";
 
 export default function splashpage() {
     return (
-        <div className='bg-blue-100'>
-            <div className='flex justify-center'>
-                <div>
-                    {" "}
+        <div className='bg-blue-100 min-h-screen'>
+            <div className='flex pt-2 justify-center'>
+                <div className=''>
                     <Image
                         src='/logo.png'
                         width={50}
                         height={50}
                         alt='Picture of the author'
-                    />{" "}
+                    />
                 </div>
                 <div>
-                    {" "}
-                    <h1 className='text-center text-5xl  text-[#141E46]  font-semibold font-poppins drop-shadow-md '>
-                        {" "}
+                    <h1 className='text-center text-4xl  text-[#141E46]  font-semibold  drop-shadow-md lg:text-6xl '>
                         Student Store
-                    </h1>{" "}
+                    </h1>
                 </div>
             </div>
 
-            <div className='flex mt-10 items-center'>
-                <div className='w-2/3 p-4 ml-12'>
+            <div className='flex flex-col  items-center h-[80%] lg:flex-row-reverse	'>
+                <div className='lg:w-[50%] flex justify-center  '>
+                    <Image
+                        src='/splash.png'
+                        width={500}
+                        height={500}
+                        alt='Picture of the author'
+                    />
+                </div>
+                <div className='ml-2 text-center flex justify-center flex-col	'>
                     <p className='font-poppins leading-loose font-normal	 text-2xl text-[#585785] '>
-                        The purpose of this website is to create a marketplace
-                        for <strong>students</strong> to easily sell, buy, or
-                        borrow affordable and used products, including
-                        electronics, games, and study books.
+                        <strong>Empowering Futures,</strong>
+                        Connecting Students
                     </p>
-                </div>
+                    <div className='container mx-auto py-4'>
+                        <h1 className='text-2xl text-[#585785] mb-2'>
+                            Your Exclusive Student Marketplace!
+                        </h1>
 
-                <div className='w-1/3 p-4'>
-                    <Image
-                        src='/overview.png'
-                        width={500}
-                        height={500}
-                        layout='responsive'
-                        alt='Picture of the author'
-                    />
-                </div>
-            </div>
-
-            <div className='flex'>
-                <div className='ml-5 w-1/2 p-4'>
-                    <Image
-                        src='/goals.png'
-                        width={500}
-                        height={500}
-                        layout='responsive'
-                        alt='Picture of the author'
-                    />
-                </div>
-                <div className='w-1/2 mt-10'>
-                    <ul className='  font-normal list-disc leading-loose 	text-2xl text-[#585785] mt-10'>
-                        <li>
-                            To provide students with a platform to trade and
-                            share products within their community.
-                        </li>
-                        <li>
-                            Facilitate the easy listing of products for sale or
-                            borrowing.
-                        </li>
-                        <li>
-                            Create a seamless user experience for filtering and
-                            buying products.
-                        </li>
-                    </ul>
+                        <div className='flex justify-center gap-10'>
+                            <div className='text-[#585785]'>
+                                {" "}
+                                <AnimatedCounter targetCount={2562} />{" "}
+                                <h1 className='text-xl '>Students</h1>{" "}
+                            </div>
+                            <div className='text-[#7874F2]'>
+                                {" "}
+                                <AnimatedCounter targetCount={1658} />{" "}
+                                <h1 className='text-xl '>Products </h1>{" "}
+                            </div>
+                            <div className='text-[#6165D7]'>
+                                {" "}
+                                <AnimatedCounter targetCount={25} />{" "}
+                                <h1 className='text-xl '>Universities </h1>{" "}
+                            </div>
+                        </div>
+                    </div>
                     <button class='bg-[#585785] font-normal  text-2xl text-white rounded-full mx-auto block  mt-10 py-2 px-6'>
-                        Join us
+                        <Link href='/signup'> Join us</Link>
                     </button>
                 </div>
             </div>
-            <br></br>
         </div>
     );
 }

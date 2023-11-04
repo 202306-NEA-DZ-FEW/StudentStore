@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="counter"
+>
+  <div
+    className="number font-bold text-5xl text-center transition duration-500 transform animate-fade-in"
+  >
+    0
+  </div>
+</div>
+`;
