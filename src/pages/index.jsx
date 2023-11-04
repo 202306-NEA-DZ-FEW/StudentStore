@@ -4,11 +4,13 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
 
+import Footer from "@/components/Footer/Footer";
+import Language from "@/components/Language/Language";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import SearchBar from "@/components/SearchBar/SearchBar";
+
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
-import Language from "@/components/Language/Language";
-import SearchBar from "@/components/SearchBar/SearchBar";
-import ProductCard from "@/components/ProductCard/ProductCard";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -34,6 +36,7 @@ export default function HomePage() {
             <SearchBar />
             <ProductCard />
             <Link href='/Listings'>go to listings</Link>
+            <Footer />
         </Layout>
     );
 }
