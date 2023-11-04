@@ -1,11 +1,11 @@
-import {
-    MdOutlineKeyboardArrowDown,
-    MdOutlineGTranslate,
-} from "react-icons/md";
-import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Fragment } from "react";
+import {
+    MdOutlineGTranslate,
+    MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
