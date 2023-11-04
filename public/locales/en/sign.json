@@ -16,5 +16,6 @@
     "sign-in": "Sign-In",
     "forgot password": "Forgot password?",
     "sign-in with": "Sign-In with",
-    "dont have an account": "Don't have an account?"
+    "dont have an account": "Don't have an account?",
+    "failed to log in": "Failed to log in"
 }

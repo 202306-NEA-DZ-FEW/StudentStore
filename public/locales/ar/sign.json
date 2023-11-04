@@ -16,5 +16,6 @@
     "sign-in": "تسجيل الدخول",
     "forgot password": "نسيت كلمة المرور؟",
     "sign-in with": "تسجيل الدخول باستخدام",
-    "dont have an account": "ليس لديك حساب؟"
+    "dont have an account": "ليس لديك حساب؟",
+    "failed to log in": "فشل في تسجيل الدخول"
 }

@@ -16,5 +16,6 @@
     "sign-in": "Se connecter",
     "forgot password": "Mot de passe oublié ?",
     "sign-in with": "Se connecter avec",
-    "dont have an account": "Vous n'avez pas de compte ?"
+    "dont have an account": "Vous n'avez pas de compte ?",
+    "failed to log in": "Échec de la connexion"
 }
