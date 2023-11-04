@@ -7,27 +7,31 @@ import Layout from "@/layout/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-export default function SignIn() {
+
+export default function ForgotPassword() {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const { login } = useAuth();
+
+    // const [checkEmail, setCheckEmail] = useState("");
+
+    const { resetPassword } = useAuth();
     const [loading, setLoading] = useState(false);
     const route = useRouter();
-    // sign in function
-    async function handleSignin(e) {
-        e.preventDefault();
-        try {
-            setLoading(true);
-            await login(email, password);
-            route.push("/");
-        } catch (error) {
-            toast.error("Failed to log in");
-        }
-        setLoading(false);
-    }
 
+    // reset password function
+    async function handleResetPassword() {
+        if (email) {
+            try {
+                setLoading(true);
+                await resetPassword(email);
+            } catch (error) {
+                console.log(error);
+            }
+        } else {
+            // Show a message to require filling the email input
+            console.log("Please enter your email.");
+        }
+        setEmail("");
+    }
     return (
         <Layout>
             <div className='min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'>
@@ -37,7 +41,7 @@ export default function SignIn() {
                 <div className='py-10 lg:w-3/6 lg:px-10'>
                     <div className='lg:w-[60%] mx-auto'>
                         <h1 className='text-[#FF8A57] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-7xl'>
-                            sign-in
+                            reset Password
                         </h1>
                         <form>
                             <input
@@ -49,29 +53,13 @@ export default function SignIn() {
                                 className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
 
-                            <input
-                                type='password'
-                                placeholder='password'
-                                value={password}
-                                required
-                                onChange={(e) => setPassword(e.target.value)}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
                             <div className='flex w-[80%] justify-between mx-auto  md:w-[100%] lg:w-full'>
-                                <Button
-                                    onClick={handleSignin}
-                                    disabled={loading}
-                                    className='mt-7 mb-5 w-[45%] p-0'
-                                >
-                                    sign-in
-                                </Button>
                                 <Button className='mt-7 mb-5 w-[50%] p-0'>
-                                    <Link href='/signin/forgotPassword'>
-                                        Forgot Passowrd
-                                    </Link>
+                                    Reset Passowrd
                                 </Button>
                             </div>
                         </form>
+
                         {/* devider */}
                         <div className='relative flex items-center w-[80%] mx-auto md:w-[100%] lg:w-full'>
                             <div className='flex-grow border-t border-[#a7b8c4]'></div>
@@ -97,7 +85,6 @@ export default function SignIn() {
                         </Link>
                     </div>
                 </div>
-                <ToastContainer />
             </div>
         </Layout>
     );
