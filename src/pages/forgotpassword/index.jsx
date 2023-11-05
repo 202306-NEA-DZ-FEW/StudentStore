@@ -19,15 +19,19 @@ export default function ForgotPassword() {
         if (email) {
             try {
                 await resetPassword(email);
-                toast.success("Check your inbox for further instructions");
+                toast.success(t("check your inbox for further instructions"));
+                setTimeout(() => {
+                    route.push("/signin");
+                }, 3000);
             } catch {
-                toast.error("Failed to reset password");
+                toast.error(t("failed to reset password"));
             }
         } else {
-            // Show a message to require filling the email input
-            console.log("Please enter your email.");
+            toast.error(t("please enter your email"));
         }
-        setEmail("");
+        setTimeout(() => {
+            setEmail("");
+        }, 1000);
     }
     const signinbg = {
         backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%),url(/images/signin-bg.jpg)`,
@@ -36,7 +40,7 @@ export default function ForgotPassword() {
     return (
         <div
             style={signinbg}
-            className='min-h-screen w-full lg:flex lg:justify-between items-center text-center py-10'
+            className='min-h-screen w-full lg:flex lg:justify-between flex justify-center items-center text-center'
         >
             {/* container for image to add later */}
             <div className='lg:w-3/6 lg:py-16 lg:px-16'>
@@ -49,9 +53,9 @@ export default function ForgotPassword() {
                 />
             </div>
             {/* form container */}
-            <div className='py-10 lg:w-3/6 lg:px-10'>
-                <div className='lg:w-[60%] mx-auto'>
-                    <h1 className='text-[#FF8A57] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-5xl'>
+            <div className='py-10 w-full md:w-[60%] lg:w-3/6 lg:px-10'>
+                <div className='lg:w-[70%] mx-auto'>
+                    <h1 className='text-[#FF8A57] text-[30px] font-bold mb-6 md:text-5xl md:mb-14 lg:mb-10 lg:text-3xl xl:text-4xl'>
                         {t("password reset")}
                     </h1>
                     <form>

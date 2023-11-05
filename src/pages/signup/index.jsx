@@ -54,7 +54,7 @@ export default function SignUp() {
             .then((emailExists) => {
                 if (emailExists) {
                     // The email already exists in Firestore, show an error message using toastify
-                    toast.error("email already exist");
+                    toast.error(t("email already exist"));
                 } else {
                     // if The email is not in Firestore, now we can continue with the signup process
                     createUserWithEmailAndPassword(
@@ -64,8 +64,7 @@ export default function SignUp() {
                     )
                         .then((userCredential) => {
                             // Registration successful, you can add user data to Firestore here
-                            toast.loading("Please wait");
-                            console.log(userCredential);
+                            toast.loading(t("please wait"));
                             const colRef = doc(
                                 db,
                                 "userinfo",
@@ -101,7 +100,7 @@ export default function SignUp() {
                         .catch((error) => {
                             // i added this condition to prevent console log error when we try to submit the same email
                             if (error.code === "auth/email-already-in-use") {
-                                toast.error("Email already in use");
+                                toast.error(t("email already in use"));
                             }
                         });
                 }
@@ -121,71 +120,84 @@ export default function SignUp() {
             /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
         // name validation
         if (!formData.userName.trim()) {
-            validationErrors.userName = "Please enter your name";
+            validationErrors.userName = t("please enter your name");
         } else if (!nameAndSurnameRegEx.test(formData.userName)) {
-            validationErrors.userName =
-                "Your name can only contain letters and spaces";
+            validationErrors.userName = t(
+                "your name can only contain letters and spaces"
+            );
         } else if (!nameAndSurnameLengthRegEx.test(formData.userName)) {
-            validationErrors.userName =
-                "Your name must be between 3 and 24 characters";
+            validationErrors.userName = t(
+                "your name must be between 3 and 24 characters"
+            );
         }
 
         // surname validation
         if (!formData.surname.trim()) {
-            validationErrors.surname = "Please enter your surname";
+            validationErrors.surname = t("please enter your surname");
         } else if (!nameAndSurnameRegEx.test(formData.surname)) {
-            validationErrors.surname =
-                "Your surname can only contain letters and spaces";
+            validationErrors.surname = t(
+                "your surname can only contain letters and spaces"
+            );
         } else if (!nameAndSurnameLengthRegEx.test(formData.surname)) {
-            validationErrors.surname =
-                "Your surname must be between 3 and 24 characters";
+            validationErrors.surname = t(
+                "your surname must be between 3 and 24 characters"
+            );
         }
         // email validation
         if (!formData.email.trim()) {
-            validationErrors.email = "Please enter your email";
+            validationErrors.email = t("please enter your email");
         } else if (!emailRegEx.test(formData.email)) {
-            validationErrors.email = "Please enter a valid email address";
+            validationErrors.email = t("please enter a valid email address");
         }
         // school validation
         if (!formData.school.trim()) {
-            validationErrors.school = "Please enter your school";
+            validationErrors.school = t("please enter your school");
         } else if (!schoolNameRegEx.test(formData.school)) {
-            validationErrors.school =
-                "Your school name can only contain letters, spaces, and common symbols";
+            validationErrors.school = t(
+                "your school name can only contain letters, spaces, and common symbols"
+            );
         } else if (!schoolNameLengthRegEx.test(formData.school)) {
-            validationErrors.school =
-                "Your school name must be at least 3 characters";
+            validationErrors.school = t(
+                "your school name must be at least 3 characters"
+            );
         }
         // password validation
         if (!formData.password.trim()) {
-            validationErrors.password = "Please enter password";
+            validationErrors.password = t("please enter password");
         } else if (formData.password.length < 8) {
-            validationErrors.password =
-                "Your password must be at least 8 characters";
+            validationErrors.password = t(
+                "your password must be at least 8 characters"
+            );
         } else if (!passwordRegEx.test(formData.password)) {
-            validationErrors.password =
-                "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+            validationErrors.password = t(
+                "password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+            );
         }
         // confirm password validation
         if (!formData.confirm_password.trim()) {
-            validationErrors.confirm_password = "Please confirm your password";
+            validationErrors.confirm_password = t(
+                "please confirm your password"
+            );
         } else if (formData.confirm_password !== formData.password) {
-            validationErrors.confirm_password =
-                "Passwords do not match. Please try again";
+            validationErrors.confirm_password = t(
+                "passwords do not match. Please try again"
+            );
         }
         setErrors(validationErrors);
-        setFormData({
-            userName: "",
-            surname: "",
-            email: "",
-            school: "",
-            password: "",
-            confirm_password: "",
-        });
+        setTimeout(() => {
+            setFormData({
+                userName: "",
+                surname: "",
+                email: "",
+                school: "",
+                password: "",
+                confirm_password: "",
+            });
+        }, 3000);
     }
     // signup bg style
     const signupbg = {
-        backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%), url(/signup-bg.jpg)`,
+        backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%), url(/images/signup-bg.jpg)`,
     };
     return (
         <Layout>
@@ -194,7 +206,7 @@ export default function SignUp() {
                 className=' min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
             >
                 {/* container for image to add later */}
-                <div className='lg:w-3/6 lg:py-16 lg:px-16'>
+                <div className='lg:w-3/6 lg:py-16 lg:px-24'>
                     <Image
                         src='/hands_box.png'
                         alt='hands box image'
