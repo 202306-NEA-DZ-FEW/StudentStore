@@ -191,7 +191,7 @@ export default function SignUp() {
         <Layout>
             <div
                 style={signupbg}
-                className='min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
+                className=' min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
             >
                 {/* container for image to add later */}
                 <div className='lg:w-3/6 lg:py-16 lg:px-16'>
@@ -207,7 +207,7 @@ export default function SignUp() {
                 {/* form container */}
                 <div className='py-10 lg:w-3/6 lg:px-10'>
                     <div className='lg:w-[60%] mx-auto'>
-                        <h1 className='text-[#7874F2] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-7xl'>
+                        <h1 className='text-[#7874F2] text-[30px] font-bold my-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-5xl'>
                             {t("sign-up")}
                         </h1>
                         <form>
@@ -317,7 +317,7 @@ export default function SignUp() {
                             {" "}
                             {t("already have an account?")}
                         </h2>
-                        <Link href='/' className='block'>
+                        <Link href='/signin' className='block'>
                             <Button className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-3 py-1 px-10'>
                                 {t("sign-in")}
                             </Button>

@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 export default function SignIn() {
     const { t } = useTranslation("sign");
     const [email, setEmail] = useState("");
@@ -30,16 +31,32 @@ export default function SignIn() {
         }
         setLoading(false);
     }
-
+    // signup bg style
+    const signinbg = {
+        backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%),url(/images/signin-bg.jpg)`,
+        backgroundPosition: "right",
+    };
     return (
         <Layout>
-            <div className='min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'>
+            <div
+                style={signinbg}
+                className='min-h-screen w-full flex justify-between items-center text-center py-10 absolute top-0 left-0'
+            >
                 {/* container for image to add later */}
-                <div className='lg:w-3/6 lg:py-16 lg:px-16'></div>
+                <div className='lg:w-[45%] lg:py-28 lg:px-28'>
+                    <Image
+                        src='/hands_box.png'
+                        alt='hands box image'
+                        height={500}
+                        width={500}
+                        layout='responsive'
+                        className='hidden lg:block'
+                    />
+                </div>
                 {/* form container */}
-                <div className='py-10 lg:w-3/6 lg:px-10'>
+                <div className='py-10 lg:w-[55%] lg:px-10'>
                     <div className='lg:w-[60%] mx-auto'>
-                        <h1 className='text-[#FF8A57] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-7xl'>
+                        <h1 className='text-[#FF8A57] text-[30px] font-bold mb-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-5xl'>
                             {t("sign-in")}
                         </h1>
                         <form>
@@ -49,7 +66,7 @@ export default function SignIn() {
                                 value={email}
                                 required
                                 onChange={(e) => setEmail(e.target.value)}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
 
                             <input
@@ -58,17 +75,17 @@ export default function SignIn() {
                                 value={password}
                                 required
                                 onChange={(e) => setPassword(e.target.value)}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3'
                             />
-                            <div className='flex w-[80%] justify-between mx-auto  md:w-[100%] lg:w-full'>
+                            <div className='flex w-[100%] justify-between mx-auto  '>
                                 <Button
                                     onClick={handleSignin}
                                     disabled={loading}
-                                    className='mt-7 mb-5 w-[45%] p-0'
+                                    className='mt-7 mb-5 w-[48%]  px-0'
                                 >
                                     {t("sign-in")}
                                 </Button>
-                                <Button className='mt-7 mb-5 w-[50%] p-0'>
+                                <Button className='mt-7 mb-5 w-[48%]  px-0 text-[#FF8A57] bg-white border-[#FF8A57] hover:text-white hover:bg-[#FF8A57] hover:border-[#FF8A57]'>
                                     <Link href='/signin/forgotPassword'>
                                         {t("forgot password")}
                                     </Link>
@@ -76,7 +93,7 @@ export default function SignIn() {
                             </div>
                         </form>
                         {/* devider */}
-                        <div className='relative flex items-center w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                        <div className='relative flex items-center w-[100%] mx-auto md:w-[100%] lg:w-full'>
                             <div className='flex-grow border-t border-[#a7b8c4]'></div>
                             <span className='flex-shrink mx-4 text-[#a7b8c4]'>
                                 {t("or")}
@@ -86,7 +103,7 @@ export default function SignIn() {
                         <h3 className='text-center text-[#647581] mt-1'>
                             {t("sign-in with")}
                         </h3>
-                        {/* sign up with socials */}
+                        {/* sign in with socials */}
                         <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
                             <GoogleButton>{t("google")}</GoogleButton>
                             <FacebookButton>{t("facebook")}</FacebookButton>
