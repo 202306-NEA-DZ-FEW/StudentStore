@@ -12,12 +12,6 @@ import {
 } from "firebase/firestore";
 import dynamic from "next/dynamic";
 
-const DynamicMapContainer = dynamic(
-    () => import("react-leaflet").then((module) => module.MapContainer),
-    {
-        ssr: false,
-    }
-);
 const MapComponent = () => {
     const [position, setPosition] = useState([0, 0]);
     const [city, setCity] = useState("");
@@ -67,7 +61,7 @@ const MapComponent = () => {
 
     return (
         <div className='w-96 h-96'>
-            <DynamicMapContainer
+            <MapContainer
                 center={position}
                 zoom={13}
                 style={{ width: "100%", height: "100%" }}
@@ -76,7 +70,7 @@ const MapComponent = () => {
                 <Marker position={position}>
                     <Popup>{city}</Popup>
                 </Marker>
-            </DynamicMapContainer>
+            </MapContainer>
         </div>
     );
 };
