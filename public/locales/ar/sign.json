@@ -17,5 +17,7 @@
     "forgot password": "نسيت كلمة المرور؟",
     "sign-in with": "تسجيل الدخول باستخدام",
     "dont have an account": "ليس لديك حساب؟",
-    "failed to log in": "فشل في تسجيل الدخول"
+    "failed to log in": "فشل في تسجيل الدخول",
+    "password reset": "إعادة تعيين كلمة المرور",
+    "reset password": "إعادة ضبط كلمة المرور"
 }

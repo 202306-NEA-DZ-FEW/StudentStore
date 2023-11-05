@@ -86,7 +86,7 @@ export default function SignIn() {
                                     {t("sign-in")}
                                 </Button>
                                 <Button className='mt-7 mb-5 w-[48%]  px-0 text-[#FF8A57] bg-white border-[#FF8A57] hover:text-white hover:bg-[#FF8A57] hover:border-[#FF8A57]'>
-                                    <Link href='/signin/forgotPassword'>
+                                    <Link href='/forgotpassword'>
                                         {t("forgot password")}
                                     </Link>
                                 </Button>

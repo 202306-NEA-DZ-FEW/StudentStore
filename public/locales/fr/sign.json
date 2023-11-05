@@ -17,5 +17,7 @@
     "forgot password": "Mot de passe oublié ?",
     "sign-in with": "Se connecter avec",
     "dont have an account": "Vous n'avez pas de compte ?",
-    "failed to log in": "Échec de la connexion"
+    "failed to log in": "Échec de la connexion",
+    "password reset": "Réinitialisation du mot de passe",
+    "reset password": "réinitialiser le mot de passe"
 }
