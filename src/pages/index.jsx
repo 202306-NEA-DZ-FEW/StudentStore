@@ -1,27 +1,43 @@
-import { collection, getDocs } from "firebase/firestore";
-import Link from "next/link";
+import * as React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import * as React from "react";
-
+import Link from "next/link";
 import Layout from "@/layout/Layout";
-import { db } from "@/util/firebase";
 import Language from "@/components/Language/Language";
-import Map from "@/components/Map/Map";
+import Map from "@/components/Map/Map"; // Correct import
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/util/firebase";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
-    const colRef = collection(db, "products");
-    getDocs(colRef).then((snapshot) => {
-        let products = [];
-        snapshot.docs.forEach((doc) =>
-            products.push({ ...doc.data(), id: doc.id })
-        );
-    });
+    const [products, setProducts] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            const colRef = collection(db, "products");
+            const snapshot = await getDocs(colRef);
+            let productsData = [];
+            snapshot.forEach((doc) => {
+                productsData.push({ ...doc.data(), id: doc.id });
+            });
+            setProducts(productsData);
+        };
+
+        fetchData();
+    }, []); // Empty dependency array ensures the effect runs once after the initial render
+
     return (
         <Layout>
-            <Map />
+            <div className='w-96 h-96'>
+                <Map />
+            </div>
+
             <p>{t("test")}</p>
+            <div>
+                {products.map((product) => (
+                    <div key={product.id}>{product.name}</div>
+                ))}
+            </div>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
                     English

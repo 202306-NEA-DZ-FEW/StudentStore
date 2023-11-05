@@ -1,90 +1,84 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { db } from "@/util/firebase";
+import {
+    doc,
+    getDoc,
+    query,
+    collection,
+    where,
+    getDocs,
+} from "firebase/firestore";
 import dynamic from "next/dynamic";
-import getLatLng from "../../util/coordinates.js";
-import firebase from "../../util/firebase.js";
-import "firebase/firestore";
 
-const MapContainer = dynamic(
+const DynamicMapContainer = dynamic(
     () => import("react-leaflet").then((module) => module.MapContainer),
     {
         ssr: false,
     }
 );
-
-const TileLayer = dynamic(
-    () => import("react-leaflet").then((module) => module.TileLayer),
-    {
-        ssr: false,
-    }
-);
-
-const Marker = dynamic(
-    () => import("react-leaflet").then((module) => module.Marker),
-    {
-        ssr: false,
-    }
-);
-
-const Popup = dynamic(
-    () => import("react-leaflet").then((module) => module.Popup),
-    {
-        ssr: false,
-    }
-);
-
-const Map = () => {
-    const [location, setLocation] = useState(null);
+const MapComponent = () => {
+    const [position, setPosition] = useState([0, 0]);
+    const [city, setCity] = useState("");
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const firestore = firebase.firestore();
-                const studentRef = firestore.collection("products").doc("1");
-                const doc = await studentRef.get();
+        if (typeof window !== "undefined") {
+            const fetchData = async () => {
+                const userinfoRef = doc(
+                    db,
+                    "userinfo",
+                    "e43JDIG05abGPsH43xEKBNsD49e2"
+                );
+                const userinfoDoc = await getDoc(userinfoRef);
 
-                if (doc.exists) {
-                    const studentData = doc.data();
-                    const { city, country } = studentData.location;
-                    const { latitude, longitude } = await getLatLng(
-                        city,
-                        country
-                    );
-                    setLocation({ latitude, longitude, city, country });
+                if (userinfoDoc.exists()) {
+                    const userData = userinfoDoc.data();
+                    const userCity = userData?.address?.city;
+
+                    if (userCity) {
+                        setCity(userCity);
+
+                        const positionQuery = query(
+                            collection(db, "position"),
+                            where("city", "==", userCity)
+                        );
+                        const positionSnapshot = await getDocs(positionQuery);
+
+                        positionSnapshot.forEach((doc) => {
+                            const positionData = doc.data();
+                            setPosition([
+                                positionData.latitude,
+                                positionData.longitude,
+                            ]);
+                        });
+                    } else {
+                        console.log("User city is undefined.");
+                        // Handle the case when userCity is undefined.
+                    }
                 } else {
                     console.log("No such document!");
                 }
-            } catch (error) {
-                console.error("Error fetching location data:", error);
-                console.error(error.response);
-            }
-        };
+            };
 
-        fetchData();
+            fetchData();
+        }
     }, []);
 
-    if (!location) {
-        return <div>Loading...</div>;
-    }
-
-    const { latitude, longitude, city, country } = location;
-
     return (
-        <MapContainer
-            center={[latitude, longitude]}
-            zoom={10}
-            style={{ height: "400px" }}
-        >
-            <TileLayer
-                url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                attribution="Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
-            />
-            <Marker position={[latitude, longitude]}>
-                <Popup>
-                    Location: {city}, {country}
-                </Popup>
-            </Marker>
-        </MapContainer>
+        <div className='w-96 h-96'>
+            <DynamicMapContainer
+                center={position}
+                zoom={13}
+                style={{ width: "100%", height: "100%" }}
+            >
+                <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+                <Marker position={position}>
+                    <Popup>{city}</Popup>
+                </Marker>
+            </DynamicMapContainer>
+        </div>
     );
 };
 
-export default Map;
+export default MapComponent;
