@@ -60,7 +60,6 @@ const DonationSlider = () => {
                         />
                     </div>
                 </SwiperSlide>
-                ...
             </Swiper>
         </div>
     );
