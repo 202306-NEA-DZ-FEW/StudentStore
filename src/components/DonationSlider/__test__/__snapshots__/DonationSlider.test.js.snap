@@ -4,6 +4,44 @@ exports[`renders correctly 1`] = `
 <div
   className="carousel w-full md:w-[60%] mx-auto relative"
 >
-  hello
+  <div
+    className="swiper-container"
+  >
+    <div
+      className="swiper-wrapper"
+    >
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={2}
+      >
+        slide 3
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={0}
+      >
+        slide 1
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={1}
+      >
+        slide 2
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={2}
+      >
+        slide 3
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={0}
+      >
+        slide 1
+      </div>
+    </div>
+    ...
+  </div>
 </div>
 `;
