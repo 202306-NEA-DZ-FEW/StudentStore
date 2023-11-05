@@ -11,6 +11,7 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
+import Sidebar from "@/components/SideBar/SideBar";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -35,8 +36,10 @@ export default function HomePage() {
             <Language />
             <SearchBar />
             <ProductCard />
+
             <Link href='/Listings'>go to listings</Link>
             <Link href='/splashpage'>go to splashpage</Link>
+            <Link href='/editprofile'>you want to edit your profile?</Link>
 
             <Footer />
         </Layout>
