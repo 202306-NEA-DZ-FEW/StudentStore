@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
+import Image from "next/image";
 
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
@@ -17,117 +18,147 @@ export default function Navbar() {
     };
 
     return (
-        <header className='bg-slate-300 text-black w-full ease-in duration-300 fixed top-0 left-0 z-10'>
-            <nav className=' mx-full h-[100px] flex justify-between items-center p-4'>
-                <div className='navbar w-[0%] '>
-                    <Link href='/' onClick={handleSmallerScreenNavigation}>
-                        <Logo />
-                    </Link>
-                </div>
-                {/* Larger screens navigation */}
-                <ul className='hidden md:flex font-semibold text-1xl lg:text-[20px] text-indigo-800 '>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/'> Home </Link>
-                    </li>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/Donation'>Donations</Link>
-                    </li>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/About'>About Us</Link>
-                    </li>
+        <header className='bg-slate-200'>
+            <div>
+                <div class='  px-2 sm:px-6 lg:px-8'>
+                    <div class='relative flex h-16 items-center justify-between'>
+                        <div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+                            {/* <!-- Mobile menu button--> */}
+                            <button
+                                type='button'
+                                class='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+                                aria-controls='mobile-menu'
+                                aria-expanded='false'
+                            >
+                                <span class='absolute -inset-0.5'></span>
+                                <span class='sr-only'>Open main menu</span>
+                                {/* <!--
+                Icon when menu is closed.
+    
+                Menu open: "hidden", Menu closed: "block"
+              --> */}
+                                <svg
+                                    class='block h-6 w-6'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                    stroke-width='1.5'
+                                    stroke='currentColor'
+                                    aria-hidden='true'
+                                >
+                                    <path
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'
+                                        d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+                                    />
+                                </svg>
+                                {/* <!--
+                Icon when menu is open.
+    
+                Menu open: "block", Menu closed: "hidden"
+              --> */}
+                                <svg
+                                    class='hidden h-6 w-6'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                    stroke-width='1.5'
+                                    stroke='currentColor'
+                                    aria-hidden='true'
+                                >
+                                    <path
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'
+                                        d='M6 18L18 6M6 6l12 12'
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+                            <div class='flex flex-shrink-0 items-center'>
+                                <Image
+                                    src='/logo.png'
+                                    width={50}
+                                    height={50}
+                                    alt='Picture of the author'
+                                />
+                            </div>
 
-                    <div className='mt-4 mr-4  '>
-                        <SearchBar />
-                    </div>
-                    <li className='mt-4 mr-4 lg:mr-8 hover:text-white '>
+                            <div class='hidden  sm:ml-6 sm:block'>
+                                <div class='flex items-center  h-full p-2 space-x-4 text-md'>
+                                    {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+                                    <Link
+                                        className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
+                                        href='/'
+                                    >
+                                        {" "}
+                                        Home{" "}
+                                    </Link>
+                                    <Link
+                                        className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
+                                        href='/'
+                                    >
+                                        {" "}
+                                        Products{" "}
+                                    </Link>
+
+                                    <Link
+                                        className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4	 rounded-md  font-bold'
+                                        href='/'
+                                    >
+                                        {" "}
+                                        Donation
+                                    </Link>
+
+                                    <Link
+                                        className='text-[#585785] hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
+                                        href='/'
+                                    >
+                                        {" "}
+                                        About us{" "}
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className='w-[90vh] ml-10 h-full  py-8  '>
+                                {" "}
+                                <SearchBar />{" "}
+                            </div>
+                        </div>
                         <Language />
-                    </li>
-                    <li className='mt-4 mr-4 lg:mr-8 hover:text-white'>
-                        <ProfileDropdown />
-                    </li>
-                    <li>
-                        <button className='mt-4 text-3xl text-[#FF8A57] hover:text-orange-500'>
-                            <FaShoppingCart />
-                        </button>
-                    </li>
-                </ul>
+                        <div class='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+                            <button className=' text-2xl text-[#FF8A57] hover:text-orange-500'>
+                                <FaShoppingCart />
+                            </button>
 
-                {/* <UnderBar /> */}
+                            {/* <!-- Profile dropdown --> */}
+                            <div class='relative ml-3'>
+                                <div>
+                                    <button
+                                        type='button'
+                                        class='relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                                        id='user-menu-button'
+                                        aria-expanded='false'
+                                        aria-haspopup='true'
+                                    >
+                                        <ProfileDropdown />
+                                    </button>
+                                </div>
 
-                {/* smaller screens -navigation icons  */}
-                {/* onClick change icon  */}
-
-                <div
-                    onClick={handleSmallerScreenNavigation}
-                    className='flex md:hidden'
-                >
-                    {menuIcon ? (
-                        <AiOutlineClose size={25} />
-                    ) : (
-                        <AiOutlineMenu size={25} />
-                    )}
-                </div>
-
-                {/* smaller screens - Navbar  */}
-                <div
-                    className={
-                        menuIcon
-                            ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex text-center justify-center items-center w-full h-screen bg-indigo-950 text-white ease-in duration-300 "
-                            : "md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-sceen bg-indigo-950 text-white "
-                    }
-                >
-                    {/* smaller screens Navbar links  */}
-                    <div className='w-full '>
-                        <ul className='font-medium text-sm '>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <SearchBar />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='/'>Home</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='#'>Donations</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='#'>About Us</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <ProfileDropdown />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Language />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <UnderBar />
-                            </li>
-                        </ul>
-                        {/* <div className='flex flex-col justify-center items-center mt-16'>
-
-       </div> */}
+                                {/* <!--
+                Dropdown menu, show/hide based on menu state.
+    
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              --> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
+                <div></div>
+            </div>
+            <UnderBar></UnderBar>
         </header>
     );
 }

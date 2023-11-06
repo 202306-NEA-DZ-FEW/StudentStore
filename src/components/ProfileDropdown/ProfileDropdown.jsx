@@ -16,7 +16,12 @@ function ProfileDropdown() {
                 className='btn btn-ghost btn-circle avatar'
             >
                 <div className='w-10 rounded-full'>
-                    <Image src='' width={20} height={20} alt='profile-pic' />
+                    <Image
+                        src='/student.png'
+                        width={20}
+                        height={20}
+                        alt='profile-pic'
+                    />
                 </div>
             </label>
             {isDropdownOpen && (
