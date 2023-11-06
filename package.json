@@ -35,6 +35,7 @@
         "react-router-dom": "^6.3.0",
         "react-test-renderer": "^18.2.0",
         "react-toastify": "^9.1.3",
+        "swiper": "^6.4.1",
         "tailwind-merge": "^1.14.0"
     },
     "devDependencies": {

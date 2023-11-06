@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="carousel w-[90%] md:w-[70%] mx-auto relative"
+>
+  <div
+    className="swiper-container"
+  >
+    <div
+      className="swiper-wrapper"
+    >
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={2}
+      >
+        <div
+          className="carousel-item relative h-[70%] w-full"
+          id="slide3"
+        >
+          <img
+            alt="donation image"
+            className="mx-auto"
+            data-nimg="1"
+            decoding="async"
+            height={700}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fdonation3.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fdonation3.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={700}
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={0}
+      >
+        <div
+          className="carousel-item relative h-[70%] w-full"
+          id="slide1"
+        >
+          <img
+            alt="donation image"
+            className="mx-auto "
+            data-nimg="1"
+            decoding="async"
+            height={700}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fdonation1.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fdonation1.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={700}
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={1}
+      >
+        <div
+          className="carousel-item relative h-[70%] w-full"
+          id="slide2"
+        >
+          <img
+            alt="donation image"
+            className="mx-auto"
+            data-nimg="1"
+            decoding="async"
+            height={700}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fdonation2.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fdonation2.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fdonation2.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={700}
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide"
+        data-swiper-slide-index={2}
+      >
+        <div
+          className="carousel-item relative h-[70%] w-full"
+          id="slide3"
+        >
+          <img
+            alt="donation image"
+            className="mx-auto"
+            data-nimg="1"
+            decoding="async"
+            height={700}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fdonation3.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fdonation3.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fdonation3.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={700}
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={0}
+      >
+        <div
+          className="carousel-item relative h-[70%] w-full"
+          id="slide1"
+        >
+          <img
+            alt="donation image"
+            className="mx-auto "
+            data-nimg="1"
+            decoding="async"
+            height={700}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fimages%2Fdonation1.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fdonation1.jpg&w=640&q=75 640w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=750&q=75 750w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=828&q=75 828w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Fdonation1.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={700}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

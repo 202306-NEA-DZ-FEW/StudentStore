@@ -43,7 +43,7 @@ export default function TwitterButton({ children, className }) {
         <div>
             <button
                 className={twMerge(
-                    "border-[#28C7FA] text-[#28C7FA]  border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]",
+                    "border-[#28C7FA] text-[#28C7FA] bg-white border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]",
                     className
                 )}
                 onClick={signInWithTwitter}
