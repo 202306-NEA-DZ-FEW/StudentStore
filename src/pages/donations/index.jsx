@@ -1,4 +1,7 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import DonationSlider from "@/components/DonationSlider/DonationSlider";
 import PricingCard from "@/components/PricingCard/PricingCard";
@@ -34,6 +37,7 @@ function donations() {
                     <PricingCard title='Some help' amount='25' />
                     <PricingCard title='Big help' amount='50' />
                 </div>
+                <ToastContainer />
             </div>
         </Layout>
     );
