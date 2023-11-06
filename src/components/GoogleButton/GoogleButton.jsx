@@ -42,7 +42,7 @@ export default function GoogleButton({ children, className }) {
         <div>
             <button
                 className={twMerge(
-                    "border-[#F26F6F] text-[#F26F6F] border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)]",
+                    "border-[#F26F6F] text-[#F26F6F] bg-white border p-1 flex gap-1 items-center rounded-[22px] hover:shadow-lg hover:shadow-[rgba(50,49,77,0.3)] ",
                     className
                 )}
                 onClick={signInWithGoogle}
