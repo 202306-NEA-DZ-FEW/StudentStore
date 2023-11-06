@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="logo w-20 h-20 flex "
+>
+  <img
+    alt="Logo"
+    src="Logo.svg"
+  />
+  <div
+    className={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  >
+    <span
+      className="text-indigo-500 , text-2xl , font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+    >
+      Student
+      <br />
+    </span>
+    <span
+      className=" text-black , text-2xl , font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+    >
+      Store
+    </span>
+  </div>
+</div>
+`;
