@@ -3,12 +3,15 @@
 @tailwind utilities;
 @import "daisyui/dist/full.css";
 
+body {
+    background-color: #f1f6fa;
+}
+
 .input-style {
     background-color: white;
     color: #585785;
     padding: auto 1rem;
     width: 100%;
-
     border-radius: 8px;
     border: solid 1px #585785;
 }
