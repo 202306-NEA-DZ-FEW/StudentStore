@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
 const DonationSlider = () => {
+    // use Swiper props to activate Autoplay
     SwiperCore.use([Autoplay]);
     return (
         <div className='carousel w-[90%] md:w-[70%] mx-auto relative'>
@@ -13,6 +14,7 @@ const DonationSlider = () => {
                 autoplay={{
                     delay: 2500,
                 }}
+                //infinite loop
                 loop={true}
             >
                 <SwiperSlide>

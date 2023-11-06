@@ -11,7 +11,7 @@ import Layout from "@/layout/Layout";
 function donations() {
     return (
         <Layout>
-            <div className='p-4 flex justify-center flex-col'>
+            <div className='p-4 mt-24 flex justify-center flex-col'>
                 <DonationSlider />
                 <div className='text-[#7874F2] flex flex-col '>
                     <h1 className=' text-3xl  md:text-4xl mt-[-60px] sm:mt-[-90px] md:mt-[-100px] lg:mt-[-150px] font-bold mx-auto mb-3'>
