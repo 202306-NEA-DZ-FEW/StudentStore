@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`PricingCard renders correctly 1`] = `
 <div
-  className="p-8  md:p-4 text-black text-center border rounded-lg shadow-md bg-white"
+  className="p-8 md:p-4 text-black text-center border rounded-lg shadow-md bg-white"
 >
   <h2
     className="text-xl   font-semibold"
-  />
+  >
+    Small help
+  </h2>
   <p
     className=" text-6xl my-2 font-semibold flex justify-center"
   >
@@ -15,12 +17,13 @@ exports[`renders correctly 1`] = `
     >
       $
     </span>
+    10
   </p>
   <button
-    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold"
+    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold w-36 md:w-44 mx-auto px-0"
     onClick={[Function]}
   >
-    Donate
+    donate
   </button>
 </div>
 `;

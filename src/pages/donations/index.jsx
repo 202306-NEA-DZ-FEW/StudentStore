@@ -1,4 +1,5 @@
-import React from "react";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -8,34 +9,57 @@ import PricingCard from "@/components/PricingCard/PricingCard";
 
 import Layout from "@/layout/Layout";
 
-function donations() {
+function DonationsPage() {
+    const { t, i18n } = useTranslation("donations");
+    //for arabic text
+    const isRTL = i18n.language.startsWith("ar");
+
     return (
         <Layout>
             <div className='p-4 mt-24 flex justify-center flex-col'>
                 <DonationSlider />
                 <div className='text-[#7874F2] flex flex-col '>
                     <h1 className=' text-3xl  md:text-4xl mt-[-60px] sm:mt-[-90px] md:mt-[-100px] lg:mt-[-150px] font-bold mx-auto mb-3'>
-                        Why Donate?
+                        {t("why donate?")}
                     </h1>
-                    <p className='mx-auto text-justify  px-10 text-[24px] sm:px-12 font-semibold w-[85%] md:w-[70%]  sm:text-2xl leading-8  pb-2 '>
-                        Life is busy, and it can sometimes be easy to forget to
-                        show your gratitude for all that you’ve been given.
-                        Students have low budgets and they’re in need of
-                        financial support. When you are ready to give and are
-                        researching groups of people to support, this can remind
-                        us of all that we have, and the act of donating to
-                        charity is a way to express our feelings gratitude.
-                        Inspire others to give by posting your kind action on
-                        social media to inspire others to give generously.
-                    </p>
+                    {isRTL ? (
+                        <p
+                            dir='rtl'
+                            className='mx-auto text-justify  px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%]  leading-10 sm:text-2xl  pb-2 '
+                        >
+                            {t("why donating paragraph")}
+                        </p>
+                    ) : (
+                        <p
+                            dir='ltr'
+                            className='mx-auto text-justify  px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%]  sm:text-2xl leading-10 pb-2 '
+                        >
+                            {t("why donating paragraph")}
+                        </p>
+                    )}
                 </div>
                 <h1 className='text-[#7874F2] text-3xl  md:text-4xl text-center mx-auto font-bold mt-6 '>
-                    Make a Difference by Donating
+                    {t("make a difference by donating")}
                 </h1>
                 <div className='flex  flex-col md:flex-row justify-between   gap-6 my-8 mx-auto lg:gap-12'>
-                    <PricingCard title='Small help' amount='10' />
-                    <PricingCard title='Some help' amount='25' />
-                    <PricingCard title='Big help' amount='50' />
+                    <PricingCard
+                        title={t("small help")}
+                        amount='10'
+                        t={t}
+                        isRTL={isRTL}
+                    />
+                    <PricingCard
+                        title={t("some help")}
+                        amount='25'
+                        t={t}
+                        isRTL={isRTL}
+                    />
+                    <PricingCard
+                        title={t("big help")}
+                        amount='50'
+                        t={t}
+                        isRTL={isRTL}
+                    />
                 </div>
                 <ToastContainer />
             </div>
@@ -43,4 +67,13 @@ function donations() {
     );
 }
 
-export default donations;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "donations"])),
+            // Will be passed to the page component as props
+        },
+    };
+}
+
+export default DonationsPage;
