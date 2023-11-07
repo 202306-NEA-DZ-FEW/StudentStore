@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import Navbar from "../components/NavBar/NavBar";
 
 export default function Layout({ children }) {
