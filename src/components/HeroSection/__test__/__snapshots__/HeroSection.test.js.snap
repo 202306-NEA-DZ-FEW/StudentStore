@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  className="pt-[10vh]"
+>
   <div
     className="swiper-container"
   >
@@ -13,10 +15,10 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="swiper-slide swiper-slide-duplicate"
-        data-swiper-slide-index={3}
+        data-swiper-slide-index={0}
       >
         <div
-          className="w-1/2 h-[100vh]"
+          className="h-[90vh] w-full"
         >
           <img
             alt="HeroSection image"
@@ -25,7 +27,103 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero2.svg"
+            src="/images/Hero1.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={1}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/globe-desktop.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={2}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/cart-desktop.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={3}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/checkout-desktop.svg"
             style={
               Object {
                 "bottom": 0,
@@ -48,8 +146,7 @@ exports[`renders correctly 1`] = `
         data-swiper-slide-index={0}
       >
         <div
-          className="h-[100vh] w-full"
-          id="slide1"
+          className="h-[90vh] w-full"
         >
           <img
             alt="HeroSection image"
@@ -58,7 +155,7 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero6.svg"
+            src="/images/Hero1.svg"
             style={
               Object {
                 "bottom": 0,
@@ -81,8 +178,7 @@ exports[`renders correctly 1`] = `
         data-swiper-slide-index={1}
       >
         <div
-          className="h-[100vh] w-full"
-          id="slide3"
+          className="w-full h-[90vh]  sm:block"
         >
           <img
             alt="HeroSection image"
@@ -91,7 +187,7 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero3.svg"
+            src="/images/globe-desktop.svg"
             style={
               Object {
                 "bottom": 0,
@@ -114,8 +210,7 @@ exports[`renders correctly 1`] = `
         data-swiper-slide-index={2}
       >
         <div
-          className="h-[100vh] w-full"
-          id="slide4"
+          className="w-full h-[90vh]  sm:block"
         >
           <img
             alt="HeroSection image"
@@ -124,7 +219,7 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero4.svg"
+            src="/images/cart-desktop.svg"
             style={
               Object {
                 "bottom": 0,
@@ -147,7 +242,7 @@ exports[`renders correctly 1`] = `
         data-swiper-slide-index={3}
       >
         <div
-          className="w-1/2 h-[100vh]"
+          className="w-full h-[90vh]  sm:block"
         >
           <img
             alt="HeroSection image"
@@ -156,7 +251,7 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero2.svg"
+            src="/images/checkout-desktop.svg"
             style={
               Object {
                 "bottom": 0,
@@ -179,8 +274,7 @@ exports[`renders correctly 1`] = `
         data-swiper-slide-index={0}
       >
         <div
-          className="h-[100vh] w-full"
-          id="slide1"
+          className="h-[90vh] w-full"
         >
           <img
             alt="HeroSection image"
@@ -189,7 +283,103 @@ exports[`renders correctly 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/images/Hero6.svg"
+            src="/images/Hero1.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={1}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/globe-desktop.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={2}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/cart-desktop.svg"
+            style={
+              Object {
+                "bottom": 0,
+                "color": "transparent",
+                "height": "100%",
+                "left": 0,
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="swiper-slide swiper-slide-duplicate"
+        data-swiper-slide-index={3}
+      >
+        <div
+          className="w-full h-[90vh]  sm:block"
+        >
+          <img
+            alt="HeroSection image"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/images/checkout-desktop.svg"
             style={
               Object {
                 "bottom": 0,
