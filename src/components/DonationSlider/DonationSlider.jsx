@@ -29,6 +29,7 @@ const DonationSlider = () => {
                             width={700}
                             height={700}
                             alt='donation image'
+                            priority={false}
                         />
                     </div>
                 </SwiperSlide>
@@ -59,6 +60,7 @@ const DonationSlider = () => {
                             height={700}
                             layout='responsive'
                             alt='donation image'
+                            priority={true}
                         />
                     </div>
                 </SwiperSlide>
