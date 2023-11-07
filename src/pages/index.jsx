@@ -4,9 +4,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Layout from "@/layout/Layout";
 import Language from "@/components/Language/Language";
-import Map from "@/components/Map/Map"; // Correct import
+import Map from "@/components/Map"; // Correct import
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/util/firebase";
+import MapComponent from "@/components/Map";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -28,8 +29,8 @@ export default function HomePage() {
 
     return (
         <Layout>
-            <div className='w-96 h-96'>
-                <Map />
+            <div>
+                <MapComponent />
             </div>
 
             <p>{t("test")}</p>

@@ -1,76 +1,92 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { GiPositionMarker } from "react-icons/gi";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "leaflet/dist/images/marker-icon.png";
+import "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
 import { db } from "@/util/firebase";
-import {
-    doc,
-    getDoc,
-    query,
-    collection,
-    where,
-    getDocs,
-} from "firebase/firestore";
-import dynamic from "next/dynamic";
+import { doc, getDoc } from "firebase/firestore";
 
 const MapComponent = () => {
-    const [position, setPosition] = useState([0, 0]);
+    const [position, setPosition] = useState([0, 0]); // Default position
     const [city, setCity] = useState("");
+    const [country, setCountry] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const fetchData = async () => {
-                const userinfoRef = doc(
-                    db,
-                    "userinfo",
-                    "e43JDIG05abGPsH43xEKBNsD49e2"
-                );
-                const userinfoDoc = await getDoc(userinfoRef);
+        const fetchData = async () => {
+            const productRef = doc(db, "products", "1");
+            const productDoc = await getDoc(productRef);
 
-                if (userinfoDoc.exists()) {
-                    const userData = userinfoDoc.data();
-                    const userCity = userData?.address?.city;
+            if (productDoc.exists()) {
+                const productData = productDoc.data();
+                const productLocation = productData?.location;
+                const productAddress = productData?.address;
 
-                    if (userCity) {
-                        setCity(userCity);
-
-                        const positionQuery = query(
-                            collection(db, "position"),
-                            where("city", "==", userCity)
-                        );
-                        const positionSnapshot = await getDocs(positionQuery);
-
-                        positionSnapshot.forEach((doc) => {
-                            const positionData = doc.data();
-                            setPosition([
-                                positionData.latitude,
-                                positionData.longitude,
-                            ]);
-                        });
-                    } else {
-                        console.log("User city is undefined.");
-                        // Handle the case when userCity is undefined.
-                    }
+                if (
+                    productLocation &&
+                    productLocation.latitude &&
+                    productLocation.longitude
+                ) {
+                    const latitude = productLocation.latitude;
+                    const longitude = productLocation.longitude;
+                    setPosition([latitude, longitude]);
                 } else {
-                    console.log("No such document!");
+                    console.log("Product location coordinates are undefined.");
+                    // Handle the case when latitude or longitude is undefined.
                 }
-            };
 
-            fetchData();
-        }
+                if (
+                    productLocation &&
+                    productLocation.city &&
+                    productLocation.country
+                ) {
+                    setCity(productLocation.city);
+                    setCountry(productLocation.country);
+                } else {
+                    console.log("Product address is undefined.");
+                    // Handle the case when city or country is undefined.
+                }
+            } else {
+                console.log("No such product document!");
+                // Handle the case when the product document does not exist.
+            }
+
+            setLoading(false);
+        };
+
+        fetchData();
     }, []);
 
+    const customMarkerIcon = new L.Icon({
+        iconUrl: "/marker1.png",
+        iconRetinaUrl: "/marker.png",
+        iconSize: [38, 38],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
     return (
-        <div className='w-96 h-96'>
-            <MapContainer
-                center={position}
-                zoom={13}
-                style={{ width: "100%", height: "100%" }}
-            >
-                <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                <Marker position={position}>
-                    <Popup>{city}</Popup>
-                </Marker>
-            </MapContainer>
+        <div className='flex justify-center items-center h-screen'>
+            <div className='border border-black rounded-lg w-9/12 h-3/6'>
+                {!loading && (
+                    <MapContainer
+                        center={position}
+                        zoom={15}
+                        style={{ width: "100%", height: "100%" }}
+                    >
+                        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+
+                        {position[0] !== 0 && position[1] !== 0 && (
+                            <Marker position={position} icon={customMarkerIcon}>
+                                <Popup>{`${city}, ${country}`}</Popup>
+                            </Marker>
+                        )}
+                    </MapContainer>
+                )}
+            </div>
         </div>
     );
 };
