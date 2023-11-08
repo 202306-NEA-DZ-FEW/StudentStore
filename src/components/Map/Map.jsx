@@ -10,7 +10,42 @@ import { db } from "@/util/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 const MapComponent = () => {
-    const [position, setPosition] = useState([0, 0]);
+    const [position, setPosition] = useState([0, 0]); // Default position
+    const [city, setCity] = useState("");
+    const [country, setCountry] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const productRef = doc(db, "products", "1");
+            const productDoc = await getDoc(productRef);
+
+            if (productDoc.exists()) {
+                const productData = productDoc.data();
+                const productLocation = productData?.location;
+
+                if (
+                    productLocation &&
+                    productLocation.latitude &&
+                    productLocation.longitude
+                ) {
+                    const latitude = productLocation.latitude;
+                    const longitude = productLocation.longitude;
+                    setPosition([latitude, longitude]);
+                }
+
+                if (
+                    productLocation &&
+                    productLocation.city &&
+                    productLocation.country
+                ) {
+                    setCity(productLocation.city);
+                    setCountry(productLocation.country);
+                }
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div>
