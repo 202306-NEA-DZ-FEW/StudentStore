@@ -59,6 +59,15 @@ const MapComponent = () => {
 
         fetchData();
     }, []);
+
+    const customMarkerIcon = new L.Icon({
+        iconUrl: "/marker.png",
+        iconRetinaUrl: "/marker1.png",
+        iconSize: [38, 38],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className='border border-black rounded-lg w-9/12 h-3/6'>
@@ -71,7 +80,7 @@ const MapComponent = () => {
                         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 
                         {position[0] !== 0 && position[1] !== 0 && (
-                            <Marker position={position}>
+                            <Marker position={position} icon={customMarkerIcon}>
                                 <Popup>{`${city}, ${country}`}</Popup>
                             </Marker>
                         )}
