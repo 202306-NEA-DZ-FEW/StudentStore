@@ -13,6 +13,7 @@ const MapComponent = () => {
     const [position, setPosition] = useState([0, 0]); // Default position
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +23,7 @@ const MapComponent = () => {
             if (productDoc.exists()) {
                 const productData = productDoc.data();
                 const productLocation = productData?.location;
+                const productAddress = productData?.address;
 
                 if (
                     productLocation &&
@@ -31,6 +33,9 @@ const MapComponent = () => {
                     const latitude = productLocation.latitude;
                     const longitude = productLocation.longitude;
                     setPosition([latitude, longitude]);
+                } else {
+                    console.log("Product location coordinates are undefined.");
+                    // Handle the case when latitude or longitude is undefined.
                 }
 
                 if (
@@ -40,13 +45,20 @@ const MapComponent = () => {
                 ) {
                     setCity(productLocation.city);
                     setCountry(productLocation.country);
+                } else {
+                    console.log("Product address is undefined.");
+                    // Handle the case when city or country is undefined.
                 }
+            } else {
+                console.log("No such product document!");
+                // Handle the case when the product document does not exist.
             }
+
+            setLoading(false);
         };
 
         fetchData();
     }, []);
-
     return (
         <div>
             <div>
