@@ -2,3 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 @import "daisyui/dist/full.css";
+
+body {
+    background-color: #f1f6fa;
+}
+
+.input-style {
+    background-color: white;
+    color: #585785;
+    padding: auto 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: solid 1px #585785;
+}
+
+.input-style::placeholder {
+    color: #585785;
+    opacity: 0.65;
+}
+
+.empty-image-container {
+    background-image: url("/Image.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.placeholder-center::placeholder {
+    text-align: center;
+    transform: translateY(140%);
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation using a CSS class */
+.animate-fade-in {
+    animation: fade-in 0.5s ease-in-out;
+}

@@ -7,6 +7,12 @@ jest.mock("../../../util/firebase", () => {
     };
 });
 
+jest.mock("next/router", () => ({
+    useRouter: () => ({
+        pathname: "/",
+    }),
+}));
+
 it("renders correctly", () => {
     const tree = renderer.create(<TwitterButton />).toJSON();
     expect(tree).toMatchSnapshot();
