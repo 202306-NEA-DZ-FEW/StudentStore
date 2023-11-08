@@ -15,10 +15,11 @@ const Listings = () => {
         type: "",
         category: "",
         title: "",
+        condition: "",
         description: "",
         price: "",
-        location: "",
-        imgUrl: [],
+        location: { city: "", country: "algeria", latitude: "", longitude: "" },
+        pictures: [],
     });
 
     const handleChange = (e) => {
@@ -27,7 +28,7 @@ const Listings = () => {
             const file = e.target.files[0];
             const files = e.target.files;
             // reject if the image is selected twice
-            const selectedFileNames = formData.imgUrl.map(
+            const selectedFileNames = formData.pictures.map(
                 (imgFile) => imgFile.name
             );
             for (const file of files) {
@@ -35,7 +36,7 @@ const Listings = () => {
                 // Check if the file with the same name has already been selected
                 if (selectedFileNames.includes(fileName)) {
                     toast.warning(
-                        "Image with the same name has already been selected."
+                        "Picture with the same name has already been selected."
                     );
                     e.target.value = "";
                     return;
@@ -47,7 +48,7 @@ const Listings = () => {
                 setImageFiles((prevImageFiles) => [...prevImageFiles, fileUrl]);
             };
             reader.readAsDataURL(file);
-            const updatedImgUrl = [...formData.imgUrl];
+            const updatedImgUrl = [...formData.pictures];
             for (let i = 0; i < files.length; i++) {
                 updatedImgUrl.push(files[i]);
             }
@@ -55,7 +56,16 @@ const Listings = () => {
                 toast.warning("You can only upload a maximum of 4 images.");
                 return;
             }
-            setFormData({ ...formData, imgUrl: updatedImgUrl });
+            setFormData({ ...formData, pictures: updatedImgUrl });
+        } else if (name.startsWith("location.")) {
+            const [parentName, childName] = name.split(".");
+            setFormData((prevData) => ({
+                ...prevData,
+                [parentName]: {
+                    ...prevData[parentName],
+                    [childName]: value,
+                },
+            }));
         } else {
             setFormData({ ...formData, [name]: value });
         }
@@ -68,12 +78,16 @@ const Listings = () => {
             !formData.type ||
             !formData.category ||
             !formData.title ||
+            !formData.condition ||
             !formData.description ||
             !formData.price ||
             !formData.location ||
-            formData.imgUrl.length === 0
+            formData.pictures.length === 0
         ) {
             toast.error("Please fill in all required fields.");
+            return;
+        } else if (formData.pictures.length < 4) {
+            toast.error("Please add all 4 pictures.");
             return;
         }
         try {
@@ -82,17 +96,23 @@ const Listings = () => {
                 type: formData.type,
                 category: formData.category,
                 title: formData.title,
+                condition: formData.condition,
                 description: formData.description,
                 price: `${formData.price}$`,
-                location: formData.location,
-                imgUrl: [],
+                location: {
+                    city: formData.location.city,
+                    country: formData.location.country,
+                    latitude: formData.location.latitude,
+                    longitude: formData.location.longitude,
+                },
+                pictures: [],
             };
             //
-            for (const imageFile of formData.imgUrl) {
+            for (const imageFile of formData.pictures) {
                 const imgsRef = ref(imgDB, `Images/${imageFile.name}`);
                 const snapshot = await uploadBytes(imgsRef, imageFile);
                 const downloadURL = await getDownloadURL(snapshot.ref);
-                docData.imgUrl.push(downloadURL); // Push the download URL to the array
+                docData.pictures.push(downloadURL); // Push the download URL to the array
             }
             await addDoc(valuesRef, docData);
             toast.success("Data Added successfully");
@@ -101,10 +121,11 @@ const Listings = () => {
                 type: "",
                 category: "",
                 title: "",
+                condition: "",
                 description: "",
                 price: "",
-                location: "",
-                imgUrl: [],
+                location: { city: "" },
+                pictures: [],
             });
             // Clear the image files
             setImageFiles([]);
@@ -115,7 +136,7 @@ const Listings = () => {
     };
     return (
         <div className='bg-[#F1F6FA] p-6'>
-            <div className='mb-8 sm:mb-12 '>
+            <div className='mb-8 sm:mb-12'>
                 <h1 className='text-[#7874F2]  text-[38px] mb-2 font-semibold text-center lg:text-left lg:ml-8 '>
                     List an Item/Service
                 </h1>
@@ -221,13 +242,12 @@ const Listings = () => {
                             name='type'
                             value={formData.type}
                             onChange={handleChange}
-                            id=''
                         >
                             <option value='' disabled selected>
                                 Type(Product, service)
                             </option>
-                            <option value='sale'>sale</option>
-                            <option value='borrow'>borrow</option>
+                            <option value='sale'>Sale</option>
+                            <option value='borrow'>Borrow</option>
                         </select>
                     </div>
                     <div className='col-span-4 row-span-1 md:col-span-2 '>
@@ -236,7 +256,6 @@ const Listings = () => {
                             name='category'
                             value={formData.category}
                             onChange={handleChange}
-                            id=''
                         >
                             <option value='' disabled selected>
                                 Category
@@ -253,7 +272,7 @@ const Listings = () => {
                             <option value='furniture'>Furniture</option>
                         </select>
                     </div>
-                    <div className='col-span-4 row-span-1 '>
+                    <div className='col-span-4 row-span-1 md:col-span-2 '>
                         <input
                             className=' input input-bordered input-style '
                             type='text'
@@ -262,6 +281,22 @@ const Listings = () => {
                             onChange={handleChange}
                             placeholder='Product name'
                         />
+                    </div>
+                    <div className='col-span-4 row-span-1 md:col-span-2 '>
+                        <select
+                            className='select select-bordered  input-style'
+                            name='condition'
+                            value={formData.condition}
+                            onChange={handleChange}
+                        >
+                            <option value='' disabled selected>
+                                Condition
+                            </option>
+                            <option value='new'>New</option>
+                            <option value='like new'>Like New</option>
+                            <option value='good'>Good</option>
+                            <option value='poor'>Poor</option>
+                        </select>
                     </div>
                     <div className='col-span-4 row-span-2 '>
                         <textarea
@@ -275,10 +310,10 @@ const Listings = () => {
                     </div>
                     <input
                         type='text'
-                        name='location'
-                        value={formData.location}
+                        name='location.city'
+                        value={formData.location.city}
                         onChange={handleChange}
-                        placeholder='Location'
+                        placeholder='Location(city)'
                         className='input input-bordered col-span-2 row-span-1 input-style '
                     />
                     <input
