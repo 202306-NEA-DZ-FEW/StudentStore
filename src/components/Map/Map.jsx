@@ -60,15 +60,23 @@ const MapComponent = () => {
         fetchData();
     }, []);
     return (
-        <div>
-            <div>
-                <MapContainer style={{ width: "100%", height: "100%" }}>
-                    <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+        <div className='flex justify-center items-center h-screen'>
+            <div className='border border-black rounded-lg w-9/12 h-3/6'>
+                {!loading && (
+                    <MapContainer
+                        center={position}
+                        zoom={15}
+                        style={{ width: "100%", height: "100%" }}
+                    >
+                        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 
-                    <Marker>
-                        <Popup></Popup>
-                    </Marker>
-                </MapContainer>
+                        {position[0] !== 0 && position[1] !== 0 && (
+                            <Marker position={position}>
+                                <Popup>{`${city}, ${country}`}</Popup>
+                            </Marker>
+                        )}
+                    </MapContainer>
+                )}
             </div>
         </div>
     );
