@@ -98,13 +98,13 @@ function TestimonialsSection() {
                     );
                 })}
                 <button
-                    className='absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 hover:text-[#7874F2] left-0'
+                    className='absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 transition duration-300 hover:text-[#7874F2] left-0'
                     onClick={() => setIndex(index - 1)}
                 >
                     <IoIosArrowDropleftCircle className='text-3xl' />
                 </button>
                 <button
-                    className='absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 hover:text-[#7874F2] right-3'
+                    className='absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 transition duration-300 hover:text-[#7874F2] right-3'
                     onClick={() => setIndex(index + 1)}
                 >
                     <IoIosArrowDroprightCircle className='text-3xl' />
