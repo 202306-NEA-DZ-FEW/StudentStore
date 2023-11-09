@@ -1,7 +1,284 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  Testimonials
-</div>
+<section
+  className="w-[90vw] my-[5rem] mx-auto"
+>
+  <div
+    className="mx-auto mt-0 w-[80vw] h-[450px] max-w-[800px] text-center relative flex overflow-hidden"
+  >
+    <article
+      className="translate-x-0 absolute top-0 left-0 w-full py-3 bg-white"
+    >
+      <img
+        alt="Mazin Ismail"
+        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fimages%2Ftestimonial1.jpg&w=256&q=75"
+        srcSet="/_next/image?url=%2Fimages%2Ftestimonial1.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftestimonial1.jpg&w=256&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={100}
+      />
+      <h4
+        className="uppercase mb-[0.25rem] text-[1rem]"
+      >
+        Mazin Ismail
+      </h4>
+      <p
+        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+      >
+        Affordable books, gadgets, and a welcoming student community. This marketplace makes student life easier and more budget-friendly. Highly recommend!
+      </p>
+      <div
+        className="flex justify-center text-purple-500"
+      >
+        <svg
+          className="text-2xl"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+          />
+        </svg>
+      </div>
+    </article>
+    <article
+      className="translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+    >
+      <img
+        alt="Hoda Khaliq"
+        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fimages%2Ftestimonial2.jpg&w=256&q=75"
+        srcSet="/_next/image?url=%2Fimages%2Ftestimonial2.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftestimonial2.jpg&w=256&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={100}
+      />
+      <h4
+        className="uppercase mb-[0.25rem] text-[1rem]"
+      >
+        Hoda Khaliq
+      </h4>
+      <p
+        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+      >
+        This platform is a lifesaver for broke college students like me. I sold old stuff and bought what I needed at affordable prices. Highly recommended!
+      </p>
+      <div
+        className="flex justify-center text-purple-500"
+      >
+        <svg
+          className="text-2xl"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+          />
+        </svg>
+      </div>
+    </article>
+    <article
+      className="translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+    >
+      <img
+        alt="Khalil Yousef"
+        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fimages%2Ftestimonial3.jpg&w=256&q=75"
+        srcSet="/_next/image?url=%2Fimages%2Ftestimonial3.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftestimonial3.jpg&w=256&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={100}
+      />
+      <h4
+        className="uppercase mb-[0.25rem] text-[1rem]"
+      >
+        Khalil Yousef
+      </h4>
+      <p
+        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+      >
+        As a busy student, I appreciate the convenience of this website. I borrowed games and textbooks without a hitch. It's a game-changer for student life!
+      </p>
+      <div
+        className="flex justify-center text-purple-500"
+      >
+        <svg
+          className="text-2xl"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+          />
+        </svg>
+      </div>
+    </article>
+    <article
+      className="-translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+    >
+      <img
+        alt="Radiya Benmoghaddam"
+        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2Fimages%2Ftestimonial4.jpg&w=256&q=75"
+        srcSet="/_next/image?url=%2Fimages%2Ftestimonial4.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftestimonial4.jpg&w=256&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={100}
+      />
+      <h4
+        className="uppercase mb-[0.25rem] text-[1rem]"
+      >
+        Radiya Benmoghaddam
+      </h4>
+      <p
+        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+      >
+        I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way. It's a fantastic platform for students!
+      </p>
+      <div
+        className="flex justify-center text-purple-500"
+      >
+        <svg
+          className="text-2xl"
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"
+          />
+        </svg>
+      </div>
+    </article>
+    <button
+      className="absolute top-[200px] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer left-0"
+      onClick={[Function]}
+    >
+      <svg
+        className="text-3xl"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="15 18 9 12 15 6"
+        />
+      </svg>
+    </button>
+    <button
+      className="absolute top-[200px] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer right-2"
+      onClick={[Function]}
+    >
+      <svg
+        className="text-3xl"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </button>
+  </div>
+</section>
 `;
