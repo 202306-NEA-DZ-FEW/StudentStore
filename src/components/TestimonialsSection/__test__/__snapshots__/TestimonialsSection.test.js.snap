@@ -2,17 +2,17 @@
 
 exports[`renders correctly 1`] = `
 <section
-  className="w-[90vw] my-[5rem] mx-auto"
+  className="py-6 mx-auto"
 >
   <div
-    className="mx-auto mt-0 w-[80vw] h-[450px] max-w-[800px] text-center relative flex overflow-hidden"
+    className="mx-auto mt-0 w-[80vw] lg:w-[65vw] h-[350px] lg:[300px]max-w-[800px] text-center relative flex items-center overflow-hidden"
   >
     <article
-      className="translate-x-0 absolute top-0 left-0 w-full py-3 bg-white"
+      className="translate-x-0 absolute h-auto w-full py-3 rounded-lg bg-white"
     >
       <img
         alt="Mazin Ismail"
-        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        className="object-cover h-16 w-16 mx-auto block border-2 border-[#7874F2] rounded-full my-4"
         data-nimg="1"
         decoding="async"
         height={100}
@@ -29,20 +29,20 @@ exports[`renders correctly 1`] = `
         width={100}
       />
       <h4
-        className="uppercase mb-[0.25rem] text-[1rem]"
+        className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
         Mazin Ismail
       </h4>
       <p
-        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+        className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose"
       >
         Affordable books, gadgets, and a welcoming student community. This marketplace makes student life easier and more budget-friendly. Highly recommend!
       </p>
       <div
-        className="flex justify-center text-purple-500"
+        className="flex justify-center text-[#7874F2]"
       >
         <svg
-          className="text-2xl"
+          className="text-3xl mt-2"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -63,11 +63,11 @@ exports[`renders correctly 1`] = `
       </div>
     </article>
     <article
-      className="translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+      className="translate-x-full absolute h-auto w-full py-3 rounded-lg bg-white"
     >
       <img
         alt="Hoda Khaliq"
-        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        className="object-cover h-16 w-16 mx-auto block border-2 border-[#7874F2] rounded-full my-4"
         data-nimg="1"
         decoding="async"
         height={100}
@@ -84,20 +84,20 @@ exports[`renders correctly 1`] = `
         width={100}
       />
       <h4
-        className="uppercase mb-[0.25rem] text-[1rem]"
+        className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
         Hoda Khaliq
       </h4>
       <p
-        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+        className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose"
       >
         This platform is a lifesaver for broke college students like me. I sold old stuff and bought what I needed at affordable prices. Highly recommended!
       </p>
       <div
-        className="flex justify-center text-purple-500"
+        className="flex justify-center text-[#7874F2]"
       >
         <svg
-          className="text-2xl"
+          className="text-3xl mt-2"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -118,11 +118,11 @@ exports[`renders correctly 1`] = `
       </div>
     </article>
     <article
-      className="translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+      className="translate-x-full absolute h-auto w-full py-3 rounded-lg bg-white"
     >
       <img
         alt="Khalil Yousef"
-        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        className="object-cover h-16 w-16 mx-auto block border-2 border-[#7874F2] rounded-full my-4"
         data-nimg="1"
         decoding="async"
         height={100}
@@ -139,20 +139,20 @@ exports[`renders correctly 1`] = `
         width={100}
       />
       <h4
-        className="uppercase mb-[0.25rem] text-[1rem]"
+        className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
         Khalil Yousef
       </h4>
       <p
-        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+        className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose"
       >
         As a busy student, I appreciate the convenience of this website. I borrowed games and textbooks without a hitch. It's a game-changer for student life!
       </p>
       <div
-        className="flex justify-center text-purple-500"
+        className="flex justify-center text-[#7874F2]"
       >
         <svg
-          className="text-2xl"
+          className="text-3xl mt-2"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -173,11 +173,11 @@ exports[`renders correctly 1`] = `
       </div>
     </article>
     <article
-      className="-translate-x-full absolute top-0 left-0 w-full py-3 bg-white"
+      className="-translate-x-full absolute h-auto w-full py-3 rounded-lg bg-white"
     >
       <img
         alt="Radiya Benmoghaddam"
-        className="object-cover h-16 w-16 mx-auto block border-4 border-purple-500 rounded-full my-4"
+        className="object-cover h-16 w-16 mx-auto block border-2 border-[#7874F2] rounded-full my-4"
         data-nimg="1"
         decoding="async"
         height={100}
@@ -194,20 +194,20 @@ exports[`renders correctly 1`] = `
         width={100}
       />
       <h4
-        className="uppercase mb-[0.25rem] text-[1rem]"
+        className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
         Radiya Benmoghaddam
       </h4>
       <p
-        className="max-w-[20rem] lg:max-w-[30rem] lg:mt-8 mx-auto  leading-loose"
+        className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose"
       >
         I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way. It's a fantastic platform for students!
       </p>
       <div
-        className="flex justify-center text-purple-500"
+        className="flex justify-center text-[#7874F2]"
       >
         <svg
-          className="text-2xl"
+          className="text-3xl mt-2"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -228,54 +228,50 @@ exports[`renders correctly 1`] = `
       </div>
     </article>
     <button
-      className="absolute top-[200px] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer left-0"
+      className="absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 hover:text-[#7874F2] left-0"
       onClick={[Function]}
     >
       <svg
         className="text-3xl"
-        fill="none"
+        fill="currentColor"
         height="1em"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        strokeWidth="0"
         style={
           Object {
             "color": undefined,
           }
         }
-        viewBox="0 0 24 24"
+        viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polyline
-          points="15 18 9 12 15 6"
+        <path
+          d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm43.4 289.1c7.5 7.5 7.5 19.8 0 27.3-3.8 3.8-8.7 5.6-13.6 5.6s-9.9-1.9-13.7-5.7l-94-94.3c-6.9-7.6-6.7-19.3.6-26.6l95.4-95.7c7.5-7.5 19.7-7.6 27.3 0 7.5 7.5 7.6 19.7 0 27.3l-81.9 81 79.9 81.1z"
         />
       </svg>
     </button>
     <button
-      className="absolute top-[200px] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer right-2"
+      className="absolute top-[50%] -translate-y-1/2 w-[1.25rem] h-[1.25rem] grid place-items-center text-[1rem] cursor-pointer text-gray-400 hover:text-[#7874F2] right-3"
       onClick={[Function]}
     >
       <svg
         className="text-3xl"
-        fill="none"
+        fill="currentColor"
         height="1em"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        strokeWidth="0"
         style={
           Object {
             "color": undefined,
           }
         }
-        viewBox="0 0 24 24"
+        viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polyline
-          points="9 18 15 12 9 6"
+        <path
+          d="M48 256c0 114.9 93.1 208 208 208s208-93.1 208-208S370.9 48 256 48 48 141.1 48 256zm244.5 0l-81.9-81.1c-7.5-7.5-7.5-19.8 0-27.3s19.8-7.5 27.3 0l95.4 95.7c7.3 7.3 7.5 19.1.6 26.6l-94 94.3c-3.8 3.8-8.7 5.7-13.7 5.7-4.9 0-9.9-1.9-13.6-5.6-7.5-7.5-7.6-19.7 0-27.3l79.9-81z"
         />
       </svg>
     </button>
