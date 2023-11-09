@@ -5,7 +5,7 @@ function UnderBar({ className }) {
     return (
         <div
             className={twMerge(
-                "bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
+                "bg-[#585785]  font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
                 className
             )}
         >

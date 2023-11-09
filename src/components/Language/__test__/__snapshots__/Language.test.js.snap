@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="relative inline-block text-left ml-36"
+  className="relative  inline-block text-left"
   data-headlessui-state=""
 >
   <div>
