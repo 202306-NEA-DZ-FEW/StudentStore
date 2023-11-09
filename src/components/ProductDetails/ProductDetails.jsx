@@ -48,7 +48,42 @@ function ProductDetails() {
                     </div>
                 </div>
             </div>
-            <div className=' grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 text-[#585785]'></div>
+            <div className=' grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 text-[#585785]'>
+                {/* Product Details */}
+                <div className='col-span-4 md:col-span-2'>
+                    <h1 className='text-3xl font-bold text-[#7874F2] mb-4'>
+                        product name
+                    </h1>
+
+                    <div className='flex mb-2'>
+                        <p className='mr-20'>
+                            <span className='font-bold'>Condition: </span>
+                            condition
+                        </p>
+
+                        <p className=''>
+                            <span className='font-bold'>Category: </span>
+                            Category
+                        </p>
+                    </div>
+                    <div className='flex mb-2'>
+                        <p className='bg-orange-500 py-1 px-2 rounded font-bold text-white mr-20'>
+                            For sale
+                        </p>
+                        <button className='bg-[#7874F2] py-1 px-2 rounded font-bold text-white ml-12'>
+                            Add to Favorites
+                        </button>
+                    </div>
+                </div>
+
+                <div className='col-span-4 row-span-1 '>
+                    <h1 className='text-xl font-bold'>Details:</h1>
+                    <hr />
+                    <div className='overflow-y-scroll max-h-[100px]'>
+                        details
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
