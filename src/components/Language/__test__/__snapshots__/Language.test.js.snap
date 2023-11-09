@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="relative inline-block text-left ml-36"
+  className="relative  inline-block text-left "
   data-headlessui-state=""
 >
   <div>
@@ -18,7 +18,7 @@ exports[`renders correctly 1`] = `
       type="button"
     >
       <svg
-        className="text-[#585785] text-2xl"
+        className="text-[#585785] text-xl"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -41,7 +41,7 @@ exports[`renders correctly 1`] = `
         />
       </svg>
       <svg
-        className="text-[#585785] text-2xl hidden md:block"
+        className="text-[#585785] text-xl hidden md:block"
         fill="currentColor"
         height="1em"
         stroke="currentColor"

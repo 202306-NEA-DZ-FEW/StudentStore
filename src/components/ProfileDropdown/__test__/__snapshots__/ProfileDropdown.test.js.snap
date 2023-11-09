@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="dropdown dropdown-end"
+  className="dropdown  dropdown-end"
 >
   <label
     className="btn btn-ghost btn-circle avatar"
@@ -17,9 +17,11 @@ exports[`renders correctly 1`] = `
         data-nimg="1"
         decoding="async"
         height={20}
+        loading="lazy"
         onError={[Function]}
         onLoad={[Function]}
-        src=""
+        src="/_next/image?url=%2Fstudent.png&w=48&q=75"
+        srcSet="/_next/image?url=%2Fstudent.png&w=32&q=75 1x, /_next/image?url=%2Fstudent.png&w=48&q=75 2x"
         style={
           Object {
             "color": "transparent",

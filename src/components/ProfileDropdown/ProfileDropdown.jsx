@@ -9,7 +9,7 @@ function ProfileDropdown() {
         setDropdownOpen(!isDropdownOpen);
     };
     return (
-        <div className='dropdown dropdown-end'>
+        <div className='dropdown  dropdown-end'>
             <label
                 tabIndex={0}
                 onClick={toggleDropdown}
@@ -27,7 +27,7 @@ function ProfileDropdown() {
             {isDropdownOpen && (
                 <ul
                     tabIndex={0}
-                    className='mt-1 z-[1] p-2 shadow menu menu-sm dropdown-content  text-black bg-[#F1F6FA] rounded-box w-22'
+                    className='mt-1 z-[1] px-1 py-2 shadow menu menu-sm dropdown-content  text-black bg-[#F1F6FA] rounded-md w-22'
                 >
                     <li>
                         <Link

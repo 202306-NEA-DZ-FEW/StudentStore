@@ -43,3 +43,12 @@
 .animate-fade-in {
     animation: fade-in 0.5s ease-in-out;
 }
+
+#sideMenu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+#toggleButton:hover + #sideMenu {
+    transform: translateX(0);
+}
