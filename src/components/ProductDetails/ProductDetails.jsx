@@ -83,6 +83,39 @@ function ProductDetails() {
                         details
                     </div>
                 </div>
+
+                {/* User Info */}
+
+                <div className='flex flex-row items-center bg-[#585785] ml-16  w-64 h-16 lg:w-80 lg:h-24 md:w-80 md:h-24 rounded-l-full border-r-4 border-dashed'>
+                    <div className='m-auto ml-2'>
+                        <Image
+                            alt='profile'
+                            width='80'
+                            height='80'
+                            className='w-8 h-8 lg:w-16 lg:h-16 md:w-16 md:h-16 rounded-full sm:w-4'
+                        />
+                    </div>
+                    <div className='m-auto  text-white text-sm lg:text-base md:text-base'>
+                        <h1 className='font-semibold text-xs lg:text-sm'>
+                            name surname
+                        </h1>
+                        <h2 className='w-[27vh] overflow-hidden'>
+                            <span className='font-bold'></span>{" "}
+                            <span className='truncate'>email</span>
+                        </h2>
+                        <h2>
+                            <span className='font-bold'></span> city, country
+                        </h2>
+                    </div>
+                </div>
+                <div className='bg-transparent w-12 h-16 lg:w-24 lg:h-24 md:w-24 md:h-24'></div>
+
+                <div className='bg-orange-500  grid justify-items-center w-16 h-16 lg:w-24 lg:h-24 md:w-24 md:h-24'>
+                    <h1 className='text-white font-semibold text-xs lg:text-xl md:text-base m-auto'>
+                        price
+                        {"$"}
+                    </h1>
+                </div>
             </div>
         </div>
     );
