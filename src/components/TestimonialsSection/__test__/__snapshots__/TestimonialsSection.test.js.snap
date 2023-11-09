@@ -201,7 +201,7 @@ exports[`renders correctly 1`] = `
       <p
         className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose"
       >
-        I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way. It's a fantastic platform for students!
+        I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way.
       </p>
       <div
         className="flex justify-center text-[#7874F2]"
