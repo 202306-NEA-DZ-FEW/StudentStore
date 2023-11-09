@@ -2,91 +2,78 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className="bg-slate-300 text-black w-full ease-in duration-300 fixed top-0 left-0 z-10"
+  className=" fixed top-0 left-0 z-10 right-0 "
 >
   <nav
-    className=" mx-full h-[100px] flex justify-between items-center p-4"
+    className="bg-slate-200  shadow-md p-4"
   >
     <div
-      className="navbar w-[0%] "
+      className="hidden md:flex justify-between md:items-center"
     >
-      <a
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <div
+        className="flex space-x-4  items-center"
       >
-        <div
-          className="logo w-20 h-20 flex "
-        >
-          <img
-            alt="Logo"
-            src="Logo.svg"
-          />
-          <div
-            className={
-              Object {
-                "height": "100%",
-                "width": "100%",
-              }
+        <img
+          alt="Picture of the author"
+          data-nimg="1"
+          decoding="async"
+          height={45}
+          loading="lazy"
+          onError={[Function]}
+          onLoad={[Function]}
+          src="/_next/image?url=%2Flogo.png&w=96&q=75"
+          srcSet="/_next/image?url=%2Flogo.png&w=48&q=75 1x, /_next/image?url=%2Flogo.png&w=96&q=75 2x"
+          style={
+            Object {
+              "color": "transparent",
             }
-          >
-            <span
-              className="text-indigo-500 , text-2xl , font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
-            >
-              Student
-              <br />
-            </span>
-            <span
-              className=" text-black , text-2xl , font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
-            >
-              Store
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>
-    <ul
-      className="hidden md:flex font-semibold text-1xl lg:text-[20px] text-indigo-800 "
-    >
-      <li
-        className="mt-3 mr-4 lg:mr-8 hover:text-white hover:bg-orange-300  rounded-full px-8 py-2"
-      >
+          }
+          width={45}
+        />
         <a
+          className="text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-           Home 
+           
+          Home
+           
         </a>
-      </li>
-      <li
-        className="mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2"
-      >
         <a
-          href="/Donation"
+          className="text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold"
+          href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-          Donations
+           
+          Products
+           
         </a>
-      </li>
-      <li
-        className="mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2"
-      >
         <a
-          href="/About"
+          className="text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold"
+          href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-          About Us
+           
+          Donation
         </a>
-      </li>
+        <a
+          className="text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          About us
+        </a>
+      </div>
       <div
-        className="mt-4 mr-4  "
+        className=" md:ml-8 md:w-[70vh] lg:w-[80vh]"
       >
         <div
           className="relative mx-auto max-w-md"
@@ -95,7 +82,7 @@ exports[`renders correctly 1`] = `
             className="input-wrapper"
           >
             <input
-              className="w-full border border-gray-300 rounded-full py-2 px-4 pl-8 focus:outline-none"
+              className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
               onChange={[Function]}
               placeholder="Search here..."
               type="text"
@@ -127,11 +114,11 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
       </div>
-      <li
-        className="mt-4 mr-4 lg:mr-8 hover:text-white "
+      <div
+        className="flex items-center space-x-4"
       >
         <div
-          className="relative inline-block text-left ml-36"
+          className="relative  inline-block text-left"
           data-headlessui-state=""
         >
           <div>
@@ -195,10 +182,28 @@ exports[`renders correctly 1`] = `
             </button>
           </div>
         </div>
-      </li>
-      <li
-        className="mt-4 mr-4 lg:mr-8 hover:text-white"
-      >
+        <button
+          className=" text-3xl text-[#FF8A57] hover:text-orange-500"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 576 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
+            />
+          </svg>
+        </button>
         <div
           className="dropdown dropdown-end"
         >
@@ -228,10 +233,117 @@ exports[`renders correctly 1`] = `
             </div>
           </label>
         </div>
-      </li>
-      <li>
+      </div>
+    </div>
+    <div
+      className="md:hidden flex justify-between   items-center"
+    >
+      <div
+        className=""
+      >
+         
         <button
-          className="mt-4 text-3xl text-[#FF8A57] hover:text-orange-500"
+          className="block text-[#585785]   font-semibold  hover:text-[#FF8A57] p-2 text-3xl"
+          onClick={[Function]}
+          type="button"
+        >
+          ☰
+        </button>
+         
+      </div>
+      <div
+        className="flex items-center"
+      >
+         
+        <img
+          alt="Picture of the author"
+          data-nimg="1"
+          decoding="async"
+          height={40}
+          loading="lazy"
+          onError={[Function]}
+          onLoad={[Function]}
+          src="/_next/image?url=%2Flogo.png&w=96&q=75"
+          srcSet="/_next/image?url=%2Flogo.png&w=48&q=75 1x, /_next/image?url=%2Flogo.png&w=96&q=75 2x"
+          style={
+            Object {
+              "color": "transparent",
+            }
+          }
+          width={40}
+        />
+         
+      </div>
+      <div
+        className="flex items-center space-x-4"
+      >
+        <div
+          className="relative  inline-block text-left"
+          data-headlessui-state=""
+        >
+          <div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="menu"
+              className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
+              data-headlessui-state=""
+              id="headlessui-menu-button-:r1:"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              type="button"
+            >
+              <svg
+                className="text-[#585785] text-2xl"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0V0z"
+                  fill="none"
+                />
+                <path
+                  d="M20 5h-9.12L10 2H4c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h7l1 3h8c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zM7.17 14.59c-2.25 0-4.09-1.83-4.09-4.09s1.83-4.09 4.09-4.09c1.04 0 1.99.37 2.74 1.07l.07.06-1.23 1.18-.06-.05c-.29-.27-.78-.59-1.52-.59-1.31 0-2.38 1.09-2.38 2.42s1.07 2.42 2.38 2.42c1.37 0 1.96-.87 2.12-1.46H7.08V9.91h3.95l.01.07c.04.21.05.4.05.61 0 2.35-1.61 4-3.92 4zm6.03-1.71c.33.6.74 1.18 1.19 1.7l-.54.53-.65-2.23zm.77-.76h-.99l-.31-1.04h3.99s-.34 1.31-1.56 2.74c-.52-.62-.89-1.23-1.13-1.7zM21 20c0 .55-.45 1-1 1h-7l2-2-.81-2.77.92-.92L17.79 18l.73-.73-2.71-2.68c.9-1.03 1.6-2.25 1.92-3.51H19v-1.04h-3.64V9h-1.04v1.04h-1.96L11.18 6H20c.55 0 1 .45 1 1v13z"
+                />
+              </svg>
+              <svg
+                className="text-[#585785] text-2xl hidden md:block"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0V0z"
+                  fill="none"
+                />
+                <path
+                  d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          className=" text-3xl text-[#FF8A57] hover:text-orange-500"
         >
           <svg
             fill="currentColor"
@@ -252,341 +364,191 @@ exports[`renders correctly 1`] = `
             />
           </svg>
         </button>
-      </li>
-    </ul>
-    <div
-      className="flex md:hidden"
-      onClick={[Function]}
-    >
-      <svg
-        fill="currentColor"
-        height={25}
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 1024 1024"
-        width={25}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"
-        />
-      </svg>
+        <div
+          className="dropdown dropdown-end"
+        >
+          <label
+            className="btn btn-ghost btn-circle avatar"
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="w-10 rounded-full"
+            >
+              <img
+                alt="profile-pic"
+                data-nimg="1"
+                decoding="async"
+                height={20}
+                onError={[Function]}
+                onLoad={[Function]}
+                src=""
+                style={
+                  Object {
+                    "color": "transparent",
+                  }
+                }
+                width={20}
+              />
+            </div>
+          </label>
+        </div>
+      </div>
     </div>
     <div
-      className="md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-sceen bg-indigo-950 text-white "
+      className="md:hidden"
     >
       <div
-        className="w-full "
+        className="relative mx-auto max-w-md"
       >
-        <ul
-          className="font-medium text-sm "
+        <div
+          className="input-wrapper"
         >
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
+          <input
+            className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
+            onChange={[Function]}
+            placeholder="Search here..."
+            type="text"
+            value=""
+          />
+          <div
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
           >
-            <div
-              className="relative mx-auto max-w-md"
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                className="input-wrapper"
-              >
-                <input
-                  className="w-full border border-gray-300 rounded-full py-2 px-4 pl-8 focus:outline-none"
-                  onChange={[Function]}
-                  placeholder="Search here..."
-                  type="text"
-                  value=""
-                />
-                <div
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    version="1.1"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <a
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onTouchStart={[Function]}
-            >
-              Home
-            </a>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <a
-              href="#"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onTouchStart={[Function]}
-            >
-              Donations
-            </a>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <a
-              href="#"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onTouchStart={[Function]}
-            >
-              About Us
-            </a>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <div
-              className="dropdown dropdown-end"
-            >
-              <label
-                className="btn btn-ghost btn-circle avatar"
-                onClick={[Function]}
-                tabIndex={0}
-              >
-                <div
-                  className="w-10 rounded-full"
-                >
-                  <img
-                    alt="profile-pic"
-                    data-nimg="1"
-                    decoding="async"
-                    height={20}
-                    onError={[Function]}
-                    onLoad={[Function]}
-                    src=""
-                    style={
-                      Object {
-                        "color": "transparent",
-                      }
-                    }
-                    width={20}
-                  />
-                </div>
-              </label>
-            </div>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <div
-              className="relative inline-block text-left ml-36"
-              data-headlessui-state=""
-            >
-              <div>
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="menu"
-                  className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
-                  data-headlessui-state=""
-                  id="headlessui-menu-button-:r1:"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  type="button"
-                >
-                  <svg
-                    className="text-[#585785] text-2xl"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0h24v24H0V0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M20 5h-9.12L10 2H4c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h7l1 3h8c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zM7.17 14.59c-2.25 0-4.09-1.83-4.09-4.09s1.83-4.09 4.09-4.09c1.04 0 1.99.37 2.74 1.07l.07.06-1.23 1.18-.06-.05c-.29-.27-.78-.59-1.52-.59-1.31 0-2.38 1.09-2.38 2.42s1.07 2.42 2.38 2.42c1.37 0 1.96-.87 2.12-1.46H7.08V9.91h3.95l.01.07c.04.21.05.4.05.61 0 2.35-1.61 4-3.92 4zm6.03-1.71c.33.6.74 1.18 1.19 1.7l-.54.53-.65-2.23zm.77-.76h-.99l-.31-1.04h3.99s-.34 1.31-1.56 2.74c-.52-.62-.89-1.23-1.13-1.7zM21 20c0 .55-.45 1-1 1h-7l2-2-.81-2.77.92-.92L17.79 18l.73-.73-2.71-2.68c.9-1.03 1.6-2.25 1.92-3.51H19v-1.04h-3.64V9h-1.04v1.04h-1.96L11.18 6H20c.55 0 1 .45 1 1v13z"
-                    />
-                  </svg>
-                  <svg
-                    className="text-[#585785] text-2xl hidden md:block"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    strokeWidth="0"
-                    style={
-                      Object {
-                        "color": undefined,
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0h24v24H0V0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            className="py-2 cursor-pointer"
-            onClick={[Function]}
-          >
-            <div
-              className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
-            >
-              <ul
-                className="p-4 md:p-0 md:flex md:justify-around lg:p- lg:flex lg:justify-around lg:w-[75%] lg:mx-auto "
-              >
-                <li>
-                  <a
-                    className="capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    All Categories
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Electronics
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Books
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Gaming
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Clothes
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Shoes
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Food
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Transportation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-                    href="#"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                    onTouchStart={[Function]}
-                  >
-                    Furniture
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+              <path
+                d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
+  <div
+    className="hidden md:block"
+  >
+     
+    <div
+      className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
+    >
+      <ul
+        className="p-4 md:p-0 md:flex md:justify-around lg:p- lg:flex lg:justify-around lg:w-[75%] lg:mx-auto "
+      >
+        <li>
+          <a
+            className="capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            All Categories
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Electronics
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Books
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Gaming
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Clothes
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Shoes
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Food
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Transportation
+          </a>
+        </li>
+        <li>
+          <a
+            className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Furniture
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
 `;

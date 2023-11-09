@@ -13,7 +13,7 @@ function classNames(...classes) {
 function Language() {
     const router = useRouter();
     return (
-        <Menu as='div' className='relative inline-block text-left ml-36'>
+        <Menu as='div' className='relative  inline-block text-left'>
             <div>
                 <Menu.Button className='bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50'>
                     <MdOutlineGTranslate className='text-[#585785] text-2xl' />
@@ -30,7 +30,7 @@ function Language() {
                 leaveFrom='transform opacity-100 scale-100'
                 leaveTo='transform opacity-0 scale-95'
             >
-                <Menu.Items className='absolute font-bold z-10 mt-2 px-1 origin-top-right rounded-md bg-[#F1F6FA] shadow-lg ring-1 ring-[#585785] ring-opacity-5 focus:outline-none'>
+                <Menu.Items className='absolute  font-semibold z-10 mt-2  origin-top-right rounded-md bg-[#F1F6FA] shadow-lg ring-1 ring-[#585785] ring-opacity-5 focus:outline-none'>
                     <div className='py-1'>
                         <Menu.Item>
                             {({ active }) => (
@@ -38,9 +38,9 @@ function Language() {
                                     href={router.pathname}
                                     className={classNames(
                                         active
-                                            ? "bg-white text-[#585785]"
-                                            : "text-[#585785]",
-                                        "block px-4 py-2 text-sm"
+                                            ? "bg-white text-grey"
+                                            : "text-[#7874F2]",
+                                        "block px-4 pt-2 pb-1 text-sm"
                                     )}
                                     locale='en'
                                 >
@@ -54,9 +54,9 @@ function Language() {
                                     href={router.pathname}
                                     className={classNames(
                                         active
-                                            ? "bg-white text-[#585785]"
-                                            : "text-[#585785]",
-                                        "block px-4 py-2 text-sm"
+                                            ? "bg-white text-grey"
+                                            : "text-[#7874F2]",
+                                        "block px-4 py-1 text-sm"
                                     )}
                                     locale='ar'
                                 >
@@ -70,9 +70,9 @@ function Language() {
                                     href={router.pathname}
                                     className={classNames(
                                         active
-                                            ? "bg-white text-[#585785]"
-                                            : "text-[#585785]",
-                                        "block px-4 py-2 text-sm"
+                                            ? "bg-white text-grey"
+                                            : "text-[#7874F2]",
+                                        "block px-4 pb-2 pt-1 text-sm"
                                     )}
                                     locale='fr'
                                 >
