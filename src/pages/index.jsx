@@ -12,6 +12,7 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
 import Sidebar from "@/components/SideBar/SideBar";
+import MapComponent from "@/components/Map";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -24,6 +25,7 @@ export default function HomePage() {
     });
     return (
         <Layout>
+            <MapComponent />
             <p>{t("test")}</p>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
