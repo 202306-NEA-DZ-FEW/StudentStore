@@ -243,7 +243,7 @@ exports[`renders correctly 1`] = `
       <div
         className=""
       >
-           
+         
         <button
           className="block text-[#585785]   font-semibold  hover:text-[#FF8A57] p-2 text-3xl"
           onClick={[Function]}
