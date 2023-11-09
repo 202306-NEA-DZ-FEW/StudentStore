@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { db } from "../../util/firebase.js";
 import { doc, getDoc, collection } from "firebase/firestore";
+
 function ProductDetails() {
     const [productData, setProductData] = useState(null);
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         const fetchProductData = async () => {
-            const productRef = doc(db, "products", "HfUS2i3IGbErrayIPPz8");
+            const productRef = doc(db, "products", "3AMbn2OGg7MdOmLMsMqo");
             const productDoc = await getDoc(productRef);
             if (productDoc.exists()) {
                 setProductData(productDoc.data());
