@@ -96,7 +96,7 @@ function ProductDetails() {
                             {productData.category}
                         </p>
                         <p className='text-1xl text-[#585785]'>
-                            <span className='font-bold'>
+                            <span className='font-bold bg-orange-500 p-2 rounded-md text-white'>
                                 For {productData.type}
                             </span>
                             {/* {data?.location} */}
@@ -104,7 +104,7 @@ function ProductDetails() {
                     </span>
                     <span className='flex flex-col gap-5'>
                         <p className='text-1xl text-[#585785]'>
-                            <span className='font-bold'>Condition </span>
+                            <span className='font-bold'>Condition: </span>
                             {productData.condition}
                         </p>
                         <p className='text-1xl text-[#585785]'>
