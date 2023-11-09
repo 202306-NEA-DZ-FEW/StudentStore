@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { db } from "../../util/firebase.js";
 import { doc, getDoc, collection } from "firebase/firestore";
-import Link from "next/link.js";
 
 function ProductDetails() {
     const [productData, setProductData] = useState(null);
@@ -85,79 +84,78 @@ function ProductDetails() {
                     </div>
                 </div>
             </div>
-            <div className='lg:col-span-2 lg:row-span-2 lg:row-end-2'>
-                <h1 className='text-2xl font-bold text-[#7874F2] bg-background-title bg-no-repeat sm:text-3xl'>
-                    {productData.title}
-                </h1>
-                <div className='mt-5 items-center  pl-4 flex justify-between'>
-                    <span className='flex flex-col gap-5'>
-                        <p className='text-1xl text-[#585785]'>
-                            <span className='font-bold'>Category: </span>
-                            {productData.category}
-                        </p>
-                        <p className='text-1xl text-[#585785]'>
-                            <span className='font-bold bg-orange-500 p-2 rounded-md text-white'>
-                                For {productData.type}
-                            </span>
-                            {/* {data?.location} */}
-                        </p>
-                    </span>
-                    <span className='flex flex-col gap-5'>
-                        <p className='text-1xl text-[#585785]'>
+            <div className=' grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 text-[#585785]'>
+                {/* Product Details */}
+                <div className='col-span-4 md:col-span-2'>
+                    <h1 className='text-3xl font-bold text-[#7874F2] mb-4'>
+                        {productData.title}
+                    </h1>
+
+                    <div className='flex mb-2'>
+                        <p className='mr-20'>
                             <span className='font-bold'>Condition: </span>
                             {productData.condition}
                         </p>
-                        <p className='text-1xl text-[#585785]'>
-                            <span className='font-bold'>
-                                {" "}
-                                <button className='bg-[#585785] shadow-lg text-white px-2 rounded-lg'>
-                                    Add to favorites
-                                </button>
-                            </span>
-                        </p>
-                    </span>
-                </div>
-                <span className='flex justify-between mx-4 mt-8'>
-                    <h2 className=' text-[#585785] text-2xl'>Details:</h2>
-                </span>
-                <br />
-                <hr className='border-2 ml-4 bg-[#7874F2]' />
-                <div className='flex flex-col text-[#585785] items-center justify-between space-y-4 py-4 sm:flex-row sm:space-y-0'></div>
-                <div className=' text-[#585785] text-1xl pl-4 h-8 overflow-y-scroll'>
-                    <p>{productData.description}</p>
-                </div>
-                <div className='mt-10 mb-6 flex select-none mx-auto items-center gap-1 sm:ml-28 lg:ml-0'>
-                    {/* User Info */}
 
-                    <div className='flex flex-row bg-[#585785] w-auto h-20 lg:w-96 lg:h-36 md:w-auto md:h-36 rounded-l-full  border-r-4 border-dashed'>
-                        <div className='m-auto ml-2'>
-                            <Image
-                                src={userData.photo}
-                                width={100}
-                                height={100}
-                                alt='profile'
-                                className='w-16 h-16 lg:w-32 lg:h-28 md:w-32 md:h-28 rounded-full'
-                            />
-                        </div>
-                        <div className='m-auto lg:m-auto text-white text-[14px] lg:text-lg md:text-lg'>
-                            <h1 className='font-semibold '>
+                        <p className=''>
+                            <span className='font-bold'>Category: </span>
+                            {productData.category}
+                        </p>
+                    </div>
+                    <div className='flex mb-2'>
+                        <p className='bg-orange-500 py-1 px-2 rounded font-bold text-white mr-20'>
+                            For {productData.type}
+                        </p>
+                        <button className='bg-[#7874F2] py-1 px-2 rounded font-bold text-white ml-12'>
+                            Add to Favorites
+                        </button>
+                    </div>
+                </div>
+
+                <div className='col-span-4 row-span-1 '>
+                    <h1 className='text-xl font-bold'>Details:</h1>
+                    <hr />
+                    <div className='overflow-y-scroll max-h-[100px]'>
+                        {productData.description}
+                    </div>
+                </div>
+
+                {/* User Info */}
+
+                <div className='inline-flex ml-8'>
+                    <div className='flex flex-row items-center bg-[#585785] ml-16  w-64 h-16 lg:w-80 lg:h-24 md:w-80 md:h-24 rounded-l-full border-r-4 border-dashed'>
+                        <Image
+                            alt='profile'
+                            width='80'
+                            height='80'
+                            className='w-8 h-8 lg:w-16 lg:h-16 md:w-16 md:h-16 rounded-full sm:w-4'
+                            src={userData.photo}
+                        />
+
+                        <div className='m-auto text-left ml-4 text-white text-sm lg:text-base md:text-base'>
+                            <h1 className='font-semibold text-xs lg:text-sm'>
                                 {userData.name} {userData.surname}
                             </h1>
-                            <h2 className='w-[20vh] '>{userData.email}</h2>
+                            <h2 className='w-[37vh] overflow-hidden'>
+                                <span className='font-bold'></span>{" "}
+                                <span className='truncate'>
+                                    {userData.email}
+                                </span>
+                            </h2>
                             <h2>
-                                {productData.location.city},{" "}
+                                <span className='font-bold'></span>
+                                {productData.location.city},
                                 {productData.location.country}
                             </h2>
                         </div>
                     </div>
 
-                    <div className='grid justify-items-center bg-orange-500 w-20 h-20 lg:w-36 lg:h-36 md:w-36 md:h-36'>
-                        <h1 className=' text-white font-semibold text-[14px] lg:text-3xl md:text-3xl m-auto'>
+                    <div className='bg-orange-500  grid justify-items-center w-16 h-16 lg:w-24 lg:h-24 md:w-24 md:h-24'>
+                        <h1 className='text-white font-semibold text-xs lg:text-xl md:text-base m-auto'>
                             {productData.price}
-                            <span>$</span>
+                            {"$"}
                         </h1>
                     </div>
-                    <div className='grid justify-items-center bg-transparent w-20 h-20 lg:w-36 lg:h-36 md:w-36 md:h-36'></div>
                 </div>
             </div>
         </div>
