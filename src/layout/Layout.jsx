@@ -1,6 +1,5 @@
-import * as React from "react";
-
-import Navbar from "../components/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/NavBar/NavBar";
 
 export default function Layout({ children }) {
     // Put Header or Footer around the children element
@@ -9,7 +8,7 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             {children}
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
