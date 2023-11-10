@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import Image from "next/image";
-
 import Language from "../Language/Language";
-import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import UnderBar from "../UnderBar/UnderBar";
@@ -28,10 +25,7 @@ export default function Navbar() {
     };
 
     return (
-        <header
-            className=' fixed top-0 left-0 z-10 right-0
-    '
-        >
+        <header className=' fixed top-0 left-0 z-10 right-0 '>
             <nav className='bg-slate-200  shadow-md p-4'>
                 {/* Large screens and tablets */}
                 <div className='hidden md:flex justify-between md:items-center'>
