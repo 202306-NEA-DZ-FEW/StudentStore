@@ -74,7 +74,7 @@ function TestimonialsSection() {
 
                     return (
                         <article
-                            className={`${position} absolute h-auto w-full py-3 rounded-lg bg-white`}
+                            className={`${position} absolute h-auto w-full py-3 rounded-lg bg-white transition duration-200 `}
                             key={id}
                         >
                             <Image
@@ -88,7 +88,7 @@ function TestimonialsSection() {
                             <h4 className='uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]'>
                                 {name}
                             </h4>
-                            <p className='max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto  leading-loose'>
+                            <p className='max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose'>
                                 {quote}
                             </p>
                             <div className='flex justify-center text-[#7874F2]'>
