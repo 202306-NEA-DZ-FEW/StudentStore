@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className=" "
-          href="/"
+          href="https://play.google.com/store/games?gl=FR"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -64,7 +64,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className=""
-          href="/"
+          href="https://www.apple.com/app-store/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -96,40 +96,39 @@ exports[`renders correctly 1`] = `
         >
           <li>
             <a
-              className="hover:underline hover:text-orange"
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/AboutUs/AboutUs"
               onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              About us
+               About Us 
             </a>
           </li>
           <li>
-                
-            <h2
-              className=""
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              Our Team
-            </h2>
-             
+               Our Team 
+            </a>
           </li>
           <li>
-                
-            <h2
-              className=""
-            >
+            <h2>
               Contact Us:
             </h2>
-             
           </li>
           <li>
             <ul
               className="text-gray-600 space-y-1 dark:text-gray-400 font-medium"
             >
               <li>
-                 
                 <div
                   className=" flex space-x-2"
                 >
-                    
                   <svg
                     fill="currentColor"
                     height={25}
@@ -148,18 +147,20 @@ exports[`renders correctly 1`] = `
                       d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-16.39 307.37l-15 65A15 15 0 0 1 354 416C194 416 64 286.29 64 126a15.7 15.7 0 0 1 11.63-14.61l65-15A18.23 18.23 0 0 1 144 96a16.27 16.27 0 0 1 13.79 9.09l30 70A17.9 17.9 0 0 1 189 181a17 17 0 0 1-5.5 11.61l-37.89 31a231.91 231.91 0 0 0 110.78 110.78l31-37.89A17 17 0 0 1 299 291a17.85 17.85 0 0 1 5.91 1.21l70 30A16.25 16.25 0 0 1 384 336a17.41 17.41 0 0 1-.39 3.37z"
                     />
                   </svg>
-                   
-                  <p>
-                     +213 123 456 789
-                  </p>
-                   
+                  <a
+                    href="tel:+2130699514862"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    +213 699 514 862
+                  </a>
                 </div>
               </li>
               <li>
                 <div
                   className="flex space-x-2"
                 >
-                   
                   <svg
                     fill="currentColor"
                     height={25}
@@ -178,11 +179,14 @@ exports[`renders correctly 1`] = `
                       d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
                     />
                   </svg>
-                   
-                  <p>
+                  <a
+                    href="mailto:adresse@email.com"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onTouchStart={[Function]}
+                  >
                      Contact@studentstore.com
-                  </p>
-                      
+                  </a>
                 </div>
               </li>
             </ul>
@@ -195,13 +199,14 @@ exports[`renders correctly 1`] = `
         <ul
           className="  space-y-4 text-white font-bold text-xl"
         >
-          <li
-            className="hover:underline hover:text-orange"
-          >
-            <div
-              className="flex space-x-2"
+          <li>
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/Listings"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-               
               <svg
                 fill="currentColor"
                 height={20}
@@ -209,8 +214,7 @@ exports[`renders correctly 1`] = `
                 strokeWidth="0"
                 style={
                   Object {
-                    "alignSelf": "center",
-                    "color": "#FFFFFF",
+                    "color": undefined,
                   }
                 }
                 viewBox="0 0 448 512"
@@ -221,19 +225,18 @@ exports[`renders correctly 1`] = `
                   d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"
                 />
               </svg>
-                
-              <a
-                className=""
-                onClick={[Function]}
-              >
-                Start selling
-              </a>
-                 
-            </div>
+              <p>
+                    Start selling
+              </p>
+            </a>
           </li>
           <li>
-            <div
-              className="flex space-x-2"
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/AllProducts/AllProducts"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
               <svg
                 fill="currentColor"
@@ -242,8 +245,7 @@ exports[`renders correctly 1`] = `
                 strokeWidth="0"
                 style={
                   Object {
-                    "alignSelf": "center",
-                    "color": "#FFFFFF",
+                    "color": undefined,
                   }
                 }
                 viewBox="0 0 512 512"
@@ -254,13 +256,10 @@ exports[`renders correctly 1`] = `
                   d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
                 />
               </svg>
-              <a
-                className="hover:underline hover:text-orange"
-                onClick={[Function]}
-              >
+              <p>
                 Buy products
-              </a>
-            </div>
+              </p>
+            </a>
           </li>
         </ul>
         <div
@@ -268,15 +267,19 @@ exports[`renders correctly 1`] = `
         >
           <a
             href="https://web.facebook.com/recodedofficial"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
+              className=" text-white hover:text-[#1877f2]                      "
               fill="currentColor"
               height={30}
               stroke="currentColor"
               strokeWidth="0"
               style={
                 Object {
-                  "color": "#FFFFFF",
+                  "color": undefined,
                 }
               }
               viewBox="0 0 512 512"
@@ -290,15 +293,19 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.linkedin.com/school/re-coded/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
+              className=" text-white hover:text-[#0a66c2] "
               fill="currentColor"
               height={30}
               stroke="currentColor"
               strokeWidth="0"
               style={
                 Object {
-                  "color": "#FFFFFF",
+                  "color": undefined,
                 }
               }
               viewBox="0 0 448 512"
@@ -312,15 +319,19 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.instagram.com/recodedofficial/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
+              className=" text-white hover:text-[#c32aa3]                      "
               fill="currentColor"
               height={30}
               stroke="currentColor"
               strokeWidth="0"
               style={
                 Object {
-                  "color": "#FFFFFF",
+                  "color": undefined,
                 }
               }
               viewBox="0 0 448 512"
@@ -332,7 +343,6 @@ exports[`renders correctly 1`] = `
               />
             </svg>
           </a>
-           
         </div>
       </div>
     </div>
@@ -376,6 +386,9 @@ exports[`renders correctly 1`] = `
           <a
             className="items-center"
             href="https://web.facebook.com/recodedofficial"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               className="items-center"
@@ -399,6 +412,9 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.linkedin.com/school/re-coded/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               fill="currentColor"
@@ -421,6 +437,9 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.instagram.com/recodedofficial/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               fill="currentColor"
@@ -444,47 +463,48 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="flex justify-around p-2"
+        className="flex items-center justify-around p-2"
       >
         <ul
           className="space-y-3 text-white font-bold text-lg"
         >
           <li>
             <a
-              className="hover:underline hover:text-orange"
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/AboutUs/AboutUs"
               onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              About us
+               About Us 
             </a>
           </li>
           <li>
-                
-            <h2
-              className=""
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              Our Team
-            </h2>
-             
+               Our Team 
+            </a>
           </li>
         </ul>
         <ul
-          className="text-gray-600 space-y-1 dark:text-gray-400 font-bold"
+          className="text-gray-600 space-y-2 dark:text-gray-400 font-bold"
         >
           <li>
-                
             <h2
               className=" text-white font-bold text-lg"
             >
               Contact Us:
             </h2>
-             
           </li>
           <li>
-             
             <div
               className=" flex space-x-2"
             >
-                
               <svg
                 fill="currentColor"
                 height={25}
@@ -503,18 +523,15 @@ exports[`renders correctly 1`] = `
                   d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-16.39 307.37l-15 65A15 15 0 0 1 354 416C194 416 64 286.29 64 126a15.7 15.7 0 0 1 11.63-14.61l65-15A18.23 18.23 0 0 1 144 96a16.27 16.27 0 0 1 13.79 9.09l30 70A17.9 17.9 0 0 1 189 181a17 17 0 0 1-5.5 11.61l-37.89 31a231.91 231.91 0 0 0 110.78 110.78l31-37.89A17 17 0 0 1 299 291a17.85 17.85 0 0 1 5.91 1.21l70 30A16.25 16.25 0 0 1 384 336a17.41 17.41 0 0 1-.39 3.37z"
                 />
               </svg>
-               
               <p>
                  +213 123 456 789
               </p>
-               
             </div>
           </li>
           <li>
             <div
               className="flex space-x-2"
             >
-               
               <svg
                 fill="currentColor"
                 height={25}
@@ -533,11 +550,9 @@ exports[`renders correctly 1`] = `
                   d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
                 />
               </svg>
-               
               <p>
                  Contact@studentstore.com
               </p>
-                  
             </div>
           </li>
         </ul>
@@ -550,10 +565,13 @@ exports[`renders correctly 1`] = `
             <li
               className="hover:underline hover:text-orange"
             >
-              <div
-                className="flex space-x-2"
+              <a
+                className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+                href="/Listings"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
-                 
                 <svg
                   fill="currentColor"
                   height={20}
@@ -561,8 +579,7 @@ exports[`renders correctly 1`] = `
                   strokeWidth="0"
                   style={
                     Object {
-                      "alignSelf": "center",
-                      "color": "#FFFFFF",
+                      "color": undefined,
                     }
                   }
                   viewBox="0 0 448 512"
@@ -573,19 +590,18 @@ exports[`renders correctly 1`] = `
                     d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"
                   />
                 </svg>
-                  
-                <a
-                  className=""
-                  onClick={[Function]}
-                >
-                  Start selling
-                </a>
-                   
-              </div>
+                <p>
+                      Start selling
+                </p>
+              </a>
             </li>
             <li>
-              <div
-                className="flex space-x-2"
+              <a
+                className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+                href="/AllProducts/AllProducts"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 <svg
                   fill="currentColor"
@@ -594,8 +610,7 @@ exports[`renders correctly 1`] = `
                   strokeWidth="0"
                   style={
                     Object {
-                      "alignSelf": "center",
-                      "color": "#FFFFFF",
+                      "color": undefined,
                     }
                   }
                   viewBox="0 0 512 512"
@@ -606,13 +621,10 @@ exports[`renders correctly 1`] = `
                     d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
                   />
                 </svg>
-                <a
-                  className="hover:underline hover:text-orange"
-                  onClick={[Function]}
-                >
-                  Buy products
-                </a>
-              </div>
+                <p>
+                  Buy products 
+                </p>
+              </a>
             </li>
           </ul>
         </div>
@@ -622,7 +634,7 @@ exports[`renders correctly 1`] = `
       >
         <a
           className=" "
-          href="/"
+          href="https://play.google.com/store/games?gl=FR"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -647,7 +659,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className=""
-          href="/"
+          href="https://www.apple.com/app-store/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -715,41 +727,41 @@ exports[`renders correctly 1`] = `
         >
           <li>
             <a
-              className="hover:underline hover:text-orange"
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/AboutUs/AboutUs"
               onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              About us
+               About Us 
             </a>
           </li>
           <li>
-                
-            <h2
-              className=""
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-              Our Team
-            </h2>
-             
+               Our Team 
+            </a>
           </li>
           <li>
-              
             <ul
               className="text-gray-600 space-y-1 dark:text-gray-400 font-bold"
             >
               <li>
-                    
                 <h2
                   className=" text-white font-bold text-lg"
                 >
                   Contact Us:
                 </h2>
-                 
               </li>
               <li>
-                 
                 <div
                   className=" flex space-x-2"
                 >
-                    
                   <svg
                     fill="currentColor"
                     height={25}
@@ -768,18 +780,15 @@ exports[`renders correctly 1`] = `
                       d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-16.39 307.37l-15 65A15 15 0 0 1 354 416C194 416 64 286.29 64 126a15.7 15.7 0 0 1 11.63-14.61l65-15A18.23 18.23 0 0 1 144 96a16.27 16.27 0 0 1 13.79 9.09l30 70A17.9 17.9 0 0 1 189 181a17 17 0 0 1-5.5 11.61l-37.89 31a231.91 231.91 0 0 0 110.78 110.78l31-37.89A17 17 0 0 1 299 291a17.85 17.85 0 0 1 5.91 1.21l70 30A16.25 16.25 0 0 1 384 336a17.41 17.41 0 0 1-.39 3.37z"
                     />
                   </svg>
-                   
                   <p>
                      +213 123 456 789
                   </p>
-                   
                 </div>
               </li>
               <li>
                 <div
                   className="flex space-x-2"
                 >
-                   
                   <svg
                     fill="currentColor"
                     height={25}
@@ -798,15 +807,12 @@ exports[`renders correctly 1`] = `
                       d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
                     />
                   </svg>
-                   
                   <p>
                      Contact@studentstore.com
                   </p>
-                      
                 </div>
               </li>
             </ul>
-             
           </li>
         </ul>
         <div
@@ -818,9 +824,12 @@ exports[`renders correctly 1`] = `
           <a
             className="items-center"
             href="https://web.facebook.com/recodedofficial"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
-              className="items-center"
+              className="items-center "
               fill="currentColor"
               height={40}
               stroke="currentColor"
@@ -841,6 +850,9 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.linkedin.com/school/re-coded/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               fill="currentColor"
@@ -863,6 +875,9 @@ exports[`renders correctly 1`] = `
           </a>
           <a
             href="https://www.instagram.com/recodedofficial/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               fill="currentColor"
@@ -888,17 +903,19 @@ exports[`renders correctly 1`] = `
       <li
         className="flex justify-center"
       >
-          
         <ul
           className=" space-y-4 text-white font-bold text-xl"
         >
           <li
             className="hover:underline hover:text-orange"
           >
-            <div
-              className="flex  space-x-2"
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/Listings"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-               
               <svg
                 fill="currentColor"
                 height={20}
@@ -906,8 +923,7 @@ exports[`renders correctly 1`] = `
                 strokeWidth="0"
                 style={
                   Object {
-                    "alignSelf": "center",
-                    "color": "#FFFFFF",
+                    "color": undefined,
                   }
                 }
                 viewBox="0 0 448 512"
@@ -918,19 +934,18 @@ exports[`renders correctly 1`] = `
                   d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"
                 />
               </svg>
-                
-              <a
-                className=""
-                onClick={[Function]}
-              >
-                Start selling
-              </a>
-                 
-            </div>
+              <p>
+                    Start selling
+              </p>
+            </a>
           </li>
           <li>
-            <div
-              className="flex space-x-2"
+            <a
+              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              href="/AllProducts/AllProducts"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
               <svg
                 fill="currentColor"
@@ -939,8 +954,7 @@ exports[`renders correctly 1`] = `
                 strokeWidth="0"
                 style={
                   Object {
-                    "alignSelf": "center",
-                    "color": "#FFFFFF",
+                    "color": undefined,
                   }
                 }
                 viewBox="0 0 512 512"
@@ -951,13 +965,10 @@ exports[`renders correctly 1`] = `
                   d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
                 />
               </svg>
-              <a
-                className="hover:underline hover:text-orange"
-                onClick={[Function]}
-              >
-                Buy products
-              </a>
-            </div>
+              <p>
+                Buy products 
+              </p>
+            </a>
           </li>
         </ul>
       </li>
@@ -966,7 +977,7 @@ exports[`renders correctly 1`] = `
       >
         <a
           className=" "
-          href="/"
+          href="https://play.google.com/store/games?gl=FR"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -991,7 +1002,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className=""
-          href="/"
+          href="https://www.apple.com/app-store/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -1018,11 +1029,49 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="flex justify-center p-2 font-semibold bg-black text-white  text-sm "
+    className="flex justify-center p-2 font-semibold bg-[#32314C] text-white  text-sm "
   >
     <p>
-      © 2023 Team 10, Recoded Front-End Bootcamp. All rights reserved.
+       © 2023 Team 10, Recoded Front-End Bootcamp. All rights reserved.  
     </p>
+  </div>
+  <div
+    className="relative "
+  >
+    <button
+      className="absolute scroll-arrow animate-bounce bottom-4 right-4 "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "none",
+          "border": "none",
+          "color": "white",
+          "cursor": "pointer",
+          "display": "inline-block",
+          "margin": "8px",
+          "zIndex": 999,
+        }
+      }
+    >
+      <svg
+        fill="currentColor"
+        height={48}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 512 512"
+        width={48}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"
+        />
+      </svg>
+    </button>
   </div>
 </footer>
 `;
