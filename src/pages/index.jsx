@@ -11,6 +11,7 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 
 import Layout from "@/layout/Layout";
 import { db } from "@/util/firebase";
+import ProductDetails from "@/components/ProductDetails/ProductDetails";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -33,7 +34,7 @@ export default function HomePage() {
                 </Link>
             </div>
             <Language />
-
+            <ProductDetails />
             <SearchBar />
             <ProductCard />
             <Link href='/Listings'>go to listings</Link>

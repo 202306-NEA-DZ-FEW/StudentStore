@@ -28,13 +28,13 @@ function Footer({ t }) {
 
         const footer = document.querySelector("footer");
         const scrollArrow = document.querySelector(".scroll-arrow");
+
         if (footer && scrollArrow) {
             const footerRect = footer.getBoundingClientRect();
             const scrollArrowRect = scrollArrow.getBoundingClientRect();
-            setIsInsideFooter(
-                scrollArrowRect.top >= footerRect.top &&
-                    scrollArrowRect.bottom <= footerRect.bottom
-            );
+
+            // Check if the top of the arrow is still within the footer
+            setIsInsideFooter(scrollArrowRect.top < footerRect.bottom);
         }
     };
 
@@ -46,7 +46,15 @@ function Footer({ t }) {
         };
     }, []);
 
-    const arrowColor = isInsideFooter ? "white" : "#585785";
+    const arrowStyle = {
+        display: isInsideFooter ? "inline-block" : "none",
+        background: "none",
+        border: "none",
+        cursor: "pointer",
+        zIndex: 999,
+        margin: "8px",
+        color: isInsideFooter ? "white" : "transparent",
+    };
 
     const navigateToPage = (path) => {
         router.push(path);
@@ -139,18 +147,10 @@ function Footer({ t }) {
                 <div className='fixed bottom-4 right-4'>
                     <button
                         onClick={goToTop}
-                        style={{
-                            display: "inline-block",
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                            zIndex: 999,
-                            margin: "8px",
-                            color: arrowColor,
-                        }}
+                        style={arrowStyle}
                         className='scroll-arrow'
                     >
-                        <IoIosArrowUp size={48} color={arrowColor} />
+                        <IoIosArrowUp size={48} />
                     </button>
                 </div>
             )}
