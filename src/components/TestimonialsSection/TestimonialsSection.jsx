@@ -56,7 +56,7 @@ function TestimonialsSection() {
     }, [index]);
 
     return (
-        <section className='py-6 mx-auto'>
+        <section className='py-4 sm:py-0'>
             <div className='mx-auto mt-0 w-[80vw] lg:w-[65vw] h-[350px] lg:[300px]max-w-[800px] text-center relative flex items-center overflow-hidden'>
                 {people.map((person, personIndex) => {
                     const { id, image, name, quote } = person;
