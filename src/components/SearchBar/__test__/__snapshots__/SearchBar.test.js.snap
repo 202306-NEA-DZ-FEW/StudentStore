@@ -8,7 +8,7 @@ exports[`renders correctly 1`] = `
     className="input-wrapper"
   >
     <input
-      className="w-full border border-gray-300 rounded-full py-2 px-4 pl-8 focus:outline-none"
+      className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
       onChange={[Function]}
       placeholder="Search here..."
       type="text"
