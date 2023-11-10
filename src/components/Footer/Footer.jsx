@@ -1,8 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { withTranslation } from "next-i18next";
-import React, { useEffect, useState } from "react";
 import {
     FaFacebook,
     FaInstagram,
@@ -15,20 +12,11 @@ import {
 import { IoIosArrowUp } from "react-icons/io";
 
 function Footer() {
-    const router = useRouter();
-
-    const [showArrow, setShowArrow] = useState(false);
-    const [isInsideFooter, setIsInsideFooter] = useState(true);
-
     const goToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-    };
-
-    const navigateToPage = (path) => {
-        router.push(path);
     };
 
     return (
@@ -456,4 +444,4 @@ function Footer() {
         </footer>
     );
 }
-export default withTranslation("common")(Footer);
+export default Footer;
