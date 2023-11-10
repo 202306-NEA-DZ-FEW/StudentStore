@@ -2,12 +2,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
+import Image from "next/image";
 
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import UnderBar from "../UnderBar/UnderBar";
+import SidebarNB from "../SideBarNB/SideBarNB";
 
 export default function Navbar() {
     const [menuIcon, setIcon] = useState(false);
@@ -15,119 +17,121 @@ export default function Navbar() {
     const handleSmallerScreenNavigation = () => {
         setIcon(!menuIcon);
     };
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const openSidebar = () => {
+        setIsSidebarOpen(true);
+    };
+
+    const closeSidebar = () => {
+        setIsSidebarOpen(false);
+    };
 
     return (
-        <header className='bg-slate-300 text-black w-full ease-in duration-300 fixed top-0 left-0 z-10'>
-            <nav className=' mx-full h-[100px] flex justify-between items-center p-4'>
-                <div className='navbar w-[0%] '>
-                    <Link href='/' onClick={handleSmallerScreenNavigation}>
-                        <Logo />
-                    </Link>
-                </div>
-                {/* Larger screens navigation */}
-                <ul className='hidden md:flex font-semibold text-1xl lg:text-[20px] text-indigo-800 '>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/'> Home </Link>
-                    </li>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/Donation'>Donations</Link>
-                    </li>
-                    <li className='mt-3 mr-4 lg:mr-8 hover:text-white  hover:bg-orange-300  rounded-full px-8 py-2'>
-                        <Link href='/About'>About Us</Link>
-                    </li>
+        <header
+            className=' fixed top-0 left-0 z-10 right-0
+    '
+        >
+            <nav className='bg-slate-200  shadow-md p-4'>
+                {/* Large screens and tablets */}
+                <div className='hidden md:flex justify-between md:items-center'>
+                    <div className='flex space-x-4  items-center'>
+                        <Image
+                            src='/logo.png'
+                            width={45}
+                            height={45}
+                            alt='Picture of the author'
+                        />
+                        <Link
+                            className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
+                            href='/'
+                        >
+                            {" "}
+                            Home{" "}
+                        </Link>
+                        <Link
+                            className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
+                            href='/'
+                        >
+                            {" "}
+                            Products{" "}
+                        </Link>
 
-                    <div className='mt-4 mr-4  '>
+                        <Link
+                            className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
+                            href='/'
+                        >
+                            {" "}
+                            Donation
+                        </Link>
+
+                        <Link
+                            className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
+                            href='/'
+                        >
+                            About us
+                        </Link>
+                    </div>
+                    <div className=' md:ml-8 md:w-[70vh] lg:w-[80vh]'>
                         <SearchBar />
                     </div>
-                    <li className='mt-4 mr-4 lg:mr-8 hover:text-white '>
+                    <div className='flex items-center space-x-4'>
+                        {/* Cart, Language, Profile icons */}
                         <Language />
-                    </li>
-                    <li className='mt-4 mr-4 lg:mr-8 hover:text-white'>
-                        <ProfileDropdown />
-                    </li>
-                    <li>
-                        <button className='mt-4 text-3xl text-[#FF8A57] hover:text-orange-500'>
+                        <button className=' text-3xl text-[#FF8A57] hover:text-orange-500'>
                             <FaShoppingCart />
                         </button>
-                    </li>
-                </ul>
 
-                {/* <UnderBar /> */}
-
-                {/* smaller screens -navigation icons  */}
-                {/* onClick change icon  */}
-
-                <div
-                    onClick={handleSmallerScreenNavigation}
-                    className='flex md:hidden'
-                >
-                    {menuIcon ? (
-                        <AiOutlineClose size={25} />
-                    ) : (
-                        <AiOutlineMenu size={25} />
-                    )}
-                </div>
-
-                {/* smaller screens - Navbar  */}
-                <div
-                    className={
-                        menuIcon
-                            ? "md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex text-center justify-center items-center w-full h-screen bg-indigo-950 text-white ease-in duration-300 "
-                            : "md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-sceen bg-indigo-950 text-white "
-                    }
-                >
-                    {/* smaller screens Navbar links  */}
-                    <div className='w-full '>
-                        <ul className='font-medium text-sm '>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <SearchBar />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='/'>Home</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='#'>Donations</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Link href='#'>About Us</Link>
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <ProfileDropdown />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <Language />
-                            </li>
-                            <li
-                                onClick={handleSmallerScreenNavigation}
-                                className='py-2 cursor-pointer'
-                            >
-                                <UnderBar />
-                            </li>
-                        </ul>
-                        {/* <div className='flex flex-col justify-center items-center mt-16'>
-
-       </div> */}
+                        <ProfileDropdown />
                     </div>
                 </div>
+
+                {/* Mobile */}
+                <div className='md:hidden flex justify-between   items-center'>
+                    <div className=''>
+                        {" "}
+                        <button
+                            type='button'
+                            className='block text-[#585785]   font-semibold  hover:text-[#FF8A57] p-2 text-3xl'
+                            onClick={openSidebar}
+                        >
+                            &#9776;
+                        </button>{" "}
+                    </div>
+
+                    <div className='flex items-center'>
+                        {" "}
+                        <Image
+                            src='/logo.png'
+                            width={40}
+                            height={40}
+                            alt='Picture of the author'
+                        />{" "}
+                    </div>
+
+                    <div className='flex items-center space-x-4'>
+                        <Language />
+
+                        <button className=' text-3xl text-[#FF8A57] hover:text-orange-500'>
+                            <FaShoppingCart />
+                        </button>
+
+                        <ProfileDropdown />
+                    </div>
+                </div>
+
+                {/* Search bar component for mobile */}
+                <div className='md:hidden'>
+                    <SearchBar />
+                </div>
             </nav>
+            {isSidebarOpen && (
+                <SidebarNB isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+            )}
+            <div className='hidden md:block'>
+                {" "}
+                <UnderBar> </UnderBar>
+            </div>
         </header>
     );
 }

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { withTranslation } from "next-i18next";
-import React, { useEffect, useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
+    FaPhoneSquareAlt,
+    FaWallet,
+    FaEnvelope,
+    FaRegPlusSquare,
+} from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Footer({ t }) {
-    const router = useRouter();
-
-    const [showArrow, setShowArrow] = useState(false);
-    const [isInsideFooter, setIsInsideFooter] = useState(true);
-
+function Footer() {
     const goToTop = () => {
         window.scrollTo({
             top: 0,
@@ -19,143 +19,429 @@ function Footer({ t }) {
         });
     };
 
-    const handleScroll = () => {
-        if (window.scrollY > 200) {
-            setShowArrow(true);
-        } else {
-            setShowArrow(false);
-        }
-
-        const footer = document.querySelector("footer");
-        const scrollArrow = document.querySelector(".scroll-arrow");
-        if (footer && scrollArrow) {
-            const footerRect = footer.getBoundingClientRect();
-            const scrollArrowRect = scrollArrow.getBoundingClientRect();
-            setIsInsideFooter(
-                scrollArrowRect.top >= footerRect.top &&
-                    scrollArrowRect.bottom <= footerRect.bottom
-            );
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const arrowColor = isInsideFooter ? "white" : "#585785";
-
-    const navigateToPage = (path) => {
-        router.push(path);
-    };
-
     return (
-        <footer className='dir-rtl'>
-            <div className='relative lg:flex lg:justify-evenly bg-[#32314C] w-full h-full break-all mt-auto pb-32'>
-                <div className='ml-5 pt-5 rtl:mr-[180px] rtl:sm:mr-[550px] rtl:lg:mr-[0px]'>
-                    <Link href='/'>
-                        <Image
-                            src='/images/logo-footer.svg'
-                            width={400}
-                            height={300}
-                            alt='logo'
-                        />
-                    </Link>
-                </div>
+        <footer className=''>
+            <div className=' hidden lg:block larger-screen'>
+                <div className='flex justify-evenly  bg-[#32314C] w-full h-full break-all mt-auto '>
+                    <div className=' flex p-4  flex-col       items-center justify-center  space-y-4'>
+                        <Link className='' href='/'>
+                            <Image
+                                src='/images/logo-footer.svg'
+                                width={200}
+                                height={100}
+                                alt='logo'
+                            />
+                        </Link>
+                        <Link
+                            href='https://play.google.com/store/games?gl=FR'
+                            className=' '
+                        >
+                            <Image
+                                src='/google_play.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                        <Link
+                            className=''
+                            href='https://www.apple.com/app-store/'
+                        >
+                            <Image
+                                src='/app_store.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
+                    <div className=' mt-4 p-6'>
+                        <ul className='space-y-3  text-white font-bold text-lg'>
+                            <li>
+                                <Link
+                                    href='/AboutUs/AboutUs'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    About Us{" "}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href='/'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    Our Team{" "}
+                                </Link>
+                            </li>
+                            <li>
+                                <h2>Contact Us:</h2>
+                            </li>
+                            <li>
+                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-medium'>
+                                    <li>
+                                        <div className=' flex space-x-2'>
+                                            <FaPhoneSquareAlt
+                                                size={25}
+                                                style={{ color: "#FFFFFF" }}
+                                            />
+                                            <Link href='tel:+2130699514862'>
+                                                +213 699 514 862
+                                            </Link>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className='flex space-x-2'>
+                                            <FaEnvelope
+                                                size={25}
+                                                style={{ color: "#FFFFFF" }}
+                                            />
+                                            <Link href='mailto:adresse@email.com'>
+                                                {" "}
+                                                Contact@studentstore.com
+                                            </Link>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='flex space-y-8 flex-col items-center justify-center'>
+                        <ul className='  space-y-4 text-white font-bold text-xl'>
+                            <li>
+                                <Link
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    href={"/Listings"}
+                                >
+                                    <FaRegPlusSquare size={20} />
+                                    <p> Start selling</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href={"/AllProducts/AllProducts"}
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    <FaWallet size={20} />
+                                    <p>Buy products</p>
+                                </Link>
+                            </li>
+                        </ul>
 
-                <div className='pl-14 pt-5 md:pt-14 rtl:w-96 rtl:mr-[150px] rtl:sm:mr-[400px] rtl:lg:mr-[0px]'>
-                    <ul className='font-poppins text-white font-bold text-2xl'>
-                        <li>
-                            <a
-                                className='hover:underline hover:text-orange'
-                                onClick={() =>
-                                    navigateToPage("/AboutUs/AboutUs")
-                                }
-                            >
-                                {t("About us")}
-                            </a>
-                        </li>
-                        <li>
-                            <h2 className='pt-4'>{t("Contact-us")}</h2>
-                            <ul className='text-gray-600 dark:text-gray-400 font-medium'>
-                                <li className='pt-4'> +213 123 456 789</li>
-                                <li className='pt-2'>
-                                    contact@studentstore.com
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className='pl-14 pt-10 md:pt-14 rtl:w-96 rtl:mr-[150px] rtl:sm:mr-[400px] rtl:lg:mr-[0px]'>
-                    <ul className='font-poppins text-white font-bold text-2xl'>
-                        <li className='mb-4'>
-                            <a
-                                className='hover:underline hover:text-orange'
-                                onClick={() => navigateToPage("/Listings")}
-                            >
-                                {t("Start selling")}
-                            </a>
-                        </li>
-                        <li className='mb-4'>
-                            <a
-                                className='hover:underline hover:text-orange'
-                                onClick={() =>
-                                    navigateToPage("/AllProducts/AllProducts")
-                                }
-                            >
-                                {t("Buy products")}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className='absolute md:flex justify-between bottom-64 right-[30px] lg:right-96 lg:top-64'>
-                    <a
-                        href='https://web.facebook.com/recodedofficial'
-                        className='mr-4'
-                    >
-                        <FaFacebook size={64} style={{ color: "#1877f2" }} />
-                    </a>
-                    <a
-                        href='https://www.linkedin.com/school/re-coded/'
-                        className='mr-4'
-                    >
-                        <FaLinkedin size={64} style={{ color: "#0077B5" }} />
-                    </a>
-                    <a
-                        href='https://www.instagram.com/recodedofficial/'
-                        className='mr-4'
-                    >
-                        <FaInstagram size={64} style={{ color: "#bc2a8d" }} />
-                    </a>
+                        <div className='social-media flex space-x-4 '>
+                            <Link href='https://web.facebook.com/recodedofficial'>
+                                <FaFacebook
+                                    className=' text-white hover:text-[#1877f2]                     	'
+                                    size={30}
+                                />
+                            </Link>
+                            <Link href='https://www.linkedin.com/school/re-coded/'>
+                                <FaLinkedin
+                                    className=' text-white hover:text-[#0a66c2]	'
+                                    size={30}
+                                />
+                            </Link>
+                            <Link href='https://www.instagram.com/recodedofficial/'>
+                                <FaInstagram
+                                    className=' text-white hover:text-[#c32aa3]                     	'
+                                    size={30}
+                                />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            {showArrow && (
-                <div className='fixed bottom-4 right-4'>
-                    <button
-                        onClick={goToTop}
-                        style={{
-                            display: "inline-block",
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                            zIndex: 999,
-                            margin: "8px",
-                            color: arrowColor,
-                        }}
-                        className='scroll-arrow'
-                    >
-                        <IoIosArrowUp size={48} color={arrowColor} />
-                    </button>
+            <div className='tablets hidden md:block lg:hidden '>
+                <div className='flex-col   bg-[#32314C] w-full h-full break-all mt-auto '>
+                    <div className=' flex p-4 justify-evenly '>
+                        <Link className='' href='/'>
+                            <Image
+                                src='/images/logo-footer.svg'
+                                width={200}
+                                height={100}
+                                alt='logo'
+                            />
+                        </Link>
+                        <div className='social-media items-center  flex space-x-4 '>
+                            <Link
+                                className='items-center'
+                                href='https://web.facebook.com/recodedofficial'
+                            >
+                                <FaFacebook
+                                    className='items-center'
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                            <Link href='https://www.linkedin.com/school/re-coded/'>
+                                <FaLinkedin
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                            <Link href='https://www.instagram.com/recodedofficial/'>
+                                <FaInstagram
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='flex items-center justify-around p-2'>
+                        <ul className='space-y-3 text-white font-bold text-lg'>
+                            <li>
+                                <Link
+                                    href='/AboutUs/AboutUs'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    About Us{" "}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href='/'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    Our Team{" "}
+                                </Link>
+                            </li>
+                        </ul>
+                        <ul className='text-gray-600 space-y-2 dark:text-gray-400 font-bold'>
+                            <li>
+                                <h2 className=' text-white font-bold text-lg'>
+                                    Contact Us:
+                                </h2>
+                            </li>
+                            <li>
+                                <div className=' flex space-x-2'>
+                                    <FaPhoneSquareAlt
+                                        size={25}
+                                        style={{ color: "#FFFFFF" }}
+                                    />
+                                    <p> +213 123 456 789</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div className='flex space-x-2'>
+                                    <FaEnvelope
+                                        size={25}
+                                        style={{ color: "#FFFFFF" }}
+                                    />
+                                    <p> Contact@studentstore.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div className='flex p-2 space-y-8 flex-col items-center justify-center'>
+                            <ul className='  space-y-4 text-white font-bold text-xl'>
+                                <li className='hover:underline hover:text-orange'>
+                                    <Link
+                                        className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                        href={"/Listings"}
+                                    >
+                                        <FaRegPlusSquare size={20} />
+                                        <p> Start selling</p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href={"/AllProducts/AllProducts"}
+                                        className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    >
+                                        <FaWallet size={20} />
+                                        <p>Buy products </p>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className=' p-4 flex justify-center space-x-8'>
+                        <Link
+                            href='https://play.google.com/store/games?gl=FR'
+                            className=' '
+                        >
+                            <Image
+                                src='/google_play.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                        <Link
+                            className=''
+                            href='https://www.apple.com/app-store/'
+                        >
+                            <Image
+                                src='/app_store.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
                 </div>
-            )}
+            </div>
+            <div className=' mobile block md:hidden '>
+                <div className='flex-col   bg-[#32314C] w-full h-full break-all mt-auto '>
+                    <div className=' flex justify-center p-4 '>
+                        <Link className='' href='/'>
+                            <Image
+                                src='/images/logo-footer.svg'
+                                width={180}
+                                height={75}
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
+                    <div className='flex justify-around p-2'>
+                        <ul className='space-y-3 text-white font-bold text-lg'>
+                            <li>
+                                <Link
+                                    href='/AboutUs/AboutUs'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    About Us{" "}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href='/'
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    {" "}
+                                    Our Team{" "}
+                                </Link>
+                            </li>
+                            <li>
+                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-bold'>
+                                    <li>
+                                        <h2 className=' text-white font-bold text-lg'>
+                                            Contact Us:
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <div className=' flex space-x-2'>
+                                            <FaPhoneSquareAlt
+                                                size={25}
+                                                style={{ color: "#FFFFFF" }}
+                                            />
+                                            <p> +213 123 456 789</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className='flex space-x-2'>
+                                            <FaEnvelope
+                                                size={25}
+                                                style={{ color: "#FFFFFF" }}
+                                            />
+                                            <p> Contact@studentstore.com</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div className='flex p-2 space-y-8 flex-col items-center justify-center'></div>
+                        <div className='social-media items-center flex  flex-col space-y-4 '>
+                            <Link
+                                className='items-center'
+                                href='https://web.facebook.com/recodedofficial'
+                            >
+                                <FaFacebook
+                                    className='items-center '
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                            <Link href='https://www.linkedin.com/school/re-coded/'>
+                                <FaLinkedin
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                            <Link href='https://www.instagram.com/recodedofficial/'>
+                                <FaInstagram
+                                    size={40}
+                                    style={{ color: "#FFFFFF" }}
+                                />
+                            </Link>
+                        </div>
+                    </div>
+                    <li className='flex justify-center'>
+                        <ul className=' space-y-4 text-white font-bold text-xl'>
+                            <li className='hover:underline hover:text-orange'>
+                                <Link
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    href={"/Listings"}
+                                >
+                                    <FaRegPlusSquare size={20} />
+                                    <p> Start selling</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href={"/AllProducts/AllProducts"}
+                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                >
+                                    <FaWallet size={20} />
+                                    <p>Buy products </p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                    <div className=' p-4 flex justify-center space-x-8'>
+                        <Link
+                            href='https://play.google.com/store/games?gl=FR'
+                            className=' '
+                        >
+                            <Image
+                                src='/google_play.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                        <Link
+                            className=''
+                            href='https://www.apple.com/app-store/'
+                        >
+                            <Image
+                                src='/app_store.png'
+                                width={150}
+                                height={150}
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div className='flex justify-center p-2 font-semibold bg-[#32314C] text-white  text-sm '>
+                <p>
+                    {" "}
+                    © 2023 Team 10, Recoded Front-End Bootcamp. All rights
+                    reserved.{" "}
+                </p>
+            </div>
+            <div className='relative '>
+                <button
+                    onClick={goToTop}
+                    style={{
+                        display: "inline-block",
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        zIndex: 999,
+                        margin: "8px",
+                        color: "white",
+                    }}
+                    className='absolute scroll-arrow animate-bounce bottom-4 right-4 '
+                >
+                    <IoIosArrowUp size={48} />
+                </button>
+            </div>
         </footer>
     );
 }
-
-export default withTranslation("common")(Footer);
+export default Footer;
