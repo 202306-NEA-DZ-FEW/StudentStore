@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import Image from "next/image";
-
 import Language from "../Language/Language";
-import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import SearchBar from "../SearchBar/SearchBar";
 import UnderBar from "../UnderBar/UnderBar";
