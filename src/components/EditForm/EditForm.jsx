@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { db } from "@/util/firebase";
-import { doc, updateDoc, getFirestore } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
 
 function EditForm() {
@@ -19,6 +19,10 @@ function EditForm() {
         zip: "",
     });
 
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
+
     const handleChange = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
     };
@@ -28,11 +32,12 @@ function EditForm() {
 
         // Validate the password and confirm password
         if (userData.password !== userData.confirmPassword) {
-            console.error("Password and confirm password do not match");
+            setError("Password and confirm password do not match");
             return;
         }
 
         try {
+            setLoading(true);
             const user = auth.currentUser;
 
             // Update the user's display name and photo URL (if name is provided)
@@ -56,9 +61,11 @@ function EditForm() {
                 zip: userData.zip,
             });
 
-            console.log("User information updated successfully");
+            setSuccess(true);
         } catch (error) {
-            console.error("Error updating user information:", error.message);
+            setError("Error updating user information: " + error.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -183,6 +190,18 @@ function EditForm() {
                         />
                     </div>
                 </div>
+                {/* Loading state */}
+                {loading && <p>Loading...</p>}
+
+                {/* Error state */}
+                {error && <p style={{ color: "red" }}>{error}</p>}
+
+                {/* Success state */}
+                {success && (
+                    <p style={{ color: "green" }}>
+                        User information updated successfully
+                    </p>
+                )}
                 <div className='flex justify-center items-center'>
                     <button className='bg-[#FF8A57] hover:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 px-7 rounded'>
                         Save Changes
