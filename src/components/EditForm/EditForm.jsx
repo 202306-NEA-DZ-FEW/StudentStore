@@ -3,6 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import { db } from "@/util/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
+import Notification from "../Notification/Notification";
 
 function EditForm() {
     const auth = useAuth();
@@ -27,10 +28,14 @@ function EditForm() {
         setUserData({ ...userData, [e.target.name]: e.target.value });
     };
 
+    const handleCloseNotification = () => {
+        setError(null);
+        setSuccess(false);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validate the password and confirm password
         if (userData.password !== userData.confirmPassword) {
             setError("Password and confirm password do not match");
             return;
@@ -40,7 +45,6 @@ function EditForm() {
             setLoading(true);
             const user = auth.currentUser;
 
-            // Update the user's display name and photo URL (if name is provided)
             if (userData.name) {
                 await updateProfile(user, {
                     displayName: userData.name,
@@ -191,17 +195,28 @@ function EditForm() {
                     </div>
                 </div>
                 {/* Loading state */}
-                {loading && <p>Loading...</p>}
+                {loading && (
+                    <div className='loading loading-spinner text-neutral'></div>
+                )}
 
                 {/* Error state */}
-                {error && <p style={{ color: "red" }}>{error}</p>}
+                {error && (
+                    <Notification
+                        type='error'
+                        message={error}
+                        onClose={handleCloseNotification}
+                    />
+                )}
 
                 {/* Success state */}
                 {success && (
-                    <p style={{ color: "green" }}>
-                        User information updated successfully
-                    </p>
+                    <Notification
+                        type='success'
+                        message='Your information has been updated successfully'
+                        onClose={handleCloseNotification}
+                    />
                 )}
+
                 <div className='flex justify-center items-center'>
                     <button className='bg-[#FF8A57] hover:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 px-7 rounded'>
                         Save Changes
