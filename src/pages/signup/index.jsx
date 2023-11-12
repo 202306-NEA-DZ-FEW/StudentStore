@@ -1,8 +1,3 @@
-import Button from "@/components/Buttons/Button";
-import FacebookButton from "@/components/FacebookButton/FacebookButton";
-import GoogleButton from "@/components/GoogleButton/GoogleButton";
-import TwitterButton from "@/components/TwitterButton/TwitterButton";
-import { auth, db } from "@/util/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {
     collection,
@@ -12,15 +7,22 @@ import {
     setDoc,
     where,
 } from "firebase/firestore";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Layout from "@/layout/Layout";
-import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
+import Button from "@/components/Buttons/Button";
+import FacebookButton from "@/components/FacebookButton/FacebookButton";
+import GoogleButton from "@/components/GoogleButton/GoogleButton";
+import TwitterButton from "@/components/TwitterButton/TwitterButton";
+
+import { auth, db } from "@/util/firebase";
 export default function SignUp() {
     const { t } = useTranslation("sign");
     // using useRouter to redirect him to products page
@@ -200,145 +202,143 @@ export default function SignUp() {
         backgroundImage: `linear-gradient(to left, #F1F6FA 35%, rgba(217, 217, 217, 0) 100%), url(/images/signup-bg.jpg)`,
     };
     return (
-        <Layout>
-            <div
-                style={signupbg}
-                className=' min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
-            >
-                {/* container for image to add later */}
-                <div className='lg:w-3/6 lg:py-16 lg:px-24'>
-                    <Image
-                        src='/hands_box.png'
-                        alt='hands box image'
-                        height={500}
-                        width={500}
-                        layout='responsive'
-                        className='hidden lg:block'
-                    />
-                </div>
-                {/* form container */}
-                <div className='py-10 lg:w-3/6 lg:px-10'>
-                    <div className='lg:w-[60%] mx-auto'>
-                        <h1 className='text-[#7874F2] text-[30px] font-bold my-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-5xl'>
-                            {t("sign-up")}
-                        </h1>
-                        <form>
-                            <input
-                                type='text'
-                                placeholder={t("name")}
-                                name='userName'
-                                value={formData.userName}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.userName && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.userName}
-                                </span>
-                            )}
-                            <input
-                                type='text'
-                                placeholder={t("surname")}
-                                name='surname'
-                                value={formData.surname}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.surname && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.surname}
-                                </span>
-                            )}
-                            <input
-                                type='email'
-                                placeholder={t("email")}
-                                name='email'
-                                value={formData.email}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.email && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.email}
-                                </span>
-                            )}
-                            <input
-                                type='text'
-                                placeholder={t("school")}
-                                name='school'
-                                value={formData.school}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.school && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.school}
-                                </span>
-                            )}
-                            <input
-                                type='password'
-                                placeholder={t("password")}
-                                name='password'
-                                value={formData.password}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.password && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.password}
-                                </span>
-                            )}
-                            <input
-                                type='password'
-                                placeholder={t("re-enter password")}
-                                name='confirm_password'
-                                value={formData.confirm_password}
-                                onChange={handleChange}
-                                className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
-                            />
-                            {errors.confirm_password && (
-                                <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                                    {errors.confirm_password}
-                                </span>
-                            )}
-                            <Button
-                                onClick={handleSignUp}
-                                className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-7 mb-5 block mx-auto'
-                            >
-                                {t("sign-up")}
-                            </Button>
-                        </form>
-                        {/* devider */}
-                        <div className='relative flex items-center w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                            <div className='flex-grow border-t border-[#a7b8c4]'></div>
-                            <span className='flex-shrink mx-4 text-[#a7b8c4]'>
-                                {t("or")}
-                            </span>
-                            <div className='flex-grow border-t border-[#a7b8c4]'></div>
-                        </div>
-                        <h3 className='text-center text-[#647581] mt-1'>
-                            {t("sign-up with")}
-                        </h3>
-                        {/* sign up with socials */}
-                        <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                            <GoogleButton>{t("google")}</GoogleButton>
-                            <FacebookButton>{t("facebook")}</FacebookButton>
-                            <TwitterButton>{t("twitter")}</TwitterButton>
-                        </div>
-                        <h2 className='mt-5 text-[#647581]'>
-                            {" "}
-                            {t("already have an account?")}
-                        </h2>
-                        <Link href='/signin' className='block'>
-                            <Button className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-3 py-1 px-10'>
-                                {t("sign-in")}
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-                <ToastContainer />
+        <div
+            style={signupbg}
+            className=' min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
+        >
+            {/* container for image to add later */}
+            <div className='lg:w-3/6 lg:py-16 lg:px-24'>
+                <Image
+                    src='/hands_box.png'
+                    alt='hands box image'
+                    height={500}
+                    width={500}
+                    layout='responsive'
+                    className='hidden lg:block'
+                />
             </div>
-        </Layout>
+            {/* form container */}
+            <div className='py-10 lg:w-3/6 lg:px-10'>
+                <div className='lg:w-[60%] mx-auto'>
+                    <h1 className='text-[#7874F2] text-[30px] font-bold my-6 md:text-6xl md:mb-14 lg:text-5xl xl:text-5xl'>
+                        {t("sign-up")}
+                    </h1>
+                    <form>
+                        <input
+                            type='text'
+                            placeholder={t("name")}
+                            name='userName'
+                            value={formData.userName}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.userName && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.userName}
+                            </span>
+                        )}
+                        <input
+                            type='text'
+                            placeholder={t("surname")}
+                            name='surname'
+                            value={formData.surname}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.surname && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.surname}
+                            </span>
+                        )}
+                        <input
+                            type='email'
+                            placeholder={t("email")}
+                            name='email'
+                            value={formData.email}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.email && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.email}
+                            </span>
+                        )}
+                        <input
+                            type='text'
+                            placeholder={t("school")}
+                            name='school'
+                            value={formData.school}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.school && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.school}
+                            </span>
+                        )}
+                        <input
+                            type='password'
+                            placeholder={t("password")}
+                            name='password'
+                            value={formData.password}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.password && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.password}
+                            </span>
+                        )}
+                        <input
+                            type='password'
+                            placeholder={t("re-enter password")}
+                            name='confirm_password'
+                            value={formData.confirm_password}
+                            onChange={handleChange}
+                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                        />
+                        {errors.confirm_password && (
+                            <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                                {errors.confirm_password}
+                            </span>
+                        )}
+                        <Button
+                            onClick={handleSignUp}
+                            className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-7 mb-5 block mx-auto'
+                        >
+                            {t("sign-up")}
+                        </Button>
+                    </form>
+                    {/* devider */}
+                    <div className='relative flex items-center w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                        <div className='flex-grow border-t border-[#a7b8c4]'></div>
+                        <span className='flex-shrink mx-4 text-[#a7b8c4]'>
+                            {t("or")}
+                        </span>
+                        <div className='flex-grow border-t border-[#a7b8c4]'></div>
+                    </div>
+                    <h3 className='text-center text-[#647581] mt-1'>
+                        {t("sign-up with")}
+                    </h3>
+                    {/* sign up with socials */}
+                    <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
+                        <GoogleButton>{t("google")}</GoogleButton>
+                        <FacebookButton>{t("facebook")}</FacebookButton>
+                        <TwitterButton>{t("twitter")}</TwitterButton>
+                    </div>
+                    <h2 className='mt-5 text-[#647581]'>
+                        {" "}
+                        {t("already have an account?")}
+                    </h2>
+                    <Link href='/signin' className='block'>
+                        <Button className='bg-[#585785] border-[#585785] hover:text-[#7874f2] hover:border-[#7874f2] mt-3 py-1 px-10'>
+                            {t("sign-in")}
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+            <ToastContainer />
+        </div>
     );
 }
 

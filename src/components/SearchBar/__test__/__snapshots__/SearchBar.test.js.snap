@@ -2,13 +2,13 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="relative mx-auto max-w-md"
+  className="relative mx-auto max-w-sm"
 >
   <div
     className="input-wrapper"
   >
     <input
-      className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
+      className="w-full py-1 px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
       onChange={[Function]}
       placeholder="Search here..."
       type="text"

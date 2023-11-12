@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <div>
   <div
-    className="fixed inset-y-0 left-0 w-[80%] mx-auto bg-slate-200 shadow-lg transition-transform transform -translate-x-full"
+    className="fixed inset-y-0 left-0  w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-transform transform -translate-x-full transition-all ease-in-out duration-300ease-in-out duration-700"
   >
     <div
       className="h-24 shadow-md flex items-center bg-[#C9D9E5]"
@@ -14,7 +14,6 @@ exports[`renders correctly 1`] = `
         <p
           className="   sm:text-lg  p-2 font-semibold text-[#585785] "
         >
-           
           Hello Samy, Welcome to student store
         </p>
       </div>
@@ -26,7 +25,6 @@ exports[`renders correctly 1`] = `
         className="text-xl space-y-4"
       >
         <li>
-           
           <a
             className="text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold"
             href="/"
@@ -34,13 +32,10 @@ exports[`renders correctly 1`] = `
             onMouseEnter={[Function]}
             onTouchStart={[Function]}
           >
-             
             Home
-             
           </a>
         </li>
         <li>
-           
           <a
             className="text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold"
             href="/"
@@ -48,13 +43,10 @@ exports[`renders correctly 1`] = `
             onMouseEnter={[Function]}
             onTouchStart={[Function]}
           >
-             
             Products
-             
           </a>
         </li>
         <li>
-           
           <a
             className="text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold"
             href="/"
@@ -62,12 +54,10 @@ exports[`renders correctly 1`] = `
             onMouseEnter={[Function]}
             onTouchStart={[Function]}
           >
-             
             Donation
           </a>
         </li>
         <li>
-           
           <a
             className="text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold"
             href="/"
@@ -200,7 +190,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <button
-      className="absolute top-4 right-4 text-[#585785] hover:text-[#FFA857]  text-4xl"
+      className="absolute top-4 cursor-pointer right-4 text-[#585785] hover:text-[#FFA857]  text-5xl"
     >
       ×
     </button>

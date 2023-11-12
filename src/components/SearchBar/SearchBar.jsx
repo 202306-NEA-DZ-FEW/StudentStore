@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { ImSearch } from "react-icons/im";
-import { collection, query, onSnapshot } from "firebase/firestore";
+
 import { db } from "@/util/firebase";
 
 const SearchBar = () => {
@@ -46,14 +47,14 @@ const SearchBar = () => {
     const showResultsContainer = products.length > 0;
 
     return (
-        <div className='relative mx-auto max-w-md'>
+        <div className='relative mx-auto max-w-sm'>
             <div className='input-wrapper'>
                 <input
                     type='text'
                     placeholder='Search here...'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className='w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none'
+                    className='w-full py-1 px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none'
                 />
                 <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'>
                     <ImSearch />

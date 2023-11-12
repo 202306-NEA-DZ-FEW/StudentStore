@@ -2,34 +2,52 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className=" fixed top-0 left-0 z-10 right-0 "
+  className="fixed top-0 left-0 z-10 right-0"
 >
   <nav
-    className="bg-slate-200  shadow-md p-4"
+    className="bg-slate-200  shadow-md p-2"
   >
     <div
       className="hidden md:flex justify-between md:items-center"
     >
       <div
-        className="flex space-x-4  items-center"
+        className="flex space-x-4 md:space-x-3 lg:space-x-4 items-center"
       >
-        <img
-          alt="Picture of the author"
-          data-nimg="1"
-          decoding="async"
-          height={45}
-          loading="lazy"
-          onError={[Function]}
-          onLoad={[Function]}
-          src="/_next/image?url=%2Flogo.png&w=96&q=75"
-          srcSet="/_next/image?url=%2Flogo.png&w=48&q=75 1x, /_next/image?url=%2Flogo.png&w=96&q=75 2x"
-          style={
-            Object {
-              "color": "transparent",
+        <div
+          className=" flex "
+        >
+          <img
+            alt="Logo"
+            data-nimg="1"
+            decoding="async"
+            height={48}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="Logo.svg"
+            style={
+              Object {
+                "color": "transparent",
+              }
             }
-          }
-          width={45}
-        />
+            width={48}
+          />
+          <div
+            className="w-full h-full"
+          >
+            <span
+              className="text-indigo-500 text-sm font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+            >
+              Student
+              <br />
+            </span>
+            <span
+              className="text-black  text-sm  font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+            >
+              Store
+            </span>
+          </div>
+        </div>
         <a
           className="text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold"
           href="/"
@@ -37,9 +55,7 @@ exports[`renders correctly 1`] = `
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-           
           Home
-           
         </a>
         <a
           className="text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold"
@@ -48,9 +64,7 @@ exports[`renders correctly 1`] = `
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-           
           Products
-           
         </a>
         <a
           className="text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold"
@@ -59,7 +73,6 @@ exports[`renders correctly 1`] = `
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
         >
-           
           Donation
         </a>
         <a
@@ -73,16 +86,16 @@ exports[`renders correctly 1`] = `
         </a>
       </div>
       <div
-        className=" md:ml-8 md:w-[70vh] lg:w-[80vh]"
+        className="  md:w-[25%] "
       >
         <div
-          className="relative mx-auto max-w-md"
+          className="relative mx-auto max-w-sm"
         >
           <div
             className="input-wrapper"
           >
             <input
-              className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
+              className="w-full py-1 px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
               onChange={[Function]}
               placeholder="Search here..."
               type="text"
@@ -115,7 +128,7 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="flex items-center space-x-4"
+        className="flex items-center md:space-x-1 lg:space-x-4"
       >
         <div
           className="relative  inline-block text-left"
@@ -125,7 +138,7 @@ exports[`renders correctly 1`] = `
             <button
               aria-expanded={false}
               aria-haspopup="menu"
-              className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
+              className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-0.5 md:rounded-full md:px-2 md:py-1 lg:px-3 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
               data-headlessui-state=""
               id="headlessui-menu-button-:r0:"
               onClick={[Function]}
@@ -238,10 +251,7 @@ exports[`renders correctly 1`] = `
     <div
       className="md:hidden flex justify-between   items-center"
     >
-      <div
-        className=""
-      >
-         
+      <div>
         <button
           className="block text-[#585785]   font-semibold  hover:text-[#FF8A57] p-2 text-3xl"
           onClick={[Function]}
@@ -249,30 +259,45 @@ exports[`renders correctly 1`] = `
         >
           ☰
         </button>
-         
       </div>
       <div
         className="flex items-center"
       >
-         
-        <img
-          alt="Picture of the author"
-          data-nimg="1"
-          decoding="async"
-          height={40}
-          loading="lazy"
-          onError={[Function]}
-          onLoad={[Function]}
-          src="/_next/image?url=%2Flogo.png&w=96&q=75"
-          srcSet="/_next/image?url=%2Flogo.png&w=48&q=75 1x, /_next/image?url=%2Flogo.png&w=96&q=75 2x"
-          style={
-            Object {
-              "color": "transparent",
+        <div
+          className=" flex "
+        >
+          <img
+            alt="Logo"
+            data-nimg="1"
+            decoding="async"
+            height={48}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="Logo.svg"
+            style={
+              Object {
+                "color": "transparent",
+              }
             }
-          }
-          width={40}
-        />
-         
+            width={48}
+          />
+          <div
+            className="w-full h-full"
+          >
+            <span
+              className="text-indigo-500 text-sm font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+            >
+              Student
+              <br />
+            </span>
+            <span
+              className="text-black  text-sm  font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+            >
+              Store
+            </span>
+          </div>
+        </div>
       </div>
       <div
         className="flex items-center space-x-4"
@@ -285,7 +310,7 @@ exports[`renders correctly 1`] = `
             <button
               aria-expanded={false}
               aria-haspopup="menu"
-              className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
+              className="bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-0.5 md:rounded-full md:px-2 md:py-1 lg:px-3 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50"
               data-headlessui-state=""
               id="headlessui-menu-button-:r1:"
               onClick={[Function]}
@@ -343,7 +368,7 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <button
-          className=" text-3xl text-[#FF8A57] hover:text-orange-500"
+          className="text-3xl text-[#FF8A57] hover:text-orange-500"
         >
           <svg
             fill="currentColor"
@@ -399,13 +424,13 @@ exports[`renders correctly 1`] = `
       className="md:hidden"
     >
       <div
-        className="relative mx-auto max-w-md"
+        className="relative mx-auto max-w-sm"
       >
         <div
           className="input-wrapper"
         >
           <input
-            className="w-full px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
+            className="w-full py-1 px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none"
             onChange={[Function]}
             placeholder="Search here..."
             type="text"
@@ -441,7 +466,6 @@ exports[`renders correctly 1`] = `
   <div
     className="hidden md:block"
   >
-     
     <div
       className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
     >
@@ -456,7 +480,7 @@ exports[`renders correctly 1`] = `
             onMouseEnter={[Function]}
             onTouchStart={[Function]}
           >
-            All Categories
+            All Products
           </a>
         </li>
         <li>

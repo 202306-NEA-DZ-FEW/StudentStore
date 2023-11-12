@@ -1,21 +1,18 @@
-import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-import UnderBar from "../UnderBar/UnderBar";
 
 const SidebarNB = ({ isOpen, closeSidebar }) => {
     return (
         <div>
             <div
-                className={`fixed inset-y-0 left-0 w-[80%] mx-auto bg-slate-200 shadow-lg transition-transform transform ${
-                    isOpen ? "translate-x-0" : "-translate-x-full"
-                }`}
+                className={`fixed inset-y-0 left-0  w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-transform transform ${
+                    isOpen
+                        ? "translate-x-0 transition-all ease-in-out duration-700"
+                        : "-translate-x-full transition-all ease-in-out duration-300"
+                }ease-in-out duration-700`}
             >
                 <div className='h-24 shadow-md flex items-center bg-[#C9D9E5]'>
                     <div className='basis-3/4'>
                         <p className='   sm:text-lg  p-2 font-semibold text-[#585785] '>
-                            {" "}
                             Hello Samy, Welcome to student store
                         </p>
                     </div>
@@ -23,37 +20,30 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                 <div className='p-8 '>
                     <ul className='text-xl space-y-4'>
                         <li>
-                            {" "}
                             <Link
                                 className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
                                 href='/'
                             >
-                                {" "}
-                                Home{" "}
+                                Home
                             </Link>
                         </li>
                         <li>
-                            {" "}
                             <Link
                                 className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
                                 href='/'
                             >
-                                {" "}
-                                Products{" "}
+                                Products
                             </Link>
                         </li>
                         <li>
-                            {" "}
                             <Link
                                 className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
                                 href='/'
                             >
-                                {" "}
                                 Donation
                             </Link>
                         </li>
                         <li>
-                            {" "}
                             <Link
                                 className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
                                 href='/'
@@ -69,7 +59,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             <ul class='text-[#585785]'>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-outtext-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         All Categories
@@ -77,7 +67,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Electronics
@@ -85,7 +75,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Books
@@ -93,7 +83,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Gaming
@@ -101,7 +91,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Clothes
@@ -109,7 +99,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Shoes
@@ -117,7 +107,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Food
@@ -125,7 +115,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Transportation
@@ -133,7 +123,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"#"}
+                                        href='#'
                                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                     >
                                         Furniture
@@ -144,7 +134,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                     </div>
                 </div>
                 <button
-                    className='absolute top-4 right-4 text-[#585785] hover:text-[#FFA857]  text-4xl'
+                    className='absolute top-4 cursor-pointer right-4 text-[#585785] hover:text-[#FFA857]  text-5xl'
                     onClick={closeSidebar}
                 >
                     &times;

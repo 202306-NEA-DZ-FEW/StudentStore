@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+    FaEnvelope,
     FaFacebook,
     FaInstagram,
     FaLinkedin,
     FaPhoneSquareAlt,
-    FaWallet,
-    FaEnvelope,
     FaRegPlusSquare,
+    FaWallet,
 } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
@@ -112,7 +112,7 @@ function Footer() {
                             <li>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href={"/Listings"}
+                                    href='/Listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -120,7 +120,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={"/AllProducts/AllProducts"}
+                                    href='/AllProducts/AllProducts'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
@@ -239,7 +239,7 @@ function Footer() {
                                 <li className='hover:underline hover:text-orange'>
                                     <Link
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                        href={"/Listings"}
+                                        href='/Listings'
                                     >
                                         <FaRegPlusSquare size={20} />
                                         <p> Start selling</p>
@@ -247,7 +247,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"/AllProducts/AllProducts"}
+                                        href='/AllProducts/AllProducts'
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                     >
                                         <FaWallet size={20} />
@@ -374,7 +374,7 @@ function Footer() {
                             <li className='hover:underline hover:text-orange'>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href={"/Listings"}
+                                    href='/Listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -382,7 +382,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={"/AllProducts/AllProducts"}
+                                    href='/AllProducts/AllProducts'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
