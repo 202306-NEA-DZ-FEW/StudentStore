@@ -184,7 +184,7 @@ function EditForm() {
                     </div>
                 </div>
                 <div className='flex justify-center items-center'>
-                    <button className='bg-[#FF8A57] hovelor:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 px-7 rounded'>
+                    <button className='bg-[#FF8A57] hover:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 px-7 rounded'>
                         Save Changes
                     </button>
                 </div>
