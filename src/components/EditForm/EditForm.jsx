@@ -73,6 +73,7 @@ function EditForm() {
     };
 
     return (
+        // component
         <div className='flex justify-center items-center h-screen'>
             <form className='w-full max-w-lg' onSubmit={handleSubmit}>
                 <div className='w-full px-3 mb-4'>
