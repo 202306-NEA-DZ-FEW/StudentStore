@@ -22,14 +22,14 @@ function DonationsPage() {
                 {isRTL ? (
                     <p
                         dir='rtl'
-                        className='mx-auto text-justify text- px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%] z-10  leading-10 sm:text-2xl  pb-2 '
+                        className='mx-auto text-justify  px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%]  leading-10 sm:text-2xl  pb-2 '
                     >
                         {t("why donating paragraph")}
                     </p>
                 ) : (
                     <p
                         dir='ltr'
-                        className='mx-auto text-justify  px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%] z-10 sm:text-2xl leading-10 pb-2 '
+                        className='mx-auto text-justify  px-2 text-[20px] sm:px-12 font-semibold w-[85%] md:w-[60%]  sm:text-2xl leading-10 pb-2 '
                     >
                         {t("why donating paragraph")}
                     </p>
