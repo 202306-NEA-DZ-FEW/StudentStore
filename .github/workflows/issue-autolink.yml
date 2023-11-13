@@ -9,6 +9,5 @@ jobs:
         steps:
             - uses: tkt-actions/add-issue-links@v1.6.0
               with:
-                  repo-token: "${{ secrets.STUDENT10 }}"
+                  repo-token: "${{ secrets.TEAM10 }}"
                   resolve: "true"
-
