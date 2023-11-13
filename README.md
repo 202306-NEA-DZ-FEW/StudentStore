@@ -2,7 +2,7 @@
 
 ## Project information
 
--   Project name: [Project name]
+-   Project name: [Project name].
 -   Project description: [Project description]
 -   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
 -   Team members: Member1, Member2, etc,
