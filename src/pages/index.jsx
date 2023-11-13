@@ -22,7 +22,7 @@ export default function HomePage() {
                     العربية
                 </Link>
             </div>
-            <TestimonialsSection />
+
             <EditForm />
             <Link href='/listings'>go to listings</Link>
             <Link href='/splashpage'>go to splashpage</Link>
