@@ -54,7 +54,7 @@ const SearchBar = () => {
                     placeholder='Search here...'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className='w-full py-1 px-4 border-[#585785] border-2 dark:bg-white rounded-full italic  font-sm  focus:outline-none'
+                    className='w-full py-1 text-[#585785] px-4 border-[#585785] border-2 dark:bg-white rounded-full   font-sm  focus:outline-none'
                 />
                 <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'>
                     <ImSearch />
@@ -62,7 +62,7 @@ const SearchBar = () => {
             </div>
 
             {showResultsContainer && (
-                <div className='product-container bg-white bg-opacity-80 rounded-lg shadow-lg p-4 absolute left-0 right-0'>
+                <div className='product-container text-[#585785] bg-white bg-opacity-95 rounded-lg shadow-lg p-4 absolute left-0 right-0'>
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
@@ -88,7 +88,7 @@ const SearchBar = () => {
             )}
 
             {showNoProductsMessage && (
-                <p className='text-white bg-gray-500 p-2 rounded'>
+                <p className='text-white absolute bg-gray-500 p-2 rounded'>
                     No products found.
                 </p>
             )}
