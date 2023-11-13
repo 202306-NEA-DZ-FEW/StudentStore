@@ -13,43 +13,50 @@ exports[`renders correctly 1`] = `
       <div
         className="flex space-x-4 md:space-x-3 lg:space-x-4 items-center"
       >
-        <div
-          className=" flex "
-        >
-          <img
-            alt="Logo"
-            data-nimg="1"
-            decoding="async"
-            height={48}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="Logo.svg"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={48}
-          />
-          <div
-            className="w-full h-full"
-          >
-            <span
-              className="text-indigo-500 text-sm font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
-            >
-              Student
-              <br />
-            </span>
-            <span
-              className="text-black  text-sm  font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
-            >
-              Store
-            </span>
-          </div>
-        </div>
         <a
-          className="text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className=" flex  "
+          >
+            <img
+              alt="Logo"
+              data-nimg="1"
+              decoding="async"
+              height={48}
+              loading="lazy"
+              onError={[Function]}
+              onLoad={[Function]}
+              src="Logo.svg"
+              style={
+                Object {
+                  "color": "transparent",
+                }
+              }
+              width={48}
+            />
+            <div
+              className="w-full h-full"
+            >
+              <span
+                className="text-indigo-500 text-sm font-bold ,   fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+              >
+                Student
+                <br />
+              </span>
+              <span
+                className="text-black  text-sm  font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+              >
+                Store
+              </span>
+            </div>
+          </div>
+        </a>
+        <a
+          className="text-[#585785] rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -59,7 +66,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold"
-          href="/"
+          href="/products"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -68,7 +75,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold"
-          href="/"
+          href="/donations"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -77,7 +84,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold"
-          href="/"
+          href="/aboutUs"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -264,7 +271,7 @@ exports[`renders correctly 1`] = `
         className="flex items-center"
       >
         <div
-          className=" flex "
+          className=" flex  "
         >
           <img
             alt="Logo"
@@ -286,7 +293,7 @@ exports[`renders correctly 1`] = `
             className="w-full h-full"
           >
             <span
-              className="text-indigo-500 text-sm font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+              className="text-indigo-500 text-sm font-bold ,   fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
             >
               Student
               <br />

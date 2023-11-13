@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className=" flex "
+  className=" flex  "
 >
   <img
     alt="Logo"
@@ -24,7 +24,7 @@ exports[`renders correctly 1`] = `
     className="w-full h-full"
   >
     <span
-      className="text-indigo-500 text-sm font-bold ,  fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
+      className="text-indigo-500 text-sm font-bold ,   fontFamily: 'Clash Display Variable', wordWrap: 'break-word'"
     >
       Student
       <br />

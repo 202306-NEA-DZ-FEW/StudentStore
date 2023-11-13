@@ -204,7 +204,7 @@ export default function SignUp() {
     return (
         <div
             style={signupbg}
-            className=' min-h-screen w-full bg-cover flex justify-between items-center text-center py-10'
+            className=' min-h-screen w-full bg-cover flex justify-between items-center text-center pb-2'
         >
             {/* container for image to add later */}
             <div className='lg:w-3/6 lg:py-16 lg:px-24'>

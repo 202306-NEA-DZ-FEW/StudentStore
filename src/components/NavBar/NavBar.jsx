@@ -31,30 +31,32 @@ export default function Navbar() {
                 {/* Large screens and tablets */}
                 <div className='hidden md:flex justify-between md:items-center'>
                     <div className='flex space-x-4 md:space-x-3 lg:space-x-4 items-center'>
-                        <Logo />
+                        <Link href='/'>
+                            <Logo />
+                        </Link>
                         <Link
-                            className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
+                            className='text-[#585785] rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
                             href='/'
                         >
                             Home
                         </Link>
                         <Link
                             className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
-                            href='/'
+                            href='/products'
                         >
                             Products
                         </Link>
 
                         <Link
                             className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
-                            href='/'
+                            href='/donations'
                         >
                             Donation
                         </Link>
 
                         <Link
                             className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
-                            href='/'
+                            href='/aboutUs'
                         >
                             About us
                         </Link>
