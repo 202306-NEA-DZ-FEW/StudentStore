@@ -6,6 +6,7 @@ import * as React from "react";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
 import Layout from "@/layout/Layout";
+import EditForm from "@/components/EditForm/EditForm";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -21,7 +22,8 @@ export default function HomePage() {
                     العربية
                 </Link>
             </div>
-            <TestimonialsSection />
+
+            <EditForm />
             <Link href='/listings'>go to listings</Link>
             <Link href='/splashpage'>go to splashpage</Link>
             <Link href='/editprofile'>you want to edit your profile?</Link>
