@@ -1,12 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import Image from "next/image";
+
 import Language from "../Language/Language";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import SearchBar from "../SearchBar/SearchBar";
-import UnderBar from "../UnderBar/UnderBar";
 import SidebarNB from "../SideBarNB/SideBarNB";
+import UnderBar from "../UnderBar/UnderBar";
 
 export default function Navbar() {
     const [menuIcon, setIcon] = useState(false);
@@ -126,6 +128,7 @@ export default function Navbar() {
                 {" "}
                 <UnderBar> </UnderBar>
             </div>
+            <ScrollIndicator />
         </header>
     );
 }
