@@ -2,12 +2,18 @@ import { auth, db } from "@/util/firebase";
 import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
 export default function FacebookButton({ children, className }) {
     const route = useRouter();
+    useEffect(() => {
+        return () => {
+            toast.dismiss();
+        };
+    }, []);
     async function signInWithFacebook() {
         try {
             const provider = new FacebookAuthProvider();

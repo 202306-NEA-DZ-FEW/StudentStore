@@ -11,6 +11,10 @@ module.exports = {
         domains: [
             "firebasestorage.googleapis.com",
             "lh3.googleusercontent.com",
+            "example.com",
+            "pbs.twimg.com",
+            "graph.facebook.com",
+            "images.unsplash.com",
         ],
     },
 };

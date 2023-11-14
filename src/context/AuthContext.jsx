@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
     }
     // log out function
     function logout() {
-        signOut(auth);
+        return signOut(auth);
     }
     // reset email function
     function resetPassword(email) {

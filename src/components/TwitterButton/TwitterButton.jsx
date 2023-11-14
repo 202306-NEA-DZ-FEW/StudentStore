@@ -2,12 +2,18 @@ import { auth, db } from "@/util/firebase";
 import { TwitterAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { BsTwitter } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
 export default function TwitterButton({ children, className }) {
     const route = useRouter();
+    useEffect(() => {
+        return () => {
+            toast.dismiss();
+        };
+    }, []);
     function signInWithTwitter() {
         const provider = new TwitterAuthProvider();
         signInWithPopup(auth, provider)
