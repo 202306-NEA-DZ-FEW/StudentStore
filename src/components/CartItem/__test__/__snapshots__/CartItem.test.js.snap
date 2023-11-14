@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <img
+    data-nimg="1"
+    decoding="async"
+    height={22}
+    onError={[Function]}
+    onLoad={[Function]}
+    src=""
+    style={
+      Object {
+        "color": "transparent",
+      }
+    }
+    width={22}
+  />
+  <h2 />
+  <p />
+  <span />
+</div>
+`;
