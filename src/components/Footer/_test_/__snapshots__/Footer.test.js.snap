@@ -102,9 +102,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               About Us
-               
             </a>
           </li>
           <li>
@@ -115,9 +113,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               Our Team
-               
             </a>
           </li>
           <li>
@@ -189,7 +185,6 @@ exports[`renders correctly 1`] = `
                     onMouseEnter={[Function]}
                     onTouchStart={[Function]}
                   >
-                     
                     Contact@studentstore.com
                   </a>
                 </div>
@@ -481,9 +476,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               About Us
-               
             </a>
           </li>
           <li>
@@ -494,9 +487,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               Our Team
-               
             </a>
           </li>
         </ul>
@@ -742,9 +733,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               About Us
-               
             </a>
           </li>
           <li>
@@ -755,9 +744,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-               
               Our Team
-               
             </a>
           </li>
           <li>
@@ -1042,12 +1029,10 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="flex justify-center p-2 font-semibold bg-[#32314C] text-white  text-sm "
+    className="flex justify-center p-2 font-semibold bg-[#32314C] text-center text-white  text-sm "
   >
     <p>
-       
       © 2023 Team 10, Recoded Front-End Bootcamp. All rights reserved.
-       
     </p>
   </div>
   <div
