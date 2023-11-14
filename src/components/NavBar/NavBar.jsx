@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
@@ -5,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import SearchBar from "../SearchBar/SearchBar";
 import SidebarNB from "../SideBarNB/SideBarNB";
 import UnderBar from "../UnderBar/UnderBar";
@@ -113,6 +115,7 @@ export default function Navbar() {
             <div className='hidden md:block'>
                 <UnderBar> </UnderBar>
             </div>
+            <ScrollIndicator />
         </header>
     );
 }

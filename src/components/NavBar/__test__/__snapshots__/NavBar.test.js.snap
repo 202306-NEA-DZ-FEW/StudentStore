@@ -581,5 +581,21 @@ exports[`renders correctly 1`] = `
       </ul>
     </div>
   </div>
+  <div
+    className="scroll-indicator"
+  >
+    <div
+      className="progressMainWrapper bg-indigo- h-[6px] mt-0 ml-0 z-1 w-full"
+    >
+      <div
+        className="progressMainStyle bg-orange-500 h-[6px] mt-0 ml-0 z-1 w-15"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
 </header>
 `;
