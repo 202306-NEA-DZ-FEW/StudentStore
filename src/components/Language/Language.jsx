@@ -15,7 +15,7 @@ function Language() {
     return (
         <Menu as='div' className='relative  inline-block text-left'>
             <div>
-                <Menu.Button className='bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-1.5 md:rounded-full md:px-3 md:py-2 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50'>
+                <Menu.Button className='bg-none md:inline-flex md:bg-[#F1F6FA] md:justify-center md:gap-x-0.5 md:rounded-full md:px-2 md:py-1 lg:px-3 md:text-sm md:font-semibold md:shadow-sm md:ring-1 md:ring-inset md:ring-transparent hover:ring-[#585785] hover:bg-gray-50'>
                     <MdOutlineGTranslate className='text-[#585785] text-2xl' />
                     <MdOutlineKeyboardArrowDown className='text-[#585785] text-2xl hidden md:block' />
                 </Menu.Button>

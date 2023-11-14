@@ -5,6 +5,7 @@
 
 body {
     background-color: #f1f6fa;
+    margin-top: 96px;
     transition: scroll-behavior 0.5s ease-in-out;
 }
 

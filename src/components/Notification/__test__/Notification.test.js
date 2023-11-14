@@ -1,6 +1,9 @@
 import renderer from "react-test-renderer";
+import Notification from "../Notitification";
 
-import Notification from "../Notification";
+jest.mock("react-icons/ai", () => ({
+    AiFillCloseCircle: "mocked-AiFillCloseCircle",
+}));
 
 it("renders correctly", () => {
     const tree = renderer.create(<Notification />).toJSON();

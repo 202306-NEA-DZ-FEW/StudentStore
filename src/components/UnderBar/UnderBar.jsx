@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 function UnderBar({ className }) {
     return (
@@ -12,15 +12,15 @@ function UnderBar({ className }) {
             <ul className='p-4 md:p-0 md:flex md:justify-around lg:p- lg:flex lg:justify-around lg:w-[75%] lg:mx-auto '>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        All Categories
+                        All Products
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Electronics
@@ -28,7 +28,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Books
@@ -36,7 +36,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Gaming
@@ -44,7 +44,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Clothes
@@ -52,7 +52,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Shoes
@@ -60,7 +60,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Food
@@ -68,7 +68,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Transportation
@@ -76,7 +76,7 @@ function UnderBar({ className }) {
                 </li>
                 <li>
                     <Link
-                        href={"#"}
+                        href='#'
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
                         Furniture

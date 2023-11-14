@@ -6,13 +6,11 @@ import * as React from "react";
 import EditForm from "@/components/EditForm/EditForm";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
-import Layout from "@/layout/Layout";
-
 export default function HomePage() {
     const { t } = useTranslation("common");
 
     return (
-        <Layout>
+        <div>
             <p>{t("test")}</p>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
@@ -22,13 +20,11 @@ export default function HomePage() {
                     العربية
                 </Link>
             </div>
-
-            <EditForm />
             <TestimonialsSection />
             <Link href='/listings'>go to listings</Link>
             <Link href='/splashpage'>go to splashpage</Link>
             <Link href='/editprofile'>you want to edit your profile?</Link>
-        </Layout>
+        </div>
     );
 }
 

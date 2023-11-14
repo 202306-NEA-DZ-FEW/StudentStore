@@ -3,8 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import { db } from "@/util/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
-import Notification from "../Notification/Notification";
-
+import Notification from "@/components/Notification/Notitification";
 function EditForm() {
     const auth = useAuth();
 
@@ -74,6 +73,7 @@ function EditForm() {
     };
 
     return (
+        // component
         <div className='flex justify-center items-center h-screen'>
             <form className='w-full max-w-lg' onSubmit={handleSubmit}>
                 <div className='w-full px-3 mb-4'>
