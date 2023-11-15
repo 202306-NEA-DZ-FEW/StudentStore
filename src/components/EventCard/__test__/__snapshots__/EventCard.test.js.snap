@@ -110,17 +110,15 @@ exports[`renders correctly 1`] = `
                 className=" text-lg font-semibold"
               >
                  
-                25 December 2023
+                15 December 2023
                  
               </p>
             </div>
-            <a
-              class="text-sm font-medium text-[#585785]  hover:underline"
-              href="#0"
+            <button
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
             >
-              Join Us
-               
-            </a>
+              Join us
+            </button>
           </footer>
         </article>
       </div>
@@ -152,7 +150,9 @@ exports[`renders correctly 1`] = `
           <div
             class="text-sm leading-relaxed  md:flex text-slate-500 space-y-4 mb-2"
           >
-            <p>
+            <p
+              className="p-2"
+            >
               Competition Details: 🌟 October 1-30, 2024 Register Now! What to Expect: 🌿 30 days of eco-challenges to empower and inform. 🌏 Join students worldwide in shaping a sustainable future.
             </p>
             <img
@@ -163,8 +163,8 @@ exports[`renders correctly 1`] = `
               loading="lazy"
               onError={[Function]}
               onLoad={[Function]}
-              src="/_next/image?url=%2FEvents.png&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvents.png&w=384&q=75 1x, /_next/image?url=%2FEvents.png&w=640&q=75 2x"
+              src="/_next/image?url=%2FEvent3.jpg&w=640&q=75"
+              srcSet="/_next/image?url=%2FEvent3.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent3.jpg&w=640&q=75 2x"
               style={
                 Object {
                   "color": "transparent",
@@ -203,17 +203,15 @@ exports[`renders correctly 1`] = `
                 className=" text-lg font-semibold"
               >
                  
-                25 December 2023
+                22 December 2023
                  
               </p>
             </div>
-            <a
-              class="text-sm font-medium text-[#585785]  hover:underline"
-              href="#0"
+            <button
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
             >
-              Join Us
-               
-            </a>
+              Join us
+            </button>
           </footer>
         </article>
       </div>
@@ -245,7 +243,9 @@ exports[`renders correctly 1`] = `
           <div
             class="text-sm  md:flex leading-relaxed text-slate-500 space-y-4 mb-2"
           >
-            <p>
+            <p
+              className="p-2"
+            >
               Calling all photographers, amateurs and pros alike! The 2024 National & Regional Awards are here to shine a spotlight on your talent.
             </p>
             <img
@@ -256,8 +256,8 @@ exports[`renders correctly 1`] = `
               loading="lazy"
               onError={[Function]}
               onLoad={[Function]}
-              src="/_next/image?url=%2FEvents.png&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvents.png&w=384&q=75 1x, /_next/image?url=%2FEvents.png&w=640&q=75 2x"
+              src="/_next/image?url=%2FEvent2.jpg&w=640&q=75"
+              srcSet="/_next/image?url=%2FEvent2.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent2.jpg&w=640&q=75 2x"
               style={
                 Object {
                   "color": "transparent",
@@ -300,13 +300,11 @@ exports[`renders correctly 1`] = `
                  
               </p>
             </div>
-            <a
-              class="text-sm font-medium text-[#585785]  hover:underline"
-              href="#0"
+            <button
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
             >
-              Join Us
-               
-            </a>
+              Join us
+            </button>
           </footer>
         </article>
       </div>

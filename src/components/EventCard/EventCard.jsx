@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
+import Button from "../Buttons/Button";
 
 const EventCard = ({ title, description }) => {
     return (
@@ -82,15 +83,12 @@ const EventCard = ({ title, description }) => {
                                     ></FaCalendarAlt>{" "}
                                     <p className=' text-lg font-semibold'>
                                         {" "}
-                                        25 December 2023{" "}
+                                        15 December 2023{" "}
                                     </p>
                                 </div>
-                                <a
-                                    class='text-sm font-medium text-[#585785]  hover:underline'
-                                    href='#0'
-                                >
-                                    Join Us{" "}
-                                </a>
+                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
+                                    Join us
+                                </Button>
                             </footer>
                         </article>
                     </div>
@@ -129,7 +127,7 @@ const EventCard = ({ title, description }) => {
                                 </h1>
                             </header>
                             <div class='text-sm leading-relaxed  md:flex text-slate-500 space-y-4 mb-2'>
-                                <p>
+                                <p className='p-2'>
                                     Competition Details: 🌟 October 1-30, 2024
                                     Register Now! What to Expect: 🌿 30 days of
                                     eco-challenges to empower and inform. 🌏
@@ -138,7 +136,7 @@ const EventCard = ({ title, description }) => {
                                 </p>
 
                                 <Image
-                                    src='/Events.png'
+                                    src='/Event3.jpg'
                                     width={300}
                                     height={300}
                                     alt='Picture of the author'
@@ -152,15 +150,12 @@ const EventCard = ({ title, description }) => {
                                     ></FaCalendarAlt>{" "}
                                     <p className=' text-lg font-semibold'>
                                         {" "}
-                                        25 December 2023{" "}
+                                        22 December 2023{" "}
                                     </p>
                                 </div>
-                                <a
-                                    class='text-sm font-medium text-[#585785]  hover:underline'
-                                    href='#0'
-                                >
-                                    Join Us{" "}
-                                </a>
+                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
+                                    Join us
+                                </Button>
                             </footer>
                         </article>
                     </div>
@@ -195,7 +190,7 @@ const EventCard = ({ title, description }) => {
                                 </h1>
                             </header>
                             <div class='text-sm  md:flex leading-relaxed text-slate-500 space-y-4 mb-2'>
-                                <p>
+                                <p className='p-2'>
                                     Calling all photographers, amateurs and pros
                                     alike! The 2024 National & Regional Awards
                                     are here to shine a spotlight on your
@@ -203,7 +198,7 @@ const EventCard = ({ title, description }) => {
                                 </p>
 
                                 <Image
-                                    src='/Events.png'
+                                    src='/Event2.jpg'
                                     width={300}
                                     height={300}
                                     alt='Picture of the author'
@@ -220,12 +215,9 @@ const EventCard = ({ title, description }) => {
                                         25 December 2023{" "}
                                     </p>
                                 </div>
-                                <a
-                                    class='text-sm font-medium text-[#585785]  hover:underline'
-                                    href='#0'
-                                >
-                                    Join Us{" "}
-                                </a>
+                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
+                                    Join us
+                                </Button>
                             </footer>
                         </article>
                     </div>
