@@ -64,6 +64,7 @@ exports[`renders correctly 1`] = `
             </p>
             <img
               alt="Picture of the author"
+              className="rounded-md "
               data-nimg="1"
               decoding="async"
               height={300}
@@ -157,6 +158,7 @@ exports[`renders correctly 1`] = `
             </p>
             <img
               alt="Picture of the author"
+              className="rounded-md "
               data-nimg="1"
               decoding="async"
               height={300}
@@ -250,6 +252,7 @@ exports[`renders correctly 1`] = `
             </p>
             <img
               alt="Picture of the author"
+              className="rounded-md "
               data-nimg="1"
               decoding="async"
               height={300}

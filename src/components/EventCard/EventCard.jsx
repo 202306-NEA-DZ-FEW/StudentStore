@@ -71,6 +71,7 @@ const EventCard = ({ title, description }) => {
                                 <Image
                                     src='/Events.png'
                                     width={300}
+                                    className='rounded-md	'
                                     height={300}
                                     alt='Picture of the author'
                                 />
@@ -138,6 +139,7 @@ const EventCard = ({ title, description }) => {
                                 <Image
                                     src='/Event3.jpg'
                                     width={300}
+                                    className='rounded-md	'
                                     height={300}
                                     alt='Picture of the author'
                                 />
@@ -198,6 +200,7 @@ const EventCard = ({ title, description }) => {
                                 </p>
 
                                 <Image
+                                    className='rounded-md	'
                                     src='/Event2.jpg'
                                     width={300}
                                     height={300}
