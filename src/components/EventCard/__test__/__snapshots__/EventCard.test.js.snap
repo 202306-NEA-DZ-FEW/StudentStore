@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="p-4 rounded-lg"
+>
+  <div
+    className="relative w-full rounded-lg  shadow-xl"
+  >
+    <div
+      className=""
+    >
+      <img
+        alt="Picture of the author"
+        data-nimg="1"
+        decoding="async"
+        height={700}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src="/_next/image?url=%2F2.png&w=1920&q=75"
+        srcSet="/_next/image?url=%2F2.png&w=750&q=75 1x, /_next/image?url=%2F2.png&w=1920&q=75 2x"
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={700}
+      />
+    </div>
+    <div
+      className="rounded-lg absolute left-0 top-0 h-16 w-16 bg-[#585785] text-center  mt-4 ml-4 text-white font-bold shadow-lg flex flex-col items-center space-y-1 hover:opacity-0"
+    >
+       
+      <p
+        className=""
+      >
+        11 April 
+      </p>
+       
+      <svg
+        fill="currentColor"
+        height={30}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 448 512"
+        width={30}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+        />
+      </svg>
+        
+    </div>
+    <div
+      className="opacity-0 rounded-lg bg-gradient-to-r from-indigo-500  to-red-600  absolute inset-0 hover:opacity-50   "
+    >
+      <h2
+        className="card-title"
+      >
+        <div
+          className="badge badge-secondary"
+        >
+          NEW
+        </div>
+      </h2>
+      <p />
+      <div
+        className="card-actions justify-end"
+      >
+        <div
+          className="badge badge-outline"
+        >
+          Fashion
+        </div>
+        <div
+          className="badge badge-outline"
+        >
+          Products
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
