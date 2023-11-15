@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+    FaEnvelope,
     FaFacebook,
     FaInstagram,
     FaLinkedin,
     FaPhoneSquareAlt,
-    FaWallet,
-    FaEnvelope,
     FaRegPlusSquare,
+    FaWallet,
 } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
@@ -62,8 +62,7 @@ function Footer() {
                                     href='/AboutUs/AboutUs'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    About Us{" "}
+                                    About Us
                                 </Link>
                             </li>
                             <li>
@@ -71,8 +70,7 @@ function Footer() {
                                     href='/'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    Our Team{" "}
+                                    Our Team
                                 </Link>
                             </li>
                             <li>
@@ -98,7 +96,6 @@ function Footer() {
                                                 style={{ color: "#FFFFFF" }}
                                             />
                                             <Link href='mailto:adresse@email.com'>
-                                                {" "}
                                                 Contact@studentstore.com
                                             </Link>
                                         </div>
@@ -112,7 +109,7 @@ function Footer() {
                             <li>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href={"/Listings"}
+                                    href='/Listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -120,7 +117,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={"/AllProducts/AllProducts"}
+                                    href='/AllProducts/AllProducts'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
@@ -195,8 +192,7 @@ function Footer() {
                                     href='/AboutUs/AboutUs'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    About Us{" "}
+                                    About Us
                                 </Link>
                             </li>
                             <li>
@@ -204,8 +200,7 @@ function Footer() {
                                     href='/'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    Our Team{" "}
+                                    Our Team
                                 </Link>
                             </li>
                         </ul>
@@ -239,7 +234,7 @@ function Footer() {
                                 <li className='hover:underline hover:text-orange'>
                                     <Link
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                        href={"/Listings"}
+                                        href='/Listings'
                                     >
                                         <FaRegPlusSquare size={20} />
                                         <p> Start selling</p>
@@ -247,7 +242,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href={"/AllProducts/AllProducts"}
+                                        href='/AllProducts/AllProducts'
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                     >
                                         <FaWallet size={20} />
@@ -302,8 +297,7 @@ function Footer() {
                                     href='/AboutUs/AboutUs'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    About Us{" "}
+                                    About Us
                                 </Link>
                             </li>
                             <li>
@@ -311,8 +305,7 @@ function Footer() {
                                     href='/'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    {" "}
-                                    Our Team{" "}
+                                    Our Team
                                 </Link>
                             </li>
                             <li>
@@ -374,7 +367,7 @@ function Footer() {
                             <li className='hover:underline hover:text-orange'>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href={"/Listings"}
+                                    href='/Listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -382,7 +375,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href={"/AllProducts/AllProducts"}
+                                    href='/AllProducts/AllProducts'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
@@ -417,11 +410,10 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-center p-2 font-semibold bg-[#32314C] text-white  text-sm '>
+            <div className='flex justify-center p-2 font-semibold bg-[#32314C] text-center text-white  text-sm '>
                 <p>
-                    {" "}
                     © 2023 Team 10, Recoded Front-End Bootcamp. All rights
-                    reserved.{" "}
+                    reserved.
                 </p>
             </div>
             <div className='relative '>
