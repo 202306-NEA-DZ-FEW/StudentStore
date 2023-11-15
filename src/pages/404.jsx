@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Layout from "@/layout/Layout";
+// import Layout from "@/layout/Layout";
 
 export default function NotFoundPage() {
-    return <Layout>404</Layout>;
+    return <h1>404</h1>;
 }
