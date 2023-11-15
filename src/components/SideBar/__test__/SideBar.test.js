@@ -1,6 +1,7 @@
 import renderer from "react-test-renderer";
 
 import SideBar from "../SideBar";
+import { AuthProvider } from "@/context/AuthContext";
 jest.mock("../../../util/firebase", () => {
     return {
         initializeApp: jest.fn(),
@@ -13,6 +14,12 @@ jest.mock("next/router", () => ({
 }));
 
 it("renders correctly", () => {
-    const tree = renderer.create(<SideBar />).toJSON();
+    const tree = renderer
+        .create(
+            <AuthProvider>
+                <SideBar />
+            </AuthProvider>
+        )
+        .toJSON();
     expect(tree).toMatchSnapshot();
 });

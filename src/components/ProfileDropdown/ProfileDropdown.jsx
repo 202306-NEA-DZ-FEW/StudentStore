@@ -20,10 +20,9 @@ function ProfileDropdown() {
             await logout();
             route.push("/signin");
         } catch (error) {
-            toast.error("failed to log out");
+            toast.error("Failed to log out");
         }
     }
-    console.log(currentUser);
     return (
         <>
             {currentUser ? (

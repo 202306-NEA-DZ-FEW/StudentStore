@@ -1,6 +1,8 @@
+import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 
 const SidebarNB = ({ isOpen, closeSidebar }) => {
+    const { currentUser } = useAuth();
     return (
         <div
             className={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-all duration-700 ${
@@ -9,9 +11,15 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
         >
             <div className='h-24 shadow-md flex items-center bg-[#C9D9E5]'>
                 <div className='basis-3/4'>
-                    <p className='sm:text-lg  p-2 font-semibold text-[#585785] '>
-                        Hello Samy, Welcome to student store
-                    </p>
+                    {currentUser ? (
+                        <p className='sm:text-lg  p-2 font-semibold text-[#585785] '>
+                            {`Hello, ${
+                                currentUser.displayName || ""
+                            } Welcome to Student Store`}
+                        </p>
+                    ) : (
+                        ""
+                    )}
                 </div>
             </div>
             <div className='p-8 '>
@@ -131,7 +139,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                 </div>
             </div>
             <button
-                className='absolute top-4 cursor-pointer right-4 text-[#585785] hover:text-[#FFA857]  text-5xl'
+                className='absolute top-4 cursor-pointer right-4 text-[#585785] hover:text-[#FFA857]  text-5xl transition-all duration-700'
                 onClick={closeSidebar}
             >
                 &times;
