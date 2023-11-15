@@ -28,10 +28,13 @@ export default function SignIn() {
             setLoading(true);
             await login(email, password);
             route.push("/");
-        } catch (error) {
-            toast.error(t("failed to log in"));
+        } catch {
+            toast.error(t("Failed to log in"), { autoClose: 1000 });
+        } finally {
+            setLoading(false);
+            setEmail("");
+            setPassword("");
         }
-        setLoading(false);
     }
     // signup bg style
     const signinbg = {
