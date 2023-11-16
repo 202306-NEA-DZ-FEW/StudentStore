@@ -1,23 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  <img
-    data-nimg="1"
-    decoding="async"
-    height={22}
-    onError={[Function]}
-    onLoad={[Function]}
-    src=""
-    style={
-      Object {
-        "color": "transparent",
+<div
+  className="flex h-[100px] gap-2"
+>
+  <div
+    className="h-[80%] "
+  >
+    <img
+      className="h-full object-fit"
+      data-nimg="1"
+      decoding="async"
+      height={200}
+      onError={[Function]}
+      onLoad={[Function]}
+      src=""
+      style={
+        Object {
+          "color": "transparent",
+        }
       }
-    }
-    width={22}
+      width={200}
+    />
+  </div>
+  <div
+    className=""
+  >
+    <h2
+      className=" text-black"
+    />
+    <p />
+    <span />
+  </div>
+  <hr
+    className="w-full my-12 text-black bg-black"
   />
-  <h2 />
-  <p />
-  <span />
 </div>
 `;
