@@ -12,12 +12,17 @@ import {
     MdOutlineKeyboardDoubleArrowLeft,
 } from "react-icons/md";
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
+import { useAuth } from "@/context/AuthContext.js";
+import { useRouter } from "next/router.js";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SideBar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
-
+    const { logout } = useAuth();
+    const route = useRouter();
     useEffect(() => {
         const fetchUserInfo = async () => {
             const userId = "e43JDIG05abGPsH43xEKBNsD49e2";
@@ -43,9 +48,14 @@ const SideBar = () => {
             setSelectedLink(link);
         }
     };
-
-    const handleLogout = () => {
-        // Handle logout logic
+    // logout function
+    const handleLogout = async () => {
+        try {
+            await logout();
+            route.push("/signin");
+        } catch (error) {
+            toast.error("Failed to log out");
+        }
     };
 
     const handleToggleSidebar = () => {
@@ -147,6 +157,7 @@ const SideBar = () => {
                     </div>
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 };

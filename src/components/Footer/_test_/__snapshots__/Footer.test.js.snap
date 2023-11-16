@@ -97,7 +97,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/AboutUs/AboutUs"
+              href="/aboutus"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -108,10 +108,11 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/"
+              href="https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
               Our Team
             </a>
@@ -202,7 +203,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/Listings"
+              href="/listings"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -233,7 +234,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/AllProducts/AllProducts"
+              href="/products"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -471,7 +472,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/AboutUs/AboutUs"
+              href="/aboutus"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -482,10 +483,11 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/"
+              href="https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
               Our Team
             </a>
@@ -567,7 +569,7 @@ exports[`renders correctly 1`] = `
             >
               <a
                 className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-                href="/Listings"
+                href="/listings"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onTouchStart={[Function]}
@@ -598,7 +600,7 @@ exports[`renders correctly 1`] = `
             <li>
               <a
                 className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-                href="/AllProducts/AllProducts"
+                href="/products"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 onTouchStart={[Function]}
@@ -728,7 +730,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/AboutUs/AboutUs"
+              href="/aboutus"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -739,10 +741,11 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/"
+              href="https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
               Our Team
             </a>
@@ -911,7 +914,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/Listings"
+              href="/listings"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
@@ -942,7 +945,7 @@ exports[`renders correctly 1`] = `
           <li>
             <a
               className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="/AllProducts/AllProducts"
+              href="/products"
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
