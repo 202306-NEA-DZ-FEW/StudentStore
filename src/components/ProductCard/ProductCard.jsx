@@ -1,10 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
+import { CartContext } from "@/context/CartContext";
+
 function ProductCard({ product }) {
+    const { addItemToCart } = useContext(CartContext);
+    const addProductToCart = () => addItemToCart(product);
     return (
-        <div className='card w-[270px]  bg-white shadow-xl'>
+        <div className='card w-[220px] bg-white shadow-xl'>
             <div className='relative flex justify-center items-center m-4 mb-0 rounded-lg h-[80%]  '>
                 <figure className='  rounded-lg '>
                     <Image
@@ -27,14 +32,15 @@ function ProductCard({ product }) {
                     {product?.title}
                 </h2>
                 <div className='mt-3 mb-4 w-full  flex items-center   justify-between   text-slate-600 '>
-                    <p className=' badge badge-outline capitalize'>
-                        {product?.category}
-                    </p>
-                    <p className='capitalize'>{product?.location?.city}</p>
+                    <p className=' badge badge-outline '>{product?.category}</p>
+                    <p className='capitalize'>{product?.location.city}</p>
                 </div>
                 <div className=' flex items-center   justify-between font-semibold text-slate-900 '>
                     <p className='text-xl '>{product?.price}</p>
-                    <button className='text-3xl text-[#FF8A57] hover:text-orange-500'>
+                    <button
+                        onClick={addProductToCart}
+                        className='text-3xl  text-[#FF8A57] hover:text-orange-500'
+                    >
                         <FaShoppingCart />
                     </button>
                 </div>
