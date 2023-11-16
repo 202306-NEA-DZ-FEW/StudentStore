@@ -73,20 +73,17 @@ export default function SignUp() {
                                 userCredential.user.uid
                             );
                             setDoc(colRef, {
-                                address: {
-                                    country: "",
-                                    city: "",
-                                    zipcode: "",
-                                    street: "",
-                                },
-                                gender: "",
                                 name: formData.userName,
                                 surname: formData.surname,
                                 email: formData.email,
                                 password: formData.password,
                                 school: formData.school,
-                                phone: "",
+                                phoneNumber: "",
                                 photo: "",
+                                gender: "",
+                                country: "",
+                                city: "",
+                                zipcode: "",
                             })
                                 .then(() => {
                                     // after the user data is added to the firestore now we will redirect the user to the product page i am using / but later we will chnage it with the products page path
@@ -230,7 +227,7 @@ export default function SignUp() {
                             name='userName'
                             value={formData.userName}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.userName && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
@@ -243,7 +240,7 @@ export default function SignUp() {
                             name='surname'
                             value={formData.surname}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.surname && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
@@ -256,7 +253,7 @@ export default function SignUp() {
                             name='email'
                             value={formData.email}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.email && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
@@ -269,7 +266,7 @@ export default function SignUp() {
                             name='school'
                             value={formData.school}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.school && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
@@ -282,7 +279,7 @@ export default function SignUp() {
                             name='password'
                             value={formData.password}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.password && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
@@ -295,7 +292,7 @@ export default function SignUp() {
                             name='confirm_password'
                             value={formData.confirm_password}
                             onChange={handleChange}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[80%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#21567e]'
                         />
                         {errors.confirm_password && (
                             <span className='text-red-500 inline-block w-[80%] mx-auto md:w-[100%] lg:w-full'>
