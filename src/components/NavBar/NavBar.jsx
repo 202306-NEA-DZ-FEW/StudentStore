@@ -68,7 +68,7 @@ export default function Navbar() {
                     <div className='flex items-center md:space-x-3 lg:space-x-4'>
                         {/* Cart, Language, Profile icons */}
                         <Language />
-                        <ShoppingCartIcon count={22} />
+                        <ShoppingCartIcon />
                         <ProfileDropdown />
                     </div>
                 </div>

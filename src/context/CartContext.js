@@ -26,6 +26,14 @@ export const CartProvider = ({ children }) => {
     const currentUserUid = currentUser?.uid || "";
     const userId = currentUserUid;
 
+    useEffect(() => {
+        const newCartCount = cartItems.reduce(
+            (total, cartItem) => total + cartItem.quantity,
+            0
+        );
+        setCartCount(newCartCount);
+    }, [cartItems]);
+
     console.log("CartProvider rendering");
 
     const addItemToCart = async (productToAdd) => {
@@ -82,7 +90,7 @@ export const CartProvider = ({ children }) => {
         fetchCartItems();
     }, [userId]);
 
-    const value = { addItemToCart, cartItems };
+    const value = { addItemToCart, cartItems, cartCount };
     console.log(cartItems);
 
     return (
