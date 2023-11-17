@@ -17,25 +17,30 @@ const CartItem = ({ cartItem }) => {
     };
 
     return (
-        <div className='flex h-[100px] gap-2'>
-            <div className='h-[80%] '>
+        <div className='flex w-full  h-[100px] gap-2 justify-between'>
+            <div className='h-[80%] flex  gap-4'>
                 <Image
                     className='h-full object-fit'
                     src={cartItem?.image}
-                    width={200}
+                    width={100}
                     height={200}
                     alt={cartItem?.title}
                 />
+                <div className='flex flex-col'>
+                    <h2 className=' text-black'>{cartItem?.title}</h2>
+                    <p>{cartItem?.type}</p>
+                    <span>{cartItem?.price}</span>
+                </div>
             </div>
-            <div className=''>
-                <h2 className=' text-black'>{cartItem?.title}</h2>
-                <p>{cartItem?.type}</p>
-                <span>{cartItem?.price}</span>
+            <div>
+                <Button
+                    onClick={removeProductFromCart}
+                    className='bg-red-600 px-4'
+                >
+                    Remove
+                </Button>
+                <hr className='w-full my-12 text-black bg-black' />
             </div>
-            <Button onClick={removeProductFromCart} className='bg-red-600 px-4'>
-                Remove
-            </Button>
-            <hr className='w-full my-12 text-black bg-black' />
         </div>
     );
 };

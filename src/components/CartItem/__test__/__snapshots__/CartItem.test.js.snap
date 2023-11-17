@@ -2,10 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="flex h-[100px] gap-2"
+  className="flex w-full  h-[100px] gap-2 justify-between"
 >
   <div
-    className="h-[80%] "
+    className="h-[80%] flex  gap-4"
   >
     <img
       className="h-full object-fit"
@@ -20,26 +20,28 @@ exports[`renders correctly 1`] = `
           "color": "transparent",
         }
       }
-      width={200}
+      width={100}
+    />
+    <div
+      className="flex flex-col"
+    >
+      <h2
+        className=" text-black"
+      />
+      <p />
+      <span />
+    </div>
+  </div>
+  <div>
+    <button
+      className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+    <hr
+      className="w-full my-12 text-black bg-black"
     />
   </div>
-  <div
-    className=""
-  >
-    <h2
-      className=" text-black"
-    />
-    <p />
-    <span />
-  </div>
-  <button
-    className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
-    onClick={[Function]}
-  >
-    Remove
-  </button>
-  <hr
-    className="w-full my-12 text-black bg-black"
-  />
 </div>
 `;
