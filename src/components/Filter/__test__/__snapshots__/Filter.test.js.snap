@@ -76,5 +76,10 @@ exports[`renders correctly 1`] = `
       className="ml-4"
     />
   </div>
+  <div>
+    <button>
+      Reset Filters
+    </button>
+  </div>
 </div>
 `;

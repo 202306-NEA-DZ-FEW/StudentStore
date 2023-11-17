@@ -13,6 +13,7 @@ export default function Filter({
     selectedCategories,
     handleCategoryChange,
     filterCategories,
+    resetFilters,
 }) {
     return (
         <>
@@ -102,6 +103,9 @@ export default function Filter({
                             </div>
                         ))}
                     </div>
+                </div>
+                <div>
+                    <button onClick={resetFilters}>Reset Filters</button>
                 </div>
             </div>
         </>

@@ -114,6 +114,16 @@ export default function ProductsContainer({ products }) {
             selectedCategories.includes(product.category)
         );
     }
+    // reset filters functionality
+    const resetFilters = () => {
+        setMinPrice("");
+        setMaxPrice("");
+        setSortByPriceAsc(false);
+        setSortByPriceDesc(false);
+        setSelectedType([]);
+        setSelectedCategories([]);
+        setFilteredProducts(products);
+    };
     // using this useEffect to diplay all product at the firt render
     useEffect(() => {
         setFilteredProducts(products);
@@ -135,6 +145,7 @@ export default function ProductsContainer({ products }) {
                 selectedCategories={selectedCategories}
                 handleCategoryChange={handleCategoryChange}
                 filterCategories={filterCategories}
+                resetFilters={resetFilters}
             />
             <ProductsList products={sortedProducts} />
         </div>
