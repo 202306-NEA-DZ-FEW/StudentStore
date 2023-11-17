@@ -8,6 +8,7 @@ export default function ProductsContainer({ products }) {
     const [maxPrice, setMaxPrice] = useState("");
     const [sortByPriceAsc, setSortByPriceAsc] = useState(false);
     const [sortByPriceDesc, setSortByPriceDesc] = useState(false);
+    const [selectedType, setSelectedType] = useState([]);
     // debounce functionality
     const debounceTimeout = useRef(null);
     const debounce = (func, delay) => {
@@ -69,6 +70,22 @@ export default function ProductsContainer({ products }) {
             (a, b) => parseFloat(b.price) - parseFloat(a.price)
         );
     }
+    // function for type change
+    const handleTypeChange = (type) => {
+        if (selectedType.includes(type)) {
+            setSelectedType(selectedType.filter((t) => t !== type));
+        } else {
+            setSelectedType([...selectedType, type]);
+        }
+    };
+    console.log(selectedType);
+    // types to compare with
+    const filterType = ["Sale", "Borrow"];
+    if (selectedType.length > 0) {
+        sortedProducts = sortedProducts.filter((product) =>
+            selectedType.includes(product.type)
+        );
+    }
     // using this useEffect to diplay all product at the firt render
     useEffect(() => {
         setFilteredProducts(products);
@@ -84,6 +101,9 @@ export default function ProductsContainer({ products }) {
                 sortByPriceDesc={sortByPriceDesc}
                 handleSortByPriceAscChange={handleSortByPriceAscChange}
                 handleSortByPriceDescChange={handleSortByPriceDescChange}
+                selectedType={selectedType}
+                handleTypeChange={handleTypeChange}
+                filterType={filterType}
             />
             <ProductsList products={sortedProducts} />
         </div>

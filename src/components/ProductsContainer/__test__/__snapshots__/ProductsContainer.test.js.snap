@@ -71,6 +71,41 @@ exports[`renders correctly 1`] = `
         </label>
       </div>
     </div>
+    <h2>
+      Type
+    </h2>
+    <div
+      className="ml-4"
+    >
+      <div
+        className="mb-1"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="label-title ml-2 mb-1"
+        >
+          For Sale
+        </label>
+      </div>
+      <div
+        className="mb-1"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="label-title ml-2 mb-1"
+        >
+          For Borrow
+        </label>
+      </div>
+    </div>
   </div>
   <div
     className="w-3/4 flex justify-center flex-wrap gap-4"

@@ -7,6 +7,9 @@ export default function Filter({
     sortByPriceDesc,
     handleSortByPriceAscChange,
     handleSortByPriceDescChange,
+    selectedType,
+    handleTypeChange,
+    filterType,
 }) {
     return (
         <>
@@ -58,6 +61,21 @@ export default function Filter({
                             Price High to Low
                         </label>
                     </div>
+                </div>
+                <h2>Type</h2>
+                <div className='ml-4'>
+                    {filterType?.map((type) => (
+                        <div key={type} className='mb-1'>
+                            <input
+                                type='checkbox'
+                                checked={selectedType.includes(type)}
+                                onChange={() => handleTypeChange(type)}
+                            />
+                            <label className='label-title ml-2 mb-1'>
+                                {`For ${type}`}
+                            </label>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
