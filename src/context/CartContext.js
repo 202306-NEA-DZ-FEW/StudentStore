@@ -2,6 +2,7 @@ import {
     addDoc,
     collection,
     getDocs,
+    onSnapshot,
     query,
     updateDoc,
     where,
@@ -41,14 +42,12 @@ export const CartProvider = ({ children }) => {
             where("userId", "==", userId),
             where("productId", "==", productToAdd.id)
         );
+        const snapshot = await getDocs(q);
 
-        const querySnapshot = await getDocs(q);
-
-        if (!querySnapshot.empty) {
+        if (!snapshot.empty) {
             console.log("Item already exists in cart");
-            const cartItemDoc = querySnapshot.docs[0].ref;
-            const quantity = querySnapshot.docs[0].data().quantity;
-
+            const cartItemDoc = snapshot.docs[0].ref;
+            const quantity = snapshot.docs[0].data().quantity;
             await updateDoc(cartItemDoc, { quantity: quantity });
         } else {
             console.log("Item does not exist in cart, adding new item");
@@ -66,17 +65,18 @@ export const CartProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const fetchCartItems = async () => {
+        const fetchCartItems = () => {
             const cartRef = collection(db, "cart");
             const q = query(cartRef, where("userId", "==", userId));
-            const querySnapshot = await getDocs(q);
-            const items = [];
 
-            querySnapshot.forEach((doc) => {
-                items.push({ ...doc.data(), id: doc.id });
+            onSnapshot(q, (snapshot) => {
+                const items = [];
+
+                snapshot.docs.forEach((doc) => {
+                    items.push({ ...doc.data(), id: doc.id });
+                });
+                setCartItems(items);
             });
-
-            setCartItems(items);
         };
 
         fetchCartItems();
