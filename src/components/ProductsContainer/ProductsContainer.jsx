@@ -6,6 +6,8 @@ export default function ProductsContainer({ products }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
+    const [sortByPriceAsc, setSortByPriceAsc] = useState(false);
+    const [sortByPriceDesc, setSortByPriceDesc] = useState(false);
     // debounce functionality
     const debounceTimeout = useRef(null);
     const debounce = (func, delay) => {
@@ -46,6 +48,27 @@ export default function ProductsContainer({ products }) {
 
         setFilteredProducts(filtered);
     };
+    // sorting by asc price
+    const handleSortByPriceAscChange = () => {
+        setSortByPriceAsc(!sortByPriceAsc);
+        setSortByPriceDesc(false);
+    };
+    // sorting by des price
+    const handleSortByPriceDescChange = () => {
+        setSortByPriceDesc(!sortByPriceDesc);
+        setSortByPriceAsc(false);
+    };
+    let sortedProducts = [...filteredProducts];
+
+    if (sortByPriceAsc) {
+        sortedProducts.sort(
+            (a, b) => parseFloat(a.price) - parseFloat(b.price)
+        );
+    } else if (sortByPriceDesc) {
+        sortedProducts.sort(
+            (a, b) => parseFloat(b.price) - parseFloat(a.price)
+        );
+    }
     // using this useEffect to diplay all product at the firt render
     useEffect(() => {
         setFilteredProducts(products);
@@ -57,8 +80,12 @@ export default function ProductsContainer({ products }) {
                 maxPrice={maxPrice}
                 handleMinPriceChange={handleMinPriceChange}
                 handleMaxPriceChange={handleMaxPriceChange}
+                sortByPriceAsc={sortByPriceAsc}
+                sortByPriceDesc={sortByPriceDesc}
+                handleSortByPriceAscChange={handleSortByPriceAscChange}
+                handleSortByPriceDescChange={handleSortByPriceDescChange}
             />
-            <ProductsList products={filteredProducts} />
+            <ProductsList products={sortedProducts} />
         </div>
     );
 }

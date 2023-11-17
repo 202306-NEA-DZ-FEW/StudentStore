@@ -8,11 +8,9 @@ exports[`renders correctly 1`] = `
     className="w-1/4"
   >
     <div>
-      <div>
-        <h2>
-          Price
-        </h2>
-      </div>
+      <h2>
+        Price
+      </h2>
       <div
         className="ml-4"
       >
@@ -34,6 +32,43 @@ exports[`renders correctly 1`] = `
             value=""
           />
         </div>
+      </div>
+    </div>
+    <h2>
+      Sort
+    </h2>
+    <div
+      className="ml-4"
+    >
+      <div
+        className="flex items-center mb-1"
+      >
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="checkbox-label"
+        >
+          Price Low to High
+        </label>
+      </div>
+      <div
+        className="flex items-center mb-1"
+      >
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="checkbox-label"
+        >
+          Price High to Low
+        </label>
       </div>
     </div>
   </div>
