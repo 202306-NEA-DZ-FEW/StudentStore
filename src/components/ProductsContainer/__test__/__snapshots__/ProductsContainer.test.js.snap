@@ -1,7 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  className="flex"
+>
+  <div
+    className="w-1/4"
+  >
+    <div>
+      <div>
+        <h2>
+          Price
+        </h2>
+      </div>
+      <div
+        className="ml-4"
+      >
+        <div
+          className="flex space-x-2 justify-center my-2"
+        >
+          <input
+            className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
+            onChange={[Function]}
+            placeholder="Min"
+            type="number"
+            value=""
+          />
+          <input
+            className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
+            onChange={[Function]}
+            placeholder="Max"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     className="w-3/4 flex justify-center flex-wrap gap-4"
   />

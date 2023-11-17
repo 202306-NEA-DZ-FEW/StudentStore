@@ -1,7 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  Filter
+<div
+  className="w-1/4"
+>
+  <div>
+    <div>
+      <h2>
+        Price
+      </h2>
+    </div>
+    <div
+      className="ml-4"
+    >
+      <div
+        className="flex space-x-2 justify-center my-2"
+      >
+        <input
+          className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
+          placeholder="Min"
+          type="number"
+        />
+        <input
+          className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
+          placeholder="Max"
+          type="number"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;
