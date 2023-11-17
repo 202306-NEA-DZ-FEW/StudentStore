@@ -6,28 +6,27 @@ exports[`renders correctly 1`] = `
 >
   <div
     className="w-1/4"
+    dir="ltr"
   >
     <div>
       <h2>
-        Price
+        price
       </h2>
       <div
         className="ml-4"
       >
-        <div
-          className="flex space-x-2 justify-center my-2"
-        >
+        <div>
           <input
             className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
             onChange={[Function]}
-            placeholder="Min"
+            placeholder="min"
             type="number"
             value=""
           />
           <input
             className="w-1/2 h-6 border rounded-md px-2 focus:outline-none"
             onChange={[Function]}
-            placeholder="Max"
+            placeholder="max"
             type="number"
             value=""
           />
@@ -35,14 +34,12 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <h2>
-      Sort
+      sort by
     </h2>
     <div
       className="ml-4"
     >
-      <div
-        className="flex items-center mb-1"
-      >
+      <div>
         <input
           checked={false}
           className="mr-2"
@@ -52,12 +49,10 @@ exports[`renders correctly 1`] = `
         <label
           className="checkbox-label"
         >
-          Price Low to High
+          lowest price
         </label>
       </div>
-      <div
-        className="flex items-center mb-1"
-      >
+      <div>
         <input
           checked={false}
           className="mr-2"
@@ -67,13 +62,13 @@ exports[`renders correctly 1`] = `
         <label
           className="checkbox-label"
         >
-          Price High to Low
+          highest price
         </label>
       </div>
     </div>
     <div>
       <h2>
-        Type
+        type
       </h2>
       <div
         className="ml-4"
@@ -110,130 +105,38 @@ exports[`renders correctly 1`] = `
     </div>
     <div>
       <h2>
-        Category
+        <button
+          className="flex items-center"
+          onClick={[Function]}
+        >
+          category
+          <svg
+            className="ml-2  transition-all duration-200"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+            />
+          </svg>
+        </button>
       </h2>
-      <div
-        className="ml-4"
-      >
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            electronics
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            books
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            gaming
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            clothes
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            shoes
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            food
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            transportation
-          </label>
-        </div>
-        <div
-          className="mb-1"
-        >
-          <input
-            checked={false}
-            onChange={[Function]}
-            type="checkbox"
-          />
-          <label
-            className="label-title ml-2 mb-1 capitalize"
-          >
-            furniture
-          </label>
-        </div>
-      </div>
     </div>
     <div>
       <button
         onClick={[Function]}
       >
-        Reset Filters
+        clear filters
       </button>
     </div>
   </div>

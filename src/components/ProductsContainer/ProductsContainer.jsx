@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Filter from "../Filter/Filter";
 import ProductsList from "../ProductsList/ProductsList";
 
-export default function ProductsContainer({ products }) {
+export default function ProductsContainer({ products, t }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
@@ -129,7 +129,7 @@ export default function ProductsContainer({ products }) {
         setFilteredProducts(products);
     }, [products]);
     return (
-        <div className='flex'>
+        <div className={`flex`}>
             <Filter
                 minPrice={minPrice}
                 maxPrice={maxPrice}
@@ -146,6 +146,7 @@ export default function ProductsContainer({ products }) {
                 handleCategoryChange={handleCategoryChange}
                 filterCategories={filterCategories}
                 resetFilters={resetFilters}
+                t={t}
             />
             <ProductsList products={sortedProducts} />
         </div>
