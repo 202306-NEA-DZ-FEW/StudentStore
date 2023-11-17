@@ -10,6 +10,9 @@ export default function Filter({
     selectedType,
     handleTypeChange,
     filterType,
+    selectedCategories,
+    handleCategoryChange,
+    filterCategories,
 }) {
     return (
         <>
@@ -62,20 +65,43 @@ export default function Filter({
                         </label>
                     </div>
                 </div>
-                <h2>Type</h2>
-                <div className='ml-4'>
-                    {filterType?.map((type) => (
-                        <div key={type} className='mb-1'>
-                            <input
-                                type='checkbox'
-                                checked={selectedType.includes(type)}
-                                onChange={() => handleTypeChange(type)}
-                            />
-                            <label className='label-title ml-2 mb-1'>
-                                {`For ${type}`}
-                            </label>
-                        </div>
-                    ))}
+                <div>
+                    <h2>Type</h2>
+                    <div className='ml-4'>
+                        {filterType?.map((type) => (
+                            <div key={type} className='mb-1'>
+                                <input
+                                    type='checkbox'
+                                    checked={selectedType.includes(type)}
+                                    onChange={() => handleTypeChange(type)}
+                                />
+                                <label className='label-title ml-2 mb-1 capitalize'>
+                                    {`for ${type}`}
+                                </label>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                    <h2>Category</h2>
+                    <div className='ml-4'>
+                        {filterCategories?.map((category) => (
+                            <div key={category} className='mb-1'>
+                                <input
+                                    type='checkbox'
+                                    checked={selectedCategories.includes(
+                                        category
+                                    )}
+                                    onChange={() =>
+                                        handleCategoryChange(category)
+                                    }
+                                />
+                                <label className='label-title ml-2 mb-1 capitalize'>
+                                    {`${category}`}
+                                </label>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>

@@ -9,6 +9,7 @@ export default function ProductsContainer({ products }) {
     const [sortByPriceAsc, setSortByPriceAsc] = useState(false);
     const [sortByPriceDesc, setSortByPriceDesc] = useState(false);
     const [selectedType, setSelectedType] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState([]);
     // debounce functionality
     const debounceTimeout = useRef(null);
     const debounce = (func, delay) => {
@@ -78,12 +79,39 @@ export default function ProductsContainer({ products }) {
             setSelectedType([...selectedType, type]);
         }
     };
-    console.log(selectedType);
     // types to compare with
-    const filterType = ["Sale", "Borrow"];
+    const filterType = ["sale", "borrow"];
     if (selectedType.length > 0) {
         sortedProducts = sortedProducts.filter((product) =>
             selectedType.includes(product.type)
+        );
+    }
+
+    // categories filter
+    // function for category change
+    const handleCategoryChange = (category) => {
+        if (selectedCategories.includes(category)) {
+            setSelectedCategories(
+                selectedCategories.filter((c) => c !== category)
+            );
+        } else {
+            setSelectedCategories([...selectedCategories, category]);
+        }
+    };
+    // Categories to compare with
+    const filterCategories = [
+        "electronics",
+        "books",
+        "gaming",
+        "clothes",
+        "shoes",
+        "food",
+        "transportation",
+        "furniture",
+    ];
+    if (selectedCategories.length > 0) {
+        sortedProducts = sortedProducts.filter((product) =>
+            selectedCategories.includes(product.category)
         );
     }
     // using this useEffect to diplay all product at the firt render
@@ -104,6 +132,9 @@ export default function ProductsContainer({ products }) {
                 selectedType={selectedType}
                 handleTypeChange={handleTypeChange}
                 filterType={filterType}
+                selectedCategories={selectedCategories}
+                handleCategoryChange={handleCategoryChange}
+                filterCategories={filterCategories}
             />
             <ProductsList products={sortedProducts} />
         </div>

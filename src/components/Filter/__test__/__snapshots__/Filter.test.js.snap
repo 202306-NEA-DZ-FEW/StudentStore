@@ -60,11 +60,21 @@ exports[`renders correctly 1`] = `
       </label>
     </div>
   </div>
-  <h2>
-    Type
-  </h2>
-  <div
-    className="ml-4"
-  />
+  <div>
+    <h2>
+      Type
+    </h2>
+    <div
+      className="ml-4"
+    />
+  </div>
+  <div>
+    <h2>
+      Category
+    </h2>
+    <div
+      className="ml-4"
+    />
+  </div>
 </div>
 `;

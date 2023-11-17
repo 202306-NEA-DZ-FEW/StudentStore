@@ -71,39 +71,162 @@ exports[`renders correctly 1`] = `
         </label>
       </div>
     </div>
-    <h2>
-      Type
-    </h2>
-    <div
-      className="ml-4"
-    >
+    <div>
+      <h2>
+        Type
+      </h2>
       <div
-        className="mb-1"
+        className="ml-4"
       >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-        <label
-          className="label-title ml-2 mb-1"
+        <div
+          className="mb-1"
         >
-          For Sale
-        </label>
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            for sale
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            for borrow
+          </label>
+        </div>
       </div>
+    </div>
+    <div>
+      <h2>
+        Category
+      </h2>
       <div
-        className="mb-1"
+        className="ml-4"
       >
-        <input
-          checked={false}
-          onChange={[Function]}
-          type="checkbox"
-        />
-        <label
-          className="label-title ml-2 mb-1"
+        <div
+          className="mb-1"
         >
-          For Borrow
-        </label>
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            electronics
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            books
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            gaming
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            clothes
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            shoes
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            food
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            transportation
+          </label>
+        </div>
+        <div
+          className="mb-1"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2 mb-1 capitalize"
+          >
+            furniture
+          </label>
+        </div>
       </div>
     </div>
   </div>
