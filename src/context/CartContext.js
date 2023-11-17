@@ -1,6 +1,7 @@
 import {
     addDoc,
     collection,
+    deleteDoc,
     getDocs,
     onSnapshot,
     query,
@@ -16,6 +17,7 @@ import { useAuth } from "./AuthContext";
 export const CartContext = createContext({
     cartItems: [],
     addItemToCart: () => {},
+    removeItemFromCart: () => {},
     cartCount: 0,
 });
 
@@ -25,6 +27,7 @@ export const CartProvider = ({ children }) => {
     const { currentUser } = useAuth();
     const currentUserUid = currentUser?.uid || "";
     const userId = currentUserUid;
+    const cartRef = collection(db, "cart");
 
     useEffect(() => {
         const newCartCount = cartItems.reduce(
@@ -44,7 +47,6 @@ export const CartProvider = ({ children }) => {
             return;
         }
 
-        const cartRef = collection(db, "cart");
         const q = query(
             cartRef,
             where("userId", "==", userId),
@@ -72,9 +74,37 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    const removeItemFromCart = async (productToDelete) => {
+        if (!currentUser) {
+            console.log(
+                "User is not authenticated. Unable to remove items from the cart."
+            );
+            return;
+        }
+
+        const q = query(
+            cartRef,
+            where("userId", "==", userId),
+            where("productId", "==", productToDelete)
+        );
+        const snapshot = await getDocs(q);
+
+        console.log("Query result:", snapshot.docs);
+        console.log("userId:", userId);
+        console.log("productId:", productToDelete);
+
+        if (!snapshot.empty) {
+            console.log("Removing item from cart");
+            const cartItemDoc = snapshot.docs[0].ref;
+            console.log(cartItemDoc);
+            await deleteDoc(cartItemDoc);
+        } else {
+            console.log("Item not found in cart");
+        }
+    };
+
     useEffect(() => {
         const fetchCartItems = () => {
-            const cartRef = collection(db, "cart");
             const q = query(cartRef, where("userId", "==", userId));
 
             onSnapshot(q, (snapshot) => {
@@ -90,7 +120,7 @@ export const CartProvider = ({ children }) => {
         fetchCartItems();
     }, [userId]);
 
-    const value = { addItemToCart, cartItems, cartCount };
+    const value = { addItemToCart, cartItems, cartCount, removeItemFromCart };
     console.log(cartItems);
 
     return (

@@ -32,6 +32,12 @@ exports[`renders correctly 1`] = `
     <p />
     <span />
   </div>
+  <button
+    className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
+    onClick={[Function]}
+  >
+    Remove
+  </button>
   <hr
     className="w-full my-12 text-black bg-black"
   />
