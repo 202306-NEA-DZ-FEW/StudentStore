@@ -8,22 +8,22 @@ exports[`renders correctly 1`] = `
     className="mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden"
   >
     <div
-      className="p-4 "
+      className="p-4 w-120  flex-1"
     >
       <article
-        className=" w-full  rounded-lg bg-white shadow-lg  "
+        className=" w-full   rounded-lg bg-white shadow-lg  "
       >
         <header
-          class="pt-1"
+          class="pt-1 flex-shrink"
         >
           <h4
-            className=" font-bold lg:text-lg text-[#585785] "
+            className=" font-bold md:text-lg text-[#585785] "
           >
             Book Buddies
           </h4>
         </header>
         <div
-          class=" space-y-4 p-4 mb-2"
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
         >
           <img
             alt="Book Buddies"
@@ -44,7 +44,7 @@ exports[`renders correctly 1`] = `
             width={275}
           />
           <p
-            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
+            className="  text-[#585785] "
           >
             The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨
           </p>
@@ -90,6 +90,7 @@ exports[`renders correctly 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
                
               Join us
@@ -101,25 +102,25 @@ exports[`renders correctly 1`] = `
       </article>
     </div>
     <div
-      className="p-4 "
+      className="p-4 w-120  flex-1"
     >
       <article
-        className=" w-full  rounded-lg bg-white shadow-lg  "
+        className=" w-full   rounded-lg bg-white shadow-lg  "
       >
         <header
-          class="pt-1"
+          class="pt-1 flex-shrink"
         >
           <h4
-            className=" font-bold lg:text-lg text-[#585785] "
+            className=" font-bold md:text-lg text-[#585785] "
           >
-             🌍 How to be human in the time of the climate crisis
+            the climate crisis
           </h4>
         </header>
         <div
-          class=" space-y-4 p-4 mb-2"
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
         >
           <img
-            alt=" 🌍 How to be human in the time of the climate crisis"
+            alt="the climate crisis"
             className="object-cover  mx-auto block  rounded-md "
             data-nimg="1"
             decoding="async"
@@ -137,7 +138,7 @@ exports[`renders correctly 1`] = `
             width={275}
           />
           <p
-            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
+            className="  text-[#585785] "
           >
             Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.
           </p>
@@ -183,6 +184,7 @@ exports[`renders correctly 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
                
               Join us
@@ -194,22 +196,22 @@ exports[`renders correctly 1`] = `
       </article>
     </div>
     <div
-      className="p-4 "
+      className="p-4 w-120  flex-1"
     >
       <article
-        className=" w-full  rounded-lg bg-white shadow-lg  "
+        className=" w-full   rounded-lg bg-white shadow-lg  "
       >
         <header
-          class="pt-1"
+          class="pt-1 flex-shrink"
         >
           <h4
-            className=" font-bold lg:text-lg text-[#585785] "
+            className=" font-bold md:text-lg text-[#585785] "
           >
             Discover Photography!
           </h4>
         </header>
         <div
-          class=" space-y-4 p-4 mb-2"
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
         >
           <img
             alt="Discover Photography!"
@@ -230,7 +232,7 @@ exports[`renders correctly 1`] = `
             width={275}
           />
           <p
-            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
+            className="  text-[#585785] "
           >
             Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? If so, this half-day course is for you.
           </p>
@@ -276,6 +278,7 @@ exports[`renders correctly 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
+              target="_blank"
             >
                
               Join us
