@@ -32,47 +32,20 @@ const CartItem = ({ cartItem, updateCart }) => {
     const calculateBorrowPrice = () => {
         // Assuming a linear calculation based on the default price and days
         const defaultDays = 15;
-        const defaultPrice = cartItem.price || 0;
+        const defaultPrice = cartItem?.price || 0;
         const pricePerDay = defaultPrice / defaultDays;
         return borrowDays * pricePerDay;
     };
+    const convertToDinar = (priceInDollars) => {
+        const exchangeRate = 134.35;
+        return (priceInDollars * exchangeRate).toFixed(2);
+    };
+    const borrowPrice = calculateBorrowPrice();
+    const convertedBorrowPrice = convertToDinar(borrowPrice);
+    const convertedPrice = convertToDinar(cartItem?.price);
+
     return (
         <div>
-            {/* <div className='flex w-full  h-[100px] gap-2 justify-between'>
-                <div className='h-[80%] flex  gap-4'>
-                    <Image
-                        className='h-full object-fit'
-                        src={cartItem?.image}
-                        width={100}
-                        height={200}
-                        alt={cartItem?.title}
-                    />
-                    <div className='flex flex-col'>
-                        <h2 className=' text-black'>{cartItem?.title}</h2>
-                        <p>{cartItem?.type}</p>
-                        {cartItem?.type === "borrow"
-                            ? calculateBorrowPrice().toFixed(2)
-                            : cartItem?.price?.toFixed(2)}
-                    </div>
-                </div>
-
-                <div>
-                    {cartItem?.type === "borrow" && (
-                        <>
-                            <Button onClick={handleIncreaseDays}>+</Button>
-                            <Button onClick={handleDecreaseDays}>-</Button>
-                            <span>{borrowDays} days</span>
-                        </>
-                    )}
-                    <Button
-                        onClick={removeProductFromCart}
-                        className='bg-red-600 px-4'
-                    >
-                        Remove
-                    </Button>
-                    <hr className='w-full my-12 text-black bg-black' />
-                </div>
-            </div> */}
             <div class='justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
                 <Image
                     src={cartItem?.image}
@@ -86,11 +59,15 @@ const CartItem = ({ cartItem, updateCart }) => {
                         <h2 class='text-lg font-bold text-gray-900'>
                             {cartItem?.title}
                         </h2>
-                        <p class='mt-1 text-md text-gray-700'>
-                            {cartItem?.type === "borrow"
-                                ? calculateBorrowPrice().toFixed(2)
-                                : cartItem?.price.toFixed(2)}
-                            $ - PRICE DA
+                        <p class='mt-1  text-md text-gray-700'>
+                            {cartItem?.type === "borrow" && (
+                                <>
+                                    {borrowPrice.toFixed(2)} -{" "}
+                                    {convertedBorrowPrice} DZD
+                                    <br />
+                                </>
+                            )}
+                            {cartItem?.price.toFixed(2)}$ - {convertedPrice} DZD
                         </p>
                         <p className='capitalize'>{cartItem?.type}</p>
                     </div>
@@ -119,10 +96,10 @@ const CartItem = ({ cartItem, updateCart }) => {
                         )}
                         <div class='flex items-center space-x-4'>
                             <Button
-                                className='bg-red-600 px-4'
+                                className='bg-transparent border-none hover:text-white  text-gray-500 hover:bg-red-600 px-4'
                                 onClick={removeProductFromCart}
                             >
-                                Delete
+                                Remove
                             </Button>
                         </div>
                     </div>

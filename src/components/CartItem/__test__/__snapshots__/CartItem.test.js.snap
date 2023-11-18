@@ -30,9 +30,11 @@ exports[`renders correctly 1`] = `
           class="text-lg font-bold text-gray-900"
         />
         <p
-          class="mt-1 text-md text-gray-700"
+          class="mt-1  text-md text-gray-700"
         >
-          $ - PRICE DA
+          $ - 
+          NaN
+           DZD
         </p>
         <p
           className="capitalize"
@@ -45,10 +47,10 @@ exports[`renders correctly 1`] = `
           class="flex items-center space-x-4"
         >
           <button
-            className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
+            className="border-2 border-[#FF8A57] py-2 rounded-lg shadow-sm text-md hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-transparent border-none hover:text-white text-gray-500 hover:bg-red-600 px-4"
             onClick={[Function]}
           >
-            Delete
+            Remove
           </button>
         </div>
       </div>
