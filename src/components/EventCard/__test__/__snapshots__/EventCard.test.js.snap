@@ -1,317 +1,285 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="Events-Section "
+<section
+  className="p-4"
 >
-  <section
-    class=" p-8"
+  <div
+    className="mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden"
   >
     <div
-      class="max-w-lg mx-auto relative"
+      className="p-4 "
     >
-      <input
-        className="sr-only peer/01"
-        id="article-01"
-        name="slider"
-        type="radio"
-      />
-      <input
-        checked={true}
-        className="sr-only peer/03"
-        id="article-03"
-        name="slider"
-        type="radio"
-      />
-      <input
-        className="sr-only peer/05"
-        id="article-05"
-        name="slider"
-        type="radio"
-      />
-      <div
-        class=" absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] peer-focus-visible/01:[&_article]:ring peer-focus-visible/01:[&_article]:ring-indigo-300 peer-checked/01:relative peer-checked/01:z-50 peer-checked/01:translate-x-0 peer-checked/01:scale-100 peer-checked/01:[&>label]:pointer-events-none peer-checked/03:-translate-x-40 md:peer-checked/03:-translate-x-80  peer-checked/03:z-30 md:peer-checked/05:-translate-x-80 peer-checked/05:-translate-x-40  "
+      <article
+        className=" w-full  rounded-lg bg-white shadow-lg  "
       >
-        <label
-          class="absolute inset-0"
-          for="article-01"
+        <header
+          class="pt-1"
         >
-          <span
-            class="sr-only"
+          <h4
+            className=" font-bold lg:text-lg text-[#585785] "
           >
-            Focus on the big picture
-          </span>
-        </label>
-        <article
-          class="bg-white   p-6 rounded-lg shadow-2xl"
+            Book Buddies
+          </h4>
+        </header>
+        <div
+          class="   text-slate-500 space-y-4 p-4 mb-2"
         >
-          <header
-            class="mb-2"
+          <img
+            alt="Book Buddies"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2FEvents.png&w=640&q=75"
+            srcSet="/_next/image?url=%2FEvents.png&w=384&q=75 1x, /_next/image?url=%2FEvents.png&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
           >
-            <h1
-              class="text-xl font-bold text-slate-900"
-            >
-              Journey Through Iconic Worlds: Campus Book Reading Stand
-            </h1>
-          </header>
+            The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around  lg:flex-row flex-col p-2 "
+        >
           <div
-            class="text-sm md:flex leading-relaxed text-slate-500 space-y-4 mb-2"
+            className="flex space-x-2 justify-center text-center text-[#585785] "
           >
-            <p
-              className="p-2"
-            >
-              See you through the month of december On campus 📚✨
-            </p>
-            <img
-              alt="Picture of the author"
-              className="rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={300}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2FEvents.png&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvents.png&w=384&q=75 1x, /_next/image?url=%2FEvents.png&w=640&q=75 2x"
+             
+            <svg
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
               style={
                 Object {
-                  "color": "transparent",
+                  "color": undefined,
                 }
               }
-              width={300}
-            />
-          </div>
-          <footer
-            class="flex justify-between "
-          >
-            <div
-              className="flex space-x-2  text-[#585785] "
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
             >
-               
-              <svg
-                fill="currentColor"
-                height={25}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 448 512"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-               
-              <p
-                className=" text-lg font-semibold"
-              >
-                 
-                15 December 2023
-                 
-              </p>
-            </div>
-            <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
-            >
-              Join us
-            </button>
-          </footer>
-        </article>
-      </div>
-      <div
-        class=" absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] peer-focus-visible/03:[&_article]:ring peer-focus-visible/03:[&_article]:ring-indigo-300                           peer-checked/01:translate-x-40 peer-checked/01:z-30 md:peer-checked/01:translate-x-60  peer-checked/03:relative peer-checked/03:z-50 peer-checked/03:translate-x-0 peer-checked/03:scale-100 peer-checked/03:[&>label]:pointer-events-none peer-checked/05:-translate-x-40  md:peer-checked/05:-translate-x-30  peer-checked/05:z-30                   "
-      >
-        <label
-          class="absolute inset-0"
-          for="article-03"
-        >
-          <span
-            class="sr-only"
-          >
-            Focus on the big picture
-          </span>
-        </label>
-        <article
-          class="bg-white p-6 rounded-lg shadow-2xl"
-        >
-          <header
-            class="mb-2"
-          >
-            <h1
-              class="text-xl font-bold text-slate-900"
-            >
-              🌍 Project Green Challenge 2024: Join the Global Movement for Climate Action!
-            </h1>
-          </header>
-          <div
-            class="text-sm leading-relaxed  md:flex text-slate-500 space-y-4 mb-2"
-          >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
             <p
-              className="p-2"
+              className=" text-center text-lg font-semibold"
             >
-              Competition Details: 🌟 October 1-30, 2024 Register Now! What to Expect: 🌿 30 days of eco-challenges to empower and inform. 🌏 Join students worldwide in shaping a sustainable future.
+              Tuesday, 21 November
             </p>
-            <img
-              alt="Picture of the author"
-              className="rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={300}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2FEvent3.jpg&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvent3.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent3.jpg&w=640&q=75 2x"
-              style={
-                Object {
-                  "color": "transparent",
-                }
-              }
-              width={300}
-            />
           </div>
-          <footer
-            class="flex justify-between "
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
           >
-            <div
-              className="flex space-x-2  text-[#585785] "
+             
+            <a
+              href="https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
             >
-               
-              <svg
-                fill="currentColor"
-                height={25}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 448 512"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-               
-              <p
-                className=" text-lg font-semibold"
-              >
-                 
-                22 December 2023
-                 
-              </p>
-            </div>
-            <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
-            >
-              Join us
-            </button>
-          </footer>
-        </article>
-      </div>
-      <div
-        class=" absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] peer-focus-visible/05:[&_article]:ring peer-focus-visible/05:[&_article]:ring-indigo-300                           peer-checked/01:translate-x-20  md:peer-checked/01:translate-x-80  md:peer-checked/03:translate-x-80 peer-checked/03:translate-x-40 peer-checked/03:z-30 peer-checked/05:relative peer-checked/05:z-50 peer-checked/05:translate-x-0 peer-checked/05:scale-100 peer-checked/05:[&>label]:pointer-events-none "
-      >
-        <label
-          class="absolute inset-0"
-          for="article-05"
-        >
-          <span
-            class="sr-only"
-          >
-            Focus on the big picture
-          </span>
-        </label>
-        <article
-          class="bg-white p-6 rounded-lg shadow-2xl"
-        >
-          <header
-            class="mb-2"
-          >
-            <h1
-              class="text-xl font-bold text-slate-900"
-            >
-              Exciting News: 2024 National & Regional Photography Awards!
-            </h1>
-          </header>
-          <div
-            class="text-sm  md:flex leading-relaxed text-slate-500 space-y-4 mb-2"
-          >
-            <p
-              className="p-2"
-            >
-              Calling all photographers, amateurs and pros alike! The 2024 National & Regional Awards are here to shine a spotlight on your talent.
-            </p>
-            <img
-              alt="Picture of the author"
-              className="rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={300}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2FEvent2.jpg&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvent2.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent2.jpg&w=640&q=75 2x"
-              style={
-                Object {
-                  "color": "transparent",
-                }
-              }
-              width={300}
-            />
-          </div>
-          <footer
-            class="flex justify-between "
-          >
-            <div
-              className="flex space-x-2  text-[#585785] "
-            >
-               
-              <svg
-                fill="currentColor"
-                height={25}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 448 512"
-                width={25}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-               
-              <p
-                className=" text-lg font-semibold"
-              >
-                 
-                25 December 2023
-                 
-              </p>
-            </div>
-            <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 px-2 border-none"
-            >
-              Join us
-            </button>
-          </footer>
-        </article>
-      </div>
+                 Join us   
+            </a>
+              
+          </button>
+        </footer>
+      </article>
     </div>
-  </section>
-</div>
+    <div
+      className="p-4 "
+    >
+      <article
+        className=" w-full  rounded-lg bg-white shadow-lg  "
+      >
+        <header
+          class="pt-1"
+        >
+          <h4
+            className=" font-bold lg:text-lg text-[#585785] "
+          >
+             🌍 How to be human in the time of the climate crisis
+          </h4>
+        </header>
+        <div
+          class="   text-slate-500 space-y-4 p-4 mb-2"
+        >
+          <img
+            alt=" 🌍 How to be human in the time of the climate crisis"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2FEvent3.jpg&w=640&q=75"
+            srcSet="/_next/image?url=%2FEvent3.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent3.jpg&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
+          >
+            Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around  lg:flex-row flex-col p-2 "
+        >
+          <div
+            className="flex space-x-2 justify-center text-center text-[#585785] "
+          >
+             
+            <svg
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
+            <p
+              className=" text-center text-lg font-semibold"
+            >
+              Saturday, December 16 
+            </p>
+          </div>
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+          >
+             
+            <a
+              href="https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
+            >
+                 Join us   
+            </a>
+              
+          </button>
+        </footer>
+      </article>
+    </div>
+    <div
+      className="p-4 "
+    >
+      <article
+        className=" w-full  rounded-lg bg-white shadow-lg  "
+      >
+        <header
+          class="pt-1"
+        >
+          <h4
+            className=" font-bold lg:text-lg text-[#585785] "
+          >
+            Discover Photography!
+          </h4>
+        </header>
+        <div
+          class="   text-slate-500 space-y-4 p-4 mb-2"
+        >
+          <img
+            alt="Discover Photography!"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2FEvent2.jpg&w=640&q=75"
+            srcSet="/_next/image?url=%2FEvent2.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent2.jpg&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
+          >
+            Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? If so, this half-day course is for you.
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around  lg:flex-row flex-col p-2 "
+        >
+          <div
+            className="flex space-x-2 justify-center text-center text-[#585785] "
+          >
+             
+            <svg
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
+            <p
+              className=" text-center text-lg font-semibold"
+            >
+              Saturday, 16 December
+            </p>
+          </div>
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+          >
+             
+            <a
+              href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
+            >
+                 Join us   
+            </a>
+              
+          </button>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
 `;

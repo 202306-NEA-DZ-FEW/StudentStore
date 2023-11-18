@@ -1,232 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import Button from "../Buttons/Button";
+import Link from "next/link";
 
-const EventCard = ({ title, description }) => {
+const EventCard = () => {
+    const data = [
+        {
+            id: 1,
+            image: "/Events.png",
+            title: "Book Buddies",
+            description:
+                "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨",
+            date: "Tuesday, 21 November",
+            link: "https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1",
+        },
+        {
+            id: 2,
+            image: "/Event3.jpg",
+            title: " 🌍 How to be human in the time of the climate crisis",
+            description:
+                "Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.",
+            date: "Saturday, December 16 ",
+            link: "https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch",
+        },
+        {
+            id: 3,
+            image: "/Event2.jpg",
+            title: "Discover Photography!",
+            description:
+                "Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? If so, this half-day course is for you.",
+            date: "Saturday, 16 December",
+            link: "https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1",
+        },
+    ];
+    const [event, setEvent] = useState(data);
     return (
-        <div className='Events-Section '>
-            <section class=' p-8'>
-                <div class='max-w-lg mx-auto relative'>
-                    <input
-                        id='article-01'
-                        type='radio'
-                        name='slider'
-                        className='sr-only peer/01'
-                    />
+        <section className='p-4'>
+            <div className='mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden'>
+                {event.map((event, eventIndex) => {
+                    const { id, image, title, description, date, link } = event;
+                    return (
+                        <div key={id} className='p-4 '>
+                            <article
+                                className={` w-full  rounded-lg bg-white shadow-lg  `}
+                                key={id}
+                            >
+                                <header class='pt-1'>
+                                    <h4 className=' font-bold lg:text-lg text-[#585785] '>
+                                        {title}
+                                    </h4>
+                                </header>
 
-                    <input
-                        id='article-03'
-                        type='radio'
-                        name='slider'
-                        className='sr-only peer/03'
-                        checked
-                    />
-
-                    <input
-                        id='article-05'
-                        type='radio'
-                        name='slider'
-                        className='sr-only peer/05'
-                    />
-
-                    <div
-                        class='
-            absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-            peer-focus-visible/01:[&_article]:ring
-            peer-focus-visible/01:[&_article]:ring-indigo-300
-            peer-checked/01:relative
-            peer-checked/01:z-50
-            peer-checked/01:translate-x-0
-            peer-checked/01:scale-100
-            peer-checked/01:[&>label]:pointer-events-none
-            peer-checked/03:-translate-x-40
-            md:peer-checked/03:-translate-x-80
-
-            peer-checked/03:z-30
-            md:peer-checked/05:-translate-x-80
-            peer-checked/05:-translate-x-40
-
-        '
-                    >
-                        <label class='absolute inset-0' for='article-01'>
-                            <span class='sr-only'>
-                                Focus on the big picture
-                            </span>
-                        </label>
-                        <article class='bg-white   p-6 rounded-lg shadow-2xl'>
-                            <header class='mb-2'>
-                                <h1 class='text-xl font-bold text-slate-900'>
-                                    Journey Through Iconic Worlds: Campus Book
-                                    Reading Stand
-                                </h1>
-                            </header>
-
-                            <div class='text-sm md:flex leading-relaxed text-slate-500 space-y-4 mb-2'>
-                                <p className='p-2'>
-                                    See you through the month of december On
-                                    campus 📚✨
-                                </p>
-
-                                <Image
-                                    src='/Events.png'
-                                    width={300}
-                                    className='rounded-md	'
-                                    height={300}
-                                    alt='Picture of the author'
-                                />
-                            </div>
-                            <footer class='flex justify-between '>
-                                <div className='flex space-x-2  text-[#585785] '>
-                                    {" "}
-                                    <FaCalendarAlt
-                                        size={25}
-                                    ></FaCalendarAlt>{" "}
-                                    <p className=' text-lg font-semibold'>
-                                        {" "}
-                                        15 December 2023{" "}
+                                <div class='   text-slate-500 space-y-4 p-4 mb-2'>
+                                    <Image
+                                        src={image}
+                                        alt={title}
+                                        width={275}
+                                        height={250}
+                                        className='object-cover  mx-auto block  rounded-md '
+                                    />
+                                    <p className='max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose'>
+                                        {description}
                                     </p>
                                 </div>
-                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
-                                    Join us
-                                </Button>
-                            </footer>
-                        </article>
-                    </div>
-
-                    <div
-                        class='
-            absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-            peer-focus-visible/03:[&_article]:ring
-            peer-focus-visible/03:[&_article]:ring-indigo-300                          
-            peer-checked/01:translate-x-40
-            peer-checked/01:z-30
-            md:peer-checked/01:translate-x-60
-
-            peer-checked/03:relative
-            peer-checked/03:z-50
-            peer-checked/03:translate-x-0
-            peer-checked/03:scale-100
-            peer-checked/03:[&>label]:pointer-events-none
-            peer-checked/05:-translate-x-40
-
-            md:peer-checked/05:-translate-x-30
-
-            peer-checked/05:z-30                  
-        '
-                    >
-                        <label class='absolute inset-0' for='article-03'>
-                            <span class='sr-only'>
-                                Focus on the big picture
-                            </span>
-                        </label>
-                        <article class='bg-white p-6 rounded-lg shadow-2xl'>
-                            <header class='mb-2'>
-                                <h1 class='text-xl font-bold text-slate-900'>
-                                    🌍 Project Green Challenge 2024: Join the
-                                    Global Movement for Climate Action!
-                                </h1>
-                            </header>
-                            <div class='text-sm leading-relaxed  md:flex text-slate-500 space-y-4 mb-2'>
-                                <p className='p-2'>
-                                    Competition Details: 🌟 October 1-30, 2024
-                                    Register Now! What to Expect: 🌿 30 days of
-                                    eco-challenges to empower and inform. 🌏
-                                    Join students worldwide in shaping a
-                                    sustainable future.
-                                </p>
-
-                                <Image
-                                    src='/Event3.jpg'
-                                    width={300}
-                                    className='rounded-md	'
-                                    height={300}
-                                    alt='Picture of the author'
-                                />
-                            </div>
-                            <footer class='flex justify-between '>
-                                <div className='flex space-x-2  text-[#585785] '>
-                                    {" "}
-                                    <FaCalendarAlt
-                                        size={25}
-                                    ></FaCalendarAlt>{" "}
-                                    <p className=' text-lg font-semibold'>
+                                <footer class='flex lg:justify-around  lg:flex-row flex-col p-2 '>
+                                    <div className='flex space-x-2 justify-center text-center text-[#585785] '>
                                         {" "}
-                                        22 December 2023{" "}
-                                    </p>
-                                </div>
-                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
-                                    Join us
-                                </Button>
-                            </footer>
-                        </article>
-                    </div>
-
-                    <div
-                        class='
-            absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-            peer-focus-visible/05:[&_article]:ring
-            peer-focus-visible/05:[&_article]:ring-indigo-300                          
-            peer-checked/01:translate-x-20 
-            md:peer-checked/01:translate-x-80 
-            md:peer-checked/03:translate-x-80
-            peer-checked/03:translate-x-40
-            peer-checked/03:z-30
-            peer-checked/05:relative
-            peer-checked/05:z-50
-            peer-checked/05:translate-x-0
-            peer-checked/05:scale-100
-            peer-checked/05:[&>label]:pointer-events-none
-        '
-                    >
-                        <label class='absolute inset-0' for='article-05'>
-                            <span class='sr-only'>
-                                Focus on the big picture
-                            </span>
-                        </label>
-                        <article class='bg-white p-6 rounded-lg shadow-2xl'>
-                            <header class='mb-2'>
-                                <h1 class='text-xl font-bold text-slate-900'>
-                                    Exciting News: 2024 National & Regional
-                                    Photography Awards!
-                                </h1>
-                            </header>
-                            <div class='text-sm  md:flex leading-relaxed text-slate-500 space-y-4 mb-2'>
-                                <p className='p-2'>
-                                    Calling all photographers, amateurs and pros
-                                    alike! The 2024 National & Regional Awards
-                                    are here to shine a spotlight on your
-                                    talent.
-                                </p>
-
-                                <Image
-                                    className='rounded-md	'
-                                    src='/Event2.jpg'
-                                    width={300}
-                                    height={300}
-                                    alt='Picture of the author'
-                                />
-                            </div>
-                            <footer class='flex justify-between '>
-                                <div className='flex space-x-2  text-[#585785] '>
-                                    {" "}
-                                    <FaCalendarAlt
-                                        size={25}
-                                    ></FaCalendarAlt>{" "}
-                                    <p className=' text-lg font-semibold'>
+                                        <FaCalendarAlt
+                                            size={25}
+                                        ></FaCalendarAlt>{" "}
+                                        <p className=' text-center text-lg font-semibold'>
+                                            {date}
+                                        </p>
+                                    </div>
+                                    <Button className='bg-[#585785] py-1 lg:px-2 border-none px-1  w-24 m-auto  '>
                                         {" "}
-                                        25 December 2023{" "}
-                                    </p>
-                                </div>
-                                <Button className='bg-[#585785] py-1 px-2 border-none	 '>
-                                    Join us
-                                </Button>
-                            </footer>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </div>
+                                        <Link href={`${link}`}>
+                                            {" "}
+                                            Join us{" "}
+                                        </Link>{" "}
+                                    </Button>
+                                </footer>
+                            </article>
+                        </div>
+                    );
+                })}
+            </div>
+        </section>
     );
 };
 
