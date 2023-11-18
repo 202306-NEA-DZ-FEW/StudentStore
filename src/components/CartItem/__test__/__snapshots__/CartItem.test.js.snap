@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="flex w-full  h-[100px] gap-2 justify-between"
->
+<div>
   <div
-    className="h-[80%] flex  gap-4"
+    class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
   >
     <img
-      className="h-full object-fit"
+      class="w-full rounded-lg sm:w-40"
       data-nimg="1"
       decoding="async"
-      height={200}
+      height={100}
       onError={[Function]}
       onLoad={[Function]}
       src=""
@@ -20,27 +18,41 @@ exports[`renders correctly 1`] = `
           "color": "transparent",
         }
       }
-      width={100}
+      width={250}
     />
     <div
-      className="flex flex-col"
+      class="sm:ml-4 sm:flex sm:w-full sm:justify-between"
     >
-      <h2
-        className=" text-black"
-      />
-      <p />
+      <div
+        class="mt-5 sm:mt-0"
+      >
+        <h2
+          class="text-lg font-bold text-gray-900"
+        />
+        <p
+          class="mt-1 text-md text-gray-700"
+        >
+          $ - PRICE DA
+        </p>
+        <p
+          className="capitalize"
+        />
+      </div>
+      <div
+        class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6"
+      >
+        <div
+          class="flex items-center space-x-4"
+        >
+          <button
+            className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <button
-      className="border-2 border-[#FF8A57] py-2 rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-red-600 px-4"
-      onClick={[Function]}
-    >
-      Remove
-    </button>
-    <hr
-      className="w-full my-12 text-black bg-black"
-    />
   </div>
 </div>
 `;

@@ -11,7 +11,7 @@ function ProductCard({ product }) {
     return (
         <div class='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
             <Link href='/'>
-                <div className='relative'>
+                <div className='relative border-b-2 border-gray-300'>
                     <Image
                         src={product?.pictures[1]}
                         height={364}
@@ -42,7 +42,7 @@ function ProductCard({ product }) {
                     </span>
                 </div>
                 <Link href='/'>
-                    <p class='text-lg font-bold text-center mt-2 text-black truncate block capitalize'>
+                    <p class='text-lg font-bold  mt-2 text-black truncate block capitalize'>
                         {product?.title}
                     </p>
                 </Link>

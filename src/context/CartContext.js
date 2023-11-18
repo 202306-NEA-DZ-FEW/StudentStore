@@ -124,7 +124,7 @@ export const CartProvider = ({ children }) => {
         const fetchCartItems = () => {
             const q = query(cartRef, where("userId", "==", userId));
 
-            onSnapshot(q, (snapshot) => {
+            const unsubscribe = onSnapshot(q, (snapshot) => {
                 const items = [];
 
                 snapshot.docs.forEach((doc) => {
@@ -132,6 +132,10 @@ export const CartProvider = ({ children }) => {
                 });
                 setCartItems(items);
             });
+            return () => {
+                // Detach the listener when the component unmounts
+                unsubscribe();
+            };
         };
 
         fetchCartItems();
