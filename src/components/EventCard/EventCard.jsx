@@ -3,7 +3,6 @@ import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import Button from "../Buttons/Button";
 import Link from "next/link";
-
 const EventCard = () => {
     const data = [
         {
@@ -44,15 +43,13 @@ const EventCard = () => {
                         <div key={id} className='p-4 '>
                             <article
                                 className={` w-full  rounded-lg bg-white shadow-lg  `}
-                                key={id}
                             >
                                 <header class='pt-1'>
                                     <h4 className=' font-bold lg:text-lg text-[#585785] '>
                                         {title}
                                     </h4>
                                 </header>
-
-                                <div class='   text-slate-500 space-y-4 p-4 mb-2'>
+                                <div class=' space-y-4 p-4 mb-2'>
                                     <Image
                                         src={image}
                                         alt={title}

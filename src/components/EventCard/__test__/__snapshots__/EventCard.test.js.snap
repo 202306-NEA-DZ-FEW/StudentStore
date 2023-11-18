@@ -23,7 +23,7 @@ exports[`renders correctly 1`] = `
           </h4>
         </header>
         <div
-          class="   text-slate-500 space-y-4 p-4 mb-2"
+          class=" space-y-4 p-4 mb-2"
         >
           <img
             alt="Book Buddies"
@@ -91,9 +91,11 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-                 Join us   
+               
+              Join us
+               
             </a>
-              
+             
           </button>
         </footer>
       </article>
@@ -114,7 +116,7 @@ exports[`renders correctly 1`] = `
           </h4>
         </header>
         <div
-          class="   text-slate-500 space-y-4 p-4 mb-2"
+          class=" space-y-4 p-4 mb-2"
         >
           <img
             alt=" 🌍 How to be human in the time of the climate crisis"
@@ -182,9 +184,11 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-                 Join us   
+               
+              Join us
+               
             </a>
-              
+             
           </button>
         </footer>
       </article>
@@ -205,7 +209,7 @@ exports[`renders correctly 1`] = `
           </h4>
         </header>
         <div
-          class="   text-slate-500 space-y-4 p-4 mb-2"
+          class=" space-y-4 p-4 mb-2"
         >
           <img
             alt="Discover Photography!"
@@ -273,9 +277,11 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-                 Join us   
+               
+              Join us
+               
             </a>
-              
+             
           </button>
         </footer>
       </article>
