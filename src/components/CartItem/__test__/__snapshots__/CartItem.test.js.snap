@@ -29,7 +29,6 @@ exports[`renders correctly 1`] = `
         className=" text-black"
       />
       <p />
-      <span />
     </div>
   </div>
   <div>

@@ -18,6 +18,7 @@ export const CartContext = createContext({
     cartItems: [],
     addItemToCart: () => {},
     removeItemFromCart: () => {},
+    updateCartItem: () => {},
     cartCount: 0,
 });
 
@@ -37,8 +38,6 @@ export const CartProvider = ({ children }) => {
         setCartCount(newCartCount);
     }, [cartItems]);
 
-    console.log("CartProvider rendering");
-
     const addItemToCart = async (productToAdd) => {
         if (!currentUser) {
             console.log(
@@ -50,7 +49,7 @@ export const CartProvider = ({ children }) => {
         const q = query(
             cartRef,
             where("userId", "==", userId),
-            where("productId", "==", productToAdd.id)
+            where("productId", "==", productToAdd)
         );
         const snapshot = await getDocs(q);
 
@@ -60,7 +59,7 @@ export const CartProvider = ({ children }) => {
             const quantity = snapshot.docs[0].data().quantity;
             await updateDoc(cartItemDoc, { quantity: quantity });
         } else {
-            console.log("Item does not exist in cart, adding new item");
+            console.log("Adding new item");
             await addDoc(cartRef, {
                 userId,
                 productId: productToAdd.id,
@@ -71,6 +70,29 @@ export const CartProvider = ({ children }) => {
                 image: productToAdd.pictures[1],
                 category: productToAdd.category,
             });
+        }
+    };
+
+    const updateCartItem = async (productId, updatedDetails) => {
+        if (!currentUser) {
+            console.log(
+                "User is not authenticated. Unable to update items in the cart."
+            );
+            return;
+        }
+
+        const q = query(
+            cartRef,
+            where("userId", "==", userId),
+            where("productId", "==", productId)
+        );
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+            const cartItemDoc = snapshot.docs[0].ref;
+            await updateDoc(cartItemDoc, updatedDetails);
+        } else {
+            console.log("Item not found in cart");
         }
     };
 
@@ -89,14 +111,9 @@ export const CartProvider = ({ children }) => {
         );
         const snapshot = await getDocs(q);
 
-        console.log("Query result:", snapshot.docs);
-        console.log("userId:", userId);
-        console.log("productId:", productToDelete);
-
         if (!snapshot.empty) {
             console.log("Removing item from cart");
             const cartItemDoc = snapshot.docs[0].ref;
-            console.log(cartItemDoc);
             await deleteDoc(cartItemDoc);
         } else {
             console.log("Item not found in cart");
@@ -120,8 +137,13 @@ export const CartProvider = ({ children }) => {
         fetchCartItems();
     }, [userId]);
 
-    const value = { addItemToCart, cartItems, cartCount, removeItemFromCart };
-    console.log(cartItems);
+    const value = {
+        addItemToCart,
+        cartItems,
+        cartCount,
+        removeItemFromCart,
+        updateCartItem,
+    };
 
     return (
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
