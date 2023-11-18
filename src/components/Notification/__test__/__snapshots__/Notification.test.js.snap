@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#FF5733",
+      "borderRadius": "5px",
+      "color": "white",
+      "marginBottom": "10px",
+      "padding": "10px",
+    }
+  }
+>
+  <p>
+     
+    <button>
+      <mocked-AiFillCloseCircle />
+    </button>
+  </p>
+</div>
+`;

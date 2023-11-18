@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { db } from "../../util/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/AuthContext.js";
 import Link from "next/link";
 
 const ProductDetails = ({ productId }) => {
@@ -154,53 +154,57 @@ const ProductDetails = ({ productId }) => {
 
                     {/* User Info */}
                     <div className='mt-2'>
-                        {/* {userData && user ? ( */}
-                        <div className='flex items-center mt-4 bg-gradient-to-r from-[#585785] to-[#FF8A57] rounded-l-full shadow-xl p-4'>
-                            <div className='rounded-full overflow-hidden'>
-                                <Image
-                                    src={userData?.photo}
-                                    width={65}
-                                    height={65}
-                                    className='object-cover w-full h-full'
-                                    alt='user picture'
-                                />
-                            </div>
-                            <div className='ml-4 flex-1'>
-                                <div className='flex flex-col'>
-                                    <h2 className='text-xl font-bold text-white'>
-                                        {userData?.name} {userData?.username}
-                                    </h2>
-                                    <div className='flex items-center'>
-                                        <p className='text-lg text-white mr-2'>
-                                            {userData?.email}
-                                        </p>
-                                        <div
-                                            className='text-center text-white ml-auto'
-                                            style={{ marginLeft: "35%" }}
-                                        >
-                                            <p className='text-4xl font-bold'>
-                                                {productData?.price}$
+                        {userData && user ? (
+                            <div className='flex items-center mt-4 bg-gradient-to-r from-[#585785] to-[#FF8A57] rounded-l-full shadow-xl p-4'>
+                                <div className='rounded-full overflow-hidden'>
+                                    <Image
+                                        src={userData?.photo}
+                                        width={65}
+                                        height={65}
+                                        className='object-cover w-full h-full'
+                                        alt='user picture'
+                                    />
+                                </div>
+                                <div className='ml-4 flex-1'>
+                                    <div className='flex flex-col'>
+                                        <h2 className='text-xl font-bold text-white'>
+                                            {userData?.name}{" "}
+                                            {userData?.username}
+                                        </h2>
+                                        <div className='flex items-center'>
+                                            <p className='text-lg text-white mr-2'>
+                                                {userData?.email}
                                             </p>
+                                            <div
+                                                className='text-center text-white ml-auto'
+                                                style={{ marginLeft: "35%" }}
+                                            >
+                                                <p className='text-4xl font-bold'>
+                                                    {productData?.price}$
+                                                </p>
+                                            </div>
                                         </div>
+                                        <p className='text-lg text-white'>
+                                            {productData.location?.city},{" "}
+                                            {productData.location?.country}
+                                        </p>
                                     </div>
-                                    <p className='text-lg text-white'>
-                                        {productData.location?.city},{" "}
-                                        {productData.location?.country}
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        {/* ) : ( */}
-                        <div className='flex items-center justify-center mt-4 text-center'>
-                            <p className='text-[#32314D] font-bold'>
-                                Please log in to get in touch with the owner of
-                                this product.{" "}
-                                <Link href='/login' className='text-[#7874F2]'>
-                                    Log in
-                                </Link>
-                            </p>
-                        </div>
-                        {/* )} */}
+                        ) : (
+                            <div className='flex items-center justify-center mt-4 text-center'>
+                                <p className='text-[#32314D] font-bold'>
+                                    Please log in to get in touch with the owner
+                                    of this product.{" "}
+                                    <Link
+                                        href='/login'
+                                        className='text-[#7874F2]'
+                                    >
+                                        Log in
+                                    </Link>
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

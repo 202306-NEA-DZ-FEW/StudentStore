@@ -1,16 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import Button from "@/components/Buttons/Button";
 import FacebookButton from "@/components/FacebookButton/FacebookButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
+
 import { useAuth } from "@/context/AuthContext";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Image from "next/image";
 export default function SignIn() {
     const { t } = useTranslation("sign");
     const [email, setEmail] = useState("");
@@ -25,10 +28,13 @@ export default function SignIn() {
             setLoading(true);
             await login(email, password);
             route.push("/");
-        } catch (error) {
-            toast.error(t("failed to log in"));
+        } catch {
+            toast.error(t("Failed to log in"), { autoClose: 1000 });
+        } finally {
+            setLoading(false);
+            setEmail("");
+            setPassword("");
         }
-        setLoading(false);
     }
     // signup bg style
     const signinbg = {
@@ -38,7 +44,7 @@ export default function SignIn() {
     return (
         <div
             style={signinbg}
-            className='min-h-screen w-full flex justify-between items-center text-center py-10 absolute top-0 left-0'
+            className='min-h-screen w-full flex justify-between items-center text-center  pb-6 '
         >
             {/* container for image to add later */}
             <div className='lg:w-[45%] lg:py-16 lg:px-16'>

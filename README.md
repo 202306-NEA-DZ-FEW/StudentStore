@@ -2,11 +2,11 @@
 
 ## Project information
 
--   Project name: [Project name]
--   Project description: [Project description]
--   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
--   Team members: Member1, Member2, etc,
--   Bootcamp: GIZ YE 2022
+-   Project name: Student’s Store
+-   Project description: A marketplace made for all students. Any student could sell or buy or even borrow any type of products like electronics, games, study books, all products supposed to be cheap and used in most cases.
+-   Technology used: Nextjs, TailwindCSS, DaisyUi, Firebase, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
+-   Team members: Benarba Tewfik, Hocine Benouddane, Katia Ghezali, Mounia Belkheir, Sami Babouche, Khaoula Aourra
+-   Bootcamp: NEA DZ FEW 2023
 
 ## Installation
 

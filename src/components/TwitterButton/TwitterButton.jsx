@@ -2,11 +2,17 @@ import { auth, db } from "@/util/firebase";
 import { TwitterAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { BsTwitter } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
 export default function TwitterButton({ children, className }) {
+    useEffect(() => {
+        return () => {
+            toast.dismiss();
+        };
+    }, []);
     const route = useRouter();
     function signInWithTwitter() {
         const provider = new TwitterAuthProvider();
@@ -17,20 +23,17 @@ export default function TwitterButton({ children, className }) {
                 const userRef = doc(db, "userinfo", user.uid);
                 toast.loading("Please wait");
                 setDoc(userRef, {
-                    address: {
-                        country: "",
-                        city: "",
-                        zipcode: "",
-                        street: "",
-                    },
-                    gender: "",
                     name: user.displayName,
                     surname: "",
                     email: user.email,
                     password: "",
                     school: "",
-                    phone: user.phoneNumber,
                     photo: user.photoURL,
+                    phoneNumber: user.phoneNumber,
+                    gender: "",
+                    country: "",
+                    city: "",
+                    zipcode: "",
                 }).then(() => {
                     route.push("/");
                 });
