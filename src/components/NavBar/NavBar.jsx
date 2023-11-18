@@ -58,7 +58,7 @@ export default function Navbar() {
 
                         <Link
                             className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
-                            href='/aboutUs'
+                            href='/aboutus'
                         >
                             About us
                         </Link>

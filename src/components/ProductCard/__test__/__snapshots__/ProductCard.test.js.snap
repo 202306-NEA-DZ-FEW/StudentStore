@@ -31,9 +31,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="rounded-full bg-[#7874F2] p-1 text-[8px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3"
-        >
-          Sale
-        </p>
+        />
       </div>
     </figure>
   </div>
@@ -42,29 +40,23 @@ exports[`renders correctly 1`] = `
   >
     <h2
       className="card-title text-slate-900 text-xl max-w-lg tracking-tight font-bold text-center "
-    >
-      Nike Air MX Super 2500
-    </h2>
+    />
     <div
       className="mt-3 mb-4 w-full  flex items-center   justify-between   text-slate-600 "
     >
       <p
-        className=" badge badge-outline "
-      >
-        category
-      </p>
-      <p>
-        location
-      </p>
+        className=" badge badge-outline capitalize"
+      />
+      <p
+        className="capitalize"
+      />
     </div>
     <div
       className=" flex items-center   justify-between font-semibold text-slate-900 "
     >
       <p
         className="text-xl "
-      >
-        $449
-      </p>
+      />
       <button
         className="text-3xl text-[#FF8A57] hover:text-orange-500"
       >

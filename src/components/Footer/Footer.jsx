@@ -59,7 +59,7 @@ function Footer() {
                         <ul className='space-y-3  text-white font-bold text-lg'>
                             <li>
                                 <Link
-                                    href='/AboutUs/AboutUs'
+                                    href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     About Us
@@ -67,7 +67,8 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href='/'
+                                    href='https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors'
+                                    target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     Our Team
@@ -109,7 +110,7 @@ function Footer() {
                             <li>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href='/Listings'
+                                    href='/listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -117,7 +118,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href='/AllProducts/AllProducts'
+                                    href='/products'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
@@ -189,7 +190,7 @@ function Footer() {
                         <ul className='space-y-3 text-white font-bold text-lg'>
                             <li>
                                 <Link
-                                    href='/AboutUs/AboutUs'
+                                    href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     About Us
@@ -197,7 +198,8 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href='/'
+                                    href='https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors'
+                                    target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     Our Team
@@ -234,7 +236,7 @@ function Footer() {
                                 <li className='hover:underline hover:text-orange'>
                                     <Link
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                        href='/Listings'
+                                        href='/listings'
                                     >
                                         <FaRegPlusSquare size={20} />
                                         <p> Start selling</p>
@@ -242,7 +244,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <Link
-                                        href='/AllProducts/AllProducts'
+                                        href='/products'
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                     >
                                         <FaWallet size={20} />
@@ -294,7 +296,7 @@ function Footer() {
                         <ul className='space-y-3 text-white font-bold text-lg'>
                             <li>
                                 <Link
-                                    href='/AboutUs/AboutUs'
+                                    href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     About Us
@@ -302,7 +304,8 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href='/'
+                                    href='https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors'
+                                    target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     Our Team
@@ -367,7 +370,7 @@ function Footer() {
                             <li className='hover:underline hover:text-orange'>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href='/Listings'
+                                    href='/listings'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -375,7 +378,7 @@ function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href='/AllProducts/AllProducts'
+                                    href='/products'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
