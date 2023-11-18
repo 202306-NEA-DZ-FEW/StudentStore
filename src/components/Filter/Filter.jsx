@@ -19,11 +19,18 @@ export default function Filter({
     filterCategories,
     resetFilters,
     t,
+    filterCondtion,
+    selectedCondition,
+    handleCondtionChange,
 }) {
     const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+    const [conditionDropdownOpen, setConditionDropdownOpen] = useState(false);
     const route = useRouter();
     const toggleCategoryDropdown = () => {
         setCategoryDropdownOpen(!categoryDropdownOpen);
+    };
+    const toggleConditionDropdown = () => {
+        setConditionDropdownOpen(!conditionDropdownOpen);
     };
 
     return (
@@ -122,6 +129,41 @@ export default function Filter({
                                 />
                                 <label className='label-title ml-2 mb-1 capitalize'>
                                     {t(`${category}`)}
+                                </label>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+            <div>
+                <h2>
+                    <button
+                        onClick={toggleConditionDropdown}
+                        className='flex items-center'
+                    >
+                        condition
+                        <IoIosArrowDown
+                            className={`ml-2 ${
+                                conditionDropdownOpen ? "rotate-180" : ""
+                            } transition-all duration-200`}
+                        />
+                    </button>
+                </h2>
+                {conditionDropdownOpen && (
+                    <div className='ml-4'>
+                        {filterCondtion?.map((condition) => (
+                            <div key={condition} className='mb-1'>
+                                <input
+                                    type='checkbox'
+                                    checked={selectedCondition.includes(
+                                        condition
+                                    )}
+                                    onChange={() =>
+                                        handleCondtionChange(condition)
+                                    }
+                                />
+                                <label className='label-title ml-2 mb-1 capitalize'>
+                                    {t(`${condition}`)}
                                 </label>
                             </div>
                         ))}

@@ -10,6 +10,7 @@ export default function ProductsContainer({ products, t }) {
     const [sortByPriceDesc, setSortByPriceDesc] = useState(false);
     const [selectedType, setSelectedType] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [selectedCondition, setSelectedCondition] = useState([]);
     // debounce functionality
     const debounceTimeout = useRef(null);
     const debounce = (func, delay) => {
@@ -114,6 +115,24 @@ export default function ProductsContainer({ products, t }) {
             selectedCategories.includes(product.category)
         );
     }
+    // condition Filter
+    // function for condition change
+    const handleCondtionChange = (condition) => {
+        if (selectedCondition.includes(condition)) {
+            setSelectedCondition(
+                selectedCondition.filter((c) => c !== condition)
+            );
+        } else {
+            setSelectedCondition([...selectedCondition, condition]);
+        }
+    };
+    // Conditions to compare with
+    const filterCondtion = ["new", "like new", "good", "poor"];
+    if (selectedCondition.length > 0) {
+        sortedProducts = sortedProducts.filter((product) =>
+            selectedCondition.includes(product.condition)
+        );
+    }
     // reset filters functionality
     const resetFilters = () => {
         setMinPrice("");
@@ -122,6 +141,7 @@ export default function ProductsContainer({ products, t }) {
         setSortByPriceDesc(false);
         setSelectedType([]);
         setSelectedCategories([]);
+        setSelectedCondition([]);
         setFilteredProducts(products);
     };
     // using this useEffect to diplay all product at the firt render
@@ -147,6 +167,9 @@ export default function ProductsContainer({ products, t }) {
                 filterCategories={filterCategories}
                 resetFilters={resetFilters}
                 t={t}
+                filterCondtion={filterCondtion}
+                selectedCondition={selectedCondition}
+                handleCondtionChange={handleCondtionChange}
             />
             <ProductsList products={sortedProducts} />
         </div>
