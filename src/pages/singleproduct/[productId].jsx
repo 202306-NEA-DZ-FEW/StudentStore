@@ -16,7 +16,7 @@ function SingleProduct() {
             {productId && (
                 <div className='hidden lg:block'>
                     {/* This will be visible on screens larger than or equal to lg (large) */}
-                    <MapComponent productId={productId} />
+                    {/* <MapComponent productId={productId} /> */}
                 </div>
             )}
         </div>
