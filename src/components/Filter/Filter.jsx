@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoFilter } from "react-icons/io5";
 
 export default function Filter({
     minPrice,
@@ -35,38 +37,49 @@ export default function Filter({
 
     return (
         <div
-            className={`w-1/4 ${route.locale === "ar" ? "order-2" : ""}`}
+            className={`w-[45%] md:w-[30%] lg:w-[20%] ${
+                route.locale === "ar" ? "order-2" : ""
+            } bg-gray-200 text-[#585785] pt-8 px-4`}
             dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
         >
+            <div className='flex items-center gap-x-2 text-xl font-bold mb-4'>
+                <IoFilter />
+                <h1>{t("filter")}</h1>
+            </div>
             <div>
-                <h2>{t("price")}</h2>
-
-                <div className='ml-4'>
-                    <div>
+                <div>
+                    <h2 className='text-lg font-bold mb-2'>{t("price")}</h2>
+                    <div className='mb-4 flex items-center gap-x-2'>
                         <input
                             type='number'
                             placeholder={t("min")}
-                            className='w-1/2 h-6 border rounded-md px-2 focus:outline-none'
+                            className={`w-2/5 h-6 border rounded-md px-2 focus:outline-none ${
+                                route.locale === "ar" ? "w-[50%] sm:w-2/5" : ""
+                            }`}
                             value={minPrice}
                             onChange={handleMinPriceChange}
                         />
                         <input
                             type='number'
                             placeholder={t("max")}
-                            className='w-1/2 h-6 border rounded-md px-2 focus:outline-none'
+                            className={`w-2/5 h-6 border rounded-md px-2 focus:outline-none ${
+                                route.locale === "ar" ? "w-[50%] sm:w-2/5" : ""
+                            }`}
                             value={maxPrice}
                             onChange={handleMaxPriceChange}
                         />
                     </div>
                 </div>
             </div>
-            <h2>{t("sort by")}</h2>
 
-            <div className='ml-4'>
-                <div>
+            <div className='mb-4'>
+                <h2 className='text-lg font-bold mb-2'>{t("sort by")}</h2>
+                <div className={`pl-2 ${route.locale === "ar" ? "pl-0" : ""}`}>
                     <input
                         type='checkbox'
-                        className='mr-2'
+                        className={`mr-2 ${
+                            route.locale === "ar" ? "mr-0 ml-2" : ""
+                        }`}
                         checked={sortByPriceAsc}
                         onChange={handleSortByPriceAscChange}
                     />
@@ -74,10 +87,12 @@ export default function Filter({
                         {t("lowest price")}
                     </label>
                 </div>
-                <div>
+                <div className={`pl-2 ${route.locale === "ar" ? "pl-0" : ""}`}>
                     <input
                         type='checkbox'
-                        className='mr-2'
+                        className={`mr-2 ${
+                            route.locale === "ar" ? "mr-0 ml-2" : ""
+                        }`}
                         checked={sortByPriceDesc}
                         onChange={handleSortByPriceDescChange}
                     />
@@ -86,41 +101,55 @@ export default function Filter({
                     </label>
                 </div>
             </div>
-            <div>
-                <h2>{t("type")}</h2>
-                <div className='ml-4'>
+            <div className='mb-4'>
+                <h2 className='text-lg font-bold mb-2'>{t("type")}</h2>
+                <div
+                    className={`pl-2 ${
+                        route.locale === "ar" ? "pr-2 pl-0" : ""
+                    }`}
+                >
                     {filterType?.map((type) => (
-                        <div key={type} className='mb-1'>
+                        <div key={type} className='mb-1 flex'>
                             <input
                                 type='checkbox'
                                 checked={selectedType.includes(type)}
                                 onChange={() => handleTypeChange(type)}
                             />
-                            <label className='label-title ml-2 mb-1 capitalize'>
+                            <label
+                                className={`label-title ml-2 ${
+                                    route.locale === "ar"
+                                        ? "ml-0 mr-2 mb-1"
+                                        : ""
+                                } capitalize `}
+                            >
                                 {t(`for ${type}`)}
                             </label>
                         </div>
                     ))}
                 </div>
             </div>
-            <div>
+            <div className='mb-4'>
                 <h2>
                     <button
                         onClick={toggleCategoryDropdown}
-                        className='flex items-center'
+                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
                     >
                         {t("category")}
                         <IoIosArrowDown
-                            className={`ml-2 ${
+                            className={`${
                                 categoryDropdownOpen ? "rotate-180" : ""
                             } transition-all duration-200`}
                         />
                     </button>
                 </h2>
                 {categoryDropdownOpen && (
-                    <div className='ml-4'>
+                    <div
+                        className={`pl-2 ${
+                            route.locale === "ar" ? "pr-2 pl-0" : ""
+                        }`}
+                    >
                         {filterCategories?.map((category) => (
-                            <div key={category} className='mb-1'>
+                            <div key={category} className='mb-1 flex'>
                                 <input
                                     type='checkbox'
                                     checked={selectedCategories.includes(
@@ -130,7 +159,13 @@ export default function Filter({
                                         handleCategoryChange(category)
                                     }
                                 />
-                                <label className='label-title ml-2 mb-1 capitalize'>
+                                <label
+                                    className={`label-title ml-1 ${
+                                        route.locale === "ar"
+                                            ? "ml-0 mr-1 mb-1"
+                                            : ""
+                                    } capitalize`}
+                                >
                                     {t(`${category}`)}
                                 </label>
                             </div>
@@ -138,24 +173,28 @@ export default function Filter({
                     </div>
                 )}
             </div>
-            <div>
+            <div className='mb-5'>
                 <h2>
                     <button
                         onClick={toggleConditionDropdown}
-                        className='flex items-center'
+                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
                     >
                         {t("condition")}
                         <IoIosArrowDown
-                            className={`ml-2 ${
+                            className={`${
                                 conditionDropdownOpen ? "rotate-180" : ""
                             } transition-all duration-200`}
                         />
                     </button>
                 </h2>
                 {conditionDropdownOpen && (
-                    <div className='ml-4'>
+                    <div
+                        className={`pl-2 ${
+                            route.locale === "ar" ? "pr-2 pl-0" : ""
+                        }`}
+                    >
                         {filterCondtion?.map((condition) => (
-                            <div key={condition} className='mb-1'>
+                            <div key={condition} className='mb-1 flex'>
                                 <input
                                     type='checkbox'
                                     checked={selectedCondition.includes(
@@ -165,7 +204,13 @@ export default function Filter({
                                         handleCondtionChange(condition)
                                     }
                                 />
-                                <label className='label-title ml-2 mb-1 capitalize'>
+                                <label
+                                    className={`label-title ml-1 ${
+                                        route.locale === "ar"
+                                            ? "ml-0 mr-1 mb-1"
+                                            : ""
+                                    } capitalize`}
+                                >
                                     {t(`${condition}`)}
                                 </label>
                             </div>
@@ -174,7 +219,14 @@ export default function Filter({
                 )}
             </div>
             <div>
-                <button onClick={resetFilters}>{t("clear filters")}</button>
+                <button
+                    onClick={resetFilters}
+                    className={`text-md font-bold bg-red-500 py-1 px-2 rounded-md text-white hover:shadow-lg transition-all duration-200 ${
+                        route.locale === "fr" ? "text-sm sm:text-md" : ""
+                    }`}
+                >
+                    {t("clear filters")}
+                </button>
             </div>
         </div>
     );

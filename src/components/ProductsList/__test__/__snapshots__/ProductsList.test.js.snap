@@ -2,6 +2,6 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="w-3/4 flex justify-center flex-wrap gap-4"
+  className="w-[55%] md:w-[70%] lg:w-[80%] flex justify-center flex-wrap gap-4"
 />
 `;

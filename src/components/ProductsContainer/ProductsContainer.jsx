@@ -149,7 +149,7 @@ export default function ProductsContainer({ products, t }) {
         setFilteredProducts(products);
     }, [products]);
     return (
-        <div className={`flex`}>
+        <div className='flex w-full'>
             <Filter
                 minPrice={minPrice}
                 maxPrice={maxPrice}
