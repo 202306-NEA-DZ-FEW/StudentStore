@@ -19,5 +19,10 @@
     "food": "طعام",
     "transportation": "نقل",
     "furniture": "أثاث",
+    "condition": "الحالة",
+    "new": "جديد",
+    "like new": "كالجديد",
+    "good": "جيد",
+    "poor": "رديء",
     "clear filters": "مسح الفلاتر"
 }

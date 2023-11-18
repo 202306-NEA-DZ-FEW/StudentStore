@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="w-1/4"
+  className="w-1/4 "
   dir="ltr"
 >
   <div>

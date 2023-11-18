@@ -19,5 +19,10 @@
     "food": "Food",
     "transportation": "Transportation",
     "furniture": "Furniture",
+    "condition": "Condition",
+    "new": "New",
+    "like new": "Like New",
+    "good": "Good",
+    "poor": "Poor",
     "clear filters": "Clear Filters"
 }

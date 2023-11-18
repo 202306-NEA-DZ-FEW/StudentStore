@@ -34,7 +34,10 @@ export default function Filter({
     };
 
     return (
-        <div className='w-1/4' dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}>
+        <div
+            className={`w-1/4 ${route.locale === "ar" ? "order-2" : ""}`}
+            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
+        >
             <div>
                 <h2>{t("price")}</h2>
 
@@ -141,7 +144,7 @@ export default function Filter({
                         onClick={toggleConditionDropdown}
                         className='flex items-center'
                     >
-                        condition
+                        {t("condition")}
                         <IoIosArrowDown
                             className={`ml-2 ${
                                 conditionDropdownOpen ? "rotate-180" : ""

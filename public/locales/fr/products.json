@@ -19,5 +19,10 @@
     "food": "Alimentation",
     "transportation": "Transport",
     "furniture": "Meubles",
+    "condition": "État",
+    "new": "Neuf",
+    "like new": "Comme neuf",
+    "good": "Bon",
+    "poor": "Mauvais",
     "clear filters": "Effacer les filtres"
 }
