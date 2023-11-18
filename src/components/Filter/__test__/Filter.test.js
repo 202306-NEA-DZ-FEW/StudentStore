@@ -1,6 +1,5 @@
 import renderer from "react-test-renderer";
-import ProductsContainer from "../ProductsContainer";
-
+import Filter from "../Filter";
 jest.mock("next/router", () => ({
     useRouter: () => ({
         pathname: "/",
@@ -9,6 +8,6 @@ jest.mock("next/router", () => ({
 }));
 const t = (key) => key;
 it("renders correctly", () => {
-    const tree = renderer.create(<ProductsContainer t={t} />).toJSON();
+    const tree = renderer.create(<Filter t={t} />).toJSON();
     expect(tree).toMatchSnapshot();
 });

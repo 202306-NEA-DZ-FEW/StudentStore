@@ -1,9 +1,218 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  className="flex w-full"
+>
   <div
-    className="w-3/4 flex justify-center flex-wrap gap-4"
+    className="w-[45%] md:w-[30%] lg:w-[20%]  bg-gray-200 text-[#585785] pt-8 px-4"
+    dir="ltr"
+  >
+    <div
+      className="flex items-center gap-x-2 text-xl font-bold mb-4"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M472 168H40a24 24 0 010-48h432a24 24 0 010 48zm-80 112H120a24 24 0 010-48h272a24 24 0 010 48zm-96 112h-80a24 24 0 010-48h80a24 24 0 010 48z"
+        />
+      </svg>
+      <h1>
+        filter
+      </h1>
+    </div>
+    <div>
+      <div>
+        <h2
+          className="text-lg font-bold mb-2"
+        >
+          price
+        </h2>
+        <div
+          className="mb-4 flex items-center gap-x-2"
+        >
+          <input
+            className="w-2/5 h-6 border rounded-md px-2 focus:outline-none "
+            onChange={[Function]}
+            placeholder="min"
+            type="number"
+            value=""
+          />
+          <input
+            className="w-2/5 h-6 border rounded-md px-2 focus:outline-none "
+            onChange={[Function]}
+            placeholder="max"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <h2
+        className="text-lg font-bold mb-2"
+      >
+        sort by
+      </h2>
+      <div
+        className="pl-2 "
+      >
+        <input
+          checked={false}
+          className="mr-2 "
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="checkbox-label"
+        >
+          lowest price
+        </label>
+      </div>
+      <div
+        className="pl-2 "
+      >
+        <input
+          checked={false}
+          className="mr-2 "
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="checkbox-label"
+        >
+          highest price
+        </label>
+      </div>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <h2
+        className="text-lg font-bold mb-2"
+      >
+        type
+      </h2>
+      <div
+        className="pl-2 "
+      >
+        <div
+          className="mb-1 flex"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2  capitalize "
+          >
+            for sale
+          </label>
+        </div>
+        <div
+          className="mb-1 flex"
+        >
+          <input
+            checked={false}
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="label-title ml-2  capitalize "
+          >
+            for borrow
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <h2>
+        <button
+          className="flex items-center justify-between w-full text-lg font-bold mb-2"
+          onClick={[Function]}
+        >
+          category
+          <svg
+            className=" transition-all duration-200"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+            />
+          </svg>
+        </button>
+      </h2>
+    </div>
+    <div
+      className="mb-5"
+    >
+      <h2>
+        <button
+          className="flex items-center justify-between w-full text-lg font-bold mb-2"
+          onClick={[Function]}
+        >
+          condition
+          <svg
+            className=" transition-all duration-200"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+            />
+          </svg>
+        </button>
+      </h2>
+    </div>
+    <div>
+      <button
+        className="text-md font-bold bg-red-500 py-1 px-2 rounded-md text-white hover:shadow-lg transition-all duration-200 "
+        onClick={[Function]}
+      >
+        clear filters
+      </button>
+    </div>
+  </div>
+  <div
+    className="w-[55%] md:w-[70%] lg:w-[80%] flex justify-center flex-wrap gap-4"
   />
 </div>
 `;
