@@ -1,5 +1,4 @@
 import { appWithTranslation } from "next-i18next";
-import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/styles/globals.css";
@@ -16,7 +15,6 @@ function MyApp({ Component, pageProps }) {
                     <Component {...pageProps} />
                 </Layout>
             </CartProvider>
-            <ToastContainer />
         </AuthProvider>
     );
 }

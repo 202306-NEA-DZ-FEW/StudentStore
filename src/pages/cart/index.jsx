@@ -1,6 +1,7 @@
+import debounce from "lodash.debounce";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 import CartItem from "@/components/CartItem/CartItem";
@@ -10,6 +11,7 @@ import { CartContext } from "@/context/CartContext";
 
 const Cart = () => {
     const { cartItems, updateCartItem } = useContext(CartContext);
+    const [borrowPrices, setBorrowPrices] = useState({});
     const calculateBorrowPrice = (item) => {
         const defaultDays = 15;
         const defaultPrice = item.price || 0; // Handle undefined price
@@ -27,7 +29,25 @@ const Cart = () => {
             }
         }, 0);
     };
-
+    const updateBorrowPrice = (productId, newBorrowPrice) => {
+        setBorrowPrices((prevPrices) => ({
+            ...prevPrices,
+            [productId]: newBorrowPrice,
+        }));
+    };
+    const updateBorrowPriceDebounced = debounce(updateBorrowPrice, 100);
+    useEffect(() => {
+        const initialBorrowPrices = cartItems.reduce((prices, cartItem) => {
+            return {
+                ...prices,
+                [cartItem.productId]:
+                    cartItem.type === "borrow"
+                        ? calculateBorrowPrice(cartItem)
+                        : cartItem.price || 0,
+            };
+        }, {});
+        setBorrowPrices(initialBorrowPrices);
+    }, [cartItems]);
     return (
         <div
             className={`bg-gray-100 pb-4 ${
@@ -58,12 +78,14 @@ const Cart = () => {
                                 key={cartItem.id}
                                 cartItem={cartItem}
                                 updateCart={updateCartItem}
+                                updateBorrowPrice={updateBorrowPriceDebounced}
                             />
                         ))}
                     </div>
                     <OrderSummary
                         cartItems={cartItems}
                         subtotal={calculateSubtotal()}
+                        borrowPrices={borrowPrices}
                     />
                 </div>
             ) : (

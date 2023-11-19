@@ -7,7 +7,7 @@ import { CartContext } from "@/context/CartContext";
 
 import Button from "../Buttons/Button";
 
-const CartItem = ({ cartItem, updateCart }) => {
+const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
     // console.log("CartItem rendering:", cartItem);
     // console.log("Product to delete:", cartItem);
     const { removeItemFromCart } = useContext(CartContext);
@@ -20,6 +20,7 @@ const CartItem = ({ cartItem, updateCart }) => {
         if (borrowDays < maxBorrowDays) {
             setBorrowDays((prevDays) => prevDays + 1);
             updateCart(cartItem.productId, { borrowDays: borrowDays + 1 });
+            updateBorrowPrice(cartItem.productId, calculateBorrowPrice());
         }
     };
 
@@ -27,6 +28,7 @@ const CartItem = ({ cartItem, updateCart }) => {
         if (borrowDays > 1) {
             setBorrowDays((prevDays) => prevDays - 1);
             updateCart(cartItem.productId, { borrowDays: borrowDays - 1 });
+            updateBorrowPrice(cartItem.productId, calculateBorrowPrice());
         }
     };
     const calculateBorrowPrice = () => {

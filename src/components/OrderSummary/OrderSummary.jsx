@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "../Buttons/Button";
 
-const OrderSummary = ({ cartItems, subtotal }) => {
+const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
     return (
         <div className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]'>
             <h2 className='text-2xl text-black font-bold text-center'>
@@ -25,7 +25,10 @@ const OrderSummary = ({ cartItems, subtotal }) => {
                             {cartItem.title}
                         </p>
                         <p className='text-gray-700 font-semibold'>
-                            {cartItem.price.toFixed(2)}$
+                            {cartItem.type === "borrow"
+                                ? borrowPrices[cartItem.productId]?.toFixed(2) +
+                                  "$"
+                                : cartItem.price.toFixed(2) + "$"}
                         </p>
                     </div>
                 ))}
