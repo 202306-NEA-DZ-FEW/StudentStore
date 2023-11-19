@@ -57,26 +57,3 @@ body {
 #toggleButton:hover + #sideMenu {
     transform: translateX(0);
 }
-
-.glow {
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: 1px 1px 20px rgb(141, 20, 234), 1px 1px 40px rgb(234, 70, 20);
-    animation: anime 1s linear infinite;
-}
-.glow:nth-child(1) {
-    animation-delay: 0.4s;
-}
-.glow:nth-child(2) {
-    animation-delay: 0.4s;
-}
-@keyframes anime {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
