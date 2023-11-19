@@ -57,7 +57,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                         </Link>
                     </li>
                 </ul>
-                <div class='border-b border-gray-400'></div>
+                <div className='border-b border-gray-400'></div>
                 <div className='p-2'>
                     <details className=' text-[#585785] font-bold'>
                         <summary className='text-xl'>Categories</summary>

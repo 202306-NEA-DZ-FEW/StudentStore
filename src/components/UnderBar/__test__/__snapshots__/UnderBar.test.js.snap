@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
       >
-        All Products
+        All Categories
       </a>
     </li>
     <li>
