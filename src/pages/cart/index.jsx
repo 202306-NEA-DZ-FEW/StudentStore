@@ -43,7 +43,7 @@ const Cart = () => {
                     </h1>
                     <Link
                         href='/products'
-                        class='flex items-end gap-1 font-semibold text-indigo-600 hover:text-indigo-800  text-right'
+                        className='flex items-end gap-1 font-semibold text-indigo-600 hover:text-indigo-800  text-right'
                     >
                         Continue Shopping
                         <FaLongArrowAltRight />
@@ -79,7 +79,7 @@ const Cart = () => {
                     </p>
                     <Link
                         href='/products'
-                        class='flex items-end gap-1 text-lg font-semibold text-indigo-600 hover:text-indigo-800  text-right'
+                        className='flex items-end gap-1 text-lg font-semibold text-indigo-600 hover:text-indigo-800  text-right'
                     >
                         Continue Shopping
                         <FaLongArrowAltRight size={22} className='text-lg' />

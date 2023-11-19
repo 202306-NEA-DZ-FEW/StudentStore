@@ -46,22 +46,22 @@ const CartItem = ({ cartItem, updateCart }) => {
 
     return (
         <div>
-            <div class='justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
+            <div className='justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
                 <div>
                     <Image
                         src={cartItem?.image}
                         width={250}
                         height={100}
                         alt={cartItem?.title}
-                        class='w-full rounded-lg sm:w-40'
+                        className='w-full rounded-lg sm:w-40'
                     />
                 </div>
-                <div class='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
-                    <div class='mt-5 sm:mt-0'>
-                        <h2 class='text-lg font-bold text-gray-900'>
+                <div className='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
+                    <div className='mt-5 sm:mt-0'>
+                        <h2 className='text-lg font-bold text-gray-900'>
                             {cartItem?.title}
                         </h2>
-                        <p class='mt-1  text-md text-gray-700'>
+                        <p className='mt-1  text-md text-gray-700'>
                             {cartItem?.type === "borrow" && (
                                 <>
                                     {borrowPrice.toFixed(2)}$ -{" "}
@@ -73,8 +73,8 @@ const CartItem = ({ cartItem, updateCart }) => {
                         </p>
                         <p className='capitalize'>{cartItem?.type}</p>
                     </div>
-                    <div class='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
-                        <div class='flex justify-end '>
+                    <div className='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
+                        <div className='flex justify-end '>
                             <Button
                                 className='bg-gray-200 border-none hover:text-white  text-gray-500 hover:bg-red-600 px-5'
                                 onClick={removeProductFromCart}
@@ -83,22 +83,22 @@ const CartItem = ({ cartItem, updateCart }) => {
                             </Button>
                         </div>
                         {cartItem?.type === "borrow" && (
-                            <div class='flex justify-end items-center  border-gray-100'>
+                            <div className='flex justify-end items-center  border-gray-100'>
                                 <button
                                     onClick={handleDecreaseDays}
-                                    class='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
+                                    className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
                                 >
                                     -
                                 </button>
                                 <p
-                                    class='h-8 w-8 border flex justify-center text-gray-500 items-center bg-white  text-xs outline-none'
+                                    className='h-8 w-8 border flex justify-center text-gray-500 items-center bg-white  text-xs outline-none'
                                     type='text'
                                 >
                                     {borrowDays} d
                                 </p>
                                 <button
                                     onClick={handleIncreaseDays}
-                                    class='cursor-pointer  rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
+                                    className='cursor-pointer  rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
                                 >
                                     +
                                 </button>
