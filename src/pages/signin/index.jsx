@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -125,7 +125,6 @@ export default function SignIn() {
                     </Link>
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 }

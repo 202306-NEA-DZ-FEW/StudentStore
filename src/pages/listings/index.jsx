@@ -3,7 +3,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -369,8 +369,6 @@ const Listings = () => {
                     </form>
                 </div>
             )}
-
-            <ToastContainer />
         </div>
     );
 };

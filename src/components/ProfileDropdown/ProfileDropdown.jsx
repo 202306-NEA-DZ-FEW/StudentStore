@@ -1,10 +1,10 @@
-import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
+import { useAuth } from "@/context/AuthContext";
 
 function ProfileDropdown() {
     const { currentUser, logout } = useAuth();
@@ -75,7 +75,6 @@ function ProfileDropdown() {
                             </li>
                         </ul>
                     )}
-                    <ToastContainer />
                 </div>
             ) : (
                 <Link
