@@ -78,7 +78,7 @@ const ProductDetails = ({ productId }) => {
                 <div className='col-span-3 row-span-1 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4] border rounded-md border-[#979797]'>
                     <Image
                         className='object-cover w-full h-full rounded-md '
-                        src={productData.pictures[0]}
+                        src={productData?.pictures[0]}
                         width={1600}
                         height={1000}
                         alt='product image'
@@ -89,7 +89,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='col-span-2 row-span-1 md:row-span-2 w-full bg-[#EEF2F4] h-20 sm:h-28 md:h-64 lg:h-28 border rounded-md border-[#979797] overflow-hidden'>
                             <Image
                                 className='object-cover w-full h-full rounded-md '
-                                src={productData.pictures[1]}
+                                src={productData?.pictures[1]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
@@ -99,7 +99,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='w-full col-span-1 row-span-1 bg-[#EEF2F4] sm:h-28 border rounded-md border-[#979797] overflow-hidden'>
                             <Image
                                 className='object-cover w-full h-full '
-                                src={productData.pictures[2]}
+                                src={productData?.pictures[2]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
@@ -108,7 +108,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28 w-full border rounded-md border-[#979797] overflow-hidden lg:w-full'>
                             <Image
                                 className='object-cover w-full h-full '
-                                src={productData.pictures[3]}
+                                src={productData?.pictures[3]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
@@ -122,24 +122,24 @@ const ProductDetails = ({ productId }) => {
                 {/* Product Details */}
                 <div className='col-span-4 md:col-span-2'>
                     <h1 className='text-4xl font-bold text-[#7874F2] mb-4'>
-                        {productData.title}
+                        {productData?.title}
                     </h1>
 
                     <div className='flex mb-2'>
                         <p className='bg-orange-500 py-1 px-2 rounded-2xl font-bold text-white mr-20'>
-                            For {productData.type}
+                            For {productData?.type}
                         </p>
                     </div>
 
                     <div className='flex mb-2'>
                         <p className='mr-20'>
                             <span className='font-bold'>Condition: </span>
-                            {productData.condition}
+                            {productData?.condition}
                         </p>
 
                         <p className=''>
                             <span className='font-bold'>Category: </span>
-                            {productData.category}
+                            {productData?.category}
                         </p>
                     </div>
                     <br />
@@ -148,7 +148,7 @@ const ProductDetails = ({ productId }) => {
                         <h1 className='text-xl font-bold'>Details:</h1>
                         <hr />
                         <div className='overflow-y-scroll max-h-[100px]'>
-                            {productData.description}
+                            {productData?.description}
                         </div>
                     </div>
 
