@@ -1,3 +1,5 @@
+// mylistings/index.jsx
+
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
 import ProductCard from "@/components/ProductCard/ProductCard";
@@ -70,7 +72,12 @@ const MyListings = () => {
                 ) : (
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                         {userListings.map((listing) => (
-                            <ProductCard key={listing.id} data={listing} />
+                            <div
+                                key={listing.id}
+                                className='w-[270px] bg-white shadow-xl'
+                            >
+                                <ProductCard data={listing} />
+                            </div>
                         ))}
                     </div>
                 )}
