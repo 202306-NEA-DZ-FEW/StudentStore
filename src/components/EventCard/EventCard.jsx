@@ -7,7 +7,7 @@ const EventCard = () => {
     const data = [
         {
             id: 1,
-            image: "/Events.png",
+            image: "/bookbuddies.jpg",
             title: "Book Buddies",
             description:
                 "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨",
@@ -16,7 +16,7 @@ const EventCard = () => {
         },
         {
             id: 2,
-            image: "/Event3.jpg",
+            image: "/Event.jpg",
             title: "the climate crisis",
             description:
                 "Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.",
@@ -25,7 +25,7 @@ const EventCard = () => {
         },
         {
             id: 3,
-            image: "/Event2.jpg",
+            image: "/photography.jpg",
             title: "Discover Photography!",
             description:
                 "Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? ",
