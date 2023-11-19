@@ -25,7 +25,7 @@ const HeroSection = () => {
     // use Swiper props to activate Autoplay
     SwiperCore.use([Autoplay, Pagination, A11y, EffectFade]);
     return (
-        <div className='pt-[10vh]'>
+        <div className='pt-5'>
             <Swiper
                 fadeEffect={true}
                 grabCursor={true}
@@ -39,7 +39,7 @@ const HeroSection = () => {
                 pagination={{ clickable: true }}
             >
                 <SwiperSlide>
-                    <div className='h-[90vh] w-full'>
+                    <div className='h-[80vh] w-full'>
                         <Image
                             src='/images/Hero1.svg'
                             layout='fill'
@@ -49,7 +49,7 @@ const HeroSection = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[90vh]  ${
+                        className={`w-full h-[80vh]  ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >
@@ -66,7 +66,7 @@ const HeroSection = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[90vh]  ${
+                        className={`w-full h-[80vh]  ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[90vh]  ${
+                        className={`w-full h-[80vh]  ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >

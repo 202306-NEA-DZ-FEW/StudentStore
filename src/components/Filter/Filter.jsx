@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
@@ -37,7 +36,7 @@ export default function Filter({
 
     return (
         <div
-            className={`w-[45%] md:w-[30%] lg:w-[20%] ${
+            className={`w-[45%] md:w-[30%] lg:w-[20%] min-h-screen ${
                 route.locale === "ar" ? "order-2" : ""
             } bg-gray-200 text-[#585785] pt-8 px-4`}
             dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
@@ -53,6 +52,7 @@ export default function Filter({
                         <input
                             type='number'
                             placeholder={t("min")}
+                            min='0'
                             className={`w-2/5 h-6 border rounded-md px-2 focus:outline-none ${
                                 route.locale === "ar" ? "w-[50%] sm:w-2/5" : ""
                             }`}
@@ -62,6 +62,7 @@ export default function Filter({
                         <input
                             type='number'
                             placeholder={t("max")}
+                            min='0'
                             className={`w-2/5 h-6 border rounded-md px-2 focus:outline-none ${
                                 route.locale === "ar" ? "w-[50%] sm:w-2/5" : ""
                             }`}
