@@ -32,37 +32,44 @@ const Listings = () => {
         const { value, name, type } = e.target;
         if (type === "file") {
             const file = e.target.files[0];
-            const files = e.target.files;
-            // reject if the image is selected twice
-            const selectedFileNames = formData.pictures.map(
-                (imgFile) => imgFile.name
-            );
-            for (const file of files) {
-                const fileName = file.name;
-                // Check if the file with the same name has already been selected
-                if (selectedFileNames.includes(fileName)) {
-                    toast.warning(
-                        "Picture with the same name has already been selected."
-                    );
-                    e.target.value = "";
+            if (file) {
+                const files = e.target.files;
+                // reject if the image is selected twice
+                const selectedFileNames = formData.pictures.map(
+                    (imgFile) => imgFile.name
+                );
+                for (const file of files) {
+                    const fileName = file.name;
+
+                    // Check if the file with the same name has already been selected
+                    if (selectedFileNames.includes(fileName)) {
+                        toast.warning(
+                            "Picture with the same name has already been selected."
+                        );
+                        e.target.value = "";
+                        return;
+                    }
+                }
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const fileUrl = event.target.result;
+                    setImageFiles((prevImageFiles) => [
+                        ...prevImageFiles,
+                        fileUrl,
+                    ]);
+                };
+                reader.readAsDataURL(file);
+                const updatedImgUrl = [...formData.pictures];
+                for (let i = 0; i < files.length; i++) {
+                    updatedImgUrl.push(files[i]);
+                }
+                if (updatedImgUrl.length > 4) {
+                    toast.warning("You can only upload a maximum of 4 images.");
                     return;
                 }
+                setFormData({ ...formData, pictures: updatedImgUrl });
             }
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const fileUrl = event.target.result;
-                setImageFiles((prevImageFiles) => [...prevImageFiles, fileUrl]);
-            };
-            reader.readAsDataURL(file);
-            const updatedImgUrl = [...formData.pictures];
-            for (let i = 0; i < files.length; i++) {
-                updatedImgUrl.push(files[i]);
-            }
-            if (updatedImgUrl.length > 4) {
-                toast.warning("You can only upload a maximum of 4 images.");
-                return;
-            }
-            setFormData({ ...formData, pictures: updatedImgUrl });
         } else if (name.startsWith("location.")) {
             const [parentName, childName] = name.split(".");
             setFormData((prevData) => ({
