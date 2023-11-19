@@ -11,6 +11,8 @@ import {
 import { createContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
+
 import { db } from "@/util/firebase";
 
 import { useAuth } from "./AuthContext";
