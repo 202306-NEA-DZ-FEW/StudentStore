@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=electronics"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -32,7 +32,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=books"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -43,7 +43,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=gaming"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=clothes"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -65,7 +65,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=shoes"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -76,7 +76,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=food"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -87,7 +87,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=transportation"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
@@ -98,7 +98,7 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
-        href="#"
+        href="/products?category=furniture"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}

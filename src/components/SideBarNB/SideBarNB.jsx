@@ -64,7 +64,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                         <ul class='text-[#585785]'>
                             <li>
                                 <Link
-                                    href='#'
+                                    href='/products'
                                     className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-outtext-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     All Categories
@@ -72,7 +72,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "electronics" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Electronics
@@ -80,7 +83,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "books" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Books
@@ -88,7 +94,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "gaming" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Gaming
@@ -96,7 +105,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "clothes" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Clothes
@@ -104,7 +116,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "shoes" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Shoes
@@ -112,7 +127,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "food" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Food
@@ -120,7 +138,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "transportation" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Transportation
@@ -128,7 +149,10 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "furniture" },
+                                    }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     Furniture
