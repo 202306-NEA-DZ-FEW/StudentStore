@@ -1,13 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
 
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import SearchBar from "../SearchBar/SearchBar";
+import ShoppingCartIcon from "../ShoppingCartIcon/ShoppingCartIcon";
 import SidebarNB from "../SideBarNB/SideBarNB";
 import UnderBar from "../UnderBar/UnderBar";
 
@@ -63,16 +62,13 @@ export default function Navbar() {
                             About us
                         </Link>
                     </div>
-                    <div className='  md:w-[25%] '>
+                    <div className='md:w-[25%] '>
                         <SearchBar />
                     </div>
-                    <div className='flex items-center md:space-x-1 lg:space-x-4'>
+                    <div className='flex items-center md:space-x-3 lg:space-x-4'>
                         {/* Cart, Language, Profile icons */}
                         <Language />
-                        <button className=' text-3xl text-[#FF8A57] hover:text-orange-500'>
-                            <FaShoppingCart />
-                        </button>
-
+                        <ShoppingCartIcon />
                         <ProfileDropdown />
                     </div>
                 </div>
@@ -95,11 +91,7 @@ export default function Navbar() {
 
                     <div className='flex items-center space-x-4'>
                         <Language />
-
-                        <button className='text-3xl text-[#FF8A57] hover:text-orange-500'>
-                            <FaShoppingCart />
-                        </button>
-
+                        <ShoppingCartIcon />
                         <ProfileDropdown />
                     </div>
                 </div>
