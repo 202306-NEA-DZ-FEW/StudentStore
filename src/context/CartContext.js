@@ -9,6 +9,7 @@ import {
     where,
 } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { db } from "@/util/firebase";
 
@@ -40,8 +41,8 @@ export const CartProvider = ({ children }) => {
 
     const addItemToCart = async (productToAdd) => {
         if (!currentUser) {
-            console.log(
-                "User is not authenticated. Unable to add items to cart."
+            toast.error(
+                "You are not logged in. Please log in to add items to your cart."
             );
             return;
         }
@@ -49,17 +50,17 @@ export const CartProvider = ({ children }) => {
         const q = query(
             cartRef,
             where("userId", "==", userId),
-            where("productId", "==", productToAdd)
+            where("productId", "==", productToAdd.id)
         );
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            console.log("Item already exists in cart");
+            toast.info("Item is already in your cart.");
             const cartItemDoc = snapshot.docs[0].ref;
             const quantity = snapshot.docs[0].data().quantity;
             await updateDoc(cartItemDoc, { quantity: quantity });
         } else {
-            console.log("Adding new item");
+            toast.success("Item added to your cart.");
             await addDoc(cartRef, {
                 userId,
                 productId: productToAdd.id,
@@ -74,13 +75,6 @@ export const CartProvider = ({ children }) => {
     };
 
     const updateCartItem = async (productId, updatedDetails) => {
-        if (!currentUser) {
-            console.log(
-                "User is not authenticated. Unable to update items in the cart."
-            );
-            return;
-        }
-
         const q = query(
             cartRef,
             where("userId", "==", userId),
@@ -92,18 +86,11 @@ export const CartProvider = ({ children }) => {
             const cartItemDoc = snapshot.docs[0].ref;
             await updateDoc(cartItemDoc, updatedDetails);
         } else {
-            console.log("Item not found in cart");
+            toast.error("Item not found in your cart.");
         }
     };
 
     const removeItemFromCart = async (productToDelete) => {
-        if (!currentUser) {
-            console.log(
-                "User is not authenticated. Unable to remove items from the cart."
-            );
-            return;
-        }
-
         const q = query(
             cartRef,
             where("userId", "==", userId),
@@ -112,11 +99,11 @@ export const CartProvider = ({ children }) => {
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            console.log("Removing item from cart");
+            toast.success("Item removed from your cart.");
             const cartItemDoc = snapshot.docs[0].ref;
             await deleteDoc(cartItemDoc);
         } else {
-            console.log("Item not found in cart");
+            toast.error("Item not found in your cart.");
         }
     };
 
@@ -150,6 +137,10 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={value}>{children}</CartContext.Provider>
+        <>
+            <CartContext.Provider value={value}>
+                {children}
+            </CartContext.Provider>
+        </>
     );
 };
