@@ -1,16 +1,10 @@
-// mylistings/index.js
+// mylistings.jsx
 
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
 import ProductCard from "@/components/ProductCard/ProductCard";
-import { app, db, auth } from "@/util/firebase";
-import {
-    collection,
-    onSnapshot,
-    addDoc,
-    where,
-    getDocs,
-} from "firebase/firestore";
+import { db, auth } from "@/util/firebase";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 
 const MyListings = () => {
     const [userListings, setUserListings] = useState([]);
@@ -27,26 +21,35 @@ const MyListings = () => {
                 const userId = getCurrentUserId();
 
                 if (userId) {
-                    const userRef = collection(db, "userinfo").doc(userId);
-                    const userDoc = await userRef.get();
+                    const userProductsQuery = query(
+                        collection(db, "products"),
+                        where("currentUserUid", "==", userId)
+                    );
 
-                    if (userDoc.exists()) {
-                        const userProductsRef = collection(db, "products");
-                        const querySnapshot = await userProductsRef
-                            .where("userId", "==", userId)
-                            .get();
+                    const unsubscribe = onSnapshot(
+                        userProductsQuery,
+                        (querySnapshot) => {
+                            const listings = querySnapshot.docs.map((doc) => ({
+                                id: doc.id,
+                                ...doc.data(),
+                            }));
 
-                        const listings = querySnapshot.docs.map((doc) => ({
-                            id: doc.id,
-                            ...doc.data(),
-                        }));
+                            setUserListings(listings);
+                            setLoading(false);
+                        },
+                        (error) => {
+                            console.error(
+                                "Error getting user listings: ",
+                                error
+                            );
+                            setLoading(false);
+                        }
+                    );
 
-                        setUserListings(listings);
-                        setLoading(false);
-                    } else {
-                        console.error("User not found");
-                        setLoading(false);
-                    }
+                    // Cleanup listener when component unmounts
+                    return () => {
+                        unsubscribe();
+                    };
                 } else {
                     console.error("User ID not available");
                     setLoading(false);
