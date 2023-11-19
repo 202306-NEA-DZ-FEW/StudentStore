@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
+  >
+    <div>
+      <img
+        className="w-full rounded-lg sm:w-40"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        onError={[Function]}
+        onLoad={[Function]}
+        src=""
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={250}
+      />
+    </div>
+    <div
+      className="sm:ml-4 sm:flex sm:w-full sm:justify-between"
+    >
+      <div
+        className="mt-5 sm:mt-0"
+      >
+        <h2
+          className="text-lg font-bold text-gray-900 capitalize"
+        />
+        <div
+          className="mt-1 text-md text-gray-700"
+        >
+          <p
+            className="font-semibold"
+          >
+            Price
+            :
+             
+            $
+          </p>
+        </div>
+        <p
+          className="capitalize"
+        />
+      </div>
+      <div
+        className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6"
+      >
+        <div
+          className="flex justify-end "
+        >
+          <button
+            className="border-2 border-[#FF8A57] py-2 rounded-lg shadow-sm text-md hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-gray-200 border-none hover:text-white text-gray-500 hover:bg-red-600 px-5"
+            onClick={[Function]}
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

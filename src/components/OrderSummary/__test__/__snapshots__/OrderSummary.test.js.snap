@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]"
+>
+  <h2
+    className="text-2xl text-black font-bold text-center"
+  >
+    Order Summary
+  </h2>
+  <hr
+    className="my-4"
+  />
+  <div
+    className="flex justify-between"
+  >
+    <p
+      className="text-lg text-black font-semibold"
+    >
+      Name
+    </p>
+    <p
+      className="text-lg text-black font-semibold pr-3"
+    >
+      Price
+    </p>
+  </div>
+  <hr
+    className="my-2"
+  />
+  <div />
+  <hr
+    className="my-4"
+  />
+  <div
+    className="flex justify-between"
+  >
+    <p
+      className="text-xl text-black font-bold"
+    >
+      Total
+    </p>
+    <div
+      className=""
+    >
+      <p
+        className="mb-1 text-lg text-black font-bold"
+      >
+        $
+      </p>
+    </div>
+  </div>
+  <button
+    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 mt-6 w-full rounded-md b font-medium text-blue-50"
+    onClick={[Function]}
+  >
+    Check out
+  </button>
+</div>
+`;
