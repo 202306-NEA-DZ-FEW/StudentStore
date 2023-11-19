@@ -1,8 +1,14 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 import Button from "../Buttons/Button";
 
 const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
+    const handleCheckout = () => {
+        toast.success("Proceed to Checkout.", {
+            autoClose: 2000,
+        });
+    };
     return (
         <div className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]'>
             <h2 className='text-2xl text-black font-bold text-center'>
@@ -42,7 +48,10 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
                     </p>
                 </div>
             </div>
-            <Button className='mt-6 w-full  rounded-md  b font-medium text-blue-50 '>
+            <Button
+                onClick={handleCheckout}
+                className='mt-6 w-full  rounded-md  b font-medium text-blue-50 '
+            >
                 Check out
             </Button>
         </div>

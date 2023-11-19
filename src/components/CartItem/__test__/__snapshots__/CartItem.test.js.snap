@@ -29,15 +29,20 @@ exports[`renders correctly 1`] = `
         className="mt-5 sm:mt-0"
       >
         <h2
-          className="text-lg font-bold text-gray-900"
+          className="text-lg font-bold text-gray-900 capitalize"
         />
-        <p
-          className="mt-1  text-md text-gray-700"
+        <div
+          className="mt-1 text-md text-gray-700"
         >
-          $ - 
-          NaN
-           DZD
-        </p>
+          <p
+            className="font-semibold"
+          >
+            Price
+            :
+             
+            $
+          </p>
+        </div>
         <p
           className="capitalize"
         />

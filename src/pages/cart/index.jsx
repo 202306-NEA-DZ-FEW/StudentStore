@@ -54,7 +54,7 @@ const Cart = () => {
                 cartItems.length > 0
                     ? "pt-20"
                     : "flex justify-center items-center pt-0 h-screen"
-            } pt-20`}
+            }`}
         >
             {cartItems.length > 0 ? (
                 <div className='mx-auto flex max-w-5xl justify-between px-6 mb-10 md:space-x-6 xl:px-0'>
@@ -63,10 +63,10 @@ const Cart = () => {
                     </h1>
                     <Link
                         href='/products'
-                        className='flex items-end gap-1 font-semibold text-indigo-600 hover:text-indigo-800  text-right'
+                        className='flex items-end  gap-1 font-semibold text-indigo-600 hover:text-indigo-800 '
                     >
                         Continue Shopping
-                        <FaLongArrowAltRight />
+                        <FaLongArrowAltRight size={22} />
                     </Link>
                 </div>
             ) : null}

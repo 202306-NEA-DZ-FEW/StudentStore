@@ -60,19 +60,21 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
                 </div>
                 <div className='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
                     <div className='mt-5 sm:mt-0'>
-                        <h2 className='text-lg font-bold text-gray-900'>
+                        <h2 className='text-lg font-bold text-gray-900 capitalize'>
                             {cartItem?.title}
                         </h2>
-                        <p className='mt-1  text-md text-gray-700'>
+                        <div className='mt-1 text-md text-gray-700'>
+                            <p className='font-semibold'>
+                                Price{cartItem?.type === "borrow" && "(15d)"}:{" "}
+                                {cartItem?.price?.toFixed(2)}$
+                            </p>
                             {cartItem?.type === "borrow" && (
-                                <>
-                                    {borrowPrice.toFixed(2)}$ -{" "}
-                                    {convertedBorrowPrice} DZD
-                                    <br />
-                                </>
+                                <p className='font-semibold'>
+                                    Price({borrowDays}d):{" "}
+                                    {borrowPrice.toFixed(2)}$
+                                </p>
                             )}
-                            {cartItem?.price.toFixed(2)}$ - {convertedPrice} DZD
-                        </p>
+                        </div>
                         <p className='capitalize'>{cartItem?.type}</p>
                     </div>
                     <div className='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>

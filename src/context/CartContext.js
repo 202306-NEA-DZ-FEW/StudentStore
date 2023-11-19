@@ -9,7 +9,7 @@ import {
     where,
 } from "firebase/firestore";
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 import { db } from "@/util/firebase";
 
@@ -55,12 +55,18 @@ export const CartProvider = ({ children }) => {
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            toast.info("Item is already in your cart.");
+            toast.info("Item is already in your cart.", {
+                autoClose: 2000,
+                position: "bottom-center",
+            });
             const cartItemDoc = snapshot.docs[0].ref;
             const quantity = snapshot.docs[0].data().quantity;
             await updateDoc(cartItemDoc, { quantity: quantity });
         } else {
-            toast.success("Item added to your cart.");
+            toast.success("Item added to your cart.", {
+                autoClose: 2000,
+                position: "bottom-center",
+            });
             await addDoc(cartRef, {
                 userId,
                 productId: productToAdd.id,
@@ -99,7 +105,9 @@ export const CartProvider = ({ children }) => {
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            toast.success("Item removed from your cart.");
+            toast.success("Item removed from your cart.", {
+                autoClose: 2000,
+            });
             const cartItemDoc = snapshot.docs[0].ref;
             await deleteDoc(cartItemDoc);
         } else {
@@ -141,6 +149,7 @@ export const CartProvider = ({ children }) => {
             <CartContext.Provider value={value}>
                 {children}
             </CartContext.Provider>
+            <ToastContainer />
         </>
     );
 };
