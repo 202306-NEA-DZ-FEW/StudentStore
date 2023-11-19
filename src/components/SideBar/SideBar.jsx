@@ -1,45 +1,41 @@
+// Sidebar.jsx
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../../util/firebase.js";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { FiEdit3 } from "react-icons/fi";
-import { BiLogOut } from "react-icons/bi";
 import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
-import {
-    MdKeyboardDoubleArrowLeft,
-    MdOutlineKeyboardDoubleArrowLeft,
-} from "react-icons/md";
-import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx";
+import { BiLogOut } from "react-icons/bi";
+import { doc, getDoc } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext.js";
 import { useRouter } from "next/router.js";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { db } from "../../util/firebase.js";
 
-const SideBar = () => {
+const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
-    const { logout } = useAuth();
+    const { currentUser, logout } = useAuth();
     const route = useRouter();
+
     useEffect(() => {
         const fetchUserInfo = async () => {
-            const userId = "e43JDIG05abGPsH43xEKBNsD49e2";
-            const userInfoRef = doc(
-                db,
-                "userinfo",
-                "e43JDIG05abGPsH43xEKBNsD49e2"
-            );
-            const userInfoSnapshot = await getDoc(userInfoRef);
+            if (currentUser) {
+                const userId = currentUser.uid;
+                const userInfoRef = doc(db, "userinfo", userId);
+                const userInfoSnapshot = await getDoc(userInfoRef);
 
-            if (userInfoSnapshot.exists()) {
-                const userInfoData = userInfoSnapshot.data();
-                setUserInfo(userInfoData);
+                if (userInfoSnapshot.exists()) {
+                    const userInfoData = userInfoSnapshot.data();
+                    setUserInfo(userInfoData);
+                }
             }
         };
+
         fetchUserInfo();
-    }, []);
+    }, [currentUser]);
 
     const handleLinkClick = (link) => {
         if (collapsed) {
@@ -48,13 +44,13 @@ const SideBar = () => {
             setSelectedLink(link);
         }
     };
-    // logout function
+
     const handleLogout = async () => {
         try {
             await logout();
             route.push("/signin");
         } catch (error) {
-            toast.error("Failed to log out");
+            console.error("Failed to log out", error);
         }
     };
 
@@ -99,9 +95,9 @@ const SideBar = () => {
                 />
                 {!collapsed && userInfo && (
                     <div className='text-center'>
-                        <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo.name} ${userInfo.surname}`}</h2>
-                        <p className='text-[#585785] mb-2'>{userInfo.email}</p>
-                        <p className='text-[#585785] mb-4'>{`${userInfo.address.city}, ${userInfo.address.country}`}</p>
+                        <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>
+                        <p className='text-[#585785] mb-2'>{userInfo?.email}</p>
+                        <p className='text-[#585785] mb-4'>{`${userInfo?.address?.city}, ${userInfo?.address?.country}`}</p>
                     </div>
                 )}
             </div>
@@ -133,7 +129,7 @@ const SideBar = () => {
                     )}
                 </div>
                 <div
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold  ${
+                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
                         selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
                     }`}
                     onClick={() => handleLinkClick("MyOrders")}
@@ -162,4 +158,4 @@ const SideBar = () => {
     );
 };
 
-export default SideBar;
+export default Sidebar;

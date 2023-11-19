@@ -74,9 +74,9 @@ const MyListings = () => {
                         {userListings.map((listing) => (
                             <div
                                 key={listing.id}
-                                className='w-[270px] bg-white shadow-xl'
+                                className='bg-white shadow-xl rounded-md overflow-hidden'
                             >
-                                <ProductCard data={listing} />
+                                <ProductCard product={listing} />
                             </div>
                         ))}
                     </div>
