@@ -12,6 +12,7 @@ import { useRouter } from "next/router.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
+import Image from "next/image.js";
 
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
@@ -88,9 +89,11 @@ const Sidebar = () => {
             />
 
             <div className='flex flex-col items-center mt-20 mb-4 space-y-4'>
-                <img
-                    src={userInfo ? userInfo.photo : ""}
-                    alt='User'
+                <Image
+                    src={currentUser.photoURL || "/images/profile.jpg"}
+                    alt='profile-pic'
+                    width={80}
+                    height={80}
                     className='w-25 h-25 rounded-full mb-2'
                 />
                 {!collapsed && userInfo && (
