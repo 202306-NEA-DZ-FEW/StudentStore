@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ListingCard from "@/components/listingcard/ListingCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 
@@ -76,7 +76,7 @@ const MyListings = () => {
                                 key={listing.id}
                                 className='bg-white shadow-xl rounded-md overflow-hidden'
                             >
-                                <ProductCard product={listing} />
+                                <ListingCard product={listing} />
                             </div>
                         ))}
                     </div>

@@ -105,7 +105,8 @@ const Sidebar = () => {
                 )}
             </div>
             <div className='flex flex-col items-center space-y-10'>
-                <div
+                <Link
+                    href='/editprofile'
                     className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
                         selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
                     }`}
@@ -117,8 +118,9 @@ const Sidebar = () => {
                     {!collapsed && (
                         <span className='hidden sm:inline'>Edit Profile</span>
                     )}
-                </div>
-                <div
+                </Link>
+                <Link
+                    href='/mylistings'
                     className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
                         selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
                     }`}
@@ -130,8 +132,9 @@ const Sidebar = () => {
                     {!collapsed && (
                         <span className='hidden sm:inline'>My Listings</span>
                     )}
-                </div>
-                <div
+                </Link>
+                <Link
+                    href='/myorders'
                     className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
                         selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
                     }`}
@@ -143,7 +146,7 @@ const Sidebar = () => {
                     {!collapsed && (
                         <span className='hidden sm:inline'>My Orders</span>
                     )}
-                </div>
+                </Link>
             </div>
             {!collapsed && (
                 <div className='mt-auto mb-4'>
