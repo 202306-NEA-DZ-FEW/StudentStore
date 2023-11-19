@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="p-4"
+>
+  <div
+    className="mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden"
+  >
+    <div
+      className="p-4 w-120 h-120  flex-1"
+    >
+      <article
+        className=" w-full   rounded-lg bg-white shadow-lg  "
+      >
+        <header
+          class="pt-1 flex-shrink"
+        >
+          <h4
+            className=" font-bold md:text-lg text-[#585785] "
+          >
+            Book Buddies
+          </h4>
+        </header>
+        <div
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+        >
+          <img
+            alt="Book Buddies"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2Fbookbuddies.jpg&w=640&q=75"
+            srcSet="/_next/image?url=%2Fbookbuddies.jpg&w=384&q=75 1x, /_next/image?url=%2Fbookbuddies.jpg&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="  text-[#585785] "
+          >
+            The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
+        >
+          <div
+            className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+          >
+             
+            <svg
+              className=" flex items-center"
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
+            <p
+              className=" text-center text-lg font-semibold"
+            >
+              Tuesday, 21 November
+            </p>
+          </div>
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+          >
+             
+            <a
+              href="https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
+              target="_blank"
+            >
+               
+              Join us
+               
+            </a>
+             
+          </button>
+        </footer>
+      </article>
+    </div>
+    <div
+      className="p-4 w-120 h-120  flex-1"
+    >
+      <article
+        className=" w-full   rounded-lg bg-white shadow-lg  "
+      >
+        <header
+          class="pt-1 flex-shrink"
+        >
+          <h4
+            className=" font-bold md:text-lg text-[#585785] "
+          >
+            the climate crisis
+          </h4>
+        </header>
+        <div
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+        >
+          <img
+            alt="the climate crisis"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2FEvent.jpg&w=640&q=75"
+            srcSet="/_next/image?url=%2FEvent.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent.jpg&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="  text-[#585785] "
+          >
+            Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
+        >
+          <div
+            className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+          >
+             
+            <svg
+              className=" flex items-center"
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
+            <p
+              className=" text-center text-lg font-semibold"
+            >
+              Saturday, 16 December  
+            </p>
+          </div>
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+          >
+             
+            <a
+              href="https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
+              target="_blank"
+            >
+               
+              Join us
+               
+            </a>
+             
+          </button>
+        </footer>
+      </article>
+    </div>
+    <div
+      className="p-4 w-120 h-120  flex-1"
+    >
+      <article
+        className=" w-full   rounded-lg bg-white shadow-lg  "
+      >
+        <header
+          class="pt-1 flex-shrink"
+        >
+          <h4
+            className=" font-bold md:text-lg text-[#585785] "
+          >
+            Discover Photography!
+          </h4>
+        </header>
+        <div
+          class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+        >
+          <img
+            alt="Discover Photography!"
+            className="object-cover  mx-auto block  rounded-md "
+            data-nimg="1"
+            decoding="async"
+            height={250}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2Fphotography.jpg&w=640&q=75"
+            srcSet="/_next/image?url=%2Fphotography.jpg&w=384&q=75 1x, /_next/image?url=%2Fphotography.jpg&w=640&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={275}
+          />
+          <p
+            className="  text-[#585785] "
+          >
+            Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? 
+          </p>
+        </div>
+        <footer
+          class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
+        >
+          <div
+            className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+          >
+             
+            <svg
+              className=" flex items-center"
+              fill="currentColor"
+              height={25}
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+              />
+            </svg>
+             
+            <p
+              className=" text-center text-lg font-semibold"
+            >
+              Saturday, 16 December
+            </p>
+          </div>
+          <button
+            className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+          >
+             
+            <a
+              href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onTouchStart={[Function]}
+              target="_blank"
+            >
+               
+              Join us
+               
+            </a>
+             
+          </button>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+`;
