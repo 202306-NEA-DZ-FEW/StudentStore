@@ -92,7 +92,7 @@ exports[`renders correctly 1`] = `
         className=" mt-4 p-6"
       >
         <ul
-          className="space-y-3  text-white font-bold text-lg"
+          className="space-y-3  text-white font-semibold text-lg"
         >
           <li>
             <a
@@ -198,7 +198,7 @@ exports[`renders correctly 1`] = `
         className="flex space-y-8 flex-col items-center justify-center"
       >
         <ul
-          className="  space-y-4 text-white font-bold text-xl"
+          className="  space-y-4 text-white font-bold text-l"
         >
           <li>
             <a
@@ -467,7 +467,7 @@ exports[`renders correctly 1`] = `
         className="flex items-center justify-around p-2"
       >
         <ul
-          className="space-y-3 text-white font-bold text-lg"
+          className="space-y-3 text-white font-semibold text-lg"
         >
           <li>
             <a
@@ -498,7 +498,7 @@ exports[`renders correctly 1`] = `
         >
           <li>
             <h2
-              className=" text-white font-bold text-lg"
+              className=" text-white font-semibold text-lg"
             >
               Contact Us:
             </h2>
@@ -670,18 +670,18 @@ exports[`renders correctly 1`] = `
             alt="logo"
             data-nimg="1"
             decoding="async"
-            height={150}
+            height={20}
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="/_next/image?url=%2Fapp_store.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fapp_store.png&w=256&q=75 1x, /_next/image?url=%2Fapp_store.png&w=384&q=75 2x"
+            src="/_next/image?url=%2Fapp_store.png&w=48&q=75"
+            srcSet="/_next/image?url=%2Fapp_store.png&w=32&q=75 1x, /_next/image?url=%2Fapp_store.png&w=48&q=75 2x"
             style={
               Object {
                 "color": "transparent",
               }
             }
-            width={150}
+            width={20}
           />
         </a>
       </div>
@@ -725,7 +725,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-around p-2"
       >
         <ul
-          className="space-y-3 text-white font-bold text-lg"
+          className="space-y-3 text-white font-semibold text-lg"
         >
           <li>
             <a
@@ -752,11 +752,11 @@ exports[`renders correctly 1`] = `
           </li>
           <li>
             <ul
-              className="text-gray-600 space-y-1 dark:text-gray-400 font-bold"
+              className="text-gray-600 space-y-1 dark:text-gray-400 font-semibold"
             >
               <li>
                 <h2
-                  className=" text-white font-bold text-lg"
+                  className=" text-white font-semibold text-lg"
                 >
                   Contact Us:
                 </h2>
@@ -907,7 +907,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center"
       >
         <ul
-          className=" space-y-4 text-white font-bold text-xl"
+          className=" space-y-4 text-white font-bold text-l"
         >
           <li
             className="hover:underline hover:text-orange"
@@ -1032,10 +1032,10 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="flex justify-center p-2 font-semibold bg-[#32314C] text-center text-white  text-sm "
+    className="flex justify-center p-2 font-medium bg-[#32314C] text-center text-white  text-sm "
   >
     <p>
-      © 2023 Team 10, Recoded Front-End Bootcamp. All rights reserved.
+      © 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.
     </p>
   </div>
   <div

@@ -7,23 +7,7 @@ import AnimatedCounter from "@/components/AnimatedCounter/AnimatedCounter";
 export default function splashpage() {
     return (
         <div className='bg-blue-100 min-h-screen flex justify-center items-center mt-[-96px] flex-col pt-6 p-8 lg:fixed lg:w-full'>
-            {/* <div className='flex pt-2 justify-center gap-3 items-center '>
-                <div className=''>
-                    <Image
-                        src='/logo.png'
-                        width={65}
-                        height={65}
-                        alt='Picture of the author'
-                    />
-                </div>
-                <div>
-                    <h1 className='text-center text-4xl  text-[#141E46]  font-semibold  drop-shadow-md lg:text-5xl '>
-                        Student Store
-                    </h1>
-                </div>
-            </div> */}
-
-            <div className=' glow flex'>
+            <div className=' flex'>
                 <Image src='Logo.svg' width={130} height={130} alt='Logo' />
                 <div className='w-full h-full pt-6'>
                     <span className="text-orange-500 text-4xl font-bold ,   fontFamily: 'Clash Display Variable', wordWrap: 'break-word'">
@@ -77,10 +61,10 @@ export default function splashpage() {
                     </div>
                     <div className='  flex justify-center gap-10 lg:flex-row md:flex-row  '>
                         <button class='bg-[#585785] font-normal  text-xl text-white rounded-full mx-auto block  mt-10 py-2 px-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300'>
-                            <Link href='/signup'> Join us</Link>
+                            <Link href='/home'> Explore</Link>
                         </button>
                         <button class='bg-[#585785] font-normal  text-xl text-white rounded-full mx-auto block  mt-10 py-2 px-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300'>
-                            <Link href='/home'> Explore</Link>
+                            <Link href='/signup'> Join us</Link>
                         </button>
                     </div>
                 </div>

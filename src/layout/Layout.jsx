@@ -5,7 +5,7 @@ import Navbar from "@/components/NavBar/NavBar";
 import PageLoadProgressBar from "@/components/PageLoadProgressBar/PageLoadProgressBar";
 export default function Layout({ children }) {
     const router = useRouter();
-    const hideNavbarAndFooter = router.pathname;
+    const hideNavbarAndFooter = router.pathname === "/";
     // Put Header or Footer around the children element
     // Example
     return (
