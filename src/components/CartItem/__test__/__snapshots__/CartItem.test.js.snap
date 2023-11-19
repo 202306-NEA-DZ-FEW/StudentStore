@@ -5,21 +5,23 @@ exports[`renders correctly 1`] = `
   <div
     class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
   >
-    <img
-      class="w-full rounded-lg sm:w-40"
-      data-nimg="1"
-      decoding="async"
-      height={100}
-      onError={[Function]}
-      onLoad={[Function]}
-      src=""
-      style={
-        Object {
-          "color": "transparent",
+    <div>
+      <img
+        class="w-full rounded-lg sm:w-40"
+        data-nimg="1"
+        decoding="async"
+        height={100}
+        onError={[Function]}
+        onLoad={[Function]}
+        src=""
+        style={
+          Object {
+            "color": "transparent",
+          }
         }
-      }
-      width={250}
-    />
+        width={250}
+      />
+    </div>
     <div
       class="sm:ml-4 sm:flex sm:w-full sm:justify-between"
     >
@@ -44,10 +46,10 @@ exports[`renders correctly 1`] = `
         class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6"
       >
         <div
-          class="flex items-center space-x-4"
+          class="flex justify-end "
         >
           <button
-            className="border-2 border-[#FF8A57] py-2 rounded-lg shadow-sm text-md hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-transparent border-none hover:text-white text-gray-500 hover:bg-red-600 px-4"
+            className="border-2 border-[#FF8A57] py-2 rounded-lg shadow-sm text-md hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-gray-200 border-none hover:text-white text-gray-500 hover:bg-red-600 px-5"
             onClick={[Function]}
           >
             Remove

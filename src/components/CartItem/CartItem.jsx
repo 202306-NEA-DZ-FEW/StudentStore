@@ -47,13 +47,15 @@ const CartItem = ({ cartItem, updateCart }) => {
     return (
         <div>
             <div class='justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start'>
-                <Image
-                    src={cartItem?.image}
-                    width={250}
-                    height={100}
-                    alt={cartItem?.title}
-                    class='w-full rounded-lg sm:w-40'
-                />
+                <div>
+                    <Image
+                        src={cartItem?.image}
+                        width={250}
+                        height={100}
+                        alt={cartItem?.title}
+                        class='w-full rounded-lg sm:w-40'
+                    />
+                </div>
                 <div class='sm:ml-4 sm:flex sm:w-full sm:justify-between'>
                     <div class='mt-5 sm:mt-0'>
                         <h2 class='text-lg font-bold text-gray-900'>
@@ -62,7 +64,7 @@ const CartItem = ({ cartItem, updateCart }) => {
                         <p class='mt-1  text-md text-gray-700'>
                             {cartItem?.type === "borrow" && (
                                 <>
-                                    {borrowPrice.toFixed(2)} -{" "}
+                                    {borrowPrice.toFixed(2)}$ -{" "}
                                     {convertedBorrowPrice} DZD
                                     <br />
                                 </>
@@ -72,36 +74,36 @@ const CartItem = ({ cartItem, updateCart }) => {
                         <p className='capitalize'>{cartItem?.type}</p>
                     </div>
                     <div class='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
+                        <div class='flex justify-end '>
+                            <Button
+                                className='bg-gray-200 border-none hover:text-white  text-gray-500 hover:bg-red-600 px-5'
+                                onClick={removeProductFromCart}
+                            >
+                                Remove
+                            </Button>
+                        </div>
                         {cartItem?.type === "borrow" && (
-                            <div class='flex items-center border-gray-100'>
+                            <div class='flex justify-end items-center  border-gray-100'>
                                 <button
                                     onClick={handleDecreaseDays}
-                                    class='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50'
+                                    class='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
                                 >
                                     -
                                 </button>
                                 <p
-                                    class='h-8 w-8 border flex justify-center items-center bg-white  text-xs outline-none'
+                                    class='h-8 w-8 border flex justify-center text-gray-500 items-center bg-white  text-xs outline-none'
                                     type='text'
                                 >
                                     {borrowDays} d
                                 </p>
                                 <button
                                     onClick={handleIncreaseDays}
-                                    class='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50'
+                                    class='cursor-pointer  rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#FF8A57] hover:text-blue-50'
                                 >
                                     +
                                 </button>
                             </div>
                         )}
-                        <div class='flex items-center space-x-4'>
-                            <Button
-                                className='bg-transparent border-none hover:text-white  text-gray-500 hover:bg-red-600 px-4'
-                                onClick={removeProductFromCart}
-                            >
-                                Remove
-                            </Button>
-                        </div>
                     </div>
                 </div>
             </div>
