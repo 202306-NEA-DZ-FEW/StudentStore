@@ -1,5 +1,3 @@
-// mylistings.jsx
-
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
 import ProductCard from "@/components/ProductCard/ProductCard";
@@ -64,14 +62,13 @@ const MyListings = () => {
     }, []);
 
     return (
-        <div>
+        <div className='flex'>
             <SideBar />
-            <div>
-                <h1>My Listings</h1>
+            <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
                     <p>Loading...</p>
                 ) : (
-                    <div>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                         {userListings.map((listing) => (
                             <ProductCard key={listing.id} data={listing} />
                         ))}
