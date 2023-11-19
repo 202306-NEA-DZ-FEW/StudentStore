@@ -70,7 +70,7 @@ export default function SignIn() {
                             value={email}
                             required
                             onChange={(e) => setEmail(e.target.value)}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#FF8A57]'
                         />
 
                         <input
@@ -79,7 +79,7 @@ export default function SignIn() {
                             value={password}
                             required
                             onChange={(e) => setPassword(e.target.value)}
-                            className='text-center py-2 rounded-sm placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3'
+                            className='text-center py-2 rounded-md placeholder-[#21567e] block w-[100%] mx-auto md:w-[100%] lg:w-full my-3 focus:outline-[#FF8A57]'
                         />
                         <div className='flex w-[100%] justify-between mx-auto  '>
                             <Button

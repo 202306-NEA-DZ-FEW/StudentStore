@@ -12,7 +12,7 @@ exports[`renders correctly 1`] = `
     loading="lazy"
     onError={[Function]}
     onLoad={[Function]}
-    src="Logo.svg"
+    src="/Logo.svg"
     style={
       Object {
         "color": "transparent",
