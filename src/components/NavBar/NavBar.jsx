@@ -32,12 +32,12 @@ export default function Navbar() {
                 {/* Large screens and tablets */}
                 <div className='hidden md:flex justify-between md:items-center'>
                     <div className='flex space-x-4 md:space-x-3 lg:space-x-4 items-center'>
-                        <Link href='/'>
+                        <Link href='/home'>
                             <Logo />
                         </Link>
                         <Link
                             className='text-[#585785] rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
-                            href='/'
+                            href='/home'
                         >
                             Home
                         </Link>
