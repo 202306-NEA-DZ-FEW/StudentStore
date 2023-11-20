@@ -1,7 +1,7 @@
 {
     "language": "en",
     "List an Item/Service": "List an Item/Service",
-    " Type(Product, service)": " Type(Product, service)",
+    "Type(Product, Service)": "Type(Product, Service)",
     "Sale": "Sale",
     "Borrow": "Borrow",
     "Electronics": "Electronics",
@@ -21,6 +21,7 @@
     "Location(city)": "Location(city)",
     "Price": "Price",
     "Upload Images": "Upload Images",
+    "List": "List",
     "Picture with the same name has already been selected.": "Picture with the same name has already been selected.",
     "You can only upload a maximum of 4 images.": "You can only upload a maximum of 4 images.",
     "Please fill in all required fields.": "Please fill in all required fields.",
