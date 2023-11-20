@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl"
+>
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
+  >
+    <div
+      className="relative border-b-2 border-gray-300"
+    >
+      <img
+        alt="Product"
+        className="h-64 w-56 object-cover rounded-t-xl"
+        data-nimg="1"
+        decoding="async"
+        height={364}
+        loading="lazy"
+        onError={[Function]}
+        onLoad={[Function]}
+        src=""
+        style={
+          Object {
+            "color": "transparent",
+          }
+        }
+        width={288}
+      />
+      <div
+        className="absolute top-0 m-2  left-0 rounded-full "
+      >
+        <p
+          className="bg-[#FF8A57] rounded-full px-2  p-1 text-[12px] font-bold capitalize tracking-wide text-white  sm:py-1 sm:px-3"
+        />
+      </div>
+    </div>
+  </a>
+  <div
+    className="px-4 py-3 w-56"
+  >
+    <div
+      className="flex justify-between"
+    >
+      <span
+        className="text-gray-400 mr-3 uppercase text-xs"
+      />
+      <span
+        className="text-gray-400 ml-3 capitalize font-semibold text-xs"
+      />
+    </div>
+    <a
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      <p
+        className="text-lg font-bold  mt-2 text-black truncate block capitalize"
+      />
+    </a>
+    <div
+      className="flex items-center"
+    >
+      <p
+        className="text-lg font-semibold text-black cursor-auto my-3"
+      >
+        $
+      </p>
+      <div
+        className="ml-auto"
+      >
+        <button
+          className="text-red-500"
+          onClick={[Function]}
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
