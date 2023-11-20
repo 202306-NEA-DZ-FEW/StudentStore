@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex flex-col justify-center items-center shadow-lg border-t-2 bg-gray-200 pt-10 pb-5"
+>
+  <h1
+    className="mb-10 text-3xl font-bold text-[#585785]"
+  >
+    Recently Added
+  </h1>
+  <div
+    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto gap-4 lg:gap-8 place-items-center"
+  />
+  <a
+    href="/products"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
+  >
+    <button
+      className="border-2 py-2 px-14 rounded-lg text-white shadow-sm text-md hover:bg-white hover:border-2 hover:duration-300 font-bold bg-[#585785] border-[#585785] hover:text-[#585785] hover:border-[#585785] mt-10 mb-5"
+    >
+      Explore More
+    </button>
+  </a>
+</div>
+`;

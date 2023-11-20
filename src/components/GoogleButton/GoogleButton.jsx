@@ -34,7 +34,7 @@ export default function GoogleButton({ children, className }) {
                     city: "",
                     zipcode: "",
                 }).then(() => {
-                    route.push("/");
+                    route.push("/home");
                 });
             })
             .catch((error) => {
