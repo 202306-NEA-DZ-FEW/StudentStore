@@ -5,6 +5,7 @@ import * as React from "react";
 
 import EventCard from "@/components/EventCard/EventCard";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import LatestProducts from "@/components/LatestProducts/LatestProducts";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
             <HeroSection />
             <EventCard t={t} />
             <TestimonialsSection t={t} />
+            <LatestProducts />
         </div>
     );
 }

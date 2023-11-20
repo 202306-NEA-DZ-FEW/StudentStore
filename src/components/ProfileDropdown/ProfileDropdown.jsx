@@ -59,7 +59,7 @@ function ProfileDropdown({ t }) {
                             </li>
                             <li>
                                 <Link
-                                    href='#'
+                                    href='/mylistings'
                                     className='text-[#7874F2] font-semibold  hover:text-grey'
                                 >
                                     {t("Listings")}
