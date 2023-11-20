@@ -155,7 +155,7 @@ const Listings = () => {
             // Clear the image files
             setImageFiles([]);
         } catch (error) {
-            toast.error("Error adding data: ", error);
+            toast.error("Error adding your listing: ", error);
         } finally {
             setIsUploading(false); // Reset loading state after request completion
         }
