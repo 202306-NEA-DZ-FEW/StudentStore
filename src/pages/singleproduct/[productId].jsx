@@ -10,7 +10,6 @@ function SingleProduct() {
 
     return (
         <div>
-            <Navbar />
             <ProductDetails productId={productId} />
             {/* Conditionally render MapComponent based on screen size */}
             {productId && (
