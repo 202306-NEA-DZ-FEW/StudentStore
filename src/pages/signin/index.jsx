@@ -27,7 +27,7 @@ export default function SignIn() {
         try {
             setLoading(true);
             await login(email, password);
-            route.push("/");
+            route.push("/home");
         } catch {
             toast.error(t("Failed to log in"), { autoClose: 1000 });
         } finally {

@@ -6,6 +6,7 @@ import * as React from "react";
 import EventCard from "@/components/EventCard/EventCard";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
+import LatestProducts from "@/components/LatestProducts/LatestProducts";
 
 export default function HomePage() {
     const { t } = useTranslation("common");
@@ -13,6 +14,7 @@ export default function HomePage() {
     return (
         <div className=''>
             <HeroSection />
+            <LatestProducts />
             <EventCard />
             <TestimonialsSection />
         </div>

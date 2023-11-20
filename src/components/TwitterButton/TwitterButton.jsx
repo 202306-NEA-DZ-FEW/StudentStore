@@ -35,7 +35,7 @@ export default function TwitterButton({ children, className }) {
                     city: "",
                     zipcode: "",
                 }).then(() => {
-                    route.push("/");
+                    route.push("/home");
                 });
             })
             .catch((error) => {
