@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <footer
   className=""
+  dir="ltr"
 >
   <div
     className=" hidden lg:block larger-screen"
@@ -102,7 +103,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-              About Us
+              Mock Translation Function
             </a>
           </li>
           <li>
@@ -114,12 +115,12 @@ exports[`renders correctly 1`] = `
               onTouchStart={[Function]}
               target="_blank"
             >
-              Our Team
+              Mock Translation Function
             </a>
           </li>
           <li>
             <h2>
-              Contact Us:
+              Mock Translation Function
             </h2>
           </li>
           <li>
@@ -227,7 +228,8 @@ exports[`renders correctly 1`] = `
                 />
               </svg>
               <p>
-                 Start selling
+                 
+                Mock Translation Function
               </p>
             </a>
           </li>
@@ -258,7 +260,7 @@ exports[`renders correctly 1`] = `
                 />
               </svg>
               <p>
-                Buy products
+                Mock Translation Function
               </p>
             </a>
           </li>
@@ -477,7 +479,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-              About Us
+              Mock Translation Function
             </a>
           </li>
           <li>
@@ -489,7 +491,7 @@ exports[`renders correctly 1`] = `
               onTouchStart={[Function]}
               target="_blank"
             >
-              Our Team
+              Mock Translation Function
             </a>
           </li>
         </ul>
@@ -500,7 +502,7 @@ exports[`renders correctly 1`] = `
             <h2
               className=" text-white font-semibold text-lg"
             >
-              Contact Us:
+              Mock Translation Function
             </h2>
           </li>
           <li>
@@ -593,7 +595,8 @@ exports[`renders correctly 1`] = `
                   />
                 </svg>
                 <p>
-                   Start selling
+                   
+                  Mock Translation Function
                 </p>
               </a>
             </li>
@@ -624,7 +627,7 @@ exports[`renders correctly 1`] = `
                   />
                 </svg>
                 <p>
-                  Buy products 
+                  Mock Translation Function
                 </p>
               </a>
             </li>
@@ -735,7 +738,7 @@ exports[`renders correctly 1`] = `
               onMouseEnter={[Function]}
               onTouchStart={[Function]}
             >
-              About Us
+              Mock Translation Function
             </a>
           </li>
           <li>
@@ -747,7 +750,7 @@ exports[`renders correctly 1`] = `
               onTouchStart={[Function]}
               target="_blank"
             >
-              Our Team
+              Mock Translation Function
             </a>
           </li>
           <li>
@@ -758,7 +761,8 @@ exports[`renders correctly 1`] = `
                 <h2
                   className=" text-white font-semibold text-lg"
                 >
-                  Contact Us:
+                  Mock Translation Function
+                  :
                 </h2>
               </li>
               <li>
@@ -938,7 +942,8 @@ exports[`renders correctly 1`] = `
                 />
               </svg>
               <p>
-                 Start selling
+                 
+                Mock Translation Function
               </p>
             </a>
           </li>
@@ -969,7 +974,7 @@ exports[`renders correctly 1`] = `
                 />
               </svg>
               <p>
-                Buy products 
+                Mock Translation Function
               </p>
             </a>
           </li>

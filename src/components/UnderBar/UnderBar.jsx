@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-function UnderBar({ className }) {
+function UnderBar({ className, t }) {
+    const route = useRouter();
     return (
         <div
             className={twMerge(
                 "bg-[#585785]  font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
                 className
             )}
+            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
         >
             <ul className='p-4 md:p-0 md:flex md:justify-around lg:p- lg:flex lg:justify-around lg:w-[75%] lg:mx-auto '>
                 <li>
@@ -15,7 +18,7 @@ function UnderBar({ className }) {
                         href='/products'
                         className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        All Categories
+                        {t("all Categories")}
                     </Link>
                 </li>
                 <li>
@@ -26,7 +29,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Electronics
+                        {t("electronics")}
                     </Link>
                 </li>
                 <li>
@@ -37,7 +40,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Books
+                        {t("books")}
                     </Link>
                 </li>
                 <li>
@@ -48,7 +51,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Gaming
+                        {t("gaming")}
                     </Link>
                 </li>
                 <li>
@@ -59,7 +62,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Clothes
+                        {t("clothes")}
                     </Link>
                 </li>
                 <li>
@@ -70,7 +73,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Shoes
+                        {t("shoes")}
                     </Link>
                 </li>
                 <li>
@@ -81,7 +84,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Food
+                        {t("food")}
                     </Link>
                 </li>
                 <li>
@@ -92,7 +95,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Transportation
+                        {t("transportation")}
                     </Link>
                 </li>
                 <li>
@@ -103,7 +106,7 @@ function UnderBar({ className }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        Furniture
+                        {t("furniture")}
                     </Link>
                 </li>
             </ul>

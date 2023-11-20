@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="relative mx-auto max-w-sm"
+  dir="ltr"
 >
   <div
     className="input-wrapper"
@@ -10,7 +11,7 @@ exports[`renders correctly 1`] = `
     <input
       className="w-full py-1 text-[#585785] px-4 border-[#585785] border-2 dark:bg-white rounded-full   font-sm  focus:outline-none"
       onChange={[Function]}
-      placeholder="Search here..."
+      placeholder="search here..."
       type="text"
       value=""
     />

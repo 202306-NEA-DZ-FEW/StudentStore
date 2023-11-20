@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
     FaEnvelope,
     FaFacebook,
@@ -11,7 +12,8 @@ import {
 } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 
-function Footer() {
+function Footer({ t }) {
+    const route = useRouter();
     const goToTop = () => {
         window.scrollTo({
             top: 0,
@@ -20,7 +22,7 @@ function Footer() {
     };
 
     return (
-        <footer className=''>
+        <footer className='' dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}>
             <div className=' hidden lg:block larger-screen'>
                 <div className='flex justify-evenly  bg-[#32314C] w-full h-full break-all mt-auto '>
                     <div className=' flex p-4  flex-col       items-center justify-center  space-y-4'>
@@ -62,7 +64,7 @@ function Footer() {
                                     href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    About Us
+                                    {t("about_us")}
                                 </Link>
                             </li>
                             <li>
@@ -71,11 +73,11 @@ function Footer() {
                                     target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    Our Team
+                                    {t("our_team")}
                                 </Link>
                             </li>
                             <li>
-                                <h2>Contact Us:</h2>
+                                <h2>{t("contact_us")}</h2>
                             </li>
                             <li>
                                 <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-medium'>
@@ -113,7 +115,7 @@ function Footer() {
                                     href='/listings'
                                 >
                                     <FaRegPlusSquare size={20} />
-                                    <p> Start selling</p>
+                                    <p> {t("start_selling")}</p>
                                 </Link>
                             </li>
                             <li>
@@ -122,7 +124,7 @@ function Footer() {
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
-                                    <p>Buy products</p>
+                                    <p>{t("buy_products")}</p>
                                 </Link>
                             </li>
                         </ul>
@@ -193,7 +195,7 @@ function Footer() {
                                     href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    About Us
+                                    {t("about_us")}
                                 </Link>
                             </li>
                             <li>
@@ -202,14 +204,14 @@ function Footer() {
                                     target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    Our Team
+                                    {t("our_team")}
                                 </Link>
                             </li>
                         </ul>
                         <ul className='text-gray-600 space-y-2 dark:text-gray-400 font-bold'>
                             <li>
                                 <h2 className=' text-white font-semibold text-lg'>
-                                    Contact Us:
+                                    {t("contact_us")}
                                 </h2>
                             </li>
                             <li>
@@ -239,7 +241,7 @@ function Footer() {
                                         href='/listings'
                                     >
                                         <FaRegPlusSquare size={20} />
-                                        <p> Start selling</p>
+                                        <p> {t("start_selling")}</p>
                                     </Link>
                                 </li>
                                 <li>
@@ -248,7 +250,7 @@ function Footer() {
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                     >
                                         <FaWallet size={20} />
-                                        <p>Buy products </p>
+                                        <p>{t("buy_products")}</p>
                                     </Link>
                                 </li>
                             </ul>
@@ -299,7 +301,7 @@ function Footer() {
                                     href='/aboutus'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    About Us
+                                    {t("about_us")}
                                 </Link>
                             </li>
                             <li>
@@ -308,14 +310,14 @@ function Footer() {
                                     target='_blank'
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    Our Team
+                                    {t("our_team")}
                                 </Link>
                             </li>
                             <li>
                                 <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-semibold'>
                                     <li>
                                         <h2 className=' text-white font-semibold text-lg'>
-                                            Contact Us:
+                                            {t("contact_us")}:
                                         </h2>
                                     </li>
                                     <li>
@@ -373,7 +375,7 @@ function Footer() {
                                     href='/listings'
                                 >
                                     <FaRegPlusSquare size={20} />
-                                    <p> Start selling</p>
+                                    <p> {t("start_selling")}</p>
                                 </Link>
                             </li>
                             <li>
@@ -382,7 +384,7 @@ function Footer() {
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
                                 >
                                     <FaWallet size={20} />
-                                    <p>Buy products </p>
+                                    <p>{t("buy_products")}</p>
                                 </Link>
                             </li>
                         </ul>

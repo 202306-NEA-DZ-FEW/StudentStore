@@ -8,13 +8,13 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
 export default function HomePage() {
-    const { t } = useTranslation("common");
+    const { t } = useTranslation("home");
 
     return (
         <div className=''>
             <HeroSection />
-            <EventCard />
-            <TestimonialsSection />
+            <EventCard t={t} />
+            <TestimonialsSection t={t} />
         </div>
     );
 }
@@ -22,7 +22,7 @@ export default function HomePage() {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common"])),
+            ...(await serverSideTranslations(locale, ["common", "home"])),
             // Will be passed to the page component as props
         },
     };

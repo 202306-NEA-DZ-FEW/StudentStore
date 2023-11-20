@@ -1,21 +1,29 @@
-import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const SidebarNB = ({ isOpen, closeSidebar }) => {
+import { useAuth } from "@/context/AuthContext";
+
+const SidebarNB = ({ isOpen, closeSidebar, t }) => {
+    const route = useRouter();
     const { currentUser } = useAuth();
     return (
         <div
             className={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-all duration-700 ${
                 isOpen ? "left-0" : "-left-full"
             } `}
+            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
         >
             <div className='h-24 shadow-md flex items-center bg-[#C9D9E5]'>
                 <div className='basis-3/4'>
                     {currentUser ? (
-                        <p className='sm:text-lg  p-2 font-semibold text-[#585785] '>
-                            {`Hello, ${
+                        <p
+                            className={`sm:text-lg  p-2 font-semibold text-[#585785] ${
+                                route.locale === "ar" ? "mr-10" : ""
+                            } `}
+                        >
+                            {`${t("Hello")}, ${
                                 currentUser.displayName || ""
-                            } Welcome to Student Store`}
+                            } ${t("Welcome to Student Store")}`}
                         </p>
                     ) : (
                         ""
@@ -29,7 +37,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
                             href='/'
                         >
-                            Home
+                            {t("home")}
                         </Link>
                     </li>
                     <li>
@@ -37,7 +45,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
                             href='/products'
                         >
-                            Products
+                            {t("products")}
                         </Link>
                     </li>
                     <li>
@@ -45,7 +53,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
                             href='/donations'
                         >
-                            Donation
+                            {t("donation")}
                         </Link>
                     </li>
                     <li>
@@ -53,21 +61,24 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                             className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
                             href='/aboutUs'
                         >
-                            About us
+                            {t("about_us")}
                         </Link>
                     </li>
                 </ul>
                 <div className='border-b border-gray-400'></div>
                 <div className='p-2'>
                     <details className=' text-[#585785] font-bold'>
-                        <summary className='text-xl'>Categories</summary>
+                        <summary className='text-xl'>
+                            {" "}
+                            {t("categories")}{" "}
+                        </summary>
                         <ul class='text-[#585785]'>
                             <li>
                                 <Link
                                     href='/products'
                                     className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-outtext-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    All Categories
+                                    {t("all Categories")}
                                 </Link>
                             </li>
                             <li>
@@ -78,7 +89,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Electronics
+                                    {t("electronics")}
                                 </Link>
                             </li>
                             <li>
@@ -89,7 +100,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Books
+                                    {t("books")}
                                 </Link>
                             </li>
                             <li>
@@ -100,7 +111,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Gaming
+                                    {t("gaming")}
                                 </Link>
                             </li>
                             <li>
@@ -111,7 +122,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Clothes
+                                    {t("clothes")}
                                 </Link>
                             </li>
                             <li>
@@ -122,7 +133,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Shoes
+                                    {t("shoes")}
                                 </Link>
                             </li>
                             <li>
@@ -133,7 +144,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Food
+                                    {t("food")}
                                 </Link>
                             </li>
                             <li>
@@ -144,7 +155,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Transportation
+                                    {t("transportation")}
                                 </Link>
                             </li>
                             <li>
@@ -155,7 +166,7 @@ const SidebarNB = ({ isOpen, closeSidebar }) => {
                                     }}
                                     className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    Furniture
+                                    {t("furniture")}
                                 </Link>
                             </li>
                         </ul>
