@@ -110,7 +110,7 @@ function Footer() {
                             <li>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href='/listings'
+                                    href='/listing'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
@@ -236,7 +236,7 @@ function Footer() {
                                 <li className='hover:underline hover:text-orange'>
                                     <Link
                                         className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                        href='/listings'
+                                        href='/listing'
                                     >
                                         <FaRegPlusSquare size={20} />
                                         <p> Start selling</p>
@@ -370,7 +370,7 @@ function Footer() {
                             <li className='hover:underline hover:text-orange'>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                    href='/listings'
+                                    href='/listing'
                                 >
                                     <FaRegPlusSquare size={20} />
                                     <p> Start selling</p>
