@@ -56,7 +56,7 @@ function Footer() {
                         </Link>
                     </div>
                     <div className=' mt-4 p-6'>
-                        <ul className='space-y-3  text-white font-bold text-lg'>
+                        <ul className='space-y-3  text-white font-semibold text-lg'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -106,7 +106,7 @@ function Footer() {
                         </ul>
                     </div>
                     <div className='flex space-y-8 flex-col items-center justify-center'>
-                        <ul className='  space-y-4 text-white font-bold text-xl'>
+                        <ul className='  space-y-4 text-white font-bold text-l'>
                             <li>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
@@ -187,7 +187,7 @@ function Footer() {
                         </div>
                     </div>
                     <div className='flex items-center justify-around p-2'>
-                        <ul className='space-y-3 text-white font-bold text-lg'>
+                        <ul className='space-y-3 text-white font-semibold text-lg'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -208,7 +208,7 @@ function Footer() {
                         </ul>
                         <ul className='text-gray-600 space-y-2 dark:text-gray-400 font-bold'>
                             <li>
-                                <h2 className=' text-white font-bold text-lg'>
+                                <h2 className=' text-white font-semibold text-lg'>
                                     Contact Us:
                                 </h2>
                             </li>
@@ -272,8 +272,8 @@ function Footer() {
                         >
                             <Image
                                 src='/app_store.png'
-                                width={150}
-                                height={150}
+                                width={20}
+                                height={20}
                                 alt='logo'
                             />
                         </Link>
@@ -293,7 +293,7 @@ function Footer() {
                         </Link>
                     </div>
                     <div className='flex justify-around p-2'>
-                        <ul className='space-y-3 text-white font-bold text-lg'>
+                        <ul className='space-y-3 text-white font-semibold text-lg'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -312,9 +312,9 @@ function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-bold'>
+                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-semibold'>
                                     <li>
-                                        <h2 className=' text-white font-bold text-lg'>
+                                        <h2 className=' text-white font-semibold text-lg'>
                                             Contact Us:
                                         </h2>
                                     </li>
@@ -366,7 +366,7 @@ function Footer() {
                         </div>
                     </div>
                     <li className='flex justify-center'>
-                        <ul className=' space-y-4 text-white font-bold text-xl'>
+                        <ul className=' space-y-4 text-white font-bold text-l'>
                             <li className='hover:underline hover:text-orange'>
                                 <Link
                                     className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
@@ -413,10 +413,10 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-center p-2 font-semibold bg-[#32314C] text-center text-white  text-sm '>
+            <div className='flex justify-center p-2 font-medium bg-[#32314C] text-center text-white  text-sm '>
                 <p>
-                    © 2023 Team 10, Recoded Front-End Bootcamp. All rights
-                    reserved.
+                    © 2023 Team 10, Re:Coded Front-End Web Development - Algeria
+                    Bootcamp. All rights reserved.
                 </p>
             </div>
             <div className='relative '>

@@ -27,6 +27,7 @@
         "firebase": "^10.5.2",
         "i18next": "^21.9.0",
         "leaflet": "^1.9.4",
+        "lodash.debounce": "^4.0.8",
         "next": "^13.2.4",
         "next-i18next": "^11.2.2",
         "nextjs-progressbar": "^0.0.16",

@@ -1,14 +1,15 @@
 import classNames from "classnames";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
 import Uploading from "@/components/Uploading/Uploading";
 
+import { useAuth } from "@/context/AuthContext";
 import { db, imgDB } from "@/util/firebase";
 
 const Listings = () => {
@@ -24,42 +25,51 @@ const Listings = () => {
         location: { city: "" },
         pictures: [],
     });
+    const { currentUser } = useAuth();
+    const currentUserUid = currentUser.uid;
 
     const handleChange = (e) => {
         const { value, name, type } = e.target;
         if (type === "file") {
             const file = e.target.files[0];
-            const files = e.target.files;
-            // reject if the image is selected twice
-            const selectedFileNames = formData.pictures.map(
-                (imgFile) => imgFile.name
-            );
-            for (const file of files) {
-                const fileName = file.name;
-                // Check if the file with the same name has already been selected
-                if (selectedFileNames.includes(fileName)) {
-                    toast.warning(
-                        "Picture with the same name has already been selected."
-                    );
-                    e.target.value = "";
+            if (file) {
+                const files = e.target.files;
+                // reject if the image is selected twice
+                const selectedFileNames = formData.pictures.map(
+                    (imgFile) => imgFile.name
+                );
+                for (const file of files) {
+                    const fileName = file.name;
+
+                    // Check if the file with the same name has already been selected
+                    if (selectedFileNames.includes(fileName)) {
+                        toast.warning(
+                            "Picture with the same name has already been selected."
+                        );
+                        e.target.value = "";
+                        return;
+                    }
+                }
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const fileUrl = event.target.result;
+                    setImageFiles((prevImageFiles) => [
+                        ...prevImageFiles,
+                        fileUrl,
+                    ]);
+                };
+                reader.readAsDataURL(file);
+                const updatedImgUrl = [...formData.pictures];
+                for (let i = 0; i < files.length; i++) {
+                    updatedImgUrl.push(files[i]);
+                }
+                if (updatedImgUrl.length > 4) {
+                    toast.warning("You can only upload a maximum of 4 images.");
                     return;
                 }
+                setFormData({ ...formData, pictures: updatedImgUrl });
             }
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const fileUrl = event.target.result;
-                setImageFiles((prevImageFiles) => [...prevImageFiles, fileUrl]);
-            };
-            reader.readAsDataURL(file);
-            const updatedImgUrl = [...formData.pictures];
-            for (let i = 0; i < files.length; i++) {
-                updatedImgUrl.push(files[i]);
-            }
-            if (updatedImgUrl.length > 4) {
-                toast.warning("You can only upload a maximum of 4 images.");
-                return;
-            }
-            setFormData({ ...formData, pictures: updatedImgUrl });
         } else if (name.startsWith("location.")) {
             const [parentName, childName] = name.split(".");
             setFormData((prevData) => ({
@@ -117,6 +127,8 @@ const Listings = () => {
                     longitude: (formData.location.longitude = ""),
                 },
                 pictures: [],
+                currentUserUid: currentUserUid,
+                createdAt: serverTimestamp(),
             };
             //
             for (const imageFile of formData.pictures) {
@@ -144,7 +156,6 @@ const Listings = () => {
             setImageFiles([]);
         } catch (error) {
             toast.error("Error adding data: ", error);
-            console.error("Error adding data: ", error);
         } finally {
             setIsUploading(false); // Reset loading state after request completion
         }
@@ -369,8 +380,6 @@ const Listings = () => {
                     </form>
                 </div>
             )}
-
-            <ToastContainer />
         </div>
     );
 };
