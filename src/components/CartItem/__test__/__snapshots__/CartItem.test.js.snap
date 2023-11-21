@@ -38,8 +38,7 @@ exports[`renders correctly 1`] = `
             className="font-semibold"
           >
             Price
-            :
-             
+            : 
             $
           </p>
         </div>

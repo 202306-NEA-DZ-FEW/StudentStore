@@ -3,13 +3,14 @@
     "Your Cart": "سلة التسوق الخاصة بك",
     "Continue Shopping": "متابعة التسوق",
     "Your cart is empty.": "سلة التسوق الخاصة بك فارغة",
-    "Continue Shopping": "متابعة التسوق",
     "Price": "السعر",
     "Remove": "إزالة",
-    "d": "d",
+    "sale": "بيع",
+    "borrow": "استعارة",
+    "d": "ي",
+    "(15d)": "(ي15)",
     "Order Summary": "ملخص الطلب",
     "Name": "الاسم",
-    "Price": "السعر",
     "Total": "المجموع",
     "Check out": "اتمام الشراء"
 }

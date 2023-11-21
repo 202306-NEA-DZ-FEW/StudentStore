@@ -1,15 +1,16 @@
 {
     "language": "fr",
-    "Your Cart": "Votre panier",
-    "Continue Shopping": "Continuer vos achats",
+    "Your Cart": "Votre Panier",
+    "Continue Shopping": "Continuer Vos Achats",
     "Your cart is empty.": "Votre panier est vide.",
-    "Continue Shopping": "Continuer vos achats",
     "Price": "Prix",
     "Remove": "Supprimer",
+    "sale": "Vente",
+    "borrow": "Emprunter",
     "d": "j",
+    "(15d)": "(15j)",
     "Order Summary": "Résumé de la commande",
     "Name": "Nom",
-    "Price": "Prix",
     "Total": "Total",
     "Check out": "Payer"
 }

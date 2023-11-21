@@ -3,13 +3,14 @@
     "Your Cart": "Your Cart",
     "Continue Shopping": "Continue Shopping",
     "Your cart is empty.": "Your cart is empty.",
-    "Continue Shopping": "Continue Shopping",
     "Price": "Price",
     "Remove": "Remove",
+    "sale": "sale",
+    "borrow": "borrow",
+    "(15d)": "(15d)",
     "d": "d",
     "Order Summary": "Order Summary",
     "Name": "Name",
-    "Price": "Price",
     "Total": "Total",
     "Check out": "Check out"
 }

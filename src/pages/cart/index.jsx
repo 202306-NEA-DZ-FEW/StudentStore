@@ -1,6 +1,9 @@
 import debounce from "lodash.debounce";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useContext, useEffect, useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
@@ -10,6 +13,8 @@ import OrderSummary from "@/components/OrderSummary/OrderSummary";
 import { CartContext } from "@/context/CartContext";
 
 const Cart = () => {
+    const { t } = useTranslation("cart");
+    const router = useRouter();
     const { cartItems, updateCartItem } = useContext(CartContext);
     const [borrowPrices, setBorrowPrices] = useState({});
     const calculateBorrowPrice = (item) => {
@@ -59,13 +64,13 @@ const Cart = () => {
             {cartItems.length > 0 ? (
                 <div className='mx-auto flex max-w-5xl justify-between px-6 mb-10 md:space-x-6 xl:px-0'>
                     <h1 className='text-gray-500 text-center ml-4  text-2xl font-bold  '>
-                        Your Cart ({cartItems.length})
+                        {t("Your Cart")} ({cartItems.length})
                     </h1>
                     <Link
                         href='/products'
                         className='flex items-end  gap-1 font-semibold text-indigo-600 hover:text-indigo-800 '
                     >
-                        Continue Shopping
+                        {t("Continue Shopping")}
                         <FaLongArrowAltRight size={22} />
                     </Link>
                 </div>
@@ -79,6 +84,7 @@ const Cart = () => {
                                 cartItem={cartItem}
                                 updateCart={updateCartItem}
                                 updateBorrowPrice={updateBorrowPriceDebounced}
+                                t={t}
                             />
                         ))}
                     </div>
@@ -86,6 +92,7 @@ const Cart = () => {
                         cartItems={cartItems}
                         subtotal={calculateSubtotal()}
                         borrowPrices={borrowPrices}
+                        t={t}
                     />
                 </div>
             ) : (
@@ -97,13 +104,13 @@ const Cart = () => {
                         alt='emty cart'
                     />
                     <p className='text-gray-500 font-semibold text-lg '>
-                        Your cart is empty.
+                        {t("Your cart is empty.")}
                     </p>
                     <Link
                         href='/products'
                         className='flex items-end gap-1 text-lg font-semibold text-indigo-600 hover:text-indigo-800  text-right'
                     >
-                        Continue Shopping
+                        {t("Continue Shopping")}
                         <FaLongArrowAltRight size={22} className='text-lg' />
                     </Link>
                 </div>
@@ -113,3 +120,11 @@ const Cart = () => {
 };
 
 export default Cart;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "cart"])),
+            // Will be passed to the page component as props
+        },
+    };
+}

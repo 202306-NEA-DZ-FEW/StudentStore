@@ -7,9 +7,7 @@ import { CartContext } from "@/context/CartContext";
 
 import Button from "../Buttons/Button";
 
-const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
-    // console.log("CartItem rendering:", cartItem);
-    // console.log("Product to delete:", cartItem);
+const CartItem = ({ cartItem, updateCart, updateBorrowPrice, t }) => {
     const { removeItemFromCart } = useContext(CartContext);
     const [borrowDays, setBorrowDays] = useState(cartItem?.borrowDays || 15);
     const maxBorrowDays = 15;
@@ -38,10 +36,7 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
         const pricePerDay = defaultPrice / defaultDays;
         return borrowDays * pricePerDay;
     };
-    const convertToDinar = (priceInDollars) => {
-        const exchangeRate = 134.35;
-        return (priceInDollars * exchangeRate).toFixed(2);
-    };
+
     const borrowPrice = calculateBorrowPrice();
 
     return (
@@ -63,17 +58,18 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
                         </h2>
                         <div className='mt-1 text-md text-gray-700'>
                             <p className='font-semibold'>
-                                Price{cartItem?.type === "borrow" && "(15d)"}:{" "}
-                                {cartItem?.price?.toFixed(2)}$
+                                {t("Price")}
+                                {cartItem?.type === "borrow" &&
+                                    t("(15d)")}: {cartItem?.price?.toFixed(2)}$
                             </p>
                             {cartItem?.type === "borrow" && (
                                 <p className='font-semibold'>
-                                    Price({borrowDays}d):{" "}
-                                    {borrowPrice.toFixed(2)}$
+                                    {t("Price")}({borrowDays}
+                                    {t("d")}): {borrowPrice.toFixed(2)}$
                                 </p>
                             )}
                         </div>
-                        <p className='capitalize'>{cartItem?.type}</p>
+                        <p className='capitalize'>{t(cartItem?.type)}</p>
                     </div>
                     <div className='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
                         <div className='flex justify-end '>
@@ -81,7 +77,7 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
                                 className='bg-gray-200 border-none hover:text-white  text-gray-500 hover:bg-red-600 px-5'
                                 onClick={removeProductFromCart}
                             >
-                                Remove
+                                {t("Remove")}
                             </Button>
                         </div>
                         {cartItem?.type === "borrow" && (
@@ -96,7 +92,7 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
                                     className='h-8 w-8 border flex justify-center text-gray-500 items-center bg-white  text-xs outline-none'
                                     type='text'
                                 >
-                                    {borrowDays} d
+                                    {borrowDays} {t("d")}
                                 </p>
                                 <button
                                     onClick={handleIncreaseDays}
