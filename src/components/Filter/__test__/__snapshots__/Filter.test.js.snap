@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="w-[45%] md:w-[30%] lg:w-[20%] min-h-screen  bg-gray-200 text-[#585785] pt-8 px-4"
+  className="w-full pb-5 sm:[45%] md:w-[30%] lg:w-[20%]  bg-gray-200 text-[#585785] pt-8 px-4"
   dir="ltr"
 >
   <div

@@ -149,7 +149,7 @@ export default function ProductsContainer({ products, t }) {
         setFilteredProducts(products);
     }, [products]);
     return (
-        <div className='flex w-full'>
+        <div className='md:flex'>
             <Filter
                 minPrice={minPrice}
                 maxPrice={maxPrice}
@@ -171,7 +171,7 @@ export default function ProductsContainer({ products, t }) {
                 selectedCondition={selectedCondition}
                 handleCondtionChange={handleCondtionChange}
             />
-            <ProductsList products={sortedProducts} />
+            <ProductsList products={sortedProducts} t={t} />
         </div>
     );
 }
