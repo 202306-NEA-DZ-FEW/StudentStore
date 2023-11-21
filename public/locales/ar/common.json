@@ -14,7 +14,6 @@
     "products": "المنتجات",
     "donation": "تبرع",
     "search_placeholder": "البحث عن المنتجات...",
-    "cart": "عربة التسوق",
     "all Categories": "جميع الفئات",
     "electronics": "الإلكترونيات",
     "books": "الكتب",
@@ -32,6 +31,6 @@
     "Listings": "إعلاناتي",
     "Logout": "خروج",
     "Sign In": "دخول",
-    "Hello": "مرحبا", 
+    "Hello": "مرحبا",
     "Welcome to Student Store": "أهلا بك في متجر الطالب"
 }

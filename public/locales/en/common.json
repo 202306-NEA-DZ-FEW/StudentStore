@@ -14,7 +14,6 @@
     "products": "Products",
     "donation": "Donation",
     "search_placeholder": "Search for products...",
-    "cart": "Shopping cart",
     "all Categories": "All categories",
     "electronics": "Electronics",
     "books": "Books",
@@ -32,6 +31,6 @@
     "Listings": "Listings",
     "Logout": "Logout",
     "Sign In": "Sign In",
-    "Hello": "Hello", 
+    "Hello": "Hello",
     "Welcome to Student Store": "Welcome to Student Store"
-    }
+}

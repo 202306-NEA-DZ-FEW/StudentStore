@@ -11,14 +11,14 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
             className={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-all duration-700 ${
                 isOpen ? "left-0" : "-left-full"
             } `}
-            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
+            // dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
         >
             <div className='h-24 shadow-md flex items-center bg-[#C9D9E5]'>
                 <div className='basis-3/4'>
                     {currentUser ? (
                         <p
                             className={`sm:text-lg  p-2 font-semibold text-[#585785] ${
-                                route.locale === "ar" ? "mr-10" : "mr-10"
+                                route.locale === "ar" ? "mr-16" : ""
                             } `}
                         >
                             {`${t("Hello")}, ${

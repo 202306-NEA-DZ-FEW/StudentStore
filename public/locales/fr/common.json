@@ -14,7 +14,6 @@
     "products": "Produits",
     "donation": "Don",
     "search_placeholder": "Chercher des produits...",
-    "cart": "Panier",
     "all Categories": "Toutes les catégories",
     "electronics": "Électronique",
     "books": "Livres",
@@ -32,7 +31,6 @@
     "Listings": "Listes",
     "Logout": "Se déconnecter",
     "Sign In": "S'identifier",
-    "Hello": "Salut", 
+    "Hello": "Salut",
     "Welcome to Student Store": "Bienvenue à notre site"
-
 }
