@@ -417,8 +417,9 @@ function Footer({ t }) {
             </div>
             <div className='flex justify-center p-2 font-medium bg-[#32314C] text-center text-white  text-sm '>
                 <p>
-                    © 2023 Team 10, Re:Coded Front-End Web Development - Algeria
-                    Bootcamp. All rights reserved.
+                    {t(
+                        "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved."
+                    )}
                 </p>
             </div>
             <div className='relative '>
