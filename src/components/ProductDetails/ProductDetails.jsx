@@ -8,43 +8,8 @@ import { CartContext } from "@/context/CartContext.js";
 import { useContext } from "react";
 import Link from "next/link";
 
-const fetchProductData = async (productId, setProductData, setLoading) => {
-    try {
-        const productRef = doc(db, "products", productId);
-        const productDoc = await getDoc(productRef);
-
-        if (productDoc.exists()) {
-            setProductData(productDoc.data());
-            setLoading(false);
-        } else {
-            console.log("No such product document!");
-        }
-    } catch (error) {
-        console.error("Error fetching product data:", error);
-        setLoading(false);
-    }
-};
-
-const fetchUserData = async (productData, currentUser, setUserData) => {
-    try {
-        if (productData && currentUser) {
-            const userRef = doc(db, "userinfo", productData.currentUserUid);
-            const userDoc = await getDoc(userRef);
-
-            if (userDoc.exists()) {
-                setUserData(userDoc.data());
-            } else {
-                console.log("No such user document!");
-            }
-        }
-    } catch (error) {
-        console.error("Error fetching user data:", error);
-    }
-};
-
 const ProductDetails = ({ productId }) => {
     const { addItemToCart } = useContext(CartContext);
-    // const addProductToCart = () => addItemToCart(productId);
     const [productData, setProductData] = useState(null);
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -52,21 +17,63 @@ const ProductDetails = ({ productId }) => {
     const { currentUser } = useAuth();
 
     useEffect(() => {
-        if (productId) {
-            fetchProductData(productId, setProductData, setLoading);
-        }
-    }, [productId]);
+        const fetchProductData = async () => {
+            try {
+                const productRef = doc(db, "products", productId);
+                const productDoc = await getDoc(productRef);
 
-    useEffect(() => {
-        if (productData && currentUser) {
-            fetchUserData(productData, currentUser, setUserData);
+                if (productDoc.exists()) {
+                    setProductData({ ...productDoc.data(), id: productDoc.id });
+                    setLoading(false);
+                } else {
+                    console.log("No such product document!");
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error("Error fetching product data:", error);
+                setLoading(false);
+            }
+        };
+
+        const fetchDataAndAddToCart = async () => {
+            await fetchProductData();
+
+            // Move fetchUserData inside the fetchDataAndAddToCart function
+            try {
+                if (productData && currentUser) {
+                    const userRef = doc(
+                        db,
+                        "userinfo",
+                        productData.currentUserUid
+                    );
+                    const userDoc = await getDoc(userRef);
+
+                    if (userDoc.exists()) {
+                        setUserData(userDoc.data());
+                    } else {
+                        console.log("No such user document!");
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        };
+
+        if (productId) {
+            fetchDataAndAddToCart();
         }
-    }, [productData, currentUser]);
+    }, [productId, currentUser]);
+
+    const handleAddToCart = () => {
+        // Call addItemToCart with the entire product details
+        if (productData) {
+            addItemToCart(productData);
+        }
+    };
 
     if (loading) {
         return <div>Loading...</div>;
     }
-
     return (
         <div
             style={{
@@ -152,7 +159,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='flex-grow' />
                         <div className='flex items-center'>
                             <button
-                                onClick={() => addItemToCart(productId)}
+                                onClick={handleAddToCart}
                                 className='text-[#7874F2] mr-4 ml-4 border border-[#7874F2] rounded hover:text-[#F1F6FA] hover:bg-[#7874F2] text-lg cursor-pointer'
                             >
                                 Add to cart

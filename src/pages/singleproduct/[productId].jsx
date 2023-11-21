@@ -11,27 +11,6 @@ function SingleProduct() {
     const { productId } = router.query;
     const [setProduct] = useState(null);
 
-    useEffect(() => {
-        const fetchProductData = async () => {
-            try {
-                const productRef = doc(db, "products", productId);
-                const productDoc = await getDoc(productRef);
-
-                if (productDoc.exists()) {
-                    setProduct({ ...productDoc.data(), id: productDoc.id });
-                } else {
-                    console.log("No such product document!");
-                }
-            } catch (error) {
-                console.error("Error fetching product data:", error);
-            }
-        };
-
-        if (productId) {
-            fetchProductData();
-        }
-    }, [productId]);
-
     return (
         <CartProvider>
             <div>
