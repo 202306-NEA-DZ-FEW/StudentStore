@@ -14,9 +14,9 @@ export default function HomePage() {
     return (
         <div className=''>
             <HeroSection />
+            <LatestProducts t={t} />
             <EventCard t={t} />
             <TestimonialsSection t={t} />
-            <LatestProducts />
         </div>
     );
 }
