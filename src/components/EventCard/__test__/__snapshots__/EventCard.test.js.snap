@@ -94,7 +94,7 @@ exports[`renders correctly 1`] = `
               target="_blank"
             >
                
-              Join us
+              interested
                
             </a>
              
@@ -114,14 +114,14 @@ exports[`renders correctly 1`] = `
           <h4
             className=" font-bold md:text-lg text-[#585785] "
           >
-            the climate crisis
+            The climate crisis
           </h4>
         </header>
         <div
           class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
         >
           <img
-            alt="the climate crisis"
+            alt="The climate crisis"
             className="object-cover  mx-auto block  rounded-md "
             data-nimg="1"
             decoding="async"
@@ -174,7 +174,7 @@ exports[`renders correctly 1`] = `
             <p
               className=" text-center text-lg font-semibold"
             >
-              Saturday, 16 December  
+              Saturday, 16 December 
             </p>
           </div>
           <button
@@ -189,7 +189,7 @@ exports[`renders correctly 1`] = `
               target="_blank"
             >
                
-              Join us
+              interested
                
             </a>
              
@@ -269,7 +269,7 @@ exports[`renders correctly 1`] = `
             <p
               className=" text-center text-lg font-semibold"
             >
-              Saturday, 16 December
+              Saturday, 16 December 
             </p>
           </div>
           <button
@@ -284,7 +284,7 @@ exports[`renders correctly 1`] = `
               target="_blank"
             >
                
-              Join us
+              interested
                
             </a>
              

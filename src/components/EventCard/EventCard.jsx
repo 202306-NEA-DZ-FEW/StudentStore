@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
-import Button from "../Buttons/Button";
 import Link from "next/link";
-const EventCard = () => {
+import React, { useEffect, useState } from "react";
+import { FaCalendarAlt } from "react-icons/fa";
+
+import Button from "../Buttons/Button";
+const EventCard = ({ t }) => {
     const data = [
         {
             id: 1,
             image: "/bookbuddies.jpg",
-            title: "Book Buddies",
-            description:
-                "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨",
-            date: "Tuesday, 21 November",
+            title: t("Book Buddies"),
+            description: t(
+                "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨"
+            ),
+            date: t("Tuesday, 21 November"),
             link: "https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1",
         },
         {
             id: 2,
             image: "/Event.jpg",
-            title: "the climate crisis",
-            description:
-                "Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.",
-            date: "Saturday, 16 December  ",
+            title: t("The climate crisis"),
+            description: t(
+                "Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future."
+            ),
+            date: t("Saturday, 16 December "),
             link: "https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch",
         },
         {
             id: 3,
             image: "/photography.jpg",
-            title: "Discover Photography!",
-            description:
-                "Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? ",
-            date: "Saturday, 16 December",
+            title: t("Discover Photography!"),
+            description: t(
+                "Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? "
+            ),
+            date: t("Saturday, 16 December "),
             link: "https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1",
         },
     ];
@@ -76,7 +80,7 @@ const EventCard = () => {
                                         {" "}
                                         <Link href={`${link}`} target='_blank'>
                                             {" "}
-                                            Join us{" "}
+                                            {t("interested")}{" "}
                                         </Link>{" "}
                                     </Button>
                                 </footer>
