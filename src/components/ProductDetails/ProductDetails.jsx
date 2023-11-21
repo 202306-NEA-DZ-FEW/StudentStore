@@ -4,13 +4,47 @@ import { db } from "../../util/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext.js";
 import { CartContext } from "@/context/CartContext.js";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+// import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import Link from "next/link";
 
+const fetchProductData = async (productId, setProductData, setLoading) => {
+    try {
+        const productRef = doc(db, "products", productId);
+        const productDoc = await getDoc(productRef);
+
+        if (productDoc.exists()) {
+            setProductData(productDoc.data());
+            setLoading(false);
+        } else {
+            console.log("No such product document!");
+        }
+    } catch (error) {
+        console.error("Error fetching product data:", error);
+        setLoading(false);
+    }
+};
+
+const fetchUserData = async (productData, currentUser, setUserData) => {
+    try {
+        if (productData && currentUser) {
+            const userRef = doc(db, "userinfo", productData.currentUserUid);
+            const userDoc = await getDoc(userRef);
+
+            if (userDoc.exists()) {
+                setUserData(userDoc.data());
+            } else {
+                console.log("No such user document!");
+            }
+        }
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
+};
+
 const ProductDetails = ({ productId }) => {
     const { addItemToCart } = useContext(CartContext);
-    const addProductToCart = () => addItemToCart(productId);
+    // const addProductToCart = () => addItemToCart(productId);
     const [productData, setProductData] = useState(null);
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,53 +52,17 @@ const ProductDetails = ({ productId }) => {
     const { currentUser } = useAuth();
 
     useEffect(() => {
-        const fetchProductData = async () => {
-            try {
-                const productRef = doc(db, "products", productId);
-                const productDoc = await getDoc(productRef);
-
-                if (productDoc.exists()) {
-                    setProductData(productDoc.data());
-                    setLoading(false); // Set loading to false once product data is fetched
-                } else {
-                    console.log("No such product document!");
-                }
-            } catch (error) {
-                console.error("Error fetching product data:", error);
-                setLoading(false); // Set loading to false in case of an error
-            }
-        };
-
-        const fetchUserData = async () => {
-            try {
-                if (productData) {
-                    const userRef = doc(
-                        db,
-                        "userinfo",
-                        productData.currentUserUid
-                    );
-                    const userDoc = await getDoc(userRef);
-
-                    if (userDoc.exists()) {
-                        setUserData(userDoc.data());
-                    } else {
-                        console.log("No such user document!");
-                    }
-                }
-            } catch (error) {
-                console.error("Error fetching user data:", error);
-            }
-        };
-
         if (productId) {
-            fetchProductData();
+            fetchProductData(productId, setProductData, setLoading);
         }
+    }, [productId]);
 
-        // Fetch user data whenever productData is updated
-        if (productData) {
-            fetchUserData();
+    useEffect(() => {
+        if (productData && currentUser) {
+            fetchUserData(productData, currentUser, setUserData);
         }
-    }, [productId, productData]);
+    }, [productData, currentUser]);
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -154,7 +152,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='flex-grow' />
                         <div className='flex items-center'>
                             <button
-                                onClick={addItemToCart}
+                                onClick={() => addItemToCart(productId)}
                                 className='text-[#7874F2] mr-4 ml-4 border border-[#7874F2] rounded hover:text-[#F1F6FA] hover:bg-[#7874F2] text-lg cursor-pointer'
                             >
                                 Add to cart
@@ -170,7 +168,7 @@ const ProductDetails = ({ productId }) => {
                     <div className='mt-2'>
                         {userData && currentUser ? (
                             <div className='flex items-center mt-4  shadow-xl p-4'>
-                                <div className='rounded-full overflow-hidden'>
+                                {/* <div className='rounded-full overflow-hidden'>
                                     <Image
                                         src={userData?.photo}
                                         width={65}
@@ -178,7 +176,7 @@ const ProductDetails = ({ productId }) => {
                                         className='object-cover w-full h-full'
                                         alt='user picture'
                                     />
-                                </div>
+                                </div> */}
                                 <div className='ml-4 flex-1'>
                                     <div className='flex flex-col'>
                                         <h2 className='text-xl font-bold '>
