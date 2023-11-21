@@ -16,54 +16,52 @@ const ProductDetails = ({ productId }) => {
 
     const { currentUser } = useAuth();
 
-    useEffect(() => {
-        const fetchProductData = async () => {
-            try {
-                const productRef = doc(db, "products", productId);
-                const productDoc = await getDoc(productRef);
+    const fetchProductData = async () => {
+        try {
+            const productRef = doc(db, "products", productId);
+            const productDoc = await getDoc(productRef);
 
-                if (productDoc.exists()) {
-                    setProductData({ ...productDoc.data(), id: productDoc.id });
-                    setLoading(false);
-                } else {
-                    console.log("No such product document!");
-                    setLoading(false);
-                }
-            } catch (error) {
-                console.error("Error fetching product data:", error);
+            if (productDoc.exists()) {
+                setProductData({ ...productDoc.data(), id: productDoc.id });
+                setLoading(false);
+            } else {
+                console.log("No such product document!");
                 setLoading(false);
             }
-        };
+        } catch (error) {
+            console.error("Error fetching product data:", error);
+            setLoading(false);
+        }
+    };
 
-        const fetchDataAndAddToCart = async () => {
-            await fetchProductData();
+    const fetchDataAndAddToCart = async () => {
+        await fetchProductData();
 
-            // Move fetchUserData inside the fetchDataAndAddToCart function
-            try {
-                if (productData && currentUser) {
-                    const userRef = doc(
-                        db,
-                        "userinfo",
-                        productData.currentUserUid
-                    );
-                    const userDoc = await getDoc(userRef);
+        // Move fetchUserData inside the fetchDataAndAddToCart function
+        try {
+            if (productData && currentUser) {
+                const userRef = doc(db, "userinfo", productData.currentUserUid);
+                const userDoc = await getDoc(userRef);
 
-                    if (userDoc.exists()) {
-                        setUserData(userDoc.data());
-                    } else {
-                        console.log("No such user document!");
-                    }
+                if (userDoc.exists()) {
+                    setUserData(userDoc.data());
+                } else {
+                    console.log("No such user document!");
+                    // Optionally set userData to a default value or handle accordingly
                 }
-            } catch (error) {
-                console.error("Error fetching user data:", error);
             }
-        };
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
 
+    useEffect(() => {
         if (productId) {
             fetchDataAndAddToCart();
         }
     }, [productId, currentUser]);
 
+    console.log(productData);
     const handleAddToCart = () => {
         // Call addItemToCart with the entire product details
         if (productData) {
@@ -77,14 +75,14 @@ const ProductDetails = ({ productId }) => {
     return (
         <div
             style={{
-                margin: "180px 160px 0px 180px",
+                margin: "80px ",
                 // "@media (max-width: 768px)": {
                 //     margin: "180px 80px 50px 100px", // Adjust these values for smaller screens
                 // },
             }}
             className='flex flex-col  sm:gap-6 sm:flex-col md:flex-col md:justify-center lg:flex-row lg:justify-between'
         >
-            <div className='grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
+            <div className='p-12 grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
                 <div className='col-span-3 row-span-1 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4] border rounded-md border-[#979797]'>
                     <Image
                         className='object-cover w-full h-full rounded-md '
@@ -130,7 +128,7 @@ const ProductDetails = ({ productId }) => {
 
             <div className='grid w-full sm:w-full md:w-full lg:w-1/2  text-[#585785]'>
                 {/* Product Details */}
-                <div className='col-span-4 md:col-span-2'>
+                <div className='pt-8 col-span-4 md:col-span-2'>
                     <h1 className='text-5xl font-bold text-[#7874F2] mb-4'>
                         {productData?.title}
                     </h1>
@@ -160,7 +158,7 @@ const ProductDetails = ({ productId }) => {
                         <div className='flex items-center'>
                             <button
                                 onClick={handleAddToCart}
-                                className='text-[#7874F2] mr-4 ml-4 border border-[#7874F2] rounded hover:text-[#F1F6FA] hover:bg-[#7874F2] text-lg cursor-pointer'
+                                className='text-[#7874F2] border border-[#7874F2] rounded hover:text-[#F1F6FA] hover:bg-[#7874F2] text-lg cursor-pointer p-2'
                             >
                                 Add to cart
                             </button>
@@ -173,22 +171,24 @@ const ProductDetails = ({ productId }) => {
 
                     {/* User Info */}
                     <div className='mt-2'>
-                        {userData && currentUser ? (
+                        {currentUser ? (
                             <div className='flex items-center mt-4  shadow-xl p-4'>
-                                {/* <div className='rounded-full overflow-hidden'>
+                                <div className='rounded-full overflow-hidden'>
                                     <Image
-                                        src={userData?.photo}
+                                        src={
+                                            userData?.photo ||
+                                            "/images/profile.jpg"
+                                        }
                                         width={65}
                                         height={65}
                                         className='object-cover w-full h-full'
                                         alt='user picture'
                                     />
-                                </div> */}
+                                </div>
                                 <div className='ml-4 flex-1'>
                                     <div className='flex flex-col'>
                                         <h2 className='text-xl font-bold '>
-                                            {userData?.name}{" "}
-                                            {userData?.username}
+                                            {userData?.name} {userData?.surname}
                                         </h2>
                                         <div className='flex items-center'>
                                             <p className='text-lg mr-2'>
