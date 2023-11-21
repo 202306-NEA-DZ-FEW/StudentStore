@@ -61,7 +61,6 @@ const ProductDetails = ({ productId }) => {
         }
     }, [productId, currentUser]);
 
-    console.log(productData);
     const handleAddToCart = () => {
         // Call addItemToCart with the entire product details
         if (productData) {
