@@ -68,7 +68,7 @@ const MyListings = () => {
             <SideBar />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
-                    <p>Loading...</p>
+                    <p>Loading....</p>
                 ) : (
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                         {userListings.map((listing) => (
