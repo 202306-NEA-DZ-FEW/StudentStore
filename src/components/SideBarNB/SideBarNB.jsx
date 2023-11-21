@@ -18,7 +18,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     {currentUser ? (
                         <p
                             className={`sm:text-lg  p-2 font-semibold text-[#585785] ${
-                                route.locale === "ar" ? "mr-10" : ""
+                                route.locale === "ar" ? "mr-10" : "mr-10"
                             } `}
                         >
                             {`${t("Hello")}, ${
