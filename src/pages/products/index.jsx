@@ -33,7 +33,7 @@ export default AllProducts;
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["products"])),
+            ...(await serverSideTranslations(locale, ["common", "products"])),
             // Will be passed to the page component as props
         },
     };

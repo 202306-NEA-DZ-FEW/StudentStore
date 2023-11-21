@@ -34,7 +34,7 @@ export default function FacebookButton({ children, className }) {
                 city: "",
                 zipcode: "",
             });
-            route.push("/");
+            route.push("/home");
         } catch (error) {
             console.log(error);
         }

@@ -86,8 +86,8 @@ export default function SignUp() {
                                 zipcode: "",
                             })
                                 .then(() => {
-                                    // after the user data is added to the firestore now we will redirect the user to the product page i am using / but later we will chnage it with the products page path
-                                    route.push("/");
+                                    // after the user data is added to the firestore now we will redirect the user to the home page
+                                    route.push("/home");
                                 })
                                 .catch((error) => {
                                     console.error(
