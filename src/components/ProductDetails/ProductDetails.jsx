@@ -4,7 +4,6 @@ import { db } from "../../util/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext.js";
 import { CartContext } from "@/context/CartContext.js";
-// import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import Link from "next/link";
 
@@ -34,28 +33,34 @@ const ProductDetails = ({ productId }) => {
         }
     };
 
-    const fetchDataAndAddToCart = async () => {
-        await fetchProductData();
-
-        // Move fetchUserData inside the fetchDataAndAddToCart function
-        try {
-            if (productData && currentUser) {
-                const userRef = doc(db, "userinfo", productData.currentUserUid);
-                const userDoc = await getDoc(userRef);
-
-                if (userDoc.exists()) {
-                    setUserData(userDoc.data());
-                } else {
-                    console.log("No such user document!");
-                    // Optionally set userData to a default value or handle accordingly
-                }
-            }
-        } catch (error) {
-            console.error("Error fetching user data:", error);
-        }
-    };
-
     useEffect(() => {
+        const fetchDataAndAddToCart = async () => {
+            try {
+                await fetchProductData();
+
+                if (productData && currentUser) {
+                    const userRef = doc(
+                        db,
+                        "userinfo",
+                        productData.currentUserUid
+                    );
+                    const userDoc = await getDoc(userRef);
+
+                    if (userDoc.exists()) {
+                        setUserData(userDoc.data());
+                        setLoading(false);
+                    } else {
+                        console.log("No such user document!");
+                        setLoading(false);
+                        // Optionally set userData to a default value or handle accordingly
+                    }
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setLoading(false);
+            }
+        };
+
         if (productId) {
             fetchDataAndAddToCart();
         }
@@ -71,6 +76,7 @@ const ProductDetails = ({ productId }) => {
     if (loading) {
         return <div>Loading...</div>;
     }
+
     return (
         <div
             style={{
