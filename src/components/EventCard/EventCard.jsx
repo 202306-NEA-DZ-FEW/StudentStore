@@ -40,54 +40,63 @@ const EventCard = ({ t }) => {
     const [event, setEvent] = useState(data);
     return (
         <section className='p-4'>
-            <div className='mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden'>
-                {event.map((event, eventIndex) => {
-                    const { id, image, title, description, date, link } = event;
-                    return (
-                        <div key={id} className='p-4 w-120 h-120  flex-1'>
-                            <article
-                                className={` w-full   rounded-lg bg-white shadow-lg  `}
-                            >
-                                <header class='pt-1 flex-shrink'>
-                                    <h4 className=' font-bold md:text-lg text-[#585785] '>
-                                        {title}
-                                    </h4>
-                                </header>
-                                <div class=' space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2'>
-                                    <Image
-                                        src={image}
-                                        alt={title}
-                                        width={275}
-                                        height={250}
-                                        className='object-cover  mx-auto block  rounded-md '
-                                    />
-                                    <p className='  text-[#585785] '>
-                                        {description}
-                                    </p>
-                                </div>
-                                <footer class='flex lg:justify-around items-center lg:flex-row flex-col p-2 '>
-                                    <div className='flex items-center space-x-2 justify-center text-center text-[#585785] '>
-                                        {" "}
-                                        <FaCalendarAlt
-                                            size={25}
-                                            className=' flex items-center'
-                                        ></FaCalendarAlt>{" "}
-                                        <p className=' text-center text-lg font-semibold'>
-                                            {date}
+            <div className='flex flex-col justify-center items-center shadow-lg border-t-2 bg-gray-200 pt-10 pb-5'>
+                <h1 className='mb-10 text-3xl font-bold text-[#585785]'>
+                    {t("Upcoming Events")}
+                </h1>
+                <div className='mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden'>
+                    {event.map((event, eventIndex) => {
+                        const { id, image, title, description, date, link } =
+                            event;
+                        return (
+                            <div key={id} className='p-4 w-120 h-120  flex-1'>
+                                <article
+                                    className={` w-full   rounded-lg bg-white shadow-lg  `}
+                                >
+                                    <header class='pt-1 flex-shrink'>
+                                        <h4 className=' font-bold md:text-lg text-[#585785] '>
+                                            {title}
+                                        </h4>
+                                    </header>
+                                    <div class=' space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2'>
+                                        <Image
+                                            src={image}
+                                            alt={title}
+                                            width={275}
+                                            height={250}
+                                            className='object-cover  mx-auto block  rounded-md '
+                                        />
+                                        <p className='  text-[#585785] '>
+                                            {description}
                                         </p>
                                     </div>
-                                    <Button className='bg-[#585785] py-1 lg:px-2 border-none px-1  w-24 m-auto  '>
-                                        {" "}
-                                        <Link href={`${link}`} target='_blank'>
+                                    <footer class='flex lg:justify-around items-center lg:flex-row flex-col p-2 '>
+                                        <div className='flex items-center space-x-2 justify-center text-center text-[#585785] '>
                                             {" "}
-                                            {t("interested")}{" "}
-                                        </Link>{" "}
-                                    </Button>
-                                </footer>
-                            </article>
-                        </div>
-                    );
-                })}
+                                            <FaCalendarAlt
+                                                size={25}
+                                                className=' flex items-center'
+                                            ></FaCalendarAlt>{" "}
+                                            <p className=' text-center text-lg font-semibold'>
+                                                {date}
+                                            </p>
+                                        </div>
+                                        <Button className='bg-[#585785] py-1 lg:px-2 border-none px-1  w-24 m-auto  '>
+                                            {" "}
+                                            <Link
+                                                href={`${link}`}
+                                                target='_blank'
+                                            >
+                                                {" "}
+                                                {t("interested")}{" "}
+                                            </Link>{" "}
+                                        </Button>
+                                    </footer>
+                                </article>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
