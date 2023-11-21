@@ -1,3 +1,15 @@
 {
-    "language": "ar"
+    "language": "ar",
+    "Your Cart": "سلة التسوق الخاصة بك",
+    "Continue Shopping": "متابعة التسوق",
+    "Your cart is empty.": "سلة التسوق الخاصة بك فارغة",
+    "Continue Shopping": "متابعة التسوق",
+    "Price": "السعر",
+    "Remove": "إزالة",
+    "d": "d",
+    "Order Summary": "ملخص الطلب",
+    "Name": "الاسم",
+    "Price": "السعر",
+    "Total": "المجموع",
+    "Check out": "اتمام الشراء"
 }
