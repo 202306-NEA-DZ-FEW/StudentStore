@@ -87,7 +87,7 @@ const ProductDetails = ({ productId }) => {
             }}
             className='flex flex-col  sm:gap-6 sm:flex-col md:flex-col md:justify-center lg:flex-row lg:justify-between'
         >
-            <div className='p-12 grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
+            <div className='lg:p-12 md:p-10  grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
                 <div className='col-span-3 row-span-1 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4] border rounded-md border-[#979797]'>
                     <Image
                         className='object-cover w-full h-full rounded-md '
@@ -134,7 +134,7 @@ const ProductDetails = ({ productId }) => {
             <div className='grid w-full sm:w-full md:w-full lg:w-1/2  text-[#585785]'>
                 {/* Product Details */}
                 <div className='pt-8 col-span-4 md:col-span-2'>
-                    <h1 className='text-5xl font-bold text-[#7874F2] mb-4'>
+                    <h1 className='font-bold text-[#7874F2] mb-4 lg:text-5xl md:text-3xl sm:text-lg'>
                         {productData?.title}
                     </h1>
 
@@ -176,36 +176,36 @@ const ProductDetails = ({ productId }) => {
 
                     {/* User Info */}
                     <div className='mt-2'>
-                        {currentUser ? (
-                            <div className='flex items-center mt-4  shadow-xl p-4'>
-                                <div className='rounded-full overflow-hidden'>
+                        {userData && currentUser ? (
+                            <div className='flex items-center mt-4  shadow-xl lg:p-4'>
+                                <div className='rounded-full overflow-hidden '>
                                     <Image
                                         src={
                                             userData?.photo ||
                                             "/images/profile.jpg"
                                         }
-                                        width={65}
-                                        height={65}
-                                        className='object-cover w-full h-full'
+                                        width={85}
+                                        height={85}
+                                        className='object-cover w-full h-full hidden sm:block md:block'
                                         alt='user picture'
                                     />
                                 </div>
                                 <div className='ml-4 flex-1'>
                                     <div className='flex flex-col'>
-                                        <h2 className='text-xl font-bold '>
+                                        <h2 className='lg:text-xl md:text-lg font-bold '>
                                             {userData?.name} {userData?.surname}
                                         </h2>
                                         <div className='flex items-center'>
-                                            <p className='text-lg mr-2'>
+                                            <p className='lg:text-lg mr-2'>
                                                 {userData?.email}
                                             </p>
                                             <div className='text-center  ml-auto'>
-                                                <p className='text-4xl font-bold'>
+                                                <p className='lg:text-4xl md:text-4xl sm:text-2xl font-bold'>
                                                     {productData?.price}$
                                                 </p>
                                             </div>
                                         </div>
-                                        <p className='text-lg '>
+                                        <p className='lg:text-lg '>
                                             {productData?.location?.city},{" "}
                                             {productData?.location?.country}
                                         </p>
