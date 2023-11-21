@@ -43,8 +43,6 @@ const CartItem = ({ cartItem, updateCart, updateBorrowPrice }) => {
         return (priceInDollars * exchangeRate).toFixed(2);
     };
     const borrowPrice = calculateBorrowPrice();
-    const convertedBorrowPrice = convertToDinar(borrowPrice);
-    const convertedPrice = convertToDinar(cartItem?.price);
 
     return (
         <div>

@@ -412,7 +412,6 @@ const Listings = () => {
                         <input
                             type='number'
                             name='price'
-                            min='0'
                             value={formData.price}
                             placeholder={t("Price")}
                             className={`input input-bordered col-span-2 row-span-1 input-style ${
