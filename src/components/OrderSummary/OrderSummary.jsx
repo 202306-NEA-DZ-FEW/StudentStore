@@ -1,24 +1,32 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { toast } from "react-toastify";
 
 import Button from "../Buttons/Button";
 
-const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
+const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
+    const route = useRouter();
     const handleCheckout = () => {
-        toast.success("Proceed to Checkout.", {
+        toast.success(t("Proceed to Checkout."), {
             autoClose: 2000,
+            rtl: route.locale === "ar",
         });
     };
     return (
-        <div className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]'>
+        <div
+            className='mt-6 h-full rounded-lg border bg-white mb-2 sm:mb-0 p-6 ml-0 shadow-md md:mt-0 md:w-[40%]'
+            style={{ marginLeft: 0 }}
+        >
             <h2 className='text-2xl text-black font-bold text-center'>
-                Order Summary
+                {t("Order Summary")}
             </h2>
             <hr className='my-4' />
             <div className='flex justify-between'>
-                <p className='text-lg text-black font-semibold'>Name</p>
+                <p className='text-lg text-black font-semibold'>{t("Name")}</p>
 
-                <p className='text-lg text-black font-semibold pr-3'>Price</p>
+                <p className='text-lg text-black font-semibold pr-3'>
+                    {t("Price")}
+                </p>
             </div>
             <hr className='my-2' />
             <div>
@@ -41,7 +49,7 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
             </div>
             <hr className='my-4' />
             <div className='flex justify-between'>
-                <p className='text-xl text-black font-bold'>Total</p>
+                <p className='text-xl text-black font-bold'>{t("Total")}</p>
                 <div className=''>
                     <p className='mb-1 text-lg text-black font-bold'>
                         {subtotal?.toFixed(2)}$
@@ -50,9 +58,9 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices }) => {
             </div>
             <Button
                 onClick={handleCheckout}
-                className='mt-6 w-full  rounded-md  b font-medium text-blue-50 '
+                className='mt-6 w-full  rounded-md  font-medium text-blue-50 '
             >
-                Check out
+                {t("Check out")}
             </Button>
         </div>
     );

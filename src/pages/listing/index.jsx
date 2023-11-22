@@ -15,7 +15,7 @@ import Uploading from "@/components/Uploading/Uploading";
 import { useAuth } from "@/context/AuthContext";
 import { db, imgDB } from "@/util/firebase";
 
-const Listings = () => {
+const Listing = () => {
     const [imageFiles, setImageFiles] = useState([]);
     const [isUploading, setIsUploading] = useState(false);
     const [formData, setFormData] = useState({
@@ -196,6 +196,12 @@ const Listings = () => {
             window.scrollTo(0, 0);
         }
     }, [isUploading]);
+    useEffect(() => {
+        // Redirect to login page if the user is not authenticated
+        if (!currentUser) {
+            route.push("/signin"); // Replace '/login' with the path to your login page
+        }
+    }, [currentUser, route]);
 
     return (
         <div className='bg-[#F1F6FA] pb-6 pt-3  px-6 text-center lg:text-left'>
@@ -319,9 +325,9 @@ const Listings = () => {
                                 onChange={handleChange}
                             >
                                 <option value='' disabled selected>
-                                    {t("Type(Product, Service)")}
+                                    {t("Type (Product, Service)")}
                                 </option>
-                                <option value='sale'>{t("sale")}</option>
+                                <option value='sell'>{t("sell")}</option>
                                 <option value='borrow'>{t("borrow")}</option>
                             </select>
                         </div>
@@ -352,6 +358,7 @@ const Listings = () => {
                                 <option value='furniture'>
                                     {t("furniture")}
                                 </option>
+                                <option value='other'>{t("other")}</option>
                             </select>
                         </div>
                         <div className='col-span-4 row-span-1 md:col-span-2 '>
@@ -402,7 +409,7 @@ const Listings = () => {
                             name='location.city'
                             value={formData.location.city}
                             onChange={handleChange}
-                            placeholder={t("Location(city)")}
+                            placeholder={t("Location (city)")}
                             className={`input input-bordered ${
                                 route.locale === "fr" ? "truncate" : ""
                             }  col-span-2 row-span-1 input-style ${
@@ -412,7 +419,6 @@ const Listings = () => {
                         <input
                             type='number'
                             name='price'
-                            min='0'
                             value={formData.price}
                             placeholder={t("Price")}
                             className={`input input-bordered col-span-2 row-span-1 input-style ${
@@ -448,7 +454,8 @@ const Listings = () => {
     );
 };
 
-export default Listings;
+export default Listing;
+
 export async function getStaticProps({ locale }) {
     return {
         props: {

@@ -7,10 +7,11 @@ import { CartContext } from "@/context/CartContext";
 
 function ProductCard({ product }) {
     const { addItemToCart } = useContext(CartContext);
+    console.log(product);
     const addProductToCart = () => addItemToCart(product);
     return (
         <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
-            <Link href='/'>
+            <Link href={`/singleproduct/${product?.id}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image
                         src={product?.pictures[1]}
@@ -42,7 +43,7 @@ function ProductCard({ product }) {
                         {product?.condition}
                     </span>
                 </div>
-                <Link href='/'>
+                <Link href={`/singleproduct/${product?.id}`}>
                     <p className='text-lg font-bold  mt-2 text-black truncate block capitalize'>
                         {product?.title}
                     </p>
