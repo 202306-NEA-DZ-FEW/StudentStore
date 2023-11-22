@@ -47,7 +47,6 @@ function EditForm() {
             if (userData.name) {
                 await updateProfile(user, {
                     displayName: userData.name,
-                    photoURL: "https://example.com/jane-q-user/profile.jpg",
                 });
             }
 

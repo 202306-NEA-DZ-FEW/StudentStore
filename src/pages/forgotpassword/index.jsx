@@ -24,10 +24,10 @@ export default function ForgotPassword() {
                     route.push("/signin");
                 }, 3000);
             } catch {
-                toast.error(t("failed to reset password"));
+                toast.error(t("Failed to reset password"));
             }
         } else {
-            toast.error(t("please enter your email"));
+            toast.error(t("{Please enter your email"));
         }
         setTimeout(() => {
             setEmail("");
