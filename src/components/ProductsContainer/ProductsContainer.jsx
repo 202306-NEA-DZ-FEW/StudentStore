@@ -109,6 +109,7 @@ export default function ProductsContainer({ products, t }) {
         "food",
         "transportation",
         "furniture",
+        "Other",
     ];
     if (selectedCategories.length > 0) {
         sortedProducts = sortedProducts.filter((product) =>

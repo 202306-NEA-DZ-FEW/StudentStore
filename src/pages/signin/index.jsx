@@ -44,7 +44,7 @@ export default function SignIn() {
     return (
         <div
             style={signinbg}
-            className='min-h-screen w-full flex justify-between items-center text-center  pb-6 '
+            className='min-h-screen w-full flex justify-center lg:justify-between items-center text-center  pb-6 '
         >
             {/* container for image to add later */}
             <div className='lg:w-[45%] lg:py-16 lg:px-16'>
