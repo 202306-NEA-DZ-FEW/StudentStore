@@ -31,7 +31,8 @@ exports[`renders correctly 1`] = `
       <h4
         className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
-        Mazin Ismail
+        (
+        )
       </h4>
       <p
         className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
@@ -86,7 +87,8 @@ exports[`renders correctly 1`] = `
       <h4
         className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
-        Hoda Khaliq
+        (
+        )
       </h4>
       <p
         className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
@@ -141,7 +143,8 @@ exports[`renders correctly 1`] = `
       <h4
         className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
-        Khalil Yousef
+        (
+        )
       </h4>
       <p
         className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
@@ -196,7 +199,8 @@ exports[`renders correctly 1`] = `
       <h4
         className="uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]"
       >
-        Radiya Benmoghaddam
+        (
+        )
       </h4>
       <p
         className="max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose"
