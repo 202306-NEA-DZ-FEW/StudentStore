@@ -327,7 +327,7 @@ const Listing = () => {
                                 <option value='' disabled selected>
                                     {t("Type (Product, Service)")}
                                 </option>
-                                <option value='sell'>{t("sell")}</option>
+                                <option value='sale'>{t("sale")}</option>
                                 <option value='borrow'>{t("borrow")}</option>
                             </select>
                         </div>

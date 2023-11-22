@@ -7,7 +7,7 @@ import { BsGoogle } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
-export default function GoogleButton({ children, className }) {
+export default function GoogleButton({ children, className, t }) {
     useEffect(() => {
         return () => {
             toast.dismiss();
@@ -20,7 +20,7 @@ export default function GoogleButton({ children, className }) {
             .then((cred) => {
                 const user = cred.user;
                 const userRef = doc(db, "userinfo", user.uid);
-                toast.loading("Please wait");
+                toast.loading(t("please wait"));
                 setDoc(userRef, {
                     name: user.displayName,
                     surname: "",
@@ -37,8 +37,8 @@ export default function GoogleButton({ children, className }) {
                     route.push("/home");
                 });
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                toast.error(t("failed to log in"), { autoClose: 1000 });
             });
     }
     return (

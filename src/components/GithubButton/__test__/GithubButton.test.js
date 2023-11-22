@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import GoogleButton from "../GoogleButton";
+import GithubButton from "../GithubButton";
 
 jest.mock("../../../util/firebase", () => {
     return {
@@ -14,6 +14,6 @@ jest.mock("next/router", () => ({
 }));
 const t = (key) => key;
 it("renders correctly", () => {
-    const tree = renderer.create(<GoogleButton t={t} />).toJSON();
+    const tree = renderer.create(<GithubButton t={t} />).toJSON();
     expect(tree).toMatchSnapshot();
 });

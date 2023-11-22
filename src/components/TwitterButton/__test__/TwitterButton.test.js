@@ -12,8 +12,8 @@ jest.mock("next/router", () => ({
         pathname: "/",
     }),
 }));
-
+const t = (key) => key;
 it("renders correctly", () => {
-    const tree = renderer.create(<TwitterButton />).toJSON();
+    const tree = renderer.create(<TwitterButton t={t} />).toJSON();
     expect(tree).toMatchSnapshot();
 });

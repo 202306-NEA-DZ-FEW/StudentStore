@@ -15,6 +15,7 @@ module.exports = {
             "pbs.twimg.com",
             "graph.facebook.com",
             "images.unsplash.com",
+            "avatars.githubusercontent.com",
         ],
     },
 };
