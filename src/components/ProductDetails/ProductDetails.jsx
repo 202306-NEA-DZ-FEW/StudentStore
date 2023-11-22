@@ -12,62 +12,52 @@ const ProductDetails = ({ productId }) => {
     const [productData, setProductData] = useState(null);
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
-
     const { currentUser } = useAuth();
 
-    const fetchProductData = async () => {
-        try {
-            const productRef = doc(db, "products", productId);
-            const productDoc = await getDoc(productRef);
-
-            if (productDoc.exists()) {
-                setProductData({ ...productDoc.data(), id: productDoc.id });
-                setLoading(false);
-            } else {
-                console.log("No such product document!");
-                setLoading(false);
-            }
-        } catch (error) {
-            console.error("Error fetching product data:", error);
-            setLoading(false);
-        }
-    };
-
     useEffect(() => {
-        const fetchDataAndAddToCart = async () => {
+        const fetchProductAndUserData = async () => {
             try {
-                await fetchProductData();
+                const productRef = doc(db, "products", productId);
+                const productDoc = await getDoc(productRef);
 
-                if (productData && currentUser) {
-                    const userRef = doc(
-                        db,
-                        "userinfo",
-                        productData.currentUserUid
-                    );
-                    const userDoc = await getDoc(userRef);
+                if (productDoc.exists()) {
+                    const productData = {
+                        ...productDoc.data(),
+                        id: productDoc.id,
+                    };
+                    setProductData(productData);
 
-                    if (userDoc.exists()) {
-                        setUserData(userDoc.data());
-                        setLoading(false);
-                    } else {
-                        console.log("No such user document!");
-                        setLoading(false);
-                        // Optionally set userData to a default value or handle accordingly
+                    if (currentUser) {
+                        const userRef = doc(
+                            db,
+                            "userinfo",
+                            productData.currentUserUid
+                        );
+                        const userDoc = await getDoc(userRef);
+
+                        if (userDoc.exists()) {
+                            setUserData(userDoc.data());
+                        } else {
+                            console.log("No such user document!");
+                            // Optionally set userData to a default value or handle accordingly
+                        }
                     }
+                } else {
+                    console.log("No such product document!");
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
+            } finally {
                 setLoading(false);
             }
         };
 
         if (productId) {
-            fetchDataAndAddToCart();
+            fetchProductAndUserData();
         }
     }, [productId, currentUser]);
 
     const handleAddToCart = () => {
-        // Call addItemToCart with the entire product details
         if (productData) {
             addItemToCart(productData);
         }
@@ -176,7 +166,7 @@ const ProductDetails = ({ productId }) => {
 
                     {/* User Info */}
                     <div className='mt-2'>
-                        {userData && currentUser ? (
+                        {currentUser ? (
                             <div className='flex items-center mt-4  shadow-xl lg:p-4'>
                                 <div className='rounded-full overflow-hidden '>
                                     <Image
