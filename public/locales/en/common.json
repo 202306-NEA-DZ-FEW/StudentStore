@@ -33,5 +33,10 @@
     "Sign In": "Sign In",
     "Hello": "Hello",
     "Welcome to Student Store": "Welcome to Student Store",
-    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved."
+    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.",
+    "You are not logged in. Please log in to add items to your cart.": "You are not logged in. Please log in to add items to your cart.",
+    "Item is already in your cart.": "Item is already in your cart",
+    "Item added to your cart.": "Item added to your cart.",
+    "Item not found in your cart.": "Item not found in your cart.",
+    "Item removed from your cart.": "Item removed from your cart."
 }

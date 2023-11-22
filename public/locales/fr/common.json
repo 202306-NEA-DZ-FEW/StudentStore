@@ -33,5 +33,10 @@
     "Sign In": "S'identifier",
     "Hello": "Salut",
     "Welcome to Student Store": "Bienvenue à notre site",
-    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023 Equipe 10, Re:Coded - Développement Web Front-End - Bootcamp d'Algérie. Tous droits réservés."
+    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023 Equipe 10, Re:Coded - Développement Web Front-End - Bootcamp d'Algérie. Tous droits réservés.",
+    "You are not logged in. Please log in to add items to your cart.": "Vous n'êtes pas connecté. Veuillez vous connecter pour ajouter des articles à votre panier.",
+    "Item is already in your cart.": "L'article est déjà dans votre panier.",
+    "Item added to your cart.": "Article ajouté à votre panier.",
+    "Item not found in your cart.": "Article non trouvé dans votre panier.",
+    "Item removed from your cart.": "Article retiré de votre panier."
 }
