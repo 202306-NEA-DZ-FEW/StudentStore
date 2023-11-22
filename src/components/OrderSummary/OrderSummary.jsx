@@ -1,12 +1,15 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { toast } from "react-toastify";
 
 import Button from "../Buttons/Button";
 
 const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
+    const route = useRouter();
     const handleCheckout = () => {
-        toast.success("Proceed to Checkout.", {
+        toast.success(t("Proceed to Checkout."), {
             autoClose: 2000,
+            rtl: route.locale === "ar",
         });
     };
     return (
