@@ -10,7 +10,10 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
         });
     };
     return (
-        <div className='mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]'>
+        <div
+            className='mt-6 h-full rounded-lg border bg-white mb-2 sm:mb-0 p-6 ml-0 shadow-md md:mt-0 md:w-[40%]'
+            style={{ marginLeft: 0 }}
+        >
             <h2 className='text-2xl text-black font-bold text-center'>
                 {t("Order Summary")}
             </h2>
@@ -52,7 +55,7 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
             </div>
             <Button
                 onClick={handleCheckout}
-                className='mt-6 w-full  rounded-md  b font-medium text-blue-50 '
+                className='mt-6 w-full  rounded-md  font-medium text-blue-50 '
             >
                 {t("Check out")}
             </Button>

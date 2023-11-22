@@ -8,9 +8,10 @@
     "sale": "بيع",
     "borrow": "استعارة",
     "d": "ي",
-    "(15d)": "(ي15)",
+    "(15d)": "(15ي)",
     "Order Summary": "ملخص الطلب",
     "Name": "الاسم",
     "Total": "المجموع",
-    "Check out": "اتمام الشراء"
+    "Check out": "اتمام الشراء",
+    "Item is already in your cart.": "اضض اياي"
 }

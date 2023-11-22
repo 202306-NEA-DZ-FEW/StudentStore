@@ -8,6 +8,7 @@ import {
     updateDoc,
     where,
 } from "firebase/firestore";
+import { useTranslation } from "next-i18next";
 import { createContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -26,6 +27,7 @@ export const CartContext = createContext({
 });
 
 export const CartProvider = ({ children }) => {
+    const { t } = useTranslation("common");
     const [cartItems, setCartItems] = useState([]);
     const [cartCount, setCartCount] = useState(0);
     const { currentUser } = useAuth();
@@ -44,7 +46,9 @@ export const CartProvider = ({ children }) => {
     const addItemToCart = async (productToAdd) => {
         if (!currentUser) {
             toast.error(
-                "You are not logged in. Please log in to add items to your cart."
+                t(
+                    "You are not logged in. Please log in to add items to your cart."
+                )
             );
             return;
         }
@@ -57,7 +61,7 @@ export const CartProvider = ({ children }) => {
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            toast.info("Item is already in your cart.", {
+            toast.info(t("Item is already in your cart."), {
                 autoClose: 2000,
                 position: "bottom-center",
             });
@@ -65,7 +69,7 @@ export const CartProvider = ({ children }) => {
             const quantity = snapshot.docs[0].data().quantity;
             await updateDoc(cartItemDoc, { quantity: quantity });
         } else {
-            toast.success("Item added to your cart.", {
+            toast.success(t("Item added to your cart."), {
                 autoClose: 2000,
                 position: "bottom-center",
             });
@@ -94,7 +98,7 @@ export const CartProvider = ({ children }) => {
             const cartItemDoc = snapshot.docs[0].ref;
             await updateDoc(cartItemDoc, updatedDetails);
         } else {
-            toast.error("Item not found in your cart.");
+            toast.error(t("Item not found in your cart."));
         }
     };
 
@@ -107,13 +111,13 @@ export const CartProvider = ({ children }) => {
         const snapshot = await getDocs(q);
 
         if (!snapshot.empty) {
-            toast.success("Item removed from your cart.", {
+            toast.success(t("Item removed from your cart."), {
                 autoClose: 2000,
             });
             const cartItemDoc = snapshot.docs[0].ref;
             await deleteDoc(cartItemDoc);
         } else {
-            toast.error("Item not found in your cart.");
+            toast.error(t("Item not found in your cart."));
         }
     };
 

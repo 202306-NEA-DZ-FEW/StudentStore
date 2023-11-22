@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useContext, useEffect, useState } from "react";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 import CartItem from "@/components/CartItem/CartItem";
 import OrderSummary from "@/components/OrderSummary/OrderSummary";
@@ -14,7 +14,7 @@ import { CartContext } from "@/context/CartContext";
 
 const Cart = () => {
     const { t } = useTranslation("cart");
-    const router = useRouter();
+    const route = useRouter();
     const { cartItems, updateCartItem } = useContext(CartContext);
     const [borrowPrices, setBorrowPrices] = useState({});
     const calculateBorrowPrice = (item) => {
@@ -55,28 +55,22 @@ const Cart = () => {
     }, [cartItems]);
     return (
         <div
-            className={`bg-gray-100 pb-4 ${
+            className={`bg-gray-100 pb-4 relative ${
                 cartItems.length > 0
                     ? "pt-20"
                     : "flex justify-center items-center pt-0 h-screen"
             }`}
+            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
         >
             {cartItems.length > 0 ? (
-                <div className='mx-auto flex max-w-5xl justify-between px-6 mb-10 md:space-x-6 xl:px-0'>
-                    <h1 className='text-gray-500 text-center ml-4  text-2xl font-bold  '>
+                <div className='mx-auto   max-w-5xl  px-6 mb-10 md:space-x-6 xl:px-0'>
+                    <h1 className='text-gray-500 text-center ml-4   text-2xl font-bold  '>
                         {t("Your Cart")} ({cartItems.length})
                     </h1>
-                    <Link
-                        href='/products'
-                        className='flex items-end  gap-1 font-semibold text-indigo-600 hover:text-indigo-800 '
-                    >
-                        {t("Continue Shopping")}
-                        <FaLongArrowAltRight size={22} />
-                    </Link>
                 </div>
             ) : null}
             {cartItems.length > 0 ? (
-                <div className='mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0'>
+                <div className='mx-auto relative gap-8 max-w-5xl justify-center pb-8 px-6 md:flex md:space-x-6 xl:px-0'>
                     <div className='rounded-lg md:w-2/3'>
                         {cartItems.map((cartItem) => (
                             <CartItem
@@ -85,6 +79,7 @@ const Cart = () => {
                                 updateCart={updateCartItem}
                                 updateBorrowPrice={updateBorrowPriceDebounced}
                                 t={t}
+                                route={route}
                             />
                         ))}
                     </div>
@@ -94,6 +89,24 @@ const Cart = () => {
                         borrowPrices={borrowPrices}
                         t={t}
                     />
+                    <Link
+                        href='/products'
+                        className={`gap-1 font-semibold  absolute hover:underline flex items-end ${
+                            route.locale === "ar"
+                                ? "bottom-0 left-6 sm:left-2 justify-end"
+                                : ""
+                        } bottom-0 right-6  sm:right-2   text-indigo-400 text-xl hover:text-indigo-600 `}
+                        style={{ marginLeft: 0 }}
+                        dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
+                    >
+                        {t("Continue Shopping")}
+
+                        {route.locale === "ar" ? (
+                            <FaLongArrowAltLeft size={22} />
+                        ) : (
+                            <FaLongArrowAltRight size={22} />
+                        )}
+                    </Link>
                 </div>
             ) : (
                 <div className='flex flex-col items-center mb-6 justify-center'>
@@ -108,10 +121,14 @@ const Cart = () => {
                     </p>
                     <Link
                         href='/products'
-                        className='flex items-end gap-1 text-lg font-semibold text-indigo-600 hover:text-indigo-800  text-right'
+                        className='flex items-end gap-1 text-lg hover:underline font-semibold text-indigo-400 hover:text-indigo-600  text-right'
                     >
                         {t("Continue Shopping")}
-                        <FaLongArrowAltRight size={22} className='text-lg' />
+                        {route.locale === "ar" ? (
+                            <FaLongArrowAltLeft size={22} />
+                        ) : (
+                            <FaLongArrowAltRight size={22} />
+                        )}
                     </Link>
                 </div>
             )}
