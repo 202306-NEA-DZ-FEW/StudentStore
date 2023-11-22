@@ -13,7 +13,7 @@ const data = [
     },
     {
         id: 2,
-        image: "/Event.jpg",
+        image: "/Tewfik.png",
         title: "Front-end Developer",
         name: "Benarba Tewfik",
         bio: "Passionate frontend developer from Algeria, always eager to embrace new challenges and learn the latest in web development.",
@@ -22,13 +22,40 @@ const data = [
     },
     {
         id: 3,
-        image: "/photography.jpg",
-        title: "Khaoula AOURRA",
-        name: "Book Buddies",
+        image: "/Khaoula.png",
+        title: "Financial auditor/ front end developer",
+        name: "Khaoula AOURRA",
         bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
         github: "https://github.com/khaoulasara/AOURRAkhaoula",
         linkedin:
             "https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1",
+    },
+    {
+        id: 4,
+        image: "/mounia.jfif",
+        title: "Re:Coded Student",
+        name: "Mounia Belkheir",
+        bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
+        github: "https://github.com/MouniaBelkheir",
+        linkedin: "https://www.linkedin.com/in/mounia-belkheir-5709011b9/",
+    },
+    {
+        id: 5,
+        image: "/Samy.jpg",
+        title: "Computer Scientist",
+        name: "Sami BABOUCHE",
+        bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
+        github: "https://github.com/samiba6",
+        linkedin: "https://www.linkedin.com/in/sami-babouche-4400551b0/",
+    },
+    {
+        id: 6,
+        image: "/Katia.png",
+        title: "Frontend Developer",
+        name: "Katia Ghezali",
+        bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
+        github: "https://github.com/KatiaGhezali",
+        linkedin: "https://www.linkedin.com/in/katiaghezali/",
     },
 ];
 function AboutUs() {

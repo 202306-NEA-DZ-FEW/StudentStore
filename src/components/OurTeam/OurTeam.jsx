@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Head from "next/head";
 const OurTeam = ({ data }) => {
     return (
-        <section className='p-4'>
+        <section className='p-2'>
             <div className='text-center  text-black'>
                 {" "}
                 <h1 className='text-4xl font-bold text-[#585785]  '>
@@ -20,30 +20,32 @@ const OurTeam = ({ data }) => {
                 </p>{" "}
             </div>
 
-            <div className='mx-auto lg:flex-row flex-col flex lg:space-x-20 lg:space-y-0 space-y-20 items-center p-12 '>
+            <div className='mx-auto lg:flex-row flex-wrap lg:justify-center flex-col flex  lg:space-y-0 space-y-12 items-center p-12 '>
                 {data?.map((data, key) => {
-                    const { id, image, name, title, bio, github, linkedin } =
-                        data;
+                    const { id, image, name, title, github, linkedin } = data;
                     return (
                         <div
                             key={id}
-                            className='group relative w-56 h-56 bg-[#c1464627] drop-shadow-lg p-8 rounded-full shadow-md transition-all duration-500 hover:rounded-2xl hover:h-50'
+                            className='group  w-56 h-56 bg-[#52235527] m-10 drop-shadow-lg p-8 rounded-full shadow-md transition-all duration-500 hover:rounded-2xl hover:h-50'
                         >
                             <div className='img group-hover:h-40 w-full h-full'>
                                 <img
-                                    src='/Hocine.jpg'
+                                    src={image}
                                     alt='Profile'
                                     className='w-full h-full rounded-full transition duration-500 transform group-hover:-translate-y-20 group-hover:rounded-xl group-hover:shadow-xl '
                                 />
                             </div>
-                            <div className='caption text-center transform -translate-y-20 opacity-0 delay-200  transition-all duration-200 group-hover:opacity-100 '>
+                            <div className='caption text-center transform -translate-y-20  ease-in-out	 opacity-0 delay-200  transition-all duration-100 group-hover:opacity-100 '>
                                 <div className='card-content  flex-col  '>
                                     <div>
                                         {" "}
                                         <h4 className=' break-normal font-bold text-lg  text-[#585785] '>
                                             {name}
                                         </h4>
-                                        <h2 className='text-md'> {title} </h2>
+                                        <h2 className='text-md text-black'>
+                                            {" "}
+                                            {title}{" "}
+                                        </h2>
                                     </div>
 
                                     <div className='social-media flex justify-center space-x-4 '>
