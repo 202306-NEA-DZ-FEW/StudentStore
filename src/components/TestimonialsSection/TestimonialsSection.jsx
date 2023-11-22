@@ -1,36 +1,44 @@
-import React, { useState, useEffect } from "react";
-import {
-    IoIosArrowDroprightCircle,
-    IoIosArrowDropleftCircle,
-} from "react-icons/io";
-import { FaQuoteRight } from "react-icons/fa";
 import Image from "next/image";
-function TestimonialsSection() {
+import React, { useEffect, useState } from "react";
+import { FaQuoteRight } from "react-icons/fa";
+import {
+    IoIosArrowDropleftCircle,
+    IoIosArrowDroprightCircle,
+} from "react-icons/io";
+function TestimonialsSection({ t }) {
     // array of testimonials
     const data = [
         {
             id: 1,
             image: "/images/testimonial1.jpg",
-            name: "Mazin Ismail",
-            quote: "Affordable books, gadgets, and a welcoming student community. This marketplace makes student life easier and more budget-friendly. Highly recommend!",
+            name: t("Mazin Ismail"),
+            quote: t(
+                "Affordable books, gadgets, and a welcoming student community. This marketplace makes student life easier and more budget-friendly. Highly recommend!"
+            ),
         },
         {
             id: 2,
             image: "/images/testimonial2.jpg",
-            name: "Hoda Khaliq",
-            quote: "This platform is a lifesaver for broke college students like me. I sold old stuff and bought what I needed at affordable prices. Highly recommended!",
+            name: t("Hoda Khaliq"),
+            quote: t(
+                "This platform is a lifesaver for broke college students like me. I sold old stuff and bought what I needed at affordable prices. Highly recommended!"
+            ),
         },
         {
             id: 3,
             image: "/images/testimonial3.jpg",
-            name: "Khalil Yousef",
-            quote: "As a busy student, I appreciate the convenience of this website. I borrowed games and textbooks without a hitch. It's a game-changer for student life!",
+            name: t("Khalil Yousef"),
+            quote: t(
+                "As a busy student, I appreciate the convenience of this website. I borrowed games and textbooks without a hitch. It's a game-changer for student life!"
+            ),
         },
         {
             id: 4,
             image: "/images/testimonial4.jpg",
-            name: "Radiya Benmoghaddam",
-            quote: "I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way.",
+            name: t("Radiya Benmoghaddam"),
+            quote: t(
+                "I've been amazed by the incredible support from this website's community. I not only found what I needed but also made friends along the way."
+            ),
         },
     ];
     const [people, setPeople] = useState(data);
@@ -86,7 +94,7 @@ function TestimonialsSection() {
                             />
 
                             <h4 className='uppercase mb-[0.25rem] text-[1rem] font-bold text-[#7874F2]'>
-                                {name}
+                                {t`(${name})`}
                             </h4>
                             <p className='max-w-[15rem] sm:max-w-[25rem] md:max-w-[30rem] lg:max-w-[35rem] xl:max-w-[40rem] mx-auto text-[#585785] leading-loose'>
                                 {quote}
