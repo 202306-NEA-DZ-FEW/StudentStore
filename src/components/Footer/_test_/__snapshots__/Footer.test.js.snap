@@ -25,61 +25,11 @@ exports[`renders correctly 1`] = `
             alt="logo"
             data-nimg="1"
             decoding="async"
-            height={100}
+            height={50}
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
             src="/images/logo-footer.svg"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={200}
-          />
-        </a>
-        <a
-          className=" "
-          href="https://play.google.com/store/games?gl=FR"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={150}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fgoogle_play.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fgoogle_play.png&w=256&q=75 1x, /_next/image?url=%2Fgoogle_play.png&w=384&q=75 2x"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={150}
-          />
-        </a>
-        <a
-          className=""
-          href="https://www.apple.com/app-store/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={150}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fapp_store.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fapp_store.png&w=256&q=75 1x, /_next/image?url=%2Fapp_store.png&w=384&q=75 2x"
             style={
               Object {
                 "color": "transparent",
@@ -93,7 +43,7 @@ exports[`renders correctly 1`] = `
         className=" mt-4 p-6"
       >
         <ul
-          className="space-y-3  text-white font-semibold text-lg"
+          className="space-y-3  text-white font-small text-sm"
         >
           <li>
             <a
@@ -107,33 +57,21 @@ exports[`renders correctly 1`] = `
             </a>
           </li>
           <li>
-            <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onTouchStart={[Function]}
-              target="_blank"
-            >
-              Mock Translation Function
-            </a>
-          </li>
-          <li>
             <h2>
               Mock Translation Function
             </h2>
           </li>
           <li>
             <ul
-              className="text-gray-600 space-y-1 dark:text-gray-400 font-medium"
+              className="text-gray-600 space-y-1 dark:text-gray-400 font-small"
             >
               <li>
                 <div
-                  className=" flex space-x-2"
+                  className=" flex space-x-2 gap-2 text-xs"
                 >
                   <svg
                     fill="currentColor"
-                    height={25}
+                    height={15}
                     stroke="currentColor"
                     strokeWidth="0"
                     style={
@@ -142,7 +80,7 @@ exports[`renders correctly 1`] = `
                       }
                     }
                     viewBox="0 0 448 512"
-                    width={25}
+                    width={15}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -161,11 +99,11 @@ exports[`renders correctly 1`] = `
               </li>
               <li>
                 <div
-                  className="flex space-x-2"
+                  className="flex space-x-2 gap-2 text-xs"
                 >
                   <svg
                     fill="currentColor"
-                    height={25}
+                    height={15}
                     stroke="currentColor"
                     strokeWidth="0"
                     style={
@@ -174,7 +112,7 @@ exports[`renders correctly 1`] = `
                       }
                     }
                     viewBox="0 0 512 512"
-                    width={25}
+                    width={15}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -199,11 +137,11 @@ exports[`renders correctly 1`] = `
         className="flex space-y-8 flex-col items-center justify-center"
       >
         <ul
-          className="  space-y-4 text-white font-bold text-l"
+          className="  space-y-4 text-white font-small text-xs"
         >
           <li>
             <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              className="flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]"
               href="/listing"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -211,7 +149,7 @@ exports[`renders correctly 1`] = `
             >
               <svg
                 fill="currentColor"
-                height={20}
+                height={12}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -220,7 +158,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={20}
+                width={12}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -235,7 +173,7 @@ exports[`renders correctly 1`] = `
           </li>
           <li>
             <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              className="flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]"
               href="/products"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -243,7 +181,7 @@ exports[`renders correctly 1`] = `
             >
               <svg
                 fill="currentColor"
-                height={20}
+                height={12}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -252,7 +190,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 512 512"
-                width={20}
+                width={12}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -266,7 +204,7 @@ exports[`renders correctly 1`] = `
           </li>
         </ul>
         <div
-          className="social-media flex space-x-4 "
+          className="social-media flex  gap-4 "
         >
           <a
             href="https://web.facebook.com/recodedofficial"
@@ -277,7 +215,7 @@ exports[`renders correctly 1`] = `
             <svg
               className=" text-white hover:text-[#1877f2]                      "
               fill="currentColor"
-              height={30}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -286,7 +224,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 512 512"
-              width={30}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -303,7 +241,7 @@ exports[`renders correctly 1`] = `
             <svg
               className=" text-white hover:text-[#0a66c2] "
               fill="currentColor"
-              height={30}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -312,7 +250,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={30}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -329,7 +267,7 @@ exports[`renders correctly 1`] = `
             <svg
               className=" text-white hover:text-[#c32aa3]                      "
               fill="currentColor"
-              height={30}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -338,7 +276,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={30}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -370,7 +308,7 @@ exports[`renders correctly 1`] = `
             alt="logo"
             data-nimg="1"
             decoding="async"
-            height={100}
+            height={50}
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
@@ -380,11 +318,11 @@ exports[`renders correctly 1`] = `
                 "color": "transparent",
               }
             }
-            width={200}
+            width={100}
           />
         </a>
         <div
-          className="social-media items-center  flex space-x-4 "
+          className="social-media items-center  flex gap-4 "
         >
           <a
             className="items-center"
@@ -396,7 +334,7 @@ exports[`renders correctly 1`] = `
             <svg
               className="items-center"
               fill="currentColor"
-              height={40}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -405,7 +343,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 512 512"
-              width={40}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -421,7 +359,7 @@ exports[`renders correctly 1`] = `
           >
             <svg
               fill="currentColor"
-              height={40}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -430,7 +368,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={40}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -446,7 +384,7 @@ exports[`renders correctly 1`] = `
           >
             <svg
               fill="currentColor"
-              height={40}
+              height={25}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -455,7 +393,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={40}
+              width={25}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -469,7 +407,7 @@ exports[`renders correctly 1`] = `
         className="flex items-center justify-around p-2"
       >
         <ul
-          className="space-y-3 text-white font-semibold text-lg"
+          className="space-y-3 text-white font-small text-sm"
         >
           <li>
             <a
@@ -496,22 +434,22 @@ exports[`renders correctly 1`] = `
           </li>
         </ul>
         <ul
-          className="text-gray-600 space-y-2 dark:text-gray-400 font-bold"
+          className="text-gray-600 space-y-2 dark:text-gray-400 font-small text-xs"
         >
           <li>
             <h2
-              className=" text-white font-semibold text-lg"
+              className=" text-white font-medium text-md"
             >
               Mock Translation Function
             </h2>
           </li>
           <li>
             <div
-              className=" flex space-x-2"
+              className=" flex space-x-2 gap-2"
             >
               <svg
                 fill="currentColor"
-                height={25}
+                height={15}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -520,7 +458,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={25}
+                width={15}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -534,11 +472,11 @@ exports[`renders correctly 1`] = `
           </li>
           <li>
             <div
-              className="flex space-x-2"
+              className="flex space-x-2 gap-2"
             >
               <svg
                 fill="currentColor"
-                height={25}
+                height={15}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -547,7 +485,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 512 512"
-                width={25}
+                width={15}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -561,16 +499,16 @@ exports[`renders correctly 1`] = `
           </li>
         </ul>
         <div
-          className="flex p-2 space-y-8 flex-col items-center justify-center"
+          className="flex p-2 space-y-8 flex-col  items-center justify-center "
         >
           <ul
-            className="  space-y-4 text-white font-bold text-xl"
+            className="  space-y-4 text-white font-small text-sm "
           >
             <li
               className="hover:underline hover:text-orange"
             >
               <a
-                className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+                className="flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]"
                 href="/listing"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -578,7 +516,7 @@ exports[`renders correctly 1`] = `
               >
                 <svg
                   fill="currentColor"
-                  height={20}
+                  height={12}
                   stroke="currentColor"
                   strokeWidth="0"
                   style={
@@ -587,7 +525,7 @@ exports[`renders correctly 1`] = `
                     }
                   }
                   viewBox="0 0 448 512"
-                  width={20}
+                  width={12}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -602,7 +540,7 @@ exports[`renders correctly 1`] = `
             </li>
             <li>
               <a
-                className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+                className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57] gap-2"
                 href="/products"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -610,7 +548,7 @@ exports[`renders correctly 1`] = `
               >
                 <svg
                   fill="currentColor"
-                  height={20}
+                  height={12}
                   stroke="currentColor"
                   strokeWidth="0"
                   style={
@@ -619,7 +557,7 @@ exports[`renders correctly 1`] = `
                     }
                   }
                   viewBox="0 0 512 512"
-                  width={20}
+                  width={12}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -634,60 +572,6 @@ exports[`renders correctly 1`] = `
           </ul>
         </div>
       </div>
-      <div
-        className=" p-4 flex justify-center space-x-8"
-      >
-        <a
-          className=" "
-          href="https://play.google.com/store/games?gl=FR"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={150}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fgoogle_play.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fgoogle_play.png&w=256&q=75 1x, /_next/image?url=%2Fgoogle_play.png&w=384&q=75 2x"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={150}
-          />
-        </a>
-        <a
-          className=""
-          href="https://www.apple.com/app-store/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={20}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fapp_store.png&w=48&q=75"
-            srcSet="/_next/image?url=%2Fapp_store.png&w=32&q=75 1x, /_next/image?url=%2Fapp_store.png&w=48&q=75 2x"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={20}
-          />
-        </a>
-      </div>
     </div>
   </div>
   <div
@@ -697,7 +581,7 @@ exports[`renders correctly 1`] = `
       className="flex-col   bg-[#32314C] w-full h-full break-all mt-auto "
     >
       <div
-        className=" flex justify-center p-4 "
+        className=" flex justify-center p-2 "
       >
         <a
           className=""
@@ -710,7 +594,7 @@ exports[`renders correctly 1`] = `
             alt="logo"
             data-nimg="1"
             decoding="async"
-            height={75}
+            height={70}
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
@@ -720,15 +604,15 @@ exports[`renders correctly 1`] = `
                 "color": "transparent",
               }
             }
-            width={180}
+            width={100}
           />
         </a>
       </div>
       <div
-        className="flex justify-around p-2"
+        className="flex justify-around p-0"
       >
         <ul
-          className="space-y-3 text-white font-semibold text-lg"
+          className="space-y-3 text-white font-small text-xs"
         >
           <li>
             <a
@@ -742,24 +626,12 @@ exports[`renders correctly 1`] = `
             </a>
           </li>
           <li>
-            <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
-              href="https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              onTouchStart={[Function]}
-              target="_blank"
-            >
-              Mock Translation Function
-            </a>
-          </li>
-          <li>
             <ul
-              className="text-gray-600 space-y-1 dark:text-gray-400 font-semibold"
+              className="text-gray-600 space-y-1 dark:text-gray-400 font-small text-xs"
             >
               <li>
                 <h2
-                  className=" text-white font-semibold text-lg"
+                  className=" text-white font-sm pb-2"
                 >
                   Mock Translation Function
                   :
@@ -771,7 +643,7 @@ exports[`renders correctly 1`] = `
                 >
                   <svg
                     fill="currentColor"
-                    height={25}
+                    height={15}
                     stroke="currentColor"
                     strokeWidth="0"
                     style={
@@ -780,7 +652,7 @@ exports[`renders correctly 1`] = `
                       }
                     }
                     viewBox="0 0 448 512"
-                    width={25}
+                    width={15}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -798,7 +670,7 @@ exports[`renders correctly 1`] = `
                 >
                   <svg
                     fill="currentColor"
-                    height={25}
+                    height={15}
                     stroke="currentColor"
                     strokeWidth="0"
                     style={
@@ -807,7 +679,7 @@ exports[`renders correctly 1`] = `
                       }
                     }
                     viewBox="0 0 512 512"
-                    width={25}
+                    width={15}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -838,7 +710,7 @@ exports[`renders correctly 1`] = `
             <svg
               className="items-center "
               fill="currentColor"
-              height={40}
+              height={20}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -847,7 +719,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 512 512"
-              width={40}
+              width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -863,7 +735,7 @@ exports[`renders correctly 1`] = `
           >
             <svg
               fill="currentColor"
-              height={40}
+              height={20}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -872,7 +744,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={40}
+              width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -888,7 +760,7 @@ exports[`renders correctly 1`] = `
           >
             <svg
               fill="currentColor"
-              height={40}
+              height={20}
               stroke="currentColor"
               strokeWidth="0"
               style={
@@ -897,7 +769,7 @@ exports[`renders correctly 1`] = `
                 }
               }
               viewBox="0 0 448 512"
-              width={40}
+              width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -908,16 +780,16 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <li
-        className="flex justify-center"
+        className="flex justify-center "
       >
-        <ul
-          className=" space-y-4 text-white font-bold text-l"
+        <div
+          className=" p-4 text-white font-small text-xs flex gap-10"
         >
-          <li
-            className="hover:underline hover:text-orange"
+          <div
+            className="hover:underline hover:text-orange "
           >
             <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              className="flex cursor-pointer items-center  space-x-2 gap-1 text-white hover:text-[#FF8A57]"
               href="/listing"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -925,7 +797,7 @@ exports[`renders correctly 1`] = `
             >
               <svg
                 fill="currentColor"
-                height={20}
+                height={12}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -934,7 +806,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={20}
+                width={12}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -946,10 +818,10 @@ exports[`renders correctly 1`] = `
                 Mock Translation Function
               </p>
             </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <a
-              className="flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]"
+              className="flex cursor-pointer items-center  space-x-2 gap-1  text-white hover:text-[#FF8A57]"
               href="/products"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -957,7 +829,7 @@ exports[`renders correctly 1`] = `
             >
               <svg
                 fill="currentColor"
-                height={20}
+                height={12}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -966,7 +838,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 512 512"
-                width={20}
+                width={12}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -977,69 +849,17 @@ exports[`renders correctly 1`] = `
                 Mock Translation Function
               </p>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </li>
-      <div
-        className=" p-4 flex justify-center space-x-8"
-      >
-        <a
-          className=" "
-          href="https://play.google.com/store/games?gl=FR"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={150}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fgoogle_play.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fgoogle_play.png&w=256&q=75 1x, /_next/image?url=%2Fgoogle_play.png&w=384&q=75 2x"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={150}
-          />
-        </a>
-        <a
-          className=""
-          href="https://www.apple.com/app-store/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          onTouchStart={[Function]}
-        >
-          <img
-            alt="logo"
-            data-nimg="1"
-            decoding="async"
-            height={150}
-            loading="lazy"
-            onError={[Function]}
-            onLoad={[Function]}
-            src="/_next/image?url=%2Fapp_store.png&w=384&q=75"
-            srcSet="/_next/image?url=%2Fapp_store.png&w=256&q=75 1x, /_next/image?url=%2Fapp_store.png&w=384&q=75 2x"
-            style={
-              Object {
-                "color": "transparent",
-              }
-            }
-            width={150}
-          />
-        </a>
-      </div>
     </div>
   </div>
   <div
-    className="flex justify-center p-2 font-medium bg-[#32314C] text-center text-white  text-sm "
+    className="flex justify-center p-2  bg-[#32314C] text-center text-white font-xs text-xs "
   >
-    <p>
+    <p
+      className=" text-[8px] "
+    >
       Mock Translation Function
     </p>
   </div>
@@ -1063,7 +883,7 @@ exports[`renders correctly 1`] = `
     >
       <svg
         fill="currentColor"
-        height={48}
+        height={40}
         stroke="currentColor"
         strokeWidth="0"
         style={
@@ -1072,7 +892,7 @@ exports[`renders correctly 1`] = `
           }
         }
         viewBox="0 0 512 512"
-        width={48}
+        width={40}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

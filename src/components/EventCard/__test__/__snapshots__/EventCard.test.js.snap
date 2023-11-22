@@ -22,7 +22,7 @@ exports[`renders correctly 1`] = `
           className=" w-full   rounded-lg bg-white shadow-lg  "
         >
           <header
-            class="pt-1 flex-shrink"
+            class="pt-2 flex-shrink"
           >
             <h4
               className=" font-bold md:text-lg text-[#585785] "
@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
             </h4>
           </header>
           <div
-            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
           >
             <img
               alt="Book Buddies"
@@ -61,13 +61,13 @@ exports[`renders correctly 1`] = `
             class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
           >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
                
               <svg
                 className=" flex items-center"
                 fill="currentColor"
-                height={25}
+                height={20}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -76,7 +76,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={25}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -85,13 +85,13 @@ exports[`renders correctly 1`] = `
               </svg>
                
               <p
-                className=" text-center text-lg font-semibold"
+                className=" text-center text-medium font-small"
               >
                 Tuesday, 21 November
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
             >
                
               <a
@@ -117,7 +117,7 @@ exports[`renders correctly 1`] = `
           className=" w-full   rounded-lg bg-white shadow-lg  "
         >
           <header
-            class="pt-1 flex-shrink"
+            class="pt-2 flex-shrink"
           >
             <h4
               className=" font-bold md:text-lg text-[#585785] "
@@ -126,7 +126,7 @@ exports[`renders correctly 1`] = `
             </h4>
           </header>
           <div
-            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
           >
             <img
               alt="The climate crisis"
@@ -156,13 +156,13 @@ exports[`renders correctly 1`] = `
             class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
           >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
                
               <svg
                 className=" flex items-center"
                 fill="currentColor"
-                height={25}
+                height={20}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -171,7 +171,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={25}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -180,13 +180,13 @@ exports[`renders correctly 1`] = `
               </svg>
                
               <p
-                className=" text-center text-lg font-semibold"
+                className=" text-center text-medium font-small"
               >
                 Saturday, 16 December 
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
             >
                
               <a
@@ -212,7 +212,7 @@ exports[`renders correctly 1`] = `
           className=" w-full   rounded-lg bg-white shadow-lg  "
         >
           <header
-            class="pt-1 flex-shrink"
+            class="pt-2 flex-shrink"
           >
             <h4
               className=" font-bold md:text-lg text-[#585785] "
@@ -221,7 +221,7 @@ exports[`renders correctly 1`] = `
             </h4>
           </header>
           <div
-            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-2"
+            class=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
           >
             <img
               alt="Discover Photography!"
@@ -251,13 +251,13 @@ exports[`renders correctly 1`] = `
             class="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
           >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] "
+              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
                
               <svg
                 className=" flex items-center"
                 fill="currentColor"
-                height={25}
+                height={20}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -266,7 +266,7 @@ exports[`renders correctly 1`] = `
                   }
                 }
                 viewBox="0 0 448 512"
-                width={25}
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -275,13 +275,13 @@ exports[`renders correctly 1`] = `
               </svg>
                
               <p
-                className=" text-center text-lg font-semibold"
+                className=" text-center text-medium font-small"
               >
                 Saturday, 16 December 
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 font-bold bg-[#585785] py-1 lg:px-2 border-none px-1 w-24 m-auto"
+              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
             >
                
               <a

@@ -29,36 +29,14 @@ function Footer({ t }) {
                         <Link className='' href='/'>
                             <Image
                                 src='/images/logo-footer.svg'
-                                width={200}
-                                height={100}
-                                alt='logo'
-                            />
-                        </Link>
-                        <Link
-                            href='https://play.google.com/store/games?gl=FR'
-                            className=' '
-                        >
-                            <Image
-                                src='/google_play.png'
                                 width={150}
-                                height={150}
-                                alt='logo'
-                            />
-                        </Link>
-                        <Link
-                            className=''
-                            href='https://www.apple.com/app-store/'
-                        >
-                            <Image
-                                src='/app_store.png'
-                                width={150}
-                                height={150}
+                                height={50}
                                 alt='logo'
                             />
                         </Link>
                     </div>
                     <div className=' mt-4 p-6'>
-                        <ul className='space-y-3  text-white font-semibold text-lg'>
+                        <ul className='space-y-3  text-white font-small text-sm'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -67,24 +45,16 @@ function Footer({ t }) {
                                     {t("about_us")}
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href='https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors'
-                                    target='_blank'
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                >
-                                    {t("our_team")}
-                                </Link>
-                            </li>
+
                             <li>
                                 <h2>{t("contact_us")}</h2>
                             </li>
                             <li>
-                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-medium'>
+                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-small'>
                                     <li>
-                                        <div className=' flex space-x-2'>
+                                        <div className=' flex space-x-2 gap-2 text-xs'>
                                             <FaPhoneSquareAlt
-                                                size={25}
+                                                size={15}
                                                 style={{ color: "#FFFFFF" }}
                                             />
                                             <Link href='tel:+2130699514862'>
@@ -93,9 +63,9 @@ function Footer({ t }) {
                                         </div>
                                     </li>
                                     <li>
-                                        <div className='flex space-x-2'>
+                                        <div className='flex space-x-2 gap-2 text-xs'>
                                             <FaEnvelope
-                                                size={25}
+                                                size={15}
                                                 style={{ color: "#FFFFFF" }}
                                             />
                                             <Link href='mailto:adresse@email.com'>
@@ -108,44 +78,44 @@ function Footer({ t }) {
                         </ul>
                     </div>
                     <div className='flex space-y-8 flex-col items-center justify-center'>
-                        <ul className='  space-y-4 text-white font-bold text-l'>
+                        <ul className='  space-y-4 text-white font-small text-xs'>
                             <li>
                                 <Link
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    className='flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]'
                                     href='/listing'
                                 >
-                                    <FaRegPlusSquare size={20} />
+                                    <FaRegPlusSquare size={12} />
                                     <p> {t("start_selling")}</p>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     href='/products'
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    className='flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]'
                                 >
-                                    <FaWallet size={20} />
+                                    <FaWallet size={12} />
                                     <p>{t("buy_products")}</p>
                                 </Link>
                             </li>
                         </ul>
 
-                        <div className='social-media flex space-x-4 '>
+                        <div className='social-media flex  gap-4 '>
                             <Link href='https://web.facebook.com/recodedofficial'>
                                 <FaFacebook
                                     className=' text-white hover:text-[#1877f2]                     	'
-                                    size={30}
+                                    size={25}
                                 />
                             </Link>
                             <Link href='https://www.linkedin.com/school/re-coded/'>
                                 <FaLinkedin
                                     className=' text-white hover:text-[#0a66c2]	'
-                                    size={30}
+                                    size={25}
                                 />
                             </Link>
                             <Link href='https://www.instagram.com/recodedofficial/'>
                                 <FaInstagram
                                     className=' text-white hover:text-[#c32aa3]                     	'
-                                    size={30}
+                                    size={25}
                                 />
                             </Link>
                         </div>
@@ -158,38 +128,38 @@ function Footer({ t }) {
                         <Link className='' href='/'>
                             <Image
                                 src='/images/logo-footer.svg'
-                                width={200}
-                                height={100}
+                                width={100}
+                                height={50}
                                 alt='logo'
                             />
                         </Link>
-                        <div className='social-media items-center  flex space-x-4 '>
+                        <div className='social-media items-center  flex gap-4 '>
                             <Link
                                 className='items-center'
                                 href='https://web.facebook.com/recodedofficial'
                             >
                                 <FaFacebook
                                     className='items-center'
-                                    size={40}
+                                    size={25}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                             <Link href='https://www.linkedin.com/school/re-coded/'>
                                 <FaLinkedin
-                                    size={40}
+                                    size={25}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                             <Link href='https://www.instagram.com/recodedofficial/'>
                                 <FaInstagram
-                                    size={40}
+                                    size={25}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                         </div>
                     </div>
                     <div className='flex items-center justify-around p-2'>
-                        <ul className='space-y-3 text-white font-semibold text-lg'>
+                        <ul className='space-y-3 text-white font-small text-sm'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -208,94 +178,70 @@ function Footer({ t }) {
                                 </Link>
                             </li>
                         </ul>
-                        <ul className='text-gray-600 space-y-2 dark:text-gray-400 font-bold'>
+                        <ul className='text-gray-600 space-y-2 dark:text-gray-400 font-small text-xs'>
                             <li>
-                                <h2 className=' text-white font-semibold text-lg'>
+                                <h2 className=' text-white font-medium text-md'>
                                     {t("contact_us")}
                                 </h2>
                             </li>
                             <li>
-                                <div className=' flex space-x-2'>
+                                <div className=' flex space-x-2 gap-2'>
                                     <FaPhoneSquareAlt
-                                        size={25}
+                                        size={15}
                                         style={{ color: "#FFFFFF" }}
                                     />
                                     <p> +213 123 456 789</p>
                                 </div>
                             </li>
                             <li>
-                                <div className='flex space-x-2'>
+                                <div className='flex space-x-2 gap-2'>
                                     <FaEnvelope
-                                        size={25}
+                                        size={15}
                                         style={{ color: "#FFFFFF" }}
                                     />
                                     <p> Contact@studentstore.com</p>
                                 </div>
                             </li>
                         </ul>
-                        <div className='flex p-2 space-y-8 flex-col items-center justify-center'>
-                            <ul className='  space-y-4 text-white font-bold text-xl'>
+                        <div className='flex p-2 space-y-8 flex-col  items-center justify-center '>
+                            <ul className='  space-y-4 text-white font-small text-sm '>
                                 <li className='hover:underline hover:text-orange'>
                                     <Link
-                                        className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                        className='flex cursor-pointer items-center  space-x-2 gap-2 text-white hover:text-[#FF8A57]'
                                         href='/listing'
                                     >
-                                        <FaRegPlusSquare size={20} />
+                                        <FaRegPlusSquare size={12} />
                                         <p> {t("start_selling")}</p>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
                                         href='/products'
-                                        className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                        className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57] gap-2'
                                     >
-                                        <FaWallet size={20} />
+                                        <FaWallet size={12} />
                                         <p>{t("buy_products")}</p>
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div className=' p-4 flex justify-center space-x-8'>
-                        <Link
-                            href='https://play.google.com/store/games?gl=FR'
-                            className=' '
-                        >
-                            <Image
-                                src='/google_play.png'
-                                width={150}
-                                height={150}
-                                alt='logo'
-                            />
-                        </Link>
-                        <Link
-                            className=''
-                            href='https://www.apple.com/app-store/'
-                        >
-                            <Image
-                                src='/app_store.png'
-                                width={20}
-                                height={20}
-                                alt='logo'
-                            />
-                        </Link>
-                    </div>
                 </div>
             </div>
             <div className=' mobile block md:hidden '>
                 <div className='flex-col   bg-[#32314C] w-full h-full break-all mt-auto '>
-                    <div className=' flex justify-center p-4 '>
+                    <div className=' flex justify-center p-2 '>
                         <Link className='' href='/'>
                             <Image
                                 src='/images/logo-footer.svg'
-                                width={180}
-                                height={75}
+                                width={100}
+                                height={70}
                                 alt='logo'
                             />
                         </Link>
                     </div>
-                    <div className='flex justify-around p-2'>
-                        <ul className='space-y-3 text-white font-semibold text-lg'>
+                    <div className='flex justify-around p-0'>
+                        <ul className='space-y-3 text-white font-small text-xs'>
                             <li>
                                 <Link
                                     href='/aboutus'
@@ -304,26 +250,18 @@ function Footer({ t }) {
                                     {t("about_us")}
                                 </Link>
                             </li>
+
                             <li>
-                                <Link
-                                    href='https://github.com/202306-NEA-DZ-FEW/StudentStore/graphs/contributors'
-                                    target='_blank'
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
-                                >
-                                    {t("our_team")}
-                                </Link>
-                            </li>
-                            <li>
-                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-semibold'>
+                                <ul className='text-gray-600 space-y-1 dark:text-gray-400 font-small text-xs'>
                                     <li>
-                                        <h2 className=' text-white font-semibold text-lg'>
+                                        <h2 className=' text-white font-sm pb-2'>
                                             {t("contact_us")}:
                                         </h2>
                                     </li>
                                     <li>
                                         <div className=' flex space-x-2'>
                                             <FaPhoneSquareAlt
-                                                size={25}
+                                                size={15}
                                                 style={{ color: "#FFFFFF" }}
                                             />
                                             <p> +213 123 456 789</p>
@@ -332,7 +270,7 @@ function Footer({ t }) {
                                     <li>
                                         <div className='flex space-x-2'>
                                             <FaEnvelope
-                                                size={25}
+                                                size={15}
                                                 style={{ color: "#FFFFFF" }}
                                             />
                                             <p> Contact@studentstore.com</p>
@@ -349,74 +287,50 @@ function Footer({ t }) {
                             >
                                 <FaFacebook
                                     className='items-center '
-                                    size={40}
+                                    size={20}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                             <Link href='https://www.linkedin.com/school/re-coded/'>
                                 <FaLinkedin
-                                    size={40}
+                                    size={20}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                             <Link href='https://www.instagram.com/recodedofficial/'>
                                 <FaInstagram
-                                    size={40}
+                                    size={20}
                                     style={{ color: "#FFFFFF" }}
                                 />
                             </Link>
                         </div>
                     </div>
-                    <li className='flex justify-center'>
-                        <ul className=' space-y-4 text-white font-bold text-l'>
-                            <li className='hover:underline hover:text-orange'>
+                    <li className='flex justify-center '>
+                        <div className=' p-4 text-white font-small text-xs flex gap-10'>
+                            <div className='hover:underline hover:text-orange '>
                                 <Link
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    className='flex cursor-pointer items-center  space-x-2 gap-1 text-white hover:text-[#FF8A57]'
                                     href='/listing'
                                 >
-                                    <FaRegPlusSquare size={20} />
+                                    <FaRegPlusSquare size={12} />
                                     <p> {t("start_selling")}</p>
                                 </Link>
-                            </li>
-                            <li>
+                            </div>
+                            <div>
                                 <Link
                                     href='/products'
-                                    className='flex cursor-pointer items-center  space-x-2 text-white hover:text-[#FF8A57]'
+                                    className='flex cursor-pointer items-center  space-x-2 gap-1  text-white hover:text-[#FF8A57]'
                                 >
-                                    <FaWallet size={20} />
+                                    <FaWallet size={12} />
                                     <p>{t("buy_products")}</p>
                                 </Link>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </li>
-                    <div className=' p-4 flex justify-center space-x-8'>
-                        <Link
-                            href='https://play.google.com/store/games?gl=FR'
-                            className=' '
-                        >
-                            <Image
-                                src='/google_play.png'
-                                width={150}
-                                height={150}
-                                alt='logo'
-                            />
-                        </Link>
-                        <Link
-                            className=''
-                            href='https://www.apple.com/app-store/'
-                        >
-                            <Image
-                                src='/app_store.png'
-                                width={150}
-                                height={150}
-                                alt='logo'
-                            />
-                        </Link>
-                    </div>
                 </div>
             </div>
-            <div className='flex justify-center p-2 font-medium bg-[#32314C] text-center text-white  text-sm '>
-                <p>
+            <div className='flex justify-center p-2  bg-[#32314C] text-center text-white font-xs text-xs '>
+                <p className=' text-[8px] '>
                     {t(
                         "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved."
                     )}
@@ -436,7 +350,7 @@ function Footer({ t }) {
                     }}
                     className='absolute scroll-arrow animate-bounce bottom-4 right-4 '
                 >
-                    <IoIosArrowUp size={48} />
+                    <IoIosArrowUp size={40} />
                 </button>
             </div>
         </footer>

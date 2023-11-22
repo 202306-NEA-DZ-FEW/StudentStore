@@ -96,7 +96,7 @@ export default function Navbar({ t }) {
                         <Logo />
                     </div>
 
-                    <div className='flex items-center space-x-4'>
+                    <div className='flex items-center  gap-3'>
                         <Language />
                         <ShoppingCartIcon />
                         <ProfileDropdown t={t} />
