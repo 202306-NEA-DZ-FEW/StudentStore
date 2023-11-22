@@ -133,7 +133,7 @@ export default function Filter({
                 <h2>
                     <button
                         onClick={toggleCategoryDropdown}
-                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
+                        className='flex items-center justify-between w-1/3 md:w-1/2 text-lg font-bold mb-2'
                     >
                         {t("category")}
                         <IoIosArrowDown
@@ -178,7 +178,7 @@ export default function Filter({
                 <h2>
                     <button
                         onClick={toggleConditionDropdown}
-                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
+                        className='flex items-center justify-between w-1/3 md:w-1/2 text-lg font-bold mb-2'
                     >
                         {t("condition")}
                         <IoIosArrowDown
