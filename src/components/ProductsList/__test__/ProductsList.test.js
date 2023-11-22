@@ -7,7 +7,8 @@ jest.mock("../../../util/firebase", () => {
         initializeApp: jest.fn(),
     };
 });
+const t = (key) => key;
 it("renders correctly", () => {
-    const tree = renderer.create(<ProductsList />).toJSON();
+    const tree = renderer.create(<ProductsList t={t} />).toJSON();
     expect(tree).toMatchSnapshot();
 });

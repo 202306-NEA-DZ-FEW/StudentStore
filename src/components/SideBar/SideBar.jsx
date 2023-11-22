@@ -1,18 +1,21 @@
 // Sidebar.jsx
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
-import { FiEdit3 } from "react-icons/fi";
-import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
-import { BiLogOut } from "react-icons/bi";
 import { doc, getDoc } from "firebase/firestore";
-import { useAuth } from "@/context/AuthContext.js";
-import { useRouter } from "next/router.js";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
+import Link from "next/link";
+import { useRouter } from "next/router.js";
+import React, { useEffect, useState } from "react";
+import { BiLogOut } from "react-icons/bi";
+import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
+import { FiEdit3 } from "react-icons/fi";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
+import { useAuth } from "@/context/AuthContext.js";
+
+import { db } from "../../util/firebase.js";
 
 const NavLink = ({ href, label, onClick, selected }) => (
     <Link href={href} passHref>
