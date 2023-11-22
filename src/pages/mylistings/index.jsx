@@ -1,5 +1,3 @@
-// mylistings/index.jsx
-
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
 import ListingCard from "@/components/listingcard/ListingCard";

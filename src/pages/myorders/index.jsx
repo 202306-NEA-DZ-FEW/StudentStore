@@ -3,6 +3,7 @@ import SideBar from "@/components/SideBar/SideBar";
 import ListingCard from "@/components/listingcard/ListingCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import OrderCard from "@/components/OrderCard/OrderCard";
 
 const MyOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
@@ -17,11 +18,12 @@ const MyOrders = () => {
         const fetchData = async () => {
             try {
                 const userId = getCurrentUserId();
+                console.log("Current User ID:", userId);
 
                 if (userId) {
                     const userProductsQuery = query(
                         collection(db, "cart"),
-                        where("currentUserUid", "==", userId)
+                        where("userId", "==", userId)
                     );
 
                     const unsubscribe = onSnapshot(
@@ -31,6 +33,7 @@ const MyOrders = () => {
                                 id: doc.id,
                                 ...doc.data(),
                             }));
+                            console.log("Current User ID:", orders);
 
                             setUserOrders(orders);
                             setLoading(false);
@@ -71,7 +74,7 @@ const MyOrders = () => {
                                 key={order.id}
                                 className='bg-white shadow-xl rounded-md overflow-hidden'
                             >
-                                <ListingCard product={order} />
+                                <OrderCard product={order} />
                             </div>
                         ))}
                     </div>

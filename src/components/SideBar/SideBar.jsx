@@ -100,7 +100,7 @@ const Sidebar = () => {
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>
                         <p className='text-[#585785] mb-2'>{userInfo?.email}</p>
-                        <p className='text-[#585785] mb-4'>{`${userInfo?.address?.city}, ${userInfo?.address?.country}`}</p>
+                        <p className='text-[#585785] mb-4'>{`${userInfo?.city}, ${userInfo?.country}`}</p>
                     </div>
                 )}
             </div>
