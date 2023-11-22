@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
 
+// ... (your existing imports)
+
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
@@ -103,47 +105,54 @@ const Sidebar = () => {
                 )}
             </div>
             <div className='flex flex-col items-center space-y-10'>
-                <Link
-                    href='/editprofile'
-                    className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("EditProfile")}
-                >
-                    <span className='mr-2'>
-                        <FiEdit3 />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>Edit Profile</span>
-                    )}
+                <Link href='/editprofile' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("EditProfile")}
+                    >
+                        <span className='mr-2'>
+                            <FiEdit3 />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                Edit Profile
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/mylistings'
-                    className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyListings")}
-                >
-                    <span className='mr-2'>
-                        <BsClipboard2Fill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Listings</span>
-                    )}
+                <Link href='/mylistings' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyListings")}
+                    >
+                        <span className='mr-2'>
+                            <BsClipboard2Fill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                My Listings
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/myorders'
-                    className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyOrders")}
-                >
-                    <span className='mr-2'>
-                        <BsFillBoxSeamFill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Orders</span>
-                    )}
+                <Link href='/myorders' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyOrders")}
+                    >
+                        <span className='mr-2'>
+                            <BsFillBoxSeamFill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>My Orders</span>
+                        )}
+                    </div>
                 </Link>
             </div>
             {!collapsed && (
