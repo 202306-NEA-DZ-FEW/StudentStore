@@ -358,6 +358,7 @@ const Listing = () => {
                                 <option value='furniture'>
                                     {t("furniture")}
                                 </option>
+                                <option value='other'>{t("other")}</option>
                             </select>
                         </div>
                         <div className='col-span-4 row-span-1 md:col-span-2 '>
