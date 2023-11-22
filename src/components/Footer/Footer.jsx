@@ -29,8 +29,8 @@ function Footer({ t }) {
                         <Link className='' href='/'>
                             <Image
                                 src='/images/logo-footer.svg'
-                                width={150}
-                                height={50}
+                                width={130}
+                                height={40}
                                 alt='logo'
                             />
                         </Link>
