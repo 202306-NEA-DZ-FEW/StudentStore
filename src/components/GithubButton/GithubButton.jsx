@@ -2,12 +2,12 @@ import { auth, db } from "@/util/firebase";
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
-export default function GithubButton({ children, className }) {
+export default function GithubButton({ children, className, t }) {
     useEffect(() => {
         return () => {
             toast.dismiss();
@@ -20,7 +20,7 @@ export default function GithubButton({ children, className }) {
             const cred = await signInWithPopup(auth, provider);
             const user = cred.user;
             const userRef = doc(db, "userinfo", user.uid);
-            toast.loading("Please wait");
+            toast.loading(t("please wait"));
             await setDoc(userRef, {
                 name: user.displayName,
                 surname: "",
@@ -35,8 +35,8 @@ export default function GithubButton({ children, className }) {
                 zipcode: "",
             });
             route.push("/home");
-        } catch (error) {
-            console.log(error);
+        } catch {
+            toast.error(t("failed to log in"), { autoClose: 1000 });
         }
     }
     return (

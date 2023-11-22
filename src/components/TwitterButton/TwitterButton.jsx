@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
 
-export default function TwitterButton({ children, className }) {
+export default function TwitterButton({ children, className, t }) {
     useEffect(() => {
         return () => {
             toast.dismiss();
@@ -21,7 +21,7 @@ export default function TwitterButton({ children, className }) {
                 console.log(cred);
                 const user = cred.user;
                 const userRef = doc(db, "userinfo", user.uid);
-                toast.loading("Please wait");
+                toast.loading(t("please wait"));
                 setDoc(userRef, {
                     name: user.displayName,
                     surname: "",
@@ -39,7 +39,7 @@ export default function TwitterButton({ children, className }) {
                 });
             })
             .catch((error) => {
-                console.log(error);
+                toast.error(t("failed to log in"), { autoClose: 1000 });
             });
     }
     return (

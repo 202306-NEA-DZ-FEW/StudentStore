@@ -206,8 +206,8 @@ export default function SignUp() {
                     }
                 }
             })
-            .catch((error) => {
-                console.error("Error checking email existence:", error);
+            .catch(() => {
+                toast.error(t("failed to sign up"), { autoClose: 1000 });
             });
     }
     // signup bg style
@@ -335,9 +335,9 @@ export default function SignUp() {
                     </h3>
                     {/* sign up with socials */}
                     <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                        <GoogleButton>{t("google")}</GoogleButton>
-                        <TwitterButton>{t("twitter")}</TwitterButton>
-                        <GithubButton>{t("github")}</GithubButton>
+                        <GoogleButton t={t}>{t("google")}</GoogleButton>
+                        <TwitterButton t={t}>{t("twitter")}</TwitterButton>
+                        <GithubButton t={t}>{t("github")}</GithubButton>
                     </div>
                     <h2 className='mt-5 text-[#647581]'>
                         {" "}

@@ -29,7 +29,7 @@ export default function SignIn() {
             await login(email, password);
             route.push("/home");
         } catch {
-            toast.error(t("Failed to log in"), { autoClose: 1000 });
+            toast.error(t("failed to log in"), { autoClose: 1000 });
         } finally {
             setLoading(false);
             setEmail("");
@@ -111,9 +111,9 @@ export default function SignIn() {
                     </h3>
                     {/* sign in with socials */}
                     <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                        <GoogleButton>{t("google")}</GoogleButton>
-                        <TwitterButton>{t("twitter")}</TwitterButton>
-                        <GithubButton>{t("github")}</GithubButton>
+                        <GoogleButton t={t}>{t("google")}</GoogleButton>
+                        <TwitterButton t={t}>{t("twitter")}</TwitterButton>
+                        <GithubButton t={t}>{t("github")}</GithubButton>
                     </div>
                     <h2 className='mt-5 text-[#647581]'>
                         {t("dont have an account")}
