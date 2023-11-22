@@ -1,5 +1,6 @@
 import renderer from "react-test-renderer";
 
+import { AuthProvider } from "@/context/AuthContext";
 import ProductDetails from "../ProductDetails";
 
 jest.mock("../../../util/firebase", () => {
@@ -8,7 +9,19 @@ jest.mock("../../../util/firebase", () => {
     };
 });
 
+jest.mock("next/router", () => ({
+    useRouter: () => ({
+        pathname: "/",
+    }),
+}));
+
 it("renders correctly", () => {
-    const tree = renderer.create(<ProductDetails />).toJSON();
+    const tree = renderer
+        .create(
+            <AuthProvider>
+                <ProductDetails />
+            </AuthProvider>
+        )
+        .toJSON();
     expect(tree).toMatchSnapshot();
 });
