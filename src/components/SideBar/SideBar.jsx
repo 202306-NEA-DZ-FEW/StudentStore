@@ -14,6 +14,20 @@ import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
 
+const NavLink = ({ href, label, onClick, selected }) => (
+    <Link href={href} passHref>
+        <div
+            className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
+                selected ? "bg-[#90EEE1]" : ""
+            }`}
+            onClick={onClick}
+        >
+            <span className='mr-2'>{/* Icon component here */}</span>
+            <span className='hidden sm:inline'>{label}</span>
+        </div>
+    </Link>
+);
+
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
@@ -75,6 +89,14 @@ const Sidebar = () => {
         };
     }, []);
 
+    const links = [
+        { label: "Edit Profile", path: "/editprofile" },
+        { label: "My Listings", path: "/mylistings" },
+        { label: "My Orders", path: "/myorders" },
+    ];
+
+    const currentPath = route.asPath;
+
     return (
         <div
             className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
@@ -105,48 +127,15 @@ const Sidebar = () => {
                 )}
             </div>
             <div className='flex flex-col items-center space-y-10'>
-                <Link
-                    href='/editprofile'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("EditProfile")}
-                >
-                    <span className='mr-2'>
-                        <FiEdit3 />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>Edit Profile</span>
-                    )}
-                </Link>
-                <Link
-                    href='/mylistings'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyListings")}
-                >
-                    <span className='mr-2'>
-                        <BsClipboard2Fill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Listings</span>
-                    )}
-                </Link>
-                <Link
-                    href='/myorders'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyOrders")}
-                >
-                    <span className='mr-2'>
-                        <BsFillBoxSeamFill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Orders</span>
-                    )}
-                </Link>
+                {links.map((link) => (
+                    <NavLink
+                        key={link.label}
+                        href={link.path}
+                        label={link.label}
+                        onClick={() => handleLinkClick(link.label)}
+                        selected={currentPath.includes(link.path)}
+                    />
+                ))}
             </div>
             {!collapsed && (
                 <div className='mt-auto mb-4'>
