@@ -36,7 +36,7 @@ export default function Filter({
 
     return (
         <div
-            className={`w-[45%] md:w-[30%] lg:w-[20%] min-h-screen ${
+            className={`w-full pb-5 sm:[45%] md:w-[30%] lg:w-[20%] ${
                 route.locale === "ar" ? "order-2" : ""
             } bg-gray-200 text-[#585785] pt-8 px-4`}
             dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
@@ -133,7 +133,7 @@ export default function Filter({
                 <h2>
                     <button
                         onClick={toggleCategoryDropdown}
-                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
+                        className='flex items-center justify-between w-1/3 md:w-1/2 text-lg font-bold mb-2'
                     >
                         {t("category")}
                         <IoIosArrowDown
@@ -178,7 +178,7 @@ export default function Filter({
                 <h2>
                     <button
                         onClick={toggleConditionDropdown}
-                        className='flex items-center justify-between w-full text-lg font-bold mb-2'
+                        className='flex items-center justify-between w-1/3 md:w-1/2 text-lg font-bold mb-2'
                     >
                         {t("condition")}
                         <IoIosArrowDown
