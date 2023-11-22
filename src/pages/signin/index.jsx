@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@/components/Buttons/Button";
-import FacebookButton from "@/components/FacebookButton/FacebookButton";
+import GithubButton from "@/components/GithubButton/GithubButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
 
@@ -112,8 +112,8 @@ export default function SignIn() {
                     {/* sign in with socials */}
                     <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
                         <GoogleButton>{t("google")}</GoogleButton>
-                        <FacebookButton>{t("facebook")}</FacebookButton>
                         <TwitterButton>{t("twitter")}</TwitterButton>
+                        <GithubButton>{t("github")}</GithubButton>
                     </div>
                     <h2 className='mt-5 text-[#647581]'>
                         {t("dont have an account")}
