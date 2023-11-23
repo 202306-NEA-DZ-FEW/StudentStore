@@ -12,8 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
 
-// ... (your existing imports)
-
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
