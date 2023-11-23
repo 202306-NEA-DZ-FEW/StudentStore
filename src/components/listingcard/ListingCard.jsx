@@ -35,7 +35,7 @@ function ListingCard({ product }) {
 
     return (
         <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
-            <Link href='{`/singleproduct/${product?.id}`}'>
+            <Link href={`/singleproduct/${product?.productId}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image
                         src={product?.pictures[1]}

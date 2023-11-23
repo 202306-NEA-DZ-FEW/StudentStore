@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl"
 >
   <a
-    href="{\`/singleproduct/\${product?.id}\`}"
+    href="/singleproduct/undefined"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onTouchStart={[Function]}
