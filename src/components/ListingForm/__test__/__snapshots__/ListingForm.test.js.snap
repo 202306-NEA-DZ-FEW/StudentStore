@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  className=" grid w-full sm:w-full md:w-full  lg:w-1/2  grid-cols-4 grid-rows-6 gap-4 "
+>
+  <div
+    className="col-span-4 row-span-1 md:col-span-2 "
+  >
+    <select
+      className="select select-bordered capitalize   input-style "
+      dir="ltr"
+      name="type"
+    >
+      <option
+        disabled={true}
+        selected={true}
+        value=""
+      >
+        Type (Product, Service)
+      </option>
+      <option
+        value="sale"
+      >
+        sale
+      </option>
+      <option
+        value="borrow"
+      >
+        borrow
+      </option>
+    </select>
+  </div>
+  <div
+    className="col-span-4 row-span-1 md:col-span-2 "
+  >
+    <select
+      className="select select-bordered capitalize  input-style "
+      dir="ltr"
+      name="category"
+    >
+      <option
+        disabled={true}
+        selected={true}
+        value=""
+      >
+        Category
+      </option>
+      <option
+        value="electronics"
+      >
+        electronics
+      </option>
+      <option
+        value="books"
+      >
+        books
+      </option>
+      <option
+        value="gaming"
+      >
+        gaming
+      </option>
+      <option
+        value="clothes"
+      >
+        clothes
+      </option>
+      <option
+        value="shoes"
+      >
+        shoes
+      </option>
+      <option
+        value="food"
+      >
+        food
+      </option>
+      <option
+        value="transportation"
+      >
+        transportation
+      </option>
+      <option
+        value="furniture"
+      >
+        furniture
+      </option>
+      <option
+        value="other"
+      >
+        other
+      </option>
+    </select>
+  </div>
+  <div
+    className="col-span-4 row-span-1 md:col-span-2 "
+  >
+    <input
+      className="input  input-bordered input-style placeholder"
+      name="title"
+      placeholder="Product name"
+      type="text"
+    />
+  </div>
+  <div
+    className="col-span-4 row-span-1 md:col-span-2 "
+  >
+    <select
+      className="select select-bordered capitalize input-style "
+      dir="ltr"
+      name="condition"
+    >
+      <option
+        disabled={true}
+        selected={true}
+        value=""
+      >
+        Condition
+      </option>
+      <option
+        value="new"
+      >
+        new
+      </option>
+      <option
+        value="like new"
+      >
+        like new
+      </option>
+      <option
+        value="good"
+      >
+        good
+      </option>
+      <option
+        value="poor"
+      >
+        poor
+      </option>
+    </select>
+  </div>
+  <div
+    className="col-span-4 row-span-2 "
+  >
+    <textarea
+      className="input input-bordered py-2  h-full  input-style placeholder-center placeholder "
+      name="description"
+      placeholder="Description"
+      type="text"
+    />
+  </div>
+  <input
+    className="input input-bordered   col-span-2 row-span-1 input-style "
+    name="location.city"
+    placeholder="Location (city)"
+    type="text"
+  />
+  <input
+    className="input input-bordered col-span-2 row-span-1 input-style "
+    name="price"
+    placeholder="Price"
+    type="number"
+  />
+  <div
+    className="col-span-4 row-span-1 flex gap-4 mt-4"
+  >
+    <label
+      className="w-full h-full items-center  justify-center relative inline-flex bg-[#585785] text-white py-2  rounded-lg cursor-pointer shimmer"
+    >
+      <span>
+        Upload Images
+      </span>
+      <input
+        className="hidden"
+        id="imageInput"
+        type="file"
+      />
+    </label>
+    <button
+      className="w-full h-full text-white bg-[#FF8A57] rounded-lg "
+      type="submit"
+    >
+      List
+    </button>
+  </div>
+</form>
+`;
