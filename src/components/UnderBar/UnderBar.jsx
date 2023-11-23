@@ -109,6 +109,17 @@ function UnderBar({ className, t }) {
                         {t("furniture")}
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        href={{
+                            pathname: "/products",
+                            query: { category: "other" },
+                        }}
+                        className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                    >
+                        {t("other")}
+                    </Link>
+                </li>
             </ul>
         </div>
     );
