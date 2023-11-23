@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
-import ListingCard from "@/components/listingcard/ListingCard";
+import OrderCard from "@/components/OrderCard/OrderCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
-import OrderCard from "@/components/OrderCard/OrderCard";
 
 const MyOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
@@ -68,16 +67,20 @@ const MyOrders = () => {
                 {loading ? (
                     <p>Loading....</p>
                 ) : (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                    <>
                         {userOrders.map((order) => (
                             <div
                                 key={order.id}
-                                className='bg-white shadow-xl rounded-md overflow-hidden'
+                                className=' rounded-md overflow-hidden mb-4'
+                                style={{
+                                    flex: "1 0 calc(25% - 1rem)",
+                                    minWidth: "250px",
+                                }}
                             >
                                 <OrderCard product={order} />
                             </div>
                         ))}
-                    </div>
+                    </>
                 )}
             </div>
         </div>
