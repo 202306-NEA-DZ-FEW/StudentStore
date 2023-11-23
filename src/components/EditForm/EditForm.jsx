@@ -52,16 +52,14 @@ function EditForm() {
 
             // Update user data in Firestore
             const userDocRef = doc(db, "userinfo", user.uid);
-            await updateDoc(userDocRef, {
-                name: userData.name,
-                surname: userData.surname,
-                email: userData.email,
-                phoneNumber: userData.phoneNumber,
-                password: userData.password,
-                city: userData.city,
-                country: userData.country,
-                zip: userData.zip,
+            const updatedData = {};
+            Object.entries(userData).forEach(([key, value]) => {
+                if (value !== "") {
+                    updatedData[key] = value;
+                }
             });
+
+            await updateDoc(userDocRef, updatedData);
 
             setSuccess(true);
         } catch (error) {
