@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Head from "next/head";
 const OurTeam = ({ data }) => {
     return (
-        <section className='p-2'>
+        <section className='p-2 bg-[#32314D] '>
             <div className='text-center  text-black'>
                 {" "}
                 <h1 className='text-4xl font-bold text-[#585785]  '>
@@ -20,13 +20,13 @@ const OurTeam = ({ data }) => {
                 </p>{" "}
             </div>
 
-            <div className='mx-auto lg:flex-row flex-wrap lg:justify-center flex-col flex  lg:space-y-0 space-y-12 items-center p-12 '>
+            <div className='mx-auto md:flex-row md:flex-wrap md:justify-center  flex-col flex  md:space-y-0 space-y-16 items-center p-12 '>
                 {data?.map((data, key) => {
                     const { id, image, name, title, github, linkedin } = data;
                     return (
                         <div
                             key={id}
-                            className='group  w-56 h-56 bg-[#52235527] m-10 drop-shadow-lg p-8 rounded-full shadow-md transition-all duration-500 hover:rounded-2xl hover:h-50'
+                            className='group  w-56 h-56 bg-[#F1F6FA] md:m-10  drop-shadow-lg p-8 rounded-full shadow-md transition-all duration-500 hover:rounded-2xl hover:h-50'
                         >
                             <div className='img group-hover:h-40 w-full h-full'>
                                 <img

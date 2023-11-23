@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <section
-  className="p-2"
+  className="p-2 bg-[#32314D] "
 >
   <div
     className="text-center  text-black"
@@ -23,7 +23,7 @@ exports[`renders correctly 1`] = `
      
   </div>
   <div
-    className="mx-auto lg:flex-row flex-wrap lg:justify-center flex-col flex  lg:space-y-0 space-y-12 items-center p-12 "
+    className="mx-auto md:flex-row md:flex-wrap md:justify-center  flex-col flex  md:space-y-0 space-y-16 items-center p-12 "
   />
 </section>
 `;
