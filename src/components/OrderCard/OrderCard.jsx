@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "@/util/firebase";
 
-function ListingCard({ product }) {
+function OrderCard({ product }) {
     const [isDeleting, setIsDeleting] = useState(false);
 
     const handleDelete = async () => {
@@ -20,7 +20,7 @@ function ListingCard({ product }) {
             try {
                 setIsDeleting(true);
 
-                const productRef = doc(db, "products", product.id);
+                const productRef = doc(db, "cart", product.id);
                 await deleteDoc(productRef);
 
                 toast.success("Product deleted successfully!");
@@ -38,10 +38,10 @@ function ListingCard({ product }) {
             <Link href={`/singleproduct/${product?.productId}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image
-                        src={product?.pictures[1]}
+                        src={product?.image}
                         height={364}
                         width={288}
-                        alt='Product image'
+                        alt='Product'
                         className='h-64 w-56 object-cover rounded-t-xl'
                         loading='lazy'
                     />
@@ -87,4 +87,4 @@ function ListingCard({ product }) {
     );
 }
 
-export default ListingCard;
+export default OrderCard;

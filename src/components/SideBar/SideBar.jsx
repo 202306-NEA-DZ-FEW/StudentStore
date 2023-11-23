@@ -1,21 +1,18 @@
-// Sidebar.jsx
-
-import { doc, getDoc } from "firebase/firestore";
-import Image from "next/image.js";
-import Link from "next/link";
-import { useRouter } from "next/router.js";
 import React, { useEffect, useState } from "react";
-import { BiLogOut } from "react-icons/bi";
-import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
-import { FiEdit3 } from "react-icons/fi";
+import Link from "next/link";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
-import { ToastContainer } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
-
+import { FiEdit3 } from "react-icons/fi";
+import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
+import { BiLogOut } from "react-icons/bi";
+import { doc, getDoc } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext.js";
-
+import { useRouter } from "next/router.js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
+import Image from "next/image.js";
+
+// ... (your existing imports)
 
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
@@ -103,52 +100,59 @@ const Sidebar = () => {
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>
                         <p className='text-[#585785] mb-2'>{userInfo?.email}</p>
-                        <p className='text-[#585785] mb-4'>{`${userInfo?.address?.city}, ${userInfo?.address?.country}`}</p>
+                        <p className='text-[#585785] mb-4'>{`${userInfo?.city}, ${userInfo?.country}`}</p>
                     </div>
                 )}
             </div>
             <div className='flex flex-col items-center space-y-10'>
-                <Link
-                    href='/editprofile'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("EditProfile")}
-                >
-                    <span className='mr-2'>
-                        <FiEdit3 />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>Edit Profile</span>
-                    )}
+                <Link href='/editprofile' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("EditProfile")}
+                    >
+                        <span className='mr-2'>
+                            <FiEdit3 />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                Edit Profile
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/mylistings'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyListings")}
-                >
-                    <span className='mr-2'>
-                        <BsClipboard2Fill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Listings</span>
-                    )}
+                <Link href='/mylistings' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyListings")}
+                    >
+                        <span className='mr-2'>
+                            <BsClipboard2Fill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                My Listings
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/myorders'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyOrders")}
-                >
-                    <span className='mr-2'>
-                        <BsFillBoxSeamFill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Orders</span>
-                    )}
+                <Link href='/myorders' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyOrders")}
+                    >
+                        <span className='mr-2'>
+                            <BsFillBoxSeamFill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>My Orders</span>
+                        )}
+                    </div>
                 </Link>
             </div>
             {!collapsed && (

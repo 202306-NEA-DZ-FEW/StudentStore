@@ -124,7 +124,7 @@ const ProductDetails = ({ productId }) => {
             <div className='grid w-full sm:w-full md:w-full lg:w-1/2  text-[#585785]'>
                 {/* Product Details */}
                 <div className='pt-8 col-span-4 md:col-span-2'>
-                    <h1 className='font-bold text-[#7874F2] mb-4 lg:text-5xl md:text-3xl sm:text-lg'>
+                    <h1 className='font-bold text-[#7874F2] mb-4 lg:text-3xl md:text-2xl sm:text-lg'>
                         {productData?.title}
                     </h1>
 
@@ -153,7 +153,8 @@ const ProductDetails = ({ productId }) => {
                         <div className='flex items-center'>
                             <button
                                 onClick={handleAddToCart}
-                                className='text-[#7874F2] border border-[#7874F2] rounded hover:text-[#F1F6FA] hover:bg-[#7874F2] text-lg cursor-pointer p-2'
+                                className='text-orange-500 border border-orange-500 rounded hover:text-[#F1F6FA] hover:bg-orange-500 text-lg cursor-pointer pl-4 pr-4 pt-1 pb-1'
+                                pb-2
                             >
                                 Add to cart
                             </button>

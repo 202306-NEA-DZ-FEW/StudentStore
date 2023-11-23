@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import SideBar from "@/components/SideBar/SideBar";
-import ListingCard from "@/components/listingcard/ListingCard";
+import OrderCard from "@/components/OrderCard/OrderCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 
-const MyListings = () => {
-    const [userListings, setUserListings] = useState([]);
+const MyOrders = () => {
+    const [userOrders, setUserOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -17,29 +17,28 @@ const MyListings = () => {
         const fetchData = async () => {
             try {
                 const userId = getCurrentUserId();
+                console.log("Current User ID:", userId);
 
                 if (userId) {
                     const userProductsQuery = query(
-                        collection(db, "products"),
-                        where("currentUserUid", "==", userId)
+                        collection(db, "cart"),
+                        where("userId", "==", userId)
                     );
 
                     const unsubscribe = onSnapshot(
                         userProductsQuery,
                         (querySnapshot) => {
-                            const listings = querySnapshot.docs.map((doc) => ({
+                            const orders = querySnapshot.docs.map((doc) => ({
                                 id: doc.id,
                                 ...doc.data(),
                             }));
+                            console.log("Current User ID:", orders);
 
-                            setUserListings(listings);
+                            setUserOrders(orders);
                             setLoading(false);
                         },
                         (error) => {
-                            console.error(
-                                "Error getting user listings: ",
-                                error
-                            );
+                            console.error("Error getting user orders: ", error);
                             setLoading(false);
                         }
                     );
@@ -68,20 +67,24 @@ const MyListings = () => {
                 {loading ? (
                     <p>Loading....</p>
                 ) : (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-                        {userListings.map((listing) => (
+                    <>
+                        {userOrders.map((order) => (
                             <div
-                                key={listing.id}
-                                className='bg-white shadow-xl rounded-md overflow-hidden'
+                                key={order.id}
+                                className=' rounded-md overflow-hidden mb-4'
+                                style={{
+                                    flex: "1 0 calc(25% - 1rem)",
+                                    minWidth: "250px",
+                                }}
                             >
-                                <ListingCard product={listing} />
+                                <OrderCard product={order} />
                             </div>
                         ))}
-                    </div>
+                    </>
                 )}
             </div>
         </div>
     );
 };
 
-export default MyListings;
+export default MyOrders;

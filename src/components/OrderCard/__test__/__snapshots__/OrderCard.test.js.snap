@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
       className="relative border-b-2 border-gray-300"
     >
       <img
-        alt="Product image"
+        alt="Product"
         className="h-64 w-56 object-cover rounded-t-xl"
         data-nimg="1"
         decoding="async"
