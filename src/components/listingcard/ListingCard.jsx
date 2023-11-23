@@ -41,7 +41,7 @@ function ListingCard({ product }) {
                         src={product?.pictures[1]}
                         height={364}
                         width={288}
-                        alt='Product'
+                        alt='Product image'
                         className='h-64 w-56 object-cover rounded-t-xl'
                         loading='lazy'
                     />
