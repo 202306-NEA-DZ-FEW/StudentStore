@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { ImSearch } from "react-icons/im";
 
 import { db } from "@/util/firebase";
+import Link from "next/link";
 
 const SearchBar = ({ t }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -67,25 +68,29 @@ const SearchBar = ({ t }) => {
             </div>
 
             {showResultsContainer && (
-                <div className='product-container text-[#585785] bg-white bg-opacity-95 rounded-lg shadow-lg p-4 absolute left-0 right-0'>
+                <div className='product-container text-[#585785] bg-white bg-opacity-95 rounded-lg shadow-lg p-4 absolute left-0 right-0 overflow-y-auto max-h-40 '>
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
-                                {product.title
-                                    .split(new RegExp(`(${searchTerm})`, "gi"))
-                                    .map((text, index) =>
-                                        text.toLowerCase() ===
-                                        searchTerm.toLowerCase() ? (
-                                            <span
-                                                key={index}
-                                                className='text-blue-500'
-                                            >
-                                                {text}
-                                            </span>
-                                        ) : (
-                                            text
+                                <Link href={`/singleproduct/${product.id}`}>
+                                    {product.title
+                                        .split(
+                                            new RegExp(`(${searchTerm})`, "gi")
                                         )
-                                    )}
+                                        .map((text, index) =>
+                                            text.toLowerCase() ===
+                                            searchTerm.toLowerCase() ? (
+                                                <span
+                                                    key={index}
+                                                    className='text-blue-500'
+                                                >
+                                                    {text}
+                                                </span>
+                                            ) : (
+                                                text
+                                            )
+                                        )}
+                                </Link>
                             </li>
                         ))}
                     </ul>

@@ -7,7 +7,6 @@ import { CartContext } from "@/context/CartContext";
 
 function ProductCard({ product }) {
     const { addItemToCart } = useContext(CartContext);
-    console.log(product);
     const addProductToCart = () => addItemToCart(product);
     return (
         <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
