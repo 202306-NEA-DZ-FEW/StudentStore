@@ -217,8 +217,6 @@ const Listing = () => {
         }
     };
 
-    console.log(formData);
-
     useEffect(() => {
         // Scroll to top when isLoading state changes
         if (isUploading) {
