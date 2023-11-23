@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductsList({ products, t }) {
+    const [showMessage, setShowMessage] = useState(false);
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setShowMessage(true);
+        }, 2000);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
     return (
         <div className='w-full sm:w-[80%] sm:mx-auto md:w-[70%] lg:w-[80%] xl:max-w-[1000px] py-5'>
             {products && products.length > 0 ? (
@@ -12,7 +24,11 @@ export default function ProductsList({ products, t }) {
                     })}
                 </div>
             ) : (
-                <p className='text-center text-gray-500 text-2xl capitalize my-10 md:mt-2 max-w-[60%] sm:max-w-full mx-auto'>
+                <p
+                    className={`text-center text-gray-500 text-2xl capitalize my-10 md:mt-2 max-w-[60%] sm:max-w-full mx-auto ${
+                        showMessage ? "visible" : "invisible"
+                    }`}
+                >
                     {t("sorry,no products match the applied filter.")}
                 </p>
             )}

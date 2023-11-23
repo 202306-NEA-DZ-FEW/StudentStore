@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  Loader
+<div
+  className="min-h-[80vh] flex items-center justify-center"
+>
+  test loader
 </div>
 `;
