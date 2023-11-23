@@ -2,7 +2,12 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-[40%]"
+  className="mt-6 h-full rounded-lg border bg-white mb-2 sm:mb-0 p-6 ml-0 shadow-md md:mt-0 md:w-[40%]"
+  style={
+    Object {
+      "marginLeft": 0,
+    }
+  }
 >
   <h2
     className="text-2xl text-black font-bold text-center"
@@ -52,7 +57,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <button
-    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 mt-6 w-full rounded-md b font-medium text-blue-50"
+    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 mt-6 w-full rounded-md font-medium text-blue-50"
     onClick={[Function]}
   >
     Check out

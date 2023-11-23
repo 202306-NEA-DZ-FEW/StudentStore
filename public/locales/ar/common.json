@@ -33,5 +33,10 @@
     "Sign In": "دخول",
     "Hello": "مرحبا",
     "Welcome to Student Store": "أهلا بك في متجر الطالب",
-    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023  المجموعة 10، برنامج تطوير الواجهة الأمامية Re:Coded - دورة الجزائر. كل الحقوق محفوظة."
+    "© 2023 Team 10, Re:Coded Front-End Web Development - Algeria Bootcamp. All rights reserved.": "© 2023  المجموعة 10، برنامج تطوير الواجهة الأمامية Re:Coded - دورة الجزائر. كل الحقوق محفوظة.",
+    "You are not logged in. Please log in to add items to your cart.": "لم تقم بتسجيل الدخول. يرجى تسجيل الدخول لإضافة المنتجات إلى سلة التسوق الخاصة بك.",
+    "Item is already in your cart.": "المنتج موجود بالفعل في سلة التسوق الخاصة بك.",
+    "Item added to your cart.": "تمت إضافة المنتج إلى سلة التسوق الخاصة بك.",
+    "Item not found in your cart.": "المنتج غير موجود في سلة التسوق الخاصة بك.",
+    "Item removed from your cart.": "تمت إزالة المنتج من سلة التسوق الخاصة بك."
 }
