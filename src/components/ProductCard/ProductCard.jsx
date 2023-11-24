@@ -9,7 +9,7 @@ function ProductCard({ product }) {
     const { addItemToCart } = useContext(CartContext);
     const addProductToCart = () => addItemToCart(product);
     return (
-        <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
+        <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl overflow-hidden'>
             <Link href={`/singleproduct/${product?.id}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image
@@ -17,7 +17,7 @@ function ProductCard({ product }) {
                         height={364}
                         width={288}
                         alt='Product'
-                        className='h-64 w-56 object-cover rounded-t-xl'
+                        className='h-64 w-56 object-cover rounded-t-xl hover:scale-105 ease-in-out transform transition-transform duration-500'
                         loading='lazy'
                     />
                     <div className='absolute top-0 m-2  left-0 rounded-full '>

@@ -12,8 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
 
-// ... (your existing imports)
-
 const Sidebar = () => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
@@ -90,7 +88,7 @@ const Sidebar = () => {
 
             <div className='flex flex-col items-center mt-20 mb-4 space-y-4'>
                 <Image
-                    src={currentUser.photoURL || "/images/profile.jpg"}
+                    src={currentUser?.photoURL || "/images/profile.jpg"}
                     alt='profile-pic'
                     width={80}
                     height={80}
