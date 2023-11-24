@@ -1,3 +1,4 @@
+import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,6 +15,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Footer({ t }) {
     const route = useRouter();
+    const { currentUser } = useAuth();
     const goToTop = () => {
         window.scrollTo({
             top: 0,
@@ -45,20 +47,22 @@ function Footer({ t }) {
                 <div className='text-white gap-2 ml-4 sm:flex justify-around md:w-[60%]'>
                     {/* services */}
                     <div className='flex flex-col gap-1 mb-2'>
-                        <h1 className='text-[#FF8A57] font-bold'>Services</h1>
+                        <h1 className='text-[#FF8A57] font-bold'>
+                            {t("services")}
+                        </h1>
                         <Link
                             className='flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]'
-                            href='/listing'
+                            href={currentUser ? "/listing" : "/signin"}
                         >
                             <FaRegPlusSquare size={15} />
-                            <p> {t("start_selling")}</p>
+                            <p className='capitalize'> {t("start_selling")}</p>
                         </Link>
                         <Link
                             href='/products'
                             className='flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]'
                         >
                             <FaWallet size={15} />
-                            <p>{t("buy_products")}</p>
+                            <p className='capitalize'>{t("buy_products")}</p>
                         </Link>
                     </div>
                     {/* additional links */}
@@ -66,7 +70,7 @@ function Footer({ t }) {
                         <div className='flex items-end justify-between'>
                             <div className=''>
                                 <h1 className='text-[#FF8A57] mb-1 font-bold'>
-                                    Contact
+                                    {t("contact")}
                                 </h1>
                                 <Link
                                     href='/aboutus'
@@ -119,7 +123,7 @@ function Footer({ t }) {
                 {/* social media links */}
                 <div className='flex justify-center md:flex-col md:justify-start items-center gap-3 md:w-1/5'>
                     <h1 className='hidden md:block text-[#FF8A57] font-bold'>
-                        Social
+                        {t("social")}
                     </h1>
                     <div className='flex gap-3'>
                         <Link
@@ -170,7 +174,7 @@ function Footer({ t }) {
                         zIndex: 999,
                         margin: "8px",
                     }}
-                    className='absolute scroll-arrow animate-bounce bottom-4 right-4 text-[#FF8A57]'
+                    className='absolute scroll-arrow animate-bounce bottom-8 right-4 sm:bottom-4 text-[#FF8A57]'
                 >
                     <IoIosArrowUp size={40} />
                 </button>
