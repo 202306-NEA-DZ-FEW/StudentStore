@@ -24,13 +24,15 @@ export default function ProductsList({ products, t }) {
                     })}
                 </div>
             ) : (
-                <p
-                    className={`text-center text-gray-500 text-2xl capitalize my-10 md:mt-2 max-w-[60%] sm:max-w-full mx-auto ${
-                        showMessage ? "visible" : "invisible"
-                    }`}
-                >
-                    {t("sorry,no products match the applied filter.")}
-                </p>
+                <div className='flex items-center h-full'>
+                    <p
+                        className={`text-center text-orange-500 font-bold text-2xl capitalize max-w-[60%] sm:max-w-full mx-auto ${
+                            showMessage ? "visible" : "invisible"
+                        }`}
+                    >
+                        {t("sorry,no products match the applied filter.")}
+                    </p>
+                </div>
             )}
         </div>
     );
