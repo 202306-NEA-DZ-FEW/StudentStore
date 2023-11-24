@@ -40,20 +40,20 @@ export default function Navbar({ t }) {
                             <Logo />
                         </Link>
                         <Link
-                            className='text-[#585785] rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
+                            className='text-[#585785] capitalize rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
                             href='/home'
                         >
                             {t("home")}
                         </Link>
                         <Link
-                            className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
+                            className='text-[#585785] capitalize rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
                             href='/products'
                         >
                             {t("products")}
                         </Link>
 
                         <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
+                            className='text-[#585785] capitalize hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
                             href='/donations'
                         >
                             {t("donation")}

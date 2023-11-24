@@ -38,6 +38,10 @@ const SearchBar = ({ t }) => {
             setLoading(false);
         });
     };
+    const handleResultClick = () => {
+        // Reset the search term when a result is clicked
+        setSearchTerm("");
+    };
 
     useEffect(() => {
         // Call the search function when searchTerm changes
@@ -72,7 +76,11 @@ const SearchBar = ({ t }) => {
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
-                                <Link href={`/singleproduct/${product.id}`}>
+                                <Link
+                                    href={`/singleproduct/${product.id}`}
+                                    className='hover:bg-gray-200 block p-1 rounded-md pl-2 transition-all duration-500'
+                                    onClick={handleResultClick}
+                                >
                                     {product.title
                                         .split(
                                             new RegExp(`(${searchTerm})`, "gi")
