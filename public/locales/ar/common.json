@@ -14,7 +14,7 @@
     "products": "المنتجات",
     "donation": "تبرع",
     "search_placeholder": "البحث عن المنتجات...",
-    "all Categories": "جميع الفئات",
+    "all products": "جميع المنتجات",
     "electronics": "الإلكترونيات",
     "books": "الكتب",
     "gaming": "الألعاب",
@@ -39,5 +39,6 @@
     "Item is already in your cart.": "المنتج موجود بالفعل في سلة التسوق الخاصة بك.",
     "Item added to your cart.": "تمت إضافة المنتج إلى سلة التسوق الخاصة بك.",
     "Item not found in your cart.": "المنتج غير موجود في سلة التسوق الخاصة بك.",
-    "Item removed from your cart.": "تمت إزالة المنتج من سلة التسوق الخاصة بك."
+    "Item removed from your cart.": "تمت إزالة المنتج من سلة التسوق الخاصة بك.",
+    "add_product": "إضافة"
 }

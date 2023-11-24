@@ -14,7 +14,7 @@
     "products": "Produits",
     "donation": "Don",
     "search_placeholder": "Chercher des produits...",
-    "all Categories": "Toutes les catégories",
+    "all products": "Tous les produits",
     "electronics": "Électronique",
     "books": "Livres",
     "gaming": "Jeux",
@@ -39,5 +39,6 @@
     "Item is already in your cart.": "L'article est déjà dans votre panier.",
     "Item added to your cart.": "Article ajouté à votre panier.",
     "Item not found in your cart.": "Article non trouvé dans votre panier.",
-    "Item removed from your cart.": "Article retiré de votre panier."
+    "Item removed from your cart.": "Article retiré de votre panier.",
+    "add_product": "Ajouter"
 }

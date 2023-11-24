@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
+  className="bg-[#585785] font-semibold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
   dir="ltr"
 >
   <ul
@@ -16,7 +16,7 @@ exports[`renders correctly 1`] = `
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
       >
-        all Categories
+        all products
       </a>
     </li>
     <li>
