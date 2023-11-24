@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+// components/ProfileComponent.js
+import React, { useState, useEffect } from "react";
+import { useAuth } from "@/context/AuthContext"; // Adjust the path based on your project structure
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/util/firebase"; // Adjust the path based on your project structure
 
 const ProfileComponent = () => {
-    const [userData, setUserData] = useState({
-        name: "John",
-        surname: "Doe",
-        email: "john.doe@example.com",
-        phoneNumber: "123-456-7890",
-    });
+    const auth = useAuth();
+    const [userData, setUserData] = useState(null);
 
-    const [isEditing, setIsEditing] = useState(false);
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (auth.currentUser) {
+                const userDocRef = doc(db, "userinfo", auth.currentUser.uid);
+                const docSnap = await getDoc(userDocRef);
 
-    const handleUpdate = () => {
-        // Implement update logic here
-        setIsEditing(false);
-    };
+                if (docSnap.exists()) {
+                    setUserData(docSnap.data());
+                } else {
+                    console.log("User document not found");
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [auth.currentUser]);
 
     return (
         <div className='container mx-auto mt-8 p-4 bg-gray-100 rounded-md'>
@@ -24,7 +34,10 @@ const ProfileComponent = () => {
                         <div className='w-16 h-16 overflow-hidden rounded-full'>
                             {/* Add the user's profile picture here */}
                             <img
-                                src='https://via.placeholder.com/150'
+                                src={
+                                    userData.photo ||
+                                    "https://via.placeholder.com/150"
+                                }
                                 alt='Profile Picture'
                                 className='object-cover w-full h-full'
                             />
@@ -37,34 +50,13 @@ const ProfileComponent = () => {
                         </div>
                     </div>
                     <p>Phone Number: {userData.phoneNumber}</p>
+                    <p>Gender: {userData.gender}</p>
+                    <p>School: {userData.school}</p>
+                    <p>
+                        Location: {userData.city}, {userData.country}
+                    </p>
+
                     {/* Add other details as needed */}
-
-                    {/* Edit button */}
-                    <button
-                        className='bg-blue-500 text-white px-4 py-2 rounded-md'
-                        onClick={() => setIsEditing(true)}
-                    >
-                        Edit
-                    </button>
-
-                    {/* Edit mode */}
-                    {isEditing && (
-                        <div className='mt-4'>
-                            <input
-                                className='border rounded-md px-2 py-1 mr-2'
-                                type='text'
-                                placeholder='New Name'
-                            />
-
-                            {/* Save button */}
-                            <button
-                                className='bg-green-500 text-white px-4 py-2 rounded-md'
-                                onClick={handleUpdate}
-                            >
-                                Save Changes
-                            </button>
-                        </div>
-                    )}
                 </div>
             ) : (
                 <p>Loading...</p>
