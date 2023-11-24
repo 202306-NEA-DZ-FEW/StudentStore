@@ -87,7 +87,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "electronics" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("electronics")}
                                 </Link>
@@ -98,7 +98,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "books" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("books")}
                                 </Link>
@@ -109,7 +109,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "gaming" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("gaming")}
                                 </Link>
@@ -120,7 +120,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "clothes" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("clothes")}
                                 </Link>
@@ -131,7 +131,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "shoes" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("shoes")}
                                 </Link>
@@ -142,7 +142,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "food" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("food")}
                                 </Link>
@@ -153,7 +153,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "transportation" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("transportation")}
                                 </Link>
@@ -164,9 +164,20 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                         pathname: "/products",
                                         query: { category: "furniture" },
                                     }}
-                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
                                     {t("furniture")}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href={{
+                                        pathname: "/products",
+                                        query: { category: "other" },
+                                    }}
+                                    className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out  text-lg inline-block ml-4 pt-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                                >
+                                    {t("other")}
                                 </Link>
                             </li>
                         </ul>

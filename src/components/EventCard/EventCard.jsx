@@ -53,12 +53,12 @@ const EventCard = ({ t }) => {
                                 <article
                                     className={` w-full   rounded-lg bg-white shadow-lg  `}
                                 >
-                                    <header class='pt-2 flex-shrink'>
+                                    <header className='pt-2 flex-shrink'>
                                         <h4 className=' font-bold md:text-lg text-[#585785] '>
                                             {title}
                                         </h4>
                                     </header>
-                                    <div class=' space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0'>
+                                    <div className=' space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0'>
                                         <Image
                                             src={image}
                                             alt={title}
@@ -70,7 +70,7 @@ const EventCard = ({ t }) => {
                                             {description}
                                         </p>
                                     </div>
-                                    <footer class='flex lg:justify-around items-center lg:flex-row flex-col p-2 '>
+                                    <footer className='flex lg:justify-around items-center lg:flex-row flex-col p-2 '>
                                         <div className='flex items-center space-x-2 justify-center text-center text-[#585785] mb-2'>
                                             {" "}
                                             <FaCalendarAlt

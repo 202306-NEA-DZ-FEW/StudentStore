@@ -107,6 +107,17 @@ exports[`renders correctly 1`] = `
         furniture
       </a>
     </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="/products?category=other"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        other
+      </a>
+    </li>
   </ul>
 </div>
 `;
