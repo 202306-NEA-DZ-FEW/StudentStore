@@ -4,7 +4,6 @@ import { db } from "@/util/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
 import Notification from "@/components/Notification/Notitification";
-import { updateEmail, sendEmailVerification } from "firebase/auth";
 function EditForm() {
     const auth = useAuth();
 
@@ -45,38 +44,24 @@ function EditForm() {
             setLoading(true);
             const user = auth.currentUser;
 
-            // Update user's display name
             if (userData.name) {
                 await updateProfile(user, {
                     displayName: userData.name,
                 });
             }
 
-            // Update user's email in Firebase Authentication
-            if (userData.email) {
-                // Send email verification
-                await sendEmailVerification(user);
-
-                // Inform the user to check their email and verify
-                // You may want to show a notification or redirect the user to a verification page.
-                setError(
-                    "Please check your email to verify the new email address."
-                );
-
-                // Stop the submission here, and let the user verify the new email before proceeding.
-                return;
-            }
-
             // Update user data in Firestore
             const userDocRef = doc(db, "userinfo", user.uid);
-            const updatedData = {};
-            Object.entries(userData).forEach(([key, value]) => {
-                if (value !== "") {
-                    updatedData[key] = value;
-                }
+            await updateDoc(userDocRef, {
+                name: userData.name,
+                surname: userData.surname,
+                email: userData.email,
+                phoneNumber: userData.phoneNumber,
+                password: userData.password,
+                city: userData.city,
+                country: userData.country,
+                zip: userData.zip,
             });
-
-            await updateDoc(userDocRef, updatedData);
 
             setSuccess(true);
         } catch (error) {
