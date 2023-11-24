@@ -7,7 +7,7 @@ function UnderBar({ className, t }) {
     return (
         <div
             className={twMerge(
-                "bg-[#585785]  font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
+                "bg-[#585785]  font-semibold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
                 className
             )}
             dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
@@ -18,7 +18,7 @@ function UnderBar({ className, t }) {
                         href='/products'
                         className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("all Categories")}
+                        {t("all products")}
                     </Link>
                 </li>
                 <li>
