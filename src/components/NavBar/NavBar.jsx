@@ -35,12 +35,12 @@ export default function Navbar({ t }) {
             <nav className='bg-slate-200  shadow-md p-2'>
                 {/* Large screens and tablets */}
                 <div className='hidden justify-between md:flex  md:items-center'>
-                    <div className='flex items-center justify-between md:gap-5 lg:gap-10 space-x-4 md:space-x-2 lg:space-x-4 '>
+                    <div className='flex items-center justify-between md:gap-5 lg:gap-10 space-x-4 md:space-x-1 lg:space-x-4 '>
                         <Link href='/home'>
                             <Logo />
                         </Link>
                         <Link
-                            className='text-[#585785] rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
+                            className='text-[#585785] capitalize rounded-md hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
                             href='/home'
                         >
                             {t("home")}
@@ -53,7 +53,7 @@ export default function Navbar({ t }) {
                         </Link>
 
                         <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
+                            className='text-[#585785] capitalize hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
                             href='/donations'
                         >
                             {t("donation")}
