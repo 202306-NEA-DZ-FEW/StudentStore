@@ -15,9 +15,9 @@
     "follow_us": "Follow us",
     "home": "Home",
     "products": "Products",
-    "donation": "Donation",
+    "donation": "Donate",
     "search_placeholder": "Search for products...",
-    "all Categories": "All categories",
+    "all products": "All products",
     "electronics": "Electronics",
     "books": "Books",
     "gaming": "Gaming",
@@ -42,5 +42,6 @@
     "Item is already in your cart.": "Item is already in your cart",
     "Item added to your cart.": "Item added to your cart.",
     "Item not found in your cart.": "Item not found in your cart.",
-    "Item removed from your cart.": "Item removed from your cart."
+    "Item removed from your cart.": "Item removed from your cart.",
+    "add_product": "Add"
 }

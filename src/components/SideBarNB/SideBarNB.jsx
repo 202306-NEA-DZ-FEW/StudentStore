@@ -34,23 +34,23 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                 <ul className='text-xl space-y-4'>
                     <li>
                         <Link
-                            className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-bold'
-                            href='/'
+                            className='text-[#585785] rounded-md     hover:text-[#FF8A57]  hover:underline hover:decoration-4 font-semibold'
+                            href='/home'
                         >
                             {t("home")}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
-                            href='/products'
+                            className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-medium'
+                            href='/listing'
                         >
-                            {t("products")}
+                            {t("add_product")}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-bold'
+                            className='text-[#585785]  hover:text-[#FF8A57] hover:underline hover:decoration-4   rounded-md  font-medium'
                             href='/donations'
                         >
                             {t("donation")}
@@ -58,17 +58,17 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     </li>
                     <li>
                         <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
+                            className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-medium'
                             href='/aboutUs'
                         >
                             {t("about_us")}
                         </Link>
                     </li>
                 </ul>
-                <div className='border-b border-gray-400'></div>
+                <div className='border-b border-gray-400 pb-3'></div>
                 <div className='p-2'>
-                    <details className=' text-[#585785] font-bold'>
-                        <summary className='text-xl'>
+                    <details className=' text-[#585785] font-semibold'>
+                        <summary className='text-l'>
                             {" "}
                             {t("categories")}{" "}
                         </summary>
@@ -78,7 +78,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                     href='/products'
                                     className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-outtext-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                                 >
-                                    {t("all Categories")}
+                                    {t("all products")}
                                 </Link>
                             </li>
                             <li>

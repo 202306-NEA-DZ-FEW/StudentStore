@@ -46,10 +46,10 @@ export default function Navbar({ t }) {
                             {t("home")}
                         </Link>
                         <Link
-                            className='text-[#585785] capitalize rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
-                            href='/products'
+                            className='text-[#585785]  rounded-md  hover:text-[#FF8A57]   hover:underline hover:decoration-4 font-bold'
+                            href='/listing'
                         >
-                            {t("products")}
+                            {t("add_product")}
                         </Link>
 
                         <Link
@@ -85,7 +85,7 @@ export default function Navbar({ t }) {
                     <div>
                         <button
                             type='button'
-                            className='block text-[#585785]   font-semibold  hover:text-[#FF8A57] p-2 text-3xl'
+                            className='block text-[#585785]   font-bold  hover:text-[#FF8A57] p-2 text-3xl'
                             onClick={openSidebar}
                         >
                             &#9776;
