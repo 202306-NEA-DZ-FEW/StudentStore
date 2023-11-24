@@ -2,15 +2,17 @@
 
 exports[`renders correctly 1`] = `
 <footer
-  className=""
+  className="bg-[#32314C]"
   dir="ltr"
 >
   <div
-    className="bg-[#32314C] flex flex-col font-semibold gap-4 p-2 md:flex-row md:justify-around"
+    className=" md:w-full lg:w-[80vw] mx-auto flex flex-col font-semibold gap-4 p-2 md:flex-row md:justify-around"
   >
-    <div>
+    <div
+      className="flex justify-center items-center"
+    >
       <div
-        className="w-full hidden md:flex justify-center"
+        className="w-full hidden sm:flex justify-center items-center md:w-[1/5]"
       >
         <a
           href="/home"
@@ -22,7 +24,7 @@ exports[`renders correctly 1`] = `
             alt="logo"
             data-nimg="1"
             decoding="async"
-            height={40}
+            height={60}
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
@@ -32,13 +34,13 @@ exports[`renders correctly 1`] = `
                 "color": "transparent",
               }
             }
-            width={130}
+            width={150}
           />
         </a>
       </div>
     </div>
     <div
-      className="text-white gap-2 ml-4 md:flex"
+      className="text-white gap-2 ml-4 sm:flex justify-around md:w-[60%]"
     >
       <div
         className="flex flex-col gap-1 mb-2"
@@ -132,9 +134,10 @@ exports[`renders correctly 1`] = `
               Mock Translation Function
             </a>
             <h2
-              className="text-[#FF8A57] mb-1"
+              className="mb-1"
             >
               Mock Translation Function
+              :
             </h2>
             <a
               className="flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]"
@@ -161,13 +164,15 @@ exports[`renders correctly 1`] = `
                   d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48zm-16.39 307.37l-15 65A15 15 0 0 1 354 416C194 416 64 286.29 64 126a15.7 15.7 0 0 1 11.63-14.61l65-15A18.23 18.23 0 0 1 144 96a16.27 16.27 0 0 1 13.79 9.09l30 70A17.9 17.9 0 0 1 189 181a17 17 0 0 1-5.5 11.61l-37.89 31a231.91 231.91 0 0 0 110.78 110.78l31-37.89A17 17 0 0 1 299 291a17.85 17.85 0 0 1 5.91 1.21l70 30A16.25 16.25 0 0 1 384 336a17.41 17.41 0 0 1-.39 3.37z"
                 />
               </svg>
-              <p>
+              <p
+                dir="ltr"
+              >
                 +213 699 514 862
               </p>
             </a>
           </div>
           <div
-            className="pr-8 md:hidden"
+            className="pr-8 sm:hidden"
           >
             <a
               href="/home"
@@ -226,93 +231,102 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="flex justify-center gap-3"
+      className="flex justify-center md:flex-col md:justify-start items-center gap-3 md:w-1/5"
     >
-      <a
-        href="https://web.facebook.com/recodedofficial"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-        target="_blank"
+      <h1
+        className="hidden md:block text-[#FF8A57] font-bold"
       >
-        <svg
-          className="text-white hover:text-[#1877f2] transition-all duration-300"
-          fill="currentColor"
-          height={25}
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
-          viewBox="0 0 512 512"
-          width={25}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
-          />
-        </svg>
-      </a>
-      <a
-        href="https://www.linkedin.com/school/re-coded/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-        target="_blank"
+        Social
+      </h1>
+      <div
+        className="flex gap-3"
       >
-        <svg
-          className="text-white hover:text-[#0a66c2] transition-all duration-300"
-          fill="currentColor"
-          height={25}
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
-          viewBox="0 0 448 512"
-          width={25}
-          xmlns="http://www.w3.org/2000/svg"
+        <a
+          href="https://web.facebook.com/recodedofficial"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+          target="_blank"
         >
-          <path
-            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-          />
-        </svg>
-      </a>
-      <a
-        href="https://www.instagram.com/recodedofficial/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-        target="_blank"
-      >
-        <svg
-          className="text-white hover:text-[#c32aa3] transition-all duration-300"
-          fill="currentColor"
-          height={25}
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
+          <svg
+            className="text-white hover:text-[#1877f2] transition-all duration-300"
+            fill="currentColor"
+            height={25}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
             }
-          }
-          viewBox="0 0 448 512"
-          width={25}
-          xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width={25}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/school/re-coded/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+          target="_blank"
         >
-          <path
-            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-          />
-        </svg>
-      </a>
+          <svg
+            className="text-white hover:text-[#0a66c2] transition-all duration-300"
+            fill="currentColor"
+            height={25}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 448 512"
+            width={25}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/recodedofficial/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onTouchStart={[Function]}
+          target="_blank"
+        >
+          <svg
+            className="text-white hover:text-[#c32aa3] transition-all duration-300"
+            fill="currentColor"
+            height={25}
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 448 512"
+            width={25}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
   <div
-    className="flex justify-center p-2 bg-[#32314C] text-center text-white"
+    className="flex justify-center p-2 bg-[#32314C] text-center text-sm text-white"
   >
     <p>
       Mock Translation Function
