@@ -99,7 +99,7 @@ const ProductDetails = ({ productId }) => {
                             />
                         </div>
 
-                        <div className='w-full col-span-1 row-span-1 bg-[#EEF2F4] sm:h-28 border rounded-md border-[#979797] overflow-hidden'>
+                        <div className='w-full col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28 border rounded-md border-[#979797] overflow-hidden'>
                             <Image
                                 className='object-cover w-full h-full '
                                 src={productData?.pictures[2]}
