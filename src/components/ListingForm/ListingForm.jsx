@@ -114,7 +114,8 @@ const ListingForm = ({ handleChange, handleSubmit, route, t, formData }) => {
                 <label
                     className={`w-full h-full items-center  justify-center relative inline-flex bg-[#585785] text-white py-2 ${
                         route?.locale === "fr" ? "text-[14px]" : ""
-                    } rounded-lg cursor-pointer shimmer`}
+                    } rounded-lg cursor-pointer shimmer  bg-[#FF8A57] hover:bg-[#fc9366] transition-all duration-300
+                    before:ease relative  overflow-hidden border border-[#FF8A57]   before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-24 before:rotate-6 before:bg-white before:opacity-10 before:duration-700  hover:before:-translate-x-80`}
                 >
                     <span>{t("Upload Images")}</span>
                     <input
@@ -127,9 +128,9 @@ const ListingForm = ({ handleChange, handleSubmit, route, t, formData }) => {
 
                 <button
                     type='submit'
-                    className='w-full h-full text-white bg-[#FF8A57] rounded-lg '
+                    className='w-full h-full text-white bg-[#585785] hover:bg-[#6967aa] transition-all duration-300  rounded-lg before:ease relative  overflow-hidden border border-[#585785]  before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-24 before:rotate-6 before:bg-white before:opacity-10 before:duration-700  hover:before:-translate-x-80 '
                 >
-                    {t("List")}
+                    <span relative='relative z-10'>{t("List")}</span>
                 </button>
             </div>
         </form>
