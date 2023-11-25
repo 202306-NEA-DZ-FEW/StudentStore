@@ -199,21 +199,7 @@ const Sidebar = ({ t }) => {
                     )}
                 </div>
             </div>
-            {/* {!collapsed && (
-                <div className=' mb-4'>
-                    <div
-                        className='flex items-center text-red-500 text-lg cursor-pointer'
-                        onClick={handleLogout}
-                    >
-                        <BiLogOut
-                            className={`mr-2 lg:text-[22px] hover:text-[#FF8A57] md:text-xl ${
-                                route.locale === "ar" ? "ml-2" : ""
-                            }`}
-                        />
-                        {t("Logout")}
-                    </div>
-                </div>
-            )} */}
+
             <ToastContainer />
         </div>
     );

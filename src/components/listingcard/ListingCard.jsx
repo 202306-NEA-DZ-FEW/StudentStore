@@ -10,12 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { db } from "@/util/firebase";
 
-function ListingCard({ product, route }) {
+function ListingCard({ product, route, t }) {
     const [isDeleting, setIsDeleting] = useState(false);
 
     const handleDelete = async () => {
         const confirmDelete = window.confirm(
-            "Are you sure you want to delete this product?"
+            t("Are you sure you want to delete this product?")
         );
 
         if (confirmDelete) {
