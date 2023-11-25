@@ -207,7 +207,7 @@ const ProfileComponent = () => {
                         </div>
                         <div className='p-4 flex-grow flex flex-col md:flex-row items-start'>
                             {/* User Information (60%) */}
-                            <div className='flex flex-col lg:w-[60%] md:w-60 md:mr-4 flex-grow items-center justify-center'>
+                            <div className='flex flex-col m-10 lg:w-[60%] md:w-60 md:mr-4 flex-grow  justify-center'>
                                 <p className='text-lg font-semibold text-[#585785] mb-2'>
                                     Name:
                                     <span className='text-base text-gray-500'>
@@ -246,14 +246,14 @@ const ProfileComponent = () => {
                             </div>
 
                             {/* User Picture (40%) */}
-                            <div className='mt-4 p-0 lg:w-[40%] md:mt-0 md:ml-4 md:w-40'>
+                            <div className='mt-4 p-0 lg:w-[40%] md:mt-0 md:ml-0 md:w-[40%]'>
                                 {userData?.photo ? (
                                     <Image
                                         src={userData?.photo}
                                         alt='User Profile'
                                         height={52}
                                         width={52}
-                                        className='h-52 w-52 rounded-full object-cover border border-gray-200'
+                                        className='h-52 w-52 rounded object-cover border border-gray-200'
                                     />
                                 ) : (
                                     <Image
@@ -266,26 +266,6 @@ const ProfileComponent = () => {
                                 )}
                             </div>
                         </div>
-                    </div>
-                    <div className=''>
-                        <Link
-                            href='/mylistings'
-                            className='flex items-center mb-2'
-                        >
-                            <span className='mr-2'>
-                                Your Transactions: Sales and Loans
-                            </span>
-                            <ArrowNarrowRightIcon className='h-6 w-6' />
-                        </Link>
-                        <Link
-                            href='/myorders'
-                            className='flex items-center mb-2'
-                        >
-                            <span className='mr-2'>
-                                Your Acquisitions: Purchases and Borrowings
-                            </span>
-                            <ArrowNarrowRightIcon className='h-6 w-6' />
-                        </Link>
                     </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
