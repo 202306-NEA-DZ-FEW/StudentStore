@@ -207,7 +207,7 @@ const ProfileComponent = () => {
                         </div>
                         <div className='p-4 flex-grow flex flex-col md:flex-row items-start'>
                             {/* User Information (60%) */}
-                            <div className='flex flex-col m-10 lg:w-[60%] md:w-60 md:mr-4 flex-grow  justify-center'>
+                            <div className='flex flex-col m-10 lg:w-[60%] md:w-60 md:mr-4 flex-grow justify-center'>
                                 <p className='text-lg font-semibold text-[#585785] mb-2'>
                                     Name:
                                     <span className='text-base text-gray-500'>
