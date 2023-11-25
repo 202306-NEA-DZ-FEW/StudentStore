@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl"
 >
   <a
-    href="/"
+    href="/singleproduct/undefined"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onTouchStart={[Function]}
@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
       className="relative border-b-2 border-gray-300"
     >
       <img
-        alt="Product"
+        alt="Product image"
         className="h-64 w-56 object-cover rounded-t-xl"
         data-nimg="1"
         decoding="async"

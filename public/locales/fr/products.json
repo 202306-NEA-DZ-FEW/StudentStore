@@ -19,10 +19,12 @@
     "food": "Alimentation",
     "transportation": "Transport",
     "furniture": "Meubles",
+    "other": "Autre",
     "condition": "État",
     "new": "Neuf",
     "like new": "Comme neuf",
     "good": "Bon",
     "poor": "Mauvais",
-    "clear filters": "Effacer les Filtres"
+    "clear filters": "Effacer les Filtres",
+    "sorry,no products match the applied filter.": "Désolé, aucun produit ne correspond au filtre appliqué."
 }

@@ -1,6 +1,11 @@
 import ProductsContainer from "@/components/ProductsContainer/ProductsContainer";
 import { db } from "@/util/firebase";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+    collection,
+    onSnapshot,
+    query as firebaseQuery,
+    orderBy,
+} from "firebase/firestore";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
@@ -12,13 +17,15 @@ function AllProducts() {
     const router = useRouter();
     useEffect(() => {
         const colRef = collection(db, "products");
-        onSnapshot(colRef, (snapshot) => {
+        const q = firebaseQuery(colRef, orderBy("createdAt", "desc"));
+        const unsubscribe = onSnapshot(q, (snapshot) => {
             let products = [];
             snapshot.docs.forEach((doc) =>
                 products.push({ ...doc.data(), id: doc.id })
             );
             setProducts(products);
         });
+        return () => unsubscribe();
     }, []);
     const { query } = router;
     const filteredProducts = query.category

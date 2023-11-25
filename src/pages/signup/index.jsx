@@ -18,8 +18,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@/components/Buttons/Button";
-import FacebookButton from "@/components/FacebookButton/FacebookButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
+import GithubButton from "@/components/GithubButton/GithubButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
 
 import { auth, db } from "@/util/firebase";
@@ -58,141 +58,157 @@ export default function SignUp() {
                     // The email already exists in Firestore, show an error message using toastify
                     toast.error(t("email already exist"));
                 } else {
-                    // if The email is not in Firestore, now we can continue with the signup process
-                    createUserWithEmailAndPassword(
-                        auth,
-                        formData.email,
-                        formData.password
-                    )
-                        .then((userCredential) => {
-                            // Registration successful, you can add user data to Firestore here
-                            toast.loading(t("please wait"));
-                            const colRef = doc(
-                                db,
-                                "userinfo",
-                                userCredential.user.uid
-                            );
-                            setDoc(colRef, {
-                                name: formData.userName,
-                                surname: formData.surname,
-                                email: formData.email,
-                                password: formData.password,
-                                school: formData.school,
-                                phoneNumber: "",
-                                photo: "",
-                                gender: "",
-                                country: "",
-                                city: "",
-                                zipcode: "",
-                            })
-                                .then(() => {
-                                    // after the user data is added to the firestore now we will redirect the user to the home page
-                                    route.push("/home");
+                    // setting an empty object to fill it with text if the condition is applied and pass it to the state
+                    const validationErrors = {};
+                    // regex variables
+                    const nameAndSurnameRegEx = /^[a-z ]+$/i;
+                    const nameAndSurnameLengthRegEx = /^.{3,24}$/;
+                    const emailRegEx = /^\w+@\w+(\.\w{2,4})+$/;
+                    const schoolNameRegEx = /^[A-Za-z\s&,.':()/-]+$/;
+                    const schoolNameLengthRegEx = /^.{3,}$/;
+                    const passwordRegEx =
+                        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
+                    // name validation
+                    if (!formData.userName.trim()) {
+                        validationErrors.userName = t("please enter your name");
+                    } else if (!nameAndSurnameRegEx.test(formData.userName)) {
+                        validationErrors.userName = t(
+                            "your name can only contain letters and spaces"
+                        );
+                    } else if (
+                        !nameAndSurnameLengthRegEx.test(formData.userName)
+                    ) {
+                        validationErrors.userName = t(
+                            "your name must be between 3 and 24 characters"
+                        );
+                    }
+
+                    // surname validation
+                    if (!formData.surname.trim()) {
+                        validationErrors.surname = t(
+                            "please enter your surname"
+                        );
+                    } else if (!nameAndSurnameRegEx.test(formData.surname)) {
+                        validationErrors.surname = t(
+                            "your surname can only contain letters and spaces"
+                        );
+                    } else if (
+                        !nameAndSurnameLengthRegEx.test(formData.surname)
+                    ) {
+                        validationErrors.surname = t(
+                            "your surname must be between 3 and 24 characters"
+                        );
+                    }
+                    // email validation
+                    if (!formData.email.trim()) {
+                        validationErrors.email = t("please enter your email");
+                    } else if (!emailRegEx.test(formData.email)) {
+                        validationErrors.email = t(
+                            "please enter a valid email address"
+                        );
+                    }
+                    // school validation
+                    if (!formData.school.trim()) {
+                        validationErrors.school = t("please enter your school");
+                    } else if (!schoolNameRegEx.test(formData.school)) {
+                        validationErrors.school = t(
+                            "your school name can only contain letters, spaces, and common symbols"
+                        );
+                    } else if (!schoolNameLengthRegEx.test(formData.school)) {
+                        validationErrors.school = t(
+                            "your school name must be at least 3 characters"
+                        );
+                    }
+                    // password validation
+                    if (!formData.password.trim()) {
+                        validationErrors.password = t("please enter password");
+                    } else if (formData.password.length < 8) {
+                        validationErrors.password = t(
+                            "your password must be at least 8 characters"
+                        );
+                    } else if (!passwordRegEx.test(formData.password)) {
+                        validationErrors.password = t(
+                            "password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+                        );
+                    }
+                    // confirm password validation
+                    if (!formData.confirm_password.trim()) {
+                        validationErrors.confirm_password = t(
+                            "please confirm your password"
+                        );
+                    } else if (
+                        formData.confirm_password !== formData.password
+                    ) {
+                        validationErrors.confirm_password = t(
+                            "passwords do not match. Please try again"
+                        );
+                    }
+                    if (Object.keys(validationErrors).length === 0) {
+                        // if The email is not in Firestore, now we can continue with the signup process
+                        createUserWithEmailAndPassword(
+                            auth,
+                            formData.email,
+                            formData.password
+                        )
+                            .then((userCredential) => {
+                                // Registration successful, you can add user data to Firestore here
+                                toast.loading(t("please wait"));
+                                const colRef = doc(
+                                    db,
+                                    "userinfo",
+                                    userCredential.user.uid
+                                );
+                                setDoc(colRef, {
+                                    name: formData.userName,
+                                    surname: formData.surname,
+                                    email: formData.email,
+                                    password: formData.password,
+                                    school: formData.school,
+                                    phoneNumber: "",
+                                    photo: "",
+                                    gender: "",
+                                    country: "",
+                                    city: "",
+                                    zipcode: "",
                                 })
-                                .catch((error) => {
-                                    console.error(
-                                        "Error adding user data to Firestore:",
-                                        error
-                                    );
-                                });
-                        })
-                        .catch((error) => {
-                            // i added this condition to prevent console log error when we try to submit the same email
-                            if (error.code === "auth/email-already-in-use") {
-                                toast.error(t("email already in use"));
-                            }
-                        });
+                                    .then(() => {
+                                        //clear the form data
+                                        setTimeout(() => {
+                                            setFormData({
+                                                userName: "",
+                                                surname: "",
+                                                email: "",
+                                                school: "",
+                                                password: "",
+                                                confirm_password: "",
+                                            });
+                                        }, 3000);
+                                        // after the user data is added to the firestore now we will redirect the user to the home page
+                                        route.push("/home");
+                                    })
+                                    .catch((error) => {
+                                        console.error(
+                                            "Error adding user data to Firestore:",
+                                            error
+                                        );
+                                    });
+                            })
+                            .catch((error) => {
+                                // i added this condition to prevent console log error when we try to submit the same email
+                                if (
+                                    error.code === "auth/email-already-in-use"
+                                ) {
+                                    toast.error(t("email already in use"));
+                                }
+                            });
+                    } else {
+                        setErrors(validationErrors);
+                    }
                 }
             })
-            .catch((error) => {
-                console.error("Error checking email existence:", error);
+            .catch(() => {
+                toast.error(t("failed to sign up"), { autoClose: 1000 });
             });
-        // setting an empty object to fill it with text if the condition is applied and pass it to the state
-        const validationErrors = {};
-        // regex variables
-        const nameAndSurnameRegEx = /^[a-z ]+$/i;
-        const nameAndSurnameLengthRegEx = /^.{3,24}$/;
-        const emailRegEx = /^\w+@\w+(\.\w{2,4})+$/;
-        const schoolNameRegEx = /^[A-Za-z\s&,.':()/-]+$/;
-        const schoolNameLengthRegEx = /^.{3,}$/;
-        const passwordRegEx =
-            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$/;
-        // name validation
-        if (!formData.userName.trim()) {
-            validationErrors.userName = t("please enter your name");
-        } else if (!nameAndSurnameRegEx.test(formData.userName)) {
-            validationErrors.userName = t(
-                "your name can only contain letters and spaces"
-            );
-        } else if (!nameAndSurnameLengthRegEx.test(formData.userName)) {
-            validationErrors.userName = t(
-                "your name must be between 3 and 24 characters"
-            );
-        }
-
-        // surname validation
-        if (!formData.surname.trim()) {
-            validationErrors.surname = t("please enter your surname");
-        } else if (!nameAndSurnameRegEx.test(formData.surname)) {
-            validationErrors.surname = t(
-                "your surname can only contain letters and spaces"
-            );
-        } else if (!nameAndSurnameLengthRegEx.test(formData.surname)) {
-            validationErrors.surname = t(
-                "your surname must be between 3 and 24 characters"
-            );
-        }
-        // email validation
-        if (!formData.email.trim()) {
-            validationErrors.email = t("please enter your email");
-        } else if (!emailRegEx.test(formData.email)) {
-            validationErrors.email = t("please enter a valid email address");
-        }
-        // school validation
-        if (!formData.school.trim()) {
-            validationErrors.school = t("please enter your school");
-        } else if (!schoolNameRegEx.test(formData.school)) {
-            validationErrors.school = t(
-                "your school name can only contain letters, spaces, and common symbols"
-            );
-        } else if (!schoolNameLengthRegEx.test(formData.school)) {
-            validationErrors.school = t(
-                "your school name must be at least 3 characters"
-            );
-        }
-        // password validation
-        if (!formData.password.trim()) {
-            validationErrors.password = t("please enter password");
-        } else if (formData.password.length < 8) {
-            validationErrors.password = t(
-                "your password must be at least 8 characters"
-            );
-        } else if (!passwordRegEx.test(formData.password)) {
-            validationErrors.password = t(
-                "password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
-            );
-        }
-        // confirm password validation
-        if (!formData.confirm_password.trim()) {
-            validationErrors.confirm_password = t(
-                "please confirm your password"
-            );
-        } else if (formData.confirm_password !== formData.password) {
-            validationErrors.confirm_password = t(
-                "passwords do not match. Please try again"
-            );
-        }
-        setErrors(validationErrors);
-        setTimeout(() => {
-            setFormData({
-                userName: "",
-                surname: "",
-                email: "",
-                school: "",
-                password: "",
-                confirm_password: "",
-            });
-        }, 3000);
     }
     // signup bg style
     const signupbg = {
@@ -319,9 +335,9 @@ export default function SignUp() {
                     </h3>
                     {/* sign up with socials */}
                     <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                        <GoogleButton>{t("google")}</GoogleButton>
-                        <FacebookButton>{t("facebook")}</FacebookButton>
-                        <TwitterButton>{t("twitter")}</TwitterButton>
+                        <GoogleButton t={t}>{t("google")}</GoogleButton>
+                        <TwitterButton t={t}>{t("twitter")}</TwitterButton>
+                        <GithubButton t={t}>{t("github")}</GithubButton>
                     </div>
                     <h2 className='mt-5 text-[#647581]'>
                         {" "}

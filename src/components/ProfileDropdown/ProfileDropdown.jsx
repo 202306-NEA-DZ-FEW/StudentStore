@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 import { useAuth } from "@/context/AuthContext";
 
-function ProfileDropdown() {
+function ProfileDropdown({ t }) {
     const { currentUser, logout } = useAuth();
     const route = useRouter();
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -54,7 +54,7 @@ function ProfileDropdown() {
                                     href='#'
                                     className='text-[#7874F2] font-semibold justify-between hover:text-grey'
                                 >
-                                    Profile
+                                    {t("Profile")}
                                 </Link>
                             </li>
                             <li>
@@ -62,7 +62,7 @@ function ProfileDropdown() {
                                     href='/mylistings'
                                     className='text-[#7874F2] font-semibold  hover:text-grey'
                                 >
-                                    Listings
+                                    {t("Listings")}
                                 </Link>
                             </li>
                             <li>
@@ -70,7 +70,7 @@ function ProfileDropdown() {
                                     className='text-[#7874F2] font-semibold   hover:text-grey'
                                     onClick={handleLogout}
                                 >
-                                    Logout
+                                    {t("Logout")}
                                 </button>
                             </li>
                         </ul>
@@ -81,7 +81,7 @@ function ProfileDropdown() {
                     className='bg-[#585785] py-1 px-1 rounded-md text-white hover:bg-[#6d6d9a] transition duration-300'
                     href='/signin'
                 >
-                    Sign In
+                    {t("Sign In")}
                 </Link>
             )}
         </>

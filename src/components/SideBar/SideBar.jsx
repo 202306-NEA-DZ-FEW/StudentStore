@@ -1,5 +1,3 @@
-// Sidebar.jsx
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
@@ -90,7 +88,7 @@ const Sidebar = () => {
 
             <div className='flex flex-col items-center mt-20 mb-4 space-y-4'>
                 <Image
-                    src={currentUser.photoURL || "/images/profile.jpg"}
+                    src={currentUser?.photoURL || "/images/profile.jpg"}
                     alt='profile-pic'
                     width={80}
                     height={80}
@@ -100,52 +98,59 @@ const Sidebar = () => {
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>
                         <p className='text-[#585785] mb-2'>{userInfo?.email}</p>
-                        <p className='text-[#585785] mb-4'>{`${userInfo?.address?.city}, ${userInfo?.address?.country}`}</p>
+                        <p className='text-[#585785] mb-4'>{`${userInfo?.city}, ${userInfo?.country}`}</p>
                     </div>
                 )}
             </div>
             <div className='flex flex-col items-center space-y-10'>
-                <Link
-                    href='/editprofile'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("EditProfile")}
-                >
-                    <span className='mr-2'>
-                        <FiEdit3 />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>Edit Profile</span>
-                    )}
+                <Link href='/editprofile' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("EditProfile")}
+                    >
+                        <span className='mr-2'>
+                            <FiEdit3 />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                Edit Profile
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/mylistings'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyListings")}
-                >
-                    <span className='mr-2'>
-                        <BsClipboard2Fill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Listings</span>
-                    )}
+                <Link href='/mylistings' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyListings")}
+                    >
+                        <span className='mr-2'>
+                            <BsClipboard2Fill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>
+                                My Listings
+                            </span>
+                        )}
+                    </div>
                 </Link>
-                <Link
-                    href='/myorders'
-                    className={`flex items-center text-[#585785] text-2xl cursor-pointer font-semibold p-3 rounded-lg ${
-                        selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
-                    }`}
-                    onClick={() => handleLinkClick("MyOrders")}
-                >
-                    <span className='mr-2'>
-                        <BsFillBoxSeamFill />
-                    </span>
-                    {!collapsed && (
-                        <span className='hidden sm:inline'>My Orders</span>
-                    )}
+                <Link href='/myorders' passHref>
+                    <div
+                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                            selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
+                        }`}
+                        onClick={() => handleLinkClick("MyOrders")}
+                    >
+                        <span className='mr-2'>
+                            <BsFillBoxSeamFill />
+                        </span>
+                        {!collapsed && (
+                            <span className='hidden sm:inline'>My Orders</span>
+                        )}
+                    </div>
                 </Link>
             </div>
             {!collapsed && (

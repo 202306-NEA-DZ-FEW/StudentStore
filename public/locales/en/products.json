@@ -19,10 +19,12 @@
     "food": "Food",
     "transportation": "Transportation",
     "furniture": "Furniture",
+    "other": "Other",
     "condition": "Condition",
     "new": "New",
     "like new": "Like New",
     "good": "Good",
     "poor": "Poor",
-    "clear filters": "Clear Filters"
+    "clear filters": "Clear Filters",
+    "sorry,no products match the applied filter.": "Sorry,No Products Match The Applied Filter."
 }

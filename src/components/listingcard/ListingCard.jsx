@@ -35,13 +35,13 @@ function ListingCard({ product }) {
 
     return (
         <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
-            <Link href='/'>
+            <Link href={`/singleproduct/${product?.id}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image
                         src={product?.pictures[1]}
                         height={364}
                         width={288}
-                        alt='Product'
+                        alt='Product image'
                         className='h-64 w-56 object-cover rounded-t-xl'
                         loading='lazy'
                     />

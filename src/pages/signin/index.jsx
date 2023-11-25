@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@/components/Buttons/Button";
-import FacebookButton from "@/components/FacebookButton/FacebookButton";
+import GithubButton from "@/components/GithubButton/GithubButton";
 import GoogleButton from "@/components/GoogleButton/GoogleButton";
 import TwitterButton from "@/components/TwitterButton/TwitterButton";
 
@@ -29,7 +29,7 @@ export default function SignIn() {
             await login(email, password);
             route.push("/home");
         } catch {
-            toast.error(t("Failed to log in"), { autoClose: 1000 });
+            toast.error(t("failed to log in"), { autoClose: 1000 });
         } finally {
             setLoading(false);
             setEmail("");
@@ -44,7 +44,7 @@ export default function SignIn() {
     return (
         <div
             style={signinbg}
-            className='min-h-screen w-full flex justify-between items-center text-center  pb-6 '
+            className='min-h-screen w-full flex justify-center lg:justify-between items-center text-center  pb-6 '
         >
             {/* container for image to add later */}
             <div className='lg:w-[45%] lg:py-16 lg:px-16'>
@@ -111,9 +111,9 @@ export default function SignIn() {
                     </h3>
                     {/* sign in with socials */}
                     <div className='flex justify-center gap-2 mt-7 w-[80%] mx-auto md:w-[100%] lg:w-full'>
-                        <GoogleButton>{t("google")}</GoogleButton>
-                        <FacebookButton>{t("facebook")}</FacebookButton>
-                        <TwitterButton>{t("twitter")}</TwitterButton>
+                        <GoogleButton t={t}>{t("google")}</GoogleButton>
+                        <TwitterButton t={t}>{t("twitter")}</TwitterButton>
+                        <GithubButton t={t}>{t("github")}</GithubButton>
                     </div>
                     <h2 className='mt-5 text-[#647581]'>
                         {t("dont have an account")}

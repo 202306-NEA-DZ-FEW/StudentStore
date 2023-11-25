@@ -19,10 +19,12 @@
     "food": "طعام",
     "transportation": "نقل",
     "furniture": "أثاث",
+    "other": "آخر",
     "condition": "الحالة",
     "new": "جديد",
     "like new": "كالجديد",
     "good": "جيد",
-    "poor": "رديء",
-    "clear filters": "مسح الفلاتر"
+    "poor": "متوسط",
+    "clear filters": "مسح الفلاتر",
+    "sorry,no products match the applied filter.": ".عذرًا ، لا توجد منتجات تطابق الفلتر المطبق"
 }

@@ -1,13 +1,16 @@
 import { collection, onSnapshot, query } from "firebase/firestore";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { ImSearch } from "react-icons/im";
 
 import { db } from "@/util/firebase";
+import Link from "next/link";
 
-const SearchBar = () => {
+const SearchBar = ({ t }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const route = useRouter();
 
     const handleSearch = async () => {
         setLoading(true);
@@ -35,6 +38,10 @@ const SearchBar = () => {
             setLoading(false);
         });
     };
+    const handleResultClick = () => {
+        // Reset the search term when a result is clicked
+        setSearchTerm("");
+    };
 
     useEffect(() => {
         // Call the search function when searchTerm changes
@@ -47,40 +54,51 @@ const SearchBar = () => {
     const showResultsContainer = products.length > 0;
 
     return (
-        <div className='relative mx-auto max-w-sm'>
+        <div
+            className='relative mx-auto max-w-sm'
+            dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
+        >
             <div className='input-wrapper'>
                 <input
                     type='text'
-                    placeholder='Search here...'
+                    placeholder={t("Search Here...")}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className='w-full py-1 text-[#585785] px-4 border-[#585785] border-2 dark:bg-white rounded-full   font-sm  focus:outline-none'
                 />
-                <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'>
+                {/* <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'dir={`${route.locale === "ar" ? "ltr" : "rtl"}`}>
                     <ImSearch />
-                </div>
+                </div> */}
             </div>
 
             {showResultsContainer && (
-                <div className='product-container text-[#585785] bg-white bg-opacity-95 rounded-lg shadow-lg p-4 absolute left-0 right-0'>
+                <div className='product-container text-[#585785] bg-white bg-opacity-95 rounded-lg shadow-lg p-4 absolute left-0 right-0 overflow-y-auto max-h-40 '>
                     <ul>
                         {products.map((product) => (
                             <li key={product.id}>
-                                {product.title
-                                    .split(new RegExp(`(${searchTerm})`, "gi"))
-                                    .map((text, index) =>
-                                        text.toLowerCase() ===
-                                        searchTerm.toLowerCase() ? (
-                                            <span
-                                                key={index}
-                                                className='text-blue-500'
-                                            >
-                                                {text}
-                                            </span>
-                                        ) : (
-                                            text
+                                <Link
+                                    href={`/singleproduct/${product.id}`}
+                                    className='hover:bg-gray-200 block p-1 rounded-md pl-2 transition-all duration-500'
+                                    onClick={handleResultClick}
+                                >
+                                    {product.title
+                                        .split(
+                                            new RegExp(`(${searchTerm})`, "gi")
                                         )
-                                    )}
+                                        .map((text, index) =>
+                                            text.toLowerCase() ===
+                                            searchTerm.toLowerCase() ? (
+                                                <span
+                                                    key={index}
+                                                    className='text-blue-500'
+                                                >
+                                                    {text}
+                                                </span>
+                                            ) : (
+                                                text
+                                            )
+                                        )}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -89,7 +107,7 @@ const SearchBar = () => {
 
             {showNoProductsMessage && (
                 <p className='text-white absolute bg-gray-500 p-2 rounded'>
-                    No products found.
+                    {t("No products found.")}
                 </p>
             )}
         </div>
