@@ -1,17 +1,27 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+    doc,
+    getDoc,
+    updateDoc,
+    collection,
+    query,
+    where,
+    getDocs,
+} from "firebase/firestore";
 import { db } from "@/util/firebase";
 import { CartContext } from "@/context/CartContext";
 import { UserListingsContext } from "@/context/UserListingsContext";
+import Image from "next/image";
 
 const ProfileComponent = () => {
     const auth = useAuth();
     const { cartCount } = useContext(CartContext);
-    const { userSaleItemCount, userBorrowItemCount } =
+    const { userSaleItemCount, userBorrowItemCount, userProducts } =
         useContext(UserListingsContext);
 
     const [userData, setUserData] = useState(null);
+    const [cartUsers, setCartUsers] = useState([]);
     const [editMode, setEditMode] = useState(false);
     const [editedData, setEditedData] = useState({});
 
@@ -29,8 +39,41 @@ const ProfileComponent = () => {
             }
         };
 
+        const fetchCartUsers = async () => {
+            if (auth.currentUser && userProducts) {
+                // Get the product IDs listed by the logged-in user
+                const productIds = userProducts.map(
+                    (product) => product.productId
+                );
+
+                // Query the cart for users who added any of these products
+                const cartQuery = query(
+                    collection(db, "cart"),
+                    where("productId", "in", productIds)
+                );
+
+                const cartSnapshot = await getDocs(cartQuery);
+                const usersPromises = cartSnapshot.docs.map(async (doc) => {
+                    const userId = doc.data().userId;
+                    const userDocRef = doc(db, "users", userId);
+                    const userDocSnap = await getDoc(userDocRef);
+
+                    if (userDocSnap.exists()) {
+                        return { userId, userName: userDocSnap.data().name };
+                    } else {
+                        console.log("User document not found");
+                        return null;
+                    }
+                });
+
+                const users = await Promise.all(usersPromises);
+                setCartUsers(users.filter((user) => user !== null));
+            }
+        };
+
         fetchUserData();
-    }, [auth.currentUser]);
+        fetchCartUsers();
+    }, [auth.currentUser, userProducts]);
 
     const handleEditClick = (field) => {
         setEditMode(true);
@@ -203,61 +246,6 @@ const ProfileComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex items-center p-8 bg-white shadow rounded-lg'>
-                        <div className='inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-yellow-600 bg-yellow-100 rounded-full mr-6'>
-                            <svg
-                                aria-hidden='true'
-                                fill='none'
-                                viewBox='0 0 24 24'
-                                stroke='currentColor'
-                                className='h-6 w-6'
-                            >
-                                <path fill='#fff' d='M12 14l9-5-9-5-9 5 9 5z' />
-                                <path
-                                    fill='#fff'
-                                    d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'
-                                />
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    strokeWidth={2}
-                                    d='M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222'
-                                />
-                            </svg>
-                        </div>
-                        <div>
-                            <span className='block text-2xl font-bold'>25</span>
-                            <span className='block text-gray-500'>
-                                Lections left
-                            </span>
-                        </div>
-                    </div>
-                    <div className='flex items-center p-8 bg-white shadow rounded-lg'>
-                        <div className='inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-teal-600 bg-teal-100 rounded-full mr-6'>
-                            <svg
-                                aria-hidden='true'
-                                fill='none'
-                                viewBox='0 0 24 24'
-                                stroke='currentColor'
-                                className='h-6 w-6'
-                            >
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    strokeWidth={2}
-                                    d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-                                />
-                            </svg>
-                        </div>
-                        <div>
-                            <span className='block text-2xl font-bold'>
-                                139
-                            </span>
-                            <span className='block text-gray-500'>
-                                Hours spent on lections
-                            </span>
-                        </div>
-                    </div>
 
                     <div className='row-span-3 bg-white shadow rounded-lg'>
                         <div className='flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100'>
@@ -283,125 +271,33 @@ const ProfileComponent = () => {
                                     />
                                 </svg>
                             </button>
-                            {/* Refer here for full dropdown menu code: https://tailwindui.com/components/application-ui/elements/dropdowns */}
                         </div>
                         <div
                             className='overflow-y-auto'
                             style={{ maxHeight: "24rem" }}
                         >
                             <ul className='p-6 space-y-6'>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/women/82.jpg'
-                                            alt='Annette Watson profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Annette Watson
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        9.3
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/men/81.jpg'
-                                            alt='Calvin Steward profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Calvin Steward
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        8.9
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/men/80.jpg'
-                                            alt='Ralph Richards profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Ralph Richards
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        8.7
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/men/79.jpg'
-                                            alt='Bernard Murphy profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Bernard Murphy
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        8.2
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/women/78.jpg'
-                                            alt='Arlene Robertson profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Arlene Robertson
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        8.2
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/women/77.jpg'
-                                            alt='Jane Lane profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Jane Lane
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        8.1
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/men/76.jpg'
-                                            alt='Pat Mckinney profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Pat Mckinney
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        7.9
-                                    </span>
-                                </li>
-                                <li className='flex items-center'>
-                                    <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                        <img
-                                            src='https://randomuser.me/api/portraits/men/75.jpg'
-                                            alt='Norman Walters profile picture'
-                                        />
-                                    </div>
-                                    <span className='text-gray-600'>
-                                        Norman Walters
-                                    </span>
-                                    <span className='ml-auto font-semibold'>
-                                        7.7
-                                    </span>
-                                </li>
+                                {cartUsers.map((user) => (
+                                    <li
+                                        key={user.userId}
+                                        className='flex items-center'
+                                    >
+                                        <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
+                                            <Image
+                                                src={`https://randomuser.me/api/portraits/${
+                                                    user.userId % 2 === 0
+                                                        ? "women"
+                                                        : "men"
+                                                }/${user.userId}.jpg`}
+                                                alt={`${user.userName} profile picture`}
+                                            />
+                                        </div>
+                                        <span className='text-gray-600'>
+                                            {user.userName}
+                                        </span>
+                                        {/* You can add other user details if needed */}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
