@@ -24,8 +24,8 @@ export default function OurTeam() {
         },
         {
             id: 3,
-            image: "/images/tewfik.png",
-            title: "Frontend Developer",
+            image: "/images/",
+            title: "Fullstack Developer",
             name: "Katia Ghezali",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
             github: "https://github.com/KatiaGhezali",
@@ -35,7 +35,7 @@ export default function OurTeam() {
         {
             id: 4,
             image: "/images/mounia.png",
-            title: "Re:Coded Student",
+            title: "Front-end Developer",
             name: "Mounia Belkheir",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
             github: "https://github.com/MouniaBelkheir",
@@ -44,8 +44,7 @@ export default function OurTeam() {
         {
             id: 5,
             image: "/images/",
-            title: "front end developer",
-            // title: "Financial auditor/ front end developer",
+            title: "Front-end Developer",
             name: "Khaoula AOURRA",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
             github: "https://github.com/khaoulasara/AOURRAkhaoula",
@@ -63,23 +62,25 @@ export default function OurTeam() {
         },
     ];
     return (
-        <section className='p-2 bg-[#32314D]'>
+        <section className='py-7 bg-[#32314D]'>
             <div className='text-center  text-black'>
-                <h1 className='text-4xl font-bold text-white'>Meet Our Team</h1>
-                <p className='text-xl leading-relaxed text-white '>
+                <h1 className='text-3xl font-bold mb-8 text-white'>
+                    Meet Our Team
+                </h1>
+                <p className='text-md px-4 sm:px-0 sm:text-xl leading-relaxed mb-8 text-white '>
                     Were a dynamic group of individuals who are passionate about
                     what we do and dedicated to delivering the best results for
                     our clients.
                 </p>
             </div>
 
-            <div className='grid grid-cols-1 lg:grid-cols-3 lg:w-[60%] mx-auto place-items-center gap-4 '>
+            <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 md:w-full lg:grid-cols-3 lg:w-[90%] xl:w-[70%] mx-auto place-items-center gap-4 xl:gap-8 '>
                 {data?.map((data) => {
                     const { id, image, name, title, github, linkedin } = data;
                     return (
                         <div
                             key={id}
-                            className='shadow-lg hover:shadow-[#90EEE1] w-72 p-5 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
+                            className='shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
                         >
                             <div className='flex justify-center items-center'>
                                 <Image
@@ -89,8 +90,8 @@ export default function OurTeam() {
                                     className='w-32 h-32 border-[#575885] image border-2 rounded-full'
                                 />
                             </div>
-                            <h1 className='font-bold mb-2'>{name}</h1>
-                            <h2 className='font-semibold mb-2'>{title}</h2>
+                            <h1 className='font-bold'>{name}</h1>
+                            <h2 className='font-semibold'>{title}</h2>
                             <div className='flex justify-center items-center gap-3 p-3'>
                                 <Link
                                     href={github}
