@@ -1,6 +1,15 @@
 import OurTeam from "@/components/OurTeam/OurTeam";
 import Image from "next/image";
 import React from "react";
+import {
+    SiFirebase,
+    SiNextdotjs,
+    SiDaisyui,
+    SiTailwindcss,
+    SiJest,
+    SiI18Next,
+    SiCommitlint,
+} from "react-icons/si";
 
 function AboutUs() {
     return (
@@ -19,7 +28,7 @@ function AboutUs() {
                         />
                     </div>
                     <div className='flex flex-col justify-center items-center gap-3 w-full md:w-1/2 p-4'>
-                        <h1 className='text-3xl text-[#32314D] font-bold'>
+                        <h1 className='text-4xl text-[#32314D] font-bold'>
                             Our Mission
                         </h1>
                         <p className='text-center text-[#32314D] md:text-md lg:text-lg leading-8 md:leading-5 '>
@@ -41,6 +50,19 @@ function AboutUs() {
                 </div>
             </div>
             <OurTeam />
+            {/* how technology section */}
+            <div className='flex flex-col justify-center h-72 items-center p-5 gap-8'>
+                <h1 className='text-3xl font-bold'>Technologies Used</h1>
+                <div className='flex flex-wrap justify-center items-center gap-4'>
+                    <SiNextdotjs className='text-7xl text-black' />
+                    <SiFirebase className='text-7xl text-[#ffcc2f]' />
+                    <SiTailwindcss className='text-7xl text-[#36b7f0]' />
+                    <SiDaisyui className='text-7xl' />
+                    <SiJest className='text-7xl text-[#c03b13]' />
+                    <SiI18Next className='text-7xl text-[#0a9b7c]' />
+                    <SiCommitlint className='text-7xl' />
+                </div>
+            </div>
         </div>
     );
 }
