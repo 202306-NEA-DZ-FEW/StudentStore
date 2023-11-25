@@ -10,13 +10,15 @@ export const UserListingsContext = createContext({
 
 export const UserListingsProvider = ({ children }) => {
     const { currentUser } = useAuth();
+
     const currentUserUid = currentUser?.uid || "";
     const userId = currentUserUid;
     const [userSaleItemCount, setUserSaleItemCount] = useState(0);
     const [userBorrowItemCount, setUserBorrowItemCount] = useState(0);
+
     useEffect(() => {
         const fetchUserListings = async () => {
-            console.log("Fetching user listings for user ID:", userId);
+            console.log("Fetching user listings for user ID:", currentUserUid);
 
             const allProductsQuery = query(
                 collection(db, "products"),
@@ -35,16 +37,12 @@ export const UserListingsProvider = ({ children }) => {
                         (doc) => doc.data().type === "borrow"
                     );
 
-                    console.log("Sale products:", saleProducts);
-                    console.log("Borrow products:", borrowProducts);
-
                     setUserSaleItemCount(saleProducts.length);
                     setUserBorrowItemCount(borrowProducts.length);
                 }
             );
 
             return () => {
-                // Detach the listener when the component unmounts
                 allProductsUnsubscribe();
             };
         };

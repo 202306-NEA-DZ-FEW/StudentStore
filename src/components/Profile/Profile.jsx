@@ -6,6 +6,7 @@ import {
     updateDoc,
     collection,
     query,
+    limit,
     where,
     getDocs,
 } from "firebase/firestore";
@@ -39,42 +40,30 @@ const ProfileComponent = () => {
             }
         };
 
-        const fetchCartUsers = async () => {
-            if (auth.currentUser && userProducts) {
-                // Get the product IDs listed by the logged-in user
-                const productIds = userProducts.map(
-                    (product) => product.productId
-                );
+        const fetchStudentsDealtWith = async () => {
+            // Query the userinfo collection for three users
+            const usersQuery = query(collection(db, "userinfo"), limit(5));
 
-                // Query the cart for users who added any of these products
-                const cartQuery = query(
-                    collection(db, "cart"),
-                    where("productId", "in", productIds)
-                );
+            const usersSnapshot = await getDocs(usersQuery);
 
-                const cartSnapshot = await getDocs(cartQuery);
-                const usersPromises = cartSnapshot.docs.map(async (doc) => {
-                    const userId = doc.data().userId;
-                    const userDocRef = doc(db, "users", userId);
-                    const userDocSnap = await getDoc(userDocRef);
+            const users = usersSnapshot.docs.map((doc) => ({
+                userId: doc.id,
+                surname: doc.data().surname,
+                email: doc.data().email,
+                phoneNumber: doc.data().phoneNumber,
+                city: doc.data().city,
+                country: doc.data().country,
 
-                    if (userDocSnap.exists()) {
-                        return { userId, userName: userDocSnap.data().name };
-                    } else {
-                        console.log("User document not found");
-                        return null;
-                    }
-                });
+                name: doc.data().name,
+                photo: doc.data().photo,
+            }));
 
-                const users = await Promise.all(usersPromises);
-                setCartUsers(users.filter((user) => user !== null));
-            }
+            setCartUsers(users);
         };
 
         fetchUserData();
-        fetchCartUsers();
+        fetchStudentsDealtWith();
     }, [auth.currentUser, userProducts]);
-
     const handleEditClick = (field) => {
         setEditMode(true);
         // Set the initial value of the input field
@@ -249,28 +238,7 @@ const ProfileComponent = () => {
 
                     <div className='row-span-3 bg-white shadow rounded-lg'>
                         <div className='flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100'>
-                            <span>Students by average mark</span>
-                            <button
-                                type='button'
-                                className='inline-flex justify-center rounded-md px-1 -mr-1 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-600'
-                                id='options-menu'
-                                aria-haspopup='true'
-                                aria-expanded='true'
-                            >
-                                Descending
-                                <svg
-                                    className='-mr-1 ml-1 h-5 w-5'
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    viewBox='0 0 20 20'
-                                    fill='currentColor'
-                                >
-                                    <path
-                                        fillRule='evenodd'
-                                        d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
-                                        clipRule='evenodd'
-                                    />
-                                </svg>
-                            </button>
+                            <span>Students you dealt with</span>
                         </div>
                         <div
                             className='overflow-y-auto'
@@ -283,32 +251,30 @@ const ProfileComponent = () => {
                                         className='flex items-center'
                                     >
                                         <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                            <Image
-                                                src={`https://randomuser.me/api/portraits/${
-                                                    user.userId % 2 === 0
-                                                        ? "women"
-                                                        : "men"
-                                                }/${user.userId}.jpg`}
-                                                alt={`${user.userName} profile picture`}
-                                            />
+                                            {/* Use an Image component or img tag to display the user's profile picture */}
+                                            {user.photo ? (
+                                                <Image
+                                                    src={user?.photo}
+                                                    alt='Profile Picture'
+                                                    className='object-cover w-full h-full'
+                                                    width={40}
+                                                    height={40}
+                                                />
+                                            ) : (
+                                                // You can use a default image or other fallback
+                                                <img
+                                                    src='https://via.placeholder.com/40'
+                                                    alt='Default Profile Picture'
+                                                    className='object-cover w-full h-full'
+                                                />
+                                            )}
                                         </div>
                                         <span className='text-gray-600'>
-                                            {user.userName}
+                                            {user?.name} {user?.surname}
                                         </span>
-                                        {/* You can add other user details if needed */}
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                    </div>
-                    <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
-                        <div className='px-6 py-5 font-semibold border-b border-gray-100'>
-                            Students by type of studying
-                        </div>
-                        <div className='p-4 flex-grow'>
-                            <div className='flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md'>
-                                Chart
-                            </div>
                         </div>
                     </div>
                 </section>
