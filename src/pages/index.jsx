@@ -1,30 +1,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import AnimatedCounter from "@/components/AnimatedCounter/AnimatedCounter";
 
-const TypingText = ({ text, speed }) => {
-    const [displayText, setDisplayText] = useState("");
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (displayText.length < text.length) {
-                setDisplayText(text.substring(0, displayText.length + 1));
-            } else {
-                clearInterval(interval);
-            }
-        }, speed);
-        return () => clearInterval(interval);
-    }, [displayText, text, speed]);
-
-    return (
-        <p className='font-poppins leading-loose font-normal text-2xl text-[#585785] '>
-            <strong>{displayText}</strong>
-        </p>
-    );
-};
+import TypingText from "@/TypingText/TypingText";
 
 export default function splashpage() {
     return (
@@ -70,12 +51,12 @@ export default function splashpage() {
                     />
                 </motion.div>
                 <div className='ml-2  text-center flex justify-center flex-col min-h-[500px] '>
-                    <p className='min-w-[488px]'>
+                    <div className='w-full lg:min-w-[488px]'>
                         <TypingText
                             text='Empowering Futures, Connecting Students'
                             speed={100}
                         />
-                    </p>
+                    </div>
                     <div className='container mx-auto py-4 '>
                         <h1 className='text-2xl text-[#585785] mb-2'>
                             Your Exclusive Student Marketplace!
