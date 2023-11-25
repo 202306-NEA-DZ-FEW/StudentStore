@@ -7,7 +7,7 @@ function UnderBar({ className, t }) {
     return (
         <div
             className={twMerge(
-                "bg-[#585785]  font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
+                "bg-[#585785]  font-semibold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold",
                 className
             )}
             dir={`${route.locale === "ar" ? "rtl" : "ltr"}`}
@@ -18,7 +18,7 @@ function UnderBar({ className, t }) {
                         href='/products'
                         className='capitalize underline hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("all Categories")}
+                        {t("All Products")}
                     </Link>
                 </li>
                 <li>
@@ -29,7 +29,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("electronics")}
+                        {t("Electronics")}
                     </Link>
                 </li>
                 <li>
@@ -40,7 +40,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("books")}
+                        {t("Books")}
                     </Link>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("gaming")}
+                        {t("Gaming")}
                     </Link>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("clothes")}
+                        {t("Clothes")}
                     </Link>
                 </li>
                 <li>
@@ -73,7 +73,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("shoes")}
+                        {t("Shoes")}
                     </Link>
                 </li>
                 <li>
@@ -84,7 +84,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("food")}
+                        {t("Food")}
                     </Link>
                 </li>
                 <li>
@@ -95,7 +95,7 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("transportation")}
+                        {t("Transportation")}
                     </Link>
                 </li>
                 <li>
@@ -106,7 +106,18 @@ function UnderBar({ className, t }) {
                         }}
                         className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
                     >
-                        {t("furniture")}
+                        {t("Furniture")}
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        href={{
+                            pathname: "/products",
+                            query: { category: "other" },
+                        }}
+                        className='capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  '
+                    >
+                        {t("Other")}
                     </Link>
                 </li>
             </ul>

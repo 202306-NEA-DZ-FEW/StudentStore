@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from "react";
-import SideBar from "@/components/SideBar/SideBar";
-import ListingCard from "@/components/listingcard/ListingCard";
-import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React, { useEffect, useState } from "react";
+
+import ListingCard from "@/components/listingcard/ListingCard";
+import SideBar from "@/components/SideBar/SideBar";
+
+import { auth, db } from "@/util/firebase";
 
 const MyListings = () => {
     const [userListings, setUserListings] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { t } = useTranslation("myListings");
+    const route = useRouter();
 
     useEffect(() => {
         const getCurrentUserId = () => {
@@ -62,19 +69,23 @@ const MyListings = () => {
     }, []);
 
     return (
-        <div className='flex'>
-            <SideBar />
+        <div className='flex' dir={`${route?.locale === "ar" ? "rtl" : "ltr"}`}>
+            <SideBar t={t} router={route} />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
                     <p>Loading....</p>
                 ) : (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                    <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4 mx-auto sm:mx-4'>
                         {userListings.map((listing) => (
                             <div
                                 key={listing.id}
                                 className='bg-white shadow-xl rounded-md overflow-hidden'
                             >
-                                <ListingCard product={listing} />
+                                <ListingCard
+                                    t={t}
+                                    route={route}
+                                    product={listing}
+                                />
                             </div>
                         ))}
                     </div>
@@ -85,3 +96,11 @@ const MyListings = () => {
 };
 
 export default MyListings;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "myListings"])),
+            // Will be passed to the page component as props
+        },
+    };
+}

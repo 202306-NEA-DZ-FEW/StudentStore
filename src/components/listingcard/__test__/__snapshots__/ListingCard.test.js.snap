@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <div
   className="w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl"
+  dir=""
 >
   <a
     href="/singleproduct/undefined"

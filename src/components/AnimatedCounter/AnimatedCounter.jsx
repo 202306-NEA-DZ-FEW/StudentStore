@@ -5,10 +5,10 @@ const AnimatedCounter = ({ targetCount }) => {
 
     useEffect(() => {
         if (count < targetCount) {
-            const increment = Math.ceil(targetCount / 200); // Adjst the increment value as the sped u want to show
+            const increment = Math.ceil(targetCount / 150); // Adjst the increment value as the sped u want to show
             const timeout = setTimeout(() => {
                 setCount((prevCount) => prevCount + increment);
-            }, 30); // Adjust the timeout duration as needed
+            }, 10); // Adjust the timeout duration as needed
             return () => clearTimeout(timeout);
         }
     }, [count, targetCount]);

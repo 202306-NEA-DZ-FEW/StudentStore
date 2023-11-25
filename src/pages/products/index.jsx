@@ -18,13 +18,14 @@ function AllProducts() {
     useEffect(() => {
         const colRef = collection(db, "products");
         const q = firebaseQuery(colRef, orderBy("createdAt", "desc"));
-        onSnapshot(q, (snapshot) => {
+        const unsubscribe = onSnapshot(q, (snapshot) => {
             let products = [];
             snapshot.docs.forEach((doc) =>
                 products.push({ ...doc.data(), id: doc.id })
             );
             setProducts(products);
         });
+        return () => unsubscribe();
     }, []);
     const { query } = router;
     const filteredProducts = query.category
