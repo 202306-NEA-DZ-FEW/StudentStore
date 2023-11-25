@@ -6,7 +6,10 @@ import React, { useEffect, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
 import { FiEdit3 } from "react-icons/fi";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import {
+    MdOutlineKeyboardDoubleArrowLeft,
+    MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -78,20 +81,29 @@ const Sidebar = ({ t }) => {
 
     return (
         <div
-            className={`bg-gray-200 min-h-screen  p-4 text-[#585785] flex flex-col ${
+            className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
                 collapsed
                     ? "w-20 transition-all duration-500 ease-in-out "
                     : "w-64 transition-all duration-500 ease-in-out overflow-hidden"
             }`}
         >
-            <MdOutlineKeyboardDoubleArrowLeft
-                className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
-                    collapsed ? "transform rotate-180" : ""
-                }`}
-                onClick={handleToggleSidebar}
-            />
+            {route?.locale === "ar" ? (
+                <MdOutlineKeyboardDoubleArrowRight
+                    className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
+                        collapsed ? "transform rotate-180" : ""
+                    }`}
+                    onClick={handleToggleSidebar}
+                />
+            ) : (
+                <MdOutlineKeyboardDoubleArrowLeft
+                    className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
+                        collapsed ? "transform rotate-180" : ""
+                    }`}
+                    onClick={handleToggleSidebar}
+                />
+            )}
 
-            <div className='flex flex-col items-center mt-20 mb-4 space-y-4'>
+            <div className='flex flex-col items-center mt-10 mb-4 space-y-4'>
                 <Image
                     src={currentUser?.photoURL || "/images/profile.jpg"}
                     alt='profile-pic'
@@ -107,10 +119,10 @@ const Sidebar = ({ t }) => {
                     </div>
                 )}
             </div>
-            <div className='flex flex-col items-stat space-y-10'>
+            <div className='flex flex-col  space-y-5'>
                 <Link href='/editprofile' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] text-[16px] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("EditProfile")}
@@ -123,7 +135,7 @@ const Sidebar = ({ t }) => {
                             <FiEdit3 />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>
+                            <span className=' sm:inline'>
                                 {t("Edit Profile")}
                             </span>
                         )}
@@ -144,12 +156,13 @@ const Sidebar = ({ t }) => {
                             <BsClipboard2Fill />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>
+                            <span className=' sm:inline'>
                                 {t("My Listings")}
                             </span>
                         )}
                     </div>
                 </Link>
+
                 <Link href='/myorders' passHref>
                     <div
                         className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
@@ -165,28 +178,42 @@ const Sidebar = ({ t }) => {
                             <BsFillBoxSeamFill />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>
-                                {t("My Orders")}
-                            </span>
+                            <span className=' sm:inline'>{t("My Orders")}</span>
                         )}
                     </div>
                 </Link>
+
+                <div
+                    className={`flex items-center text-red-500 hover:text-red-600 lg:text-[22px]  md:text-xl cursor-pointer font-semibold p-3 rounded-lg `}
+                    onClick={handleLogout}
+                >
+                    <span
+                        className={`mr-2 ${
+                            route.locale === "ar" ? "ml-2" : ""
+                        }`}
+                    >
+                        <BiLogOut />
+                    </span>
+                    {!collapsed && (
+                        <span className='sm:inline'>{t("Logout")}</span>
+                    )}
+                </div>
             </div>
-            {!collapsed && (
-                <div className='mt-auto mb-4'>
+            {/* {!collapsed && (
+                <div className=' mb-4'>
                     <div
                         className='flex items-center text-red-500 text-lg cursor-pointer'
                         onClick={handleLogout}
                     >
                         <BiLogOut
-                            className={`mr-2 ${
+                            className={`mr-2 lg:text-[22px] hover:text-[#FF8A57] md:text-xl ${
                                 route.locale === "ar" ? "ml-2" : ""
                             }`}
                         />
                         {t("Logout")}
                     </div>
                 </div>
-            )}
+            )} */}
             <ToastContainer />
         </div>
     );
