@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from "react";
-import SideBar from "@/components/SideBar/SideBar";
-import ListingCard from "@/components/listingcard/ListingCard";
-import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React, { useEffect, useState } from "react";
+
+import ListingCard from "@/components/listingcard/ListingCard";
+import SideBar from "@/components/SideBar/SideBar";
+
+import { auth, db } from "@/util/firebase";
 
 const MyListings = () => {
     const [userListings, setUserListings] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { t } = useTranslation("myListings");
+    const route = useRouter();
 
     useEffect(() => {
         const getCurrentUserId = () => {
@@ -85,3 +92,11 @@ const MyListings = () => {
 };
 
 export default MyListings;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "myListings"])),
+            // Will be passed to the page component as props
+        },
+    };
+}
