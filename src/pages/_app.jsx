@@ -5,14 +5,17 @@ import "@/styles/globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import Layout from "@/layout/Layout";
+import { UserListingsProvider } from "@/context/UserListingsContext";
 
 function MyApp({ Component, pageProps }) {
     return (
         <AuthProvider>
             <CartProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                <UserListingsProvider>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </UserListingsProvider>
             </CartProvider>
         </AuthProvider>
     );
