@@ -3,10 +3,13 @@ import { useAuth } from "@/context/AuthContext";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/util/firebase";
 import { CartContext } from "@/context/CartContext";
+import { UserListingsContext } from "@/context/UserListingsContext";
 
 const ProfileComponent = () => {
     const auth = useAuth();
     const { cartCount } = useContext(CartContext);
+    const { userSaleItemCount, userBorrowItemCount } =
+        useContext(UserListingsContext);
 
     const [userData, setUserData] = useState(null);
     const [editMode, setEditMode] = useState(false);
@@ -128,7 +131,7 @@ const ProfileComponent = () => {
                         </div>
                         <div>
                             <span className='block text-2xl font-bold'>
-                                6.8
+                                {userSaleItemCount}
                             </span>
                             <span className='block text-gray-500'>
                                 Products sold
@@ -155,7 +158,7 @@ const ProfileComponent = () => {
                         </div>
                         <div>
                             <span className='block text-2xl font-bold'>
-                                {cartCount}
+                                {userBorrowItemCount}
                             </span>
                             <span className='block text-gray-500'>
                                 Products borrowed

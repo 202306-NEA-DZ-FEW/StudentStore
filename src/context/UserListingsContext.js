@@ -22,8 +22,9 @@ export const UserListingsProvider = ({ children }) => {
                 where("currentUserUid", "==", userId),
                 where("type", "==", "sale")
             );
+
             const userBorrowItemsQuery = query(
-                db.collection("cproducts"),
+                db.collection("products"),
                 where("currentUserUid", "==", userId),
                 where("type", "==", "borrow")
             );
