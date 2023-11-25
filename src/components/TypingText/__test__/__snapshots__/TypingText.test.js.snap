@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<p
+  className="font-poppins leading-loose font-normal text-2xl text-[#585785] "
+>
+  <strong />
+</p>
+`;
