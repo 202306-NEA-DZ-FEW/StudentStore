@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="bg-[#585785] font-bold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
+  className="bg-[#585785] font-semibold md:font-semibold md:bg-[#585785] lg:bg-[#585785] lg:font-semibold"
   dir="ltr"
 >
   <ul
@@ -16,7 +16,7 @@ exports[`renders correctly 1`] = `
         onMouseEnter={[Function]}
         onTouchStart={[Function]}
       >
-        all Categories
+        all products
       </a>
     </li>
     <li>
@@ -105,6 +105,17 @@ exports[`renders correctly 1`] = `
         onTouchStart={[Function]}
       >
         furniture
+      </a>
+    </li>
+    <li>
+      <a
+        className="capitalize hover:text-[#FFA857] transition-all duration-300 ease-in-out text-white text-lg inline-block ml-4 p-1 md:text-sm md:ml-0 md:py-2 lg:text-md lg:ml-0  "
+        href="/products?category=other"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        other
       </a>
     </li>
   </ul>

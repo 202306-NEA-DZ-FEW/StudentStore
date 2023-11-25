@@ -39,17 +39,17 @@ const HeroSection = () => {
                 pagination={{ clickable: true }}
             >
                 <SwiperSlide>
-                    <div className='h-[80vh] w-full'>
+                    <div className='h-[84vh] w-full relative'>
                         <Image
                             src='/images/Hero1.svg'
-                            layout='fill'
+                            fill={true}
                             alt='HeroSection image'
                         />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[80vh]  ${
+                        className={`w-full h-[84vh] relative ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >
@@ -66,7 +66,7 @@ const HeroSection = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[80vh]  ${
+                        className={`w-full h-[84vh] relative ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >
@@ -83,7 +83,7 @@ const HeroSection = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div
-                        className={`w-full h-[80vh]  ${
+                        className={`w-full h-[84vh] relative ${
                             isSmallScreen ? "sm:hidden" : "sm:block"
                         }`}
                     >
