@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/util/firebase";
+import { CartContext } from "@/context/CartContext";
 
 const ProfileComponent = () => {
     const auth = useAuth();
+    const { cartCount } = useContext(CartContext);
+
     const [userData, setUserData] = useState(null);
     const [editMode, setEditMode] = useState(false);
     const [editedData, setEditedData] = useState({});
@@ -52,10 +55,10 @@ const ProfileComponent = () => {
                 <div className='flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between'>
                     <div className='mr-6'>
                         <h1 className='text-4xl font-semibold mb-2'>
-                            Welcome {userData.name} {userData.surname}
+                            Welcome {userData?.name} {userData?.surname}
                         </h1>
                         <h2 className='text-gray-600 ml-0.5'>
-                            Student at {userData.school}
+                            Student at {userData?.school}
                         </h2>
                     </div>
                     <div className='flex flex-wrap items-start justify-end -mb-3'>
@@ -97,9 +100,12 @@ const ProfileComponent = () => {
                             </svg>
                         </div>
                         <div>
-                            <span className='block text-2xl font-bold'>62</span>
+                            <span className='block text-2xl font-bold'>
+                                {" "}
+                                {cartCount}
+                            </span>
                             <span className='block text-gray-500'>
-                                Products listed
+                                Products ordered
                             </span>
                         </div>
                     </div>
@@ -125,7 +131,7 @@ const ProfileComponent = () => {
                                 6.8
                             </span>
                             <span className='block text-gray-500'>
-                                Products ordered
+                                Products sold
                             </span>
                         </div>
                     </div>
@@ -149,7 +155,33 @@ const ProfileComponent = () => {
                         </div>
                         <div>
                             <span className='block text-2xl font-bold'>
-                                83%
+                                {cartCount}
+                            </span>
+                            <span className='block text-gray-500'>
+                                Products borrowed
+                            </span>
+                        </div>
+                    </div>
+                    <div className='flex items-center p-8 bg-white shadow rounded-lg'>
+                        <div className='inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6'>
+                            <svg
+                                aria-hidden='true'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                stroke='currentColor'
+                                className='h-6 w-6'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
+                                />
+                            </svg>
+                        </div>
+                        <div>
+                            <span className='block text-2xl font-bold'>
+                                {cartCount}
                             </span>
                             <span className='block text-gray-500'>
                                 Products added to cart
