@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { onSnapshot, query, where } from "firebase/firestore";
+import { onSnapshot, collection, query, where } from "firebase/firestore";
 import { db } from "@/util/firebase";
 import { useAuth } from "./AuthContext";
 
@@ -14,39 +14,38 @@ export const UserListingsProvider = ({ children }) => {
     const userId = currentUserUid;
     const [userSaleItemCount, setUserSaleItemCount] = useState(0);
     const [userBorrowItemCount, setUserBorrowItemCount] = useState(0);
-
     useEffect(() => {
         const fetchUserListings = async () => {
-            const userSaleItemsQuery = query(
-                db.collection("products"),
-                where("currentUserUid", "==", userId),
-                where("type", "==", "sale")
+            console.log("Fetching user listings for user ID:", userId);
+
+            const allProductsQuery = query(
+                collection(db, "products"),
+                where("currentUserUid", "==", userId)
             );
 
-            const userBorrowItemsQuery = query(
-                db.collection("products"),
-                where("currentUserUid", "==", userId),
-                where("type", "==", "borrow")
-            );
-
-            const userSaleItemsUnsubscribe = onSnapshot(
-                userSaleItemsQuery,
+            const allProductsUnsubscribe = onSnapshot(
+                allProductsQuery,
                 (snapshot) => {
-                    setUserSaleItemCount(snapshot.docs.length);
-                }
-            );
+                    console.log("Fetched products snapshot:", snapshot.docs);
 
-            const userBorrowItemsUnsubscribe = onSnapshot(
-                userBorrowItemsQuery,
-                (snapshot) => {
-                    setUserBorrowItemCount(snapshot.docs.length);
+                    const saleProducts = snapshot.docs.filter(
+                        (doc) => doc.data().type === "sale"
+                    );
+                    const borrowProducts = snapshot.docs.filter(
+                        (doc) => doc.data().type === "borrow"
+                    );
+
+                    console.log("Sale products:", saleProducts);
+                    console.log("Borrow products:", borrowProducts);
+
+                    setUserSaleItemCount(saleProducts.length);
+                    setUserBorrowItemCount(borrowProducts.length);
                 }
             );
 
             return () => {
-                // Detach the listeners when the component unmounts
-                userSaleItemsUnsubscribe();
-                userBorrowItemsUnsubscribe();
+                // Detach the listener when the component unmounts
+                allProductsUnsubscribe();
             };
         };
 
