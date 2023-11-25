@@ -1,3 +1,7 @@
 {
-    "language": "fr"
+    "language": "fr",
+    "Edit Profile": "Modifier le profil",
+    "My Listings": "Mes annonces",
+    "My Orders": "Mes commandes",
+    "Logout": "Déconnexion"
 }

@@ -1,7 +1,6 @@
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useEffect, useState } from "react";
 
 import ListingCard from "@/components/listingcard/ListingCard";
@@ -70,7 +69,7 @@ const MyListings = () => {
 
     return (
         <div className='flex'>
-            <SideBar />
+            <SideBar t={t} route={route} />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
                     <p>Loading....</p>
@@ -95,7 +94,7 @@ export default MyListings;
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "myListings"])),
+            ...(await (locale, ["common", "myListings"])),
             // Will be passed to the page component as props
         },
     };

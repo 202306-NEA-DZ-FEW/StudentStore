@@ -1,3 +1,7 @@
 {
-    "language": "ar"
+    "language": "ar",
+    "Edit Profile": "تعديل الملف الشخصي",
+    "My Listings": "قوائمي",
+    "My Orders": "طلباتي",
+    "Logout": "تسجيل الخروج"
 }

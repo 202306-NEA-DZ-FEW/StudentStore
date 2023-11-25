@@ -1,3 +1,7 @@
 {
-    "language": "en"
+    "language": "en",
+    "Edit Profile": "Edit Profile",
+    "My Listings": "My Listings",
+    "My Orders": "My Orders",
+    "Logout": "Logout"
 }
