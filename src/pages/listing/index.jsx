@@ -223,12 +223,6 @@ const Listing = () => {
             window.scrollTo(0, 0);
         }
     }, [isUploading]);
-    useEffect(() => {
-        // Redirect to login page if the user is not authenticated
-        if (!currentUser) {
-            route.push("/signin");
-        }
-    }, [currentUser, route]);
 
     return (
         <div className='bg-[#F1F6FA] pb-6 pt-3  px-6 text-center lg:text-left'>

@@ -61,7 +61,7 @@ const SearchBar = ({ t }) => {
             <div className='input-wrapper'>
                 <input
                     type='text'
-                    placeholder={t("search here...")}
+                    placeholder={t("Search Here...")}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className='w-full py-1 text-[#585785] px-4 border-[#585785] border-2 dark:bg-white rounded-full   font-sm  focus:outline-none'
@@ -107,7 +107,7 @@ const SearchBar = ({ t }) => {
 
             {showNoProductsMessage && (
                 <p className='text-white absolute bg-gray-500 p-2 rounded'>
-                    {t("no products found.")}
+                    {t("No products found.")}
                 </p>
             )}
         </div>
