@@ -1,3 +1,4 @@
+import Faq from "@/components/Faq/__test__/Faq";
 import OurMission from "@/components/OurMission/OurMission";
 import OurTeam from "@/components/OurTeam/OurTeam";
 import { useAnimation } from "framer-motion";
@@ -60,6 +61,8 @@ function AboutUs() {
                     <SiCommitlint className='text-7xl' />
                 </motion.div>
             </motion.div>
+            {/* faq section */}
+            <Faq />
         </div>
     );
 }
