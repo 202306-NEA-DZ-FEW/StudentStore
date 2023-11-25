@@ -1,10 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import * as React from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 // import Layout from "@/layout/Layout";
 
 export default function NotFoundPage() {
+    const router = useRouter();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            router.push("/home");
+        }, 6000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <main class='flex min-h-full justify-center py-10 md:py-4 lg:py-1 items-center bg-white px-6 pb-4 sm:pb-12 lg:px-8'>
             <div class='text-center'>
