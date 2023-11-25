@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
-import { FiEdit3 } from "react-icons/fi";
-import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
-import { BiLogOut } from "react-icons/bi";
 import { doc, getDoc } from "firebase/firestore";
-import { useAuth } from "@/context/AuthContext.js";
-import { useRouter } from "next/router.js";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { db } from "../../util/firebase.js";
 import Image from "next/image.js";
+import Link from "next/link";
+import { useRouter } from "next/router.js";
+import React, { useEffect, useState } from "react";
+import { BiLogOut } from "react-icons/bi";
+import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
+import { FiEdit3 } from "react-icons/fi";
+import {
+    MdOutlineKeyboardDoubleArrowLeft,
+    MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
+import { ToastContainer } from "react-toastify";
 
-const Sidebar = () => {
+import "react-toastify/dist/ReactToastify.css";
+
+import { useAuth } from "@/context/AuthContext.js";
+
+import { db } from "../../util/firebase.js";
+
+const Sidebar = ({ t }) => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
@@ -76,17 +82,28 @@ const Sidebar = () => {
     return (
         <div
             className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
-                collapsed ? "w-20" : "w-64"
+                collapsed
+                    ? "w-20 transition-all duration-500 ease-in-out "
+                    : "w-64 transition-all duration-500 ease-in-out overflow-hidden"
             }`}
         >
-            <MdOutlineKeyboardDoubleArrowLeft
-                className={`cursor-pointer text-4xl ${
-                    collapsed ? "transform rotate-180" : ""
-                }`}
-                onClick={handleToggleSidebar}
-            />
+            {route?.locale === "ar" ? (
+                <MdOutlineKeyboardDoubleArrowRight
+                    className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
+                        collapsed ? "transform rotate-180" : ""
+                    }`}
+                    onClick={handleToggleSidebar}
+                />
+            ) : (
+                <MdOutlineKeyboardDoubleArrowLeft
+                    className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
+                        collapsed ? "transform rotate-180" : ""
+                    }`}
+                    onClick={handleToggleSidebar}
+                />
+            )}
 
-            <div className='flex flex-col items-center mt-20 mb-4 space-y-4'>
+            <div className='flex flex-col items-center mt-10 mb-4 space-y-4'>
                 <Image
                     src={currentUser?.photoURL || "/images/profile.jpg"}
                     alt='profile-pic'
@@ -102,68 +119,87 @@ const Sidebar = () => {
                     </div>
                 )}
             </div>
-            <div className='flex flex-col items-center space-y-10'>
+            <div className='flex flex-col  space-y-5'>
                 <Link href='/editprofile' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] text-[16px] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("EditProfile")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <FiEdit3 />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>
-                                Edit Profile
+                            <span className=' sm:inline'>
+                                {t("Edit Profile")}
                             </span>
                         )}
                     </div>
                 </Link>
                 <Link href='/mylistings' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("MyListings")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <BsClipboard2Fill />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>
-                                My Listings
+                            <span className=' sm:inline'>
+                                {t("My Listings")}
                             </span>
                         )}
                     </div>
                 </Link>
+
                 <Link href='/myorders' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("MyOrders")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <BsFillBoxSeamFill />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>My Orders</span>
+                            <span className=' sm:inline'>{t("My Orders")}</span>
                         )}
                     </div>
                 </Link>
-            </div>
-            {!collapsed && (
-                <div className='mt-auto mb-4'>
-                    <div
-                        className='flex items-center text-red-500 text-lg cursor-pointer'
-                        onClick={handleLogout}
+
+                <div
+                    className={`flex items-center text-red-500 hover:text-red-600 lg:text-[22px]  md:text-xl cursor-pointer font-semibold p-3 rounded-lg `}
+                    onClick={handleLogout}
+                >
+                    <span
+                        className={`mr-2 ${
+                            route.locale === "ar" ? "ml-2" : ""
+                        }`}
                     >
-                        <BiLogOut className='mr-2' />
-                        Logout
-                    </div>
+                        <BiLogOut />
+                    </span>
+                    {!collapsed && (
+                        <span className='sm:inline'>{t("Logout")}</span>
+                    )}
                 </div>
-            )}
+            </div>
+
             <ToastContainer />
         </div>
     );
