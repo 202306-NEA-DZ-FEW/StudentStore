@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
-export default function OurTeam() {
+export default function OurTeam({ t }) {
     const data = [
         {
             id: 1,
@@ -65,12 +65,10 @@ export default function OurTeam() {
         <section className='py-7 bg-[#32314D]'>
             <div className='text-center  text-black'>
                 <h1 className='text-3xl font-bold mb-8 text-white'>
-                    Meet Our Team
+                    {t("Meet Our Team")}
                 </h1>
                 <p className='text-md px-4 sm:px-0 sm:text-xl leading-relaxed mb-8 text-white '>
-                    Were a dynamic group of individuals who are passionate about
-                    what we do and dedicated to delivering the best results for
-                    our clients.
+                    {t("Team")}
                 </p>
             </div>
 
@@ -90,8 +88,8 @@ export default function OurTeam() {
                                     className='w-32 h-32 border-[#575885] image border-2 rounded-full'
                                 />
                             </div>
-                            <h1 className='font-bold'>{name}</h1>
-                            <h2 className='font-semibold'>{title}</h2>
+                            <h1 className='font-bold'>{t(`${name}`)}</h1>
+                            <h2 className='font-semibold'>{t(`${title}`)}</h2>
                             <div className='flex justify-center items-center gap-3 p-3'>
                                 <Link
                                     href={github}

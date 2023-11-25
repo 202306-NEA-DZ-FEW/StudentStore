@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
     <p
       className="text-md px-4 sm:px-0 sm:text-xl leading-relaxed mb-8 text-white "
     >
-      Were a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.
+      Team
     </p>
   </div>
   <div
