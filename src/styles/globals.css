@@ -57,3 +57,9 @@ body {
 #toggleButton:hover + #sideMenu {
     transform: translateX(0);
 }
+.card:hover .icon {
+    color: white;
+}
+.card:hover .image {
+    border-color: #90eee1;
+}

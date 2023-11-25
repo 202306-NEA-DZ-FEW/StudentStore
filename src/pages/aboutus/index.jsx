@@ -1,3 +1,4 @@
+import OurTeam from "@/components/OurTeam/OurTeam";
 import Image from "next/image";
 import React from "react";
 
@@ -39,8 +40,8 @@ function AboutUs() {
                     </div>
                 </div>
             </div>
+            <OurTeam />
         </div>
     );
 }
-
 export default AboutUs;
