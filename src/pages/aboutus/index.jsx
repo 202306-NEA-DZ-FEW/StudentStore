@@ -2,6 +2,8 @@ import OurMission from "@/components/OurMission/OurMission";
 import OurTeam from "@/components/OurTeam/OurTeam";
 import { useAnimation } from "framer-motion";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 import { useEffect } from "react";
 import {
@@ -15,6 +17,7 @@ import {
 } from "react-icons/si";
 
 function AboutUs() {
+    const { t } = useTranslation("aboutus");
     const controls = useAnimation();
 
     const handleScroll = () => {
@@ -37,7 +40,7 @@ function AboutUs() {
     return (
         <div className='min-h-screen'>
             {/* Section 1 */}
-            <OurMission />
+            <OurMission t={t} />
             <OurTeam />
             {/* how technology section */}
             <motion.div
@@ -61,3 +64,11 @@ function AboutUs() {
     );
 }
 export default AboutUs;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "aboutus"])),
+            // Will be passed to the page component as props
+        },
+    };
+}
