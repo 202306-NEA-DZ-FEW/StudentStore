@@ -22,6 +22,7 @@ import {
     UserIcon,
     TruckIcon,
     SwitchHorizontalIcon,
+    ArrowNarrowRightIcon,
 } from "@heroicons/react/solid";
 
 <svg
@@ -266,16 +267,72 @@ const ProfileComponent = () => {
                             </div>
                         </div>
                     </div>
+                    <div className=''>
+                        <Link
+                            href='/mylistings'
+                            className='flex items-center mb-2'
+                        >
+                            <span className='mr-2'>
+                                Your Transactions: Sales and Loans
+                            </span>
+                            <ArrowNarrowRightIcon className='h-6 w-6' />
+                        </Link>
+                        <Link
+                            href='/myorders'
+                            className='flex items-center mb-2'
+                        >
+                            <span className='mr-2'>
+                                Your Acquisitions: Purchases and Borrowings
+                            </span>
+                            <ArrowNarrowRightIcon className='h-6 w-6' />
+                        </Link>
+                    </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
                         <div className='flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100'>
-                            <span>Students you bought products from</span>
+                            <span>Owners of products that interested you</span>
+                        </div>
+                        <div
+                            className='overflow-y-auto'
+                            style={{ maxHeight: "24rem" }}
+                        >
+                            <ul className='p-6 space-y-6'>
+                                {cartUsers.map((user) => (
+                                    <li
+                                        key={user.userId}
+                                        className='flex items-center'
+                                    >
+                                        <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
+                                            {/* Use an Image component or img tag to display the user's profile picture */}
+                                            {user.photo ? (
+                                                <Image
+                                                    src={user?.photo}
+                                                    alt='Profile Picture'
+                                                    className='object-cover w-full h-full'
+                                                    width={40}
+                                                    height={40}
+                                                />
+                                            ) : (
+                                                // You can use a default image or other fallback
+                                                <img
+                                                    src='https://via.placeholder.com/40'
+                                                    alt='Default Profile Picture'
+                                                    className='object-cover w-full h-full'
+                                                />
+                                            )}
+                                        </div>
+                                        <span className='text-gray-600'>
+                                            {user?.name} {user?.surname}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
                         <div className='px-6 py-5 font-semibold border-b border-gray-100'>
-                            Students that bought your products
+                            Students interested in your products
                         </div>
                         <div
                             className='overflow-y-auto'
