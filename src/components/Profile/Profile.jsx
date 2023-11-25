@@ -246,7 +246,7 @@ const ProfileComponent = () => {
                             </div>
 
                             {/* User Picture (40%) */}
-                            <div className='mt-4 p-0 lg:w-[40%] md:mt-0 md:ml-0 md:w-[40%]'>
+                            <div className='mt-4 md:mt-0 md:ml-0 md:w-[40%] lg:w-[40%]'>
                                 {userData?.photo ? (
                                     <Image
                                         src={userData?.photo}
@@ -261,11 +261,32 @@ const ProfileComponent = () => {
                                         alt='Default Profile Picture'
                                         height={52}
                                         width={52}
-                                        className='h-52 w-52 rounded object-cover float-right border border-gray-200'
+                                        className='h-52 w-52 rounded object-cover border border-gray-200'
                                     />
                                 )}
                             </div>
                         </div>
+                    </div>
+
+                    <div className='flex flex-col col-span-2 justify-start md:justify-end'>
+                        <Link
+                            href='/mylistings'
+                            className='flex items-center mb-2 ml-auto text-[#7874F2] hover:text-[#FF8A57]'
+                        >
+                            <span className='mr-2'>
+                                Your Transactions: Sales and Loans
+                            </span>
+                            <ArrowNarrowRightIcon className='h-6 w-6' />
+                        </Link>
+                        <Link
+                            href='/myorders'
+                            className='flex items-center mb-2 ml-auto text-[#7874F2] hover:text-[#FF8A57]'
+                        >
+                            <span className='mr-2'>
+                                Your Acquisitions: Purchases and Borrowings
+                            </span>
+                            <ArrowNarrowRightIcon className='h-6 w-6' />
+                        </Link>
                     </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
