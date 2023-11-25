@@ -48,21 +48,21 @@ function Footer({ t }) {
                     {/* services */}
                     <div className='flex flex-col gap-1 mb-2'>
                         <h1 className='text-[#FF8A57] font-bold'>
-                            {t("services")}
+                            {t("Services")}
                         </h1>
                         <Link
                             className='flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]'
                             href={currentUser ? "/listing" : "/signin"}
                         >
                             <FaRegPlusSquare size={15} />
-                            <p className='capitalize'> {t("start_selling")}</p>
+                            <p className='capitalize'> {t("Start Selling")}</p>
                         </Link>
                         <Link
                             href='/products'
                             className='flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]'
                         >
                             <FaWallet size={15} />
-                            <p className='capitalize'>{t("buy_products")}</p>
+                            <p className='capitalize'>{t("Buy Products")}</p>
                         </Link>
                     </div>
                     {/* additional links */}
@@ -70,15 +70,15 @@ function Footer({ t }) {
                         <div className='flex items-end justify-between'>
                             <div className=''>
                                 <h1 className='text-[#FF8A57] mb-1 font-bold'>
-                                    {t("contact")}
+                                    {t("Contact")}
                                 </h1>
                                 <Link
                                     href='/aboutus'
                                     className='transition-all inline-block mb-1 duration-300 hover:text-[#FF8A57]'
                                 >
-                                    {t("about_us")}
+                                    {t("About us")}
                                 </Link>
-                                <h2 className='mb-1'>{t("contact_us")}:</h2>
+                                <h2 className='mb-1'>{t("Contact us")}:</h2>
                                 <Link
                                     href='tel:+2130699514862'
                                     className='flex items-center gap-1 transition-all duration-300 hover:text-[#FF8A57]'
@@ -123,7 +123,7 @@ function Footer({ t }) {
                 {/* social media links */}
                 <div className='flex justify-center md:flex-col md:justify-start items-center gap-3 md:w-1/5'>
                     <h1 className='hidden md:block text-[#FF8A57] font-bold'>
-                        {t("social")}
+                        {t("Follow us")}
                     </h1>
                     <div className='flex gap-3'>
                         <Link
@@ -157,7 +157,7 @@ function Footer({ t }) {
                 </div>
             </div>
             <div className='flex justify-center p-2 bg-[#32314C] text-center text-sm text-white'>
-                <p>
+                <p className='max-w-[14rem] sm:max-w-full'>
                     {t(
                         "© 2023 Team 10, Re:Coded - Algeria Bootcamp. All rights reserved."
                     )}
