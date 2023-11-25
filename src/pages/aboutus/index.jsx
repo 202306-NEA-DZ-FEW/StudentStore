@@ -33,7 +33,7 @@ const data = [
     {
         id: 4,
         image: "/mounia.jfif",
-        title: "Re:Coded Student",
+        title: "Fullstack developer",
         name: "Mounia Belkheir",
         bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
         github: "https://github.com/MouniaBelkheir",
@@ -51,7 +51,7 @@ const data = [
     {
         id: 6,
         image: "/Katia.png",
-        title: "Frontend Developer",
+        title: "Fullstack Developer",
         name: "Katia Ghezali",
         bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
         github: "https://github.com/KatiaGhezali",
