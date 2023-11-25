@@ -6,9 +6,8 @@ import ProfileComponent from "@/components/Profile/Profile";
 const EditProfilePage = () => {
     return (
         <div className='flex'>
-            <div>
-                <ProfileComponent />
-            </div>
+            <Sidebar />
+            <ProfileComponent />
         </div>
     );
 };
