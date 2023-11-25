@@ -4,8 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 import AnimatedCounter from "@/components/AnimatedCounter/AnimatedCounter";
-
-import TypingText from "@/TypingText/TypingText";
+import TypingText from "@/components/TypingText/TypingText";
 
 export default function splashpage() {
     return (
