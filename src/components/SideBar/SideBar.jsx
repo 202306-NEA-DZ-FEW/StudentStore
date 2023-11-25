@@ -15,7 +15,7 @@ import { useAuth } from "@/context/AuthContext.js";
 
 import { db } from "../../util/firebase.js";
 
-const Sidebar = () => {
+const Sidebar = ({ t }) => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
@@ -78,12 +78,14 @@ const Sidebar = () => {
 
     return (
         <div
-            className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
-                collapsed ? "w-20" : "w-64"
+            className={`bg-gray-200 min-h-screen  p-4 text-[#585785] flex flex-col ${
+                collapsed
+                    ? "w-20 transition-all duration-500 ease-in-out "
+                    : "w-64 transition-all duration-500 ease-in-out overflow-hidden"
             }`}
         >
             <MdOutlineKeyboardDoubleArrowLeft
-                className={`cursor-pointer text-4xl ${
+                className={`cursor-pointer text-4xl self-end hover:text-[#FF8A57] ${
                     collapsed ? "transform rotate-180" : ""
                 }`}
                 onClick={handleToggleSidebar}
@@ -105,53 +107,67 @@ const Sidebar = () => {
                     </div>
                 )}
             </div>
-            <div className='flex flex-col items-center space-y-10'>
+            <div className='flex flex-col items-stat space-y-10'>
                 <Link href='/editprofile' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "EditProfile" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("EditProfile")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <FiEdit3 />
                         </span>
                         {!collapsed && (
                             <span className='hidden sm:inline'>
-                                Edit Profile
+                                {t("Edit Profile")}
                             </span>
                         )}
                     </div>
                 </Link>
                 <Link href='/mylistings' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "MyListings" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("MyListings")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <BsClipboard2Fill />
                         </span>
                         {!collapsed && (
                             <span className='hidden sm:inline'>
-                                My Listings
+                                {t("My Listings")}
                             </span>
                         )}
                     </div>
                 </Link>
                 <Link href='/myorders' passHref>
                     <div
-                        className={`flex items-center text-[#585785] lg:text-2xl md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
+                        className={`flex items-center text-[#585785] lg:text-[22px] hover:text-[#FF8A57] md:text-xl cursor-pointer font-semibold p-3 rounded-lg ${
                             selectedLink === "MyOrders" ? "bg-[#90EEE1]" : ""
                         }`}
                         onClick={() => handleLinkClick("MyOrders")}
                     >
-                        <span className='mr-2'>
+                        <span
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        >
                             <BsFillBoxSeamFill />
                         </span>
                         {!collapsed && (
-                            <span className='hidden sm:inline'>My Orders</span>
+                            <span className='hidden sm:inline'>
+                                {t("My Orders")}
+                            </span>
                         )}
                     </div>
                 </Link>
@@ -162,8 +178,12 @@ const Sidebar = () => {
                         className='flex items-center text-red-500 text-lg cursor-pointer'
                         onClick={handleLogout}
                     >
-                        <BiLogOut className='mr-2' />
-                        Logout
+                        <BiLogOut
+                            className={`mr-2 ${
+                                route.locale === "ar" ? "ml-2" : ""
+                            }`}
+                        />
+                        {t("Logout")}
                     </div>
                 </div>
             )}

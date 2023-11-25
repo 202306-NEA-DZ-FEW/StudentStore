@@ -1,14 +1,16 @@
+import { deleteDoc, doc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
+import { FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
-import { deleteDoc, doc } from "firebase/firestore";
+
 import { db } from "@/util/firebase";
 
-function ListingCard({ product }) {
+function ListingCard({ product, route }) {
     const [isDeleting, setIsDeleting] = useState(false);
 
     const handleDelete = async () => {
@@ -34,7 +36,10 @@ function ListingCard({ product }) {
     };
 
     return (
-        <div className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'>
+        <div
+            className='w-56 bg-white shadow-md rounded-xl duration-500  hover:shadow-xl'
+            dir={`${route?.locale === "ar" ? "ltr" : ""}`}
+        >
             <Link href={`/singleproduct/${product?.id}`}>
                 <div className='relative border-b-2 border-gray-300'>
                     <Image

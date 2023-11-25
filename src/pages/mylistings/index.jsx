@@ -1,6 +1,7 @@
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useEffect, useState } from "react";
 
 import ListingCard from "@/components/listingcard/ListingCard";
@@ -68,19 +69,23 @@ const MyListings = () => {
     }, []);
 
     return (
-        <div className='flex'>
-            <SideBar t={t} route={route} />
+        <div className='flex' dir={`${route?.locale === "ar" ? "rtl" : "ltr"}`}>
+            <SideBar t={t} router={route} />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
                     <p>Loading....</p>
                 ) : (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                    <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4 mx-auto sm:mx-4'>
                         {userListings.map((listing) => (
                             <div
                                 key={listing.id}
                                 className='bg-white shadow-xl rounded-md overflow-hidden'
                             >
-                                <ListingCard product={listing} />
+                                <ListingCard
+                                    t={t}
+                                    route={route}
+                                    product={listing}
+                                />
                             </div>
                         ))}
                     </div>
@@ -94,7 +99,7 @@ export default MyListings;
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await (locale, ["common", "myListings"])),
+            ...(await serverSideTranslations(locale, ["common", "myListings"])),
             // Will be passed to the page component as props
         },
     };
