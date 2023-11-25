@@ -10,6 +10,7 @@ import {
     where,
     getDocs,
 } from "firebase/firestore";
+import Link from "next/link";
 import { db } from "@/util/firebase";
 import { CartContext } from "@/context/CartContext";
 import { UserListingsContext } from "@/context/UserListingsContext";
@@ -121,23 +122,25 @@ const ProfileComponent = () => {
                         </h2>
                     </div>
                     <div className='flex flex-wrap items-start justify-end -mb-3'>
-                        <button className='inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3'>
-                            <svg
-                                aria-hidden='true'
-                                fill='none'
-                                viewBox='0 0 24 24'
-                                stroke='currentColor'
-                                className='flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2'
-                            >
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    strokeWidth={2}
-                                    d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'
-                                />
-                            </svg>
-                            Edit profile
-                        </button>
+                        <Link href='/editprofile'>
+                            <button className='inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3'>
+                                <svg
+                                    aria-hidden='true'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                    stroke='currentColor'
+                                    className='flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2'
+                                >
+                                    <path
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        strokeWidth={2}
+                                        d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'
+                                    />
+                                </svg>
+                                Edit profile
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <section className='grid md:grid-cols-2 xl:grid-cols-4 gap-6'>
@@ -199,24 +202,80 @@ const ProfileComponent = () => {
                 <section className='grid md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6'>
                     <div className='flex flex-col md:col-span-2 md:row-span-2 bg-white shadow rounded-lg'>
                         <div className='px-6 py-5 font-semibold border-b border-gray-100'>
-                            The number of applied and left students per month
+                            Personal information
                         </div>
-                        <div className='p-4 flex-grow'>
-                            <div className='flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md'>
-                                Chart
+                        <div className='p-4 flex-grow flex flex-col md:flex-row items-start'>
+                            {/* User Information (60%) */}
+                            <div className='flex flex-col lg:w-[60%] md:w-60 md:mr-4 flex-grow items-center justify-center'>
+                                <p className='text-lg font-semibold text-[#585785] mb-2'>
+                                    Name:
+                                    <span className='text-base text-gray-500'>
+                                        {" "}
+                                        {userData?.name} {userData?.surname}
+                                    </span>
+                                </p>
+                                <p className='text-lg font-semibold text-[#585785] mb-2'>
+                                    Email:
+                                    <span className='text-base text-gray-500'>
+                                        {" "}
+                                        {userData?.email}
+                                    </span>
+                                </p>
+                                <p className='text-lg font-semibold text-[#585785] mb-2'>
+                                    Phone:
+                                    <span className='text-base text-gray-500'>
+                                        {" "}
+                                        {userData?.phoneNumber}
+                                    </span>
+                                </p>
+                                <p className='text-lg font-semibold text-[#585785] mb-2'>
+                                    School:
+                                    <span className='text-base text-gray-500'>
+                                        {" "}
+                                        {userData?.school}
+                                    </span>
+                                </p>
+                                <p className='text-lg font-semibold text-[#585785] mb-2'>
+                                    Address:
+                                    <span className='text-base text-gray-500'>
+                                        {" "}
+                                        {userData?.city}, {userData?.country}
+                                    </span>
+                                </p>
+                            </div>
+
+                            {/* User Picture (40%) */}
+                            <div className='mt-4 p-0 lg:w-[40%] md:mt-0 md:ml-4 md:w-40'>
+                                {userData?.photo ? (
+                                    <Image
+                                        src={userData?.photo}
+                                        alt='User Profile'
+                                        height={52}
+                                        width={52}
+                                        className='h-52 w-52 rounded-full object-cover border border-gray-200'
+                                    />
+                                ) : (
+                                    <Image
+                                        src='/images/profile.jpg'
+                                        alt='Default Profile Picture'
+                                        height={52}
+                                        width={52}
+                                        className='h-52 w-52 rounded object-cover float-right border border-gray-200'
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
                         <div className='flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100'>
-                            <span>Students you dealt with</span>
+                            <span>Students you bought products from</span>
                         </div>
                     </div>
 
                     <div className='flex flex-col row-span-3 bg-white shadow rounded-lg'>
                         <div className='px-6 py-5 font-semibold border-b border-gray-100'>
-                            Students you have dealt with
+                            Students that bought your products
                         </div>
                         <div
                             className='overflow-y-auto'
@@ -258,129 +317,6 @@ const ProfileComponent = () => {
                 </section>
             </main>
         </>
-
-        // <div className='flex items-center justify-center h-screen'>
-        //     <div className='container mx-auto p-4 bg-gray-100 rounded-md'>
-        //         <h1 className='text-4xl font-bold mb-4 text-[#32314D] text-center'>
-        //             Profile
-        //         </h1>
-        //         {userData ? (
-        //             <div className='flex flex-col items-center mb-4'>
-        //                 <div className='w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full mb-4'>
-        //                     {/* Add the user's profile picture here */}
-        //                     <img
-        //                         src={
-        //                             userData.photo ||
-        //                             "https://via.placeholder.com/150"
-        //                         }
-        //                         alt='Profile Picture'
-        //                         className='object-cover w-full h-full'
-        //                     />
-        //                 </div>
-        //                 <div className='text-center'>
-        //                     <p className='text-2xl font-bold text-[#585785] mb-2'>
-        //                         {userData.name} {userData.surname}
-        //                     </p>
-        //                     <div className='flex items-center text-lg text-gray-600 mb-4'>
-        //                         <span className='mr-2'>
-        //                             <i className='fas fa-envelope'></i>
-        //                         </span>
-        //                         {editMode ? (
-        //                             <input
-        //                                 type='text'
-        //                                 name='email'
-        //                                 value={editedData.email || ""}
-        //                                 onChange={handleInputChange}
-        //                             />
-        //                         ) : (
-        //                             userData.email
-        //                         )}
-        //                         {editMode && (
-        //                             <button
-        //                                 className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                                 onClick={() => handleSaveClick()}
-        //                             >
-        //                                 Save
-        //                             </button>
-        //                         )}
-        //                         {!editMode && (
-        //                             <span
-        //                                 className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                                 onClick={() => handleEditClick("email")}
-        //                             >
-        //                                 <i className='fas fa-edit'></i>
-        //                             </span>
-        //                         )}
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         ) : (
-        //             <p>Loading...</p>
-        //         )}
-        //         {userData && (
-        //             <>
-        //                 <div className='flex items-center text-[#585785] text-lg mb-4'>
-        //                     <span className='mr-2'>
-        //                         <i className='fas fa-phone-alt'></i>
-        //                     </span>
-        //                     Phone Number: {userData.phoneNumber}
-        //                     {editMode && (
-        //                         <span
-        //                             className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                             onClick={() =>
-        //                                 handleEditClick("phoneNumber")
-        //                             }
-        //                         >
-        //                             <i className='fas fa-edit'></i>
-        //                         </span>
-        //                     )}
-        //                 </div>
-        //                 <div className='flex items-center text-[#585785] text-lg mb-4'>
-        //                     <span className='mr-2'>
-        //                         <i className='fas fa-venus-mars'></i>
-        //                     </span>
-        //                     Gender: {userData.gender}
-        //                     {editMode && (
-        //                         <span
-        //                             className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                             onClick={() => handleEditClick("gender")}
-        //                         >
-        //                             <i className='fas fa-edit'></i>
-        //                         </span>
-        //                     )}
-        //                 </div>
-        //                 <div className='flex items-center text-[#585785] text-lg mb-4'>
-        //                     <span className='mr-2'>
-        //                         <i className='fas fa-school'></i>
-        //                     </span>
-        //                     School: {userData.school}
-        //                     {editMode && (
-        //                         <span
-        //                             className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                             onClick={() => handleEditClick("school")}
-        //                         >
-        //                             <i className='fas fa-edit'></i>
-        //                         </span>
-        //                     )}
-        //                 </div>
-        //                 <div className='flex items-center text-[#585785] text-lg mb-4'>
-        //                     <span className='mr-2'>
-        //                         <i className='fas fa-map-marker-alt'></i>
-        //                     </span>
-        //                     Location: {userData.city}, {userData.country}
-        //                     {editMode && (
-        //                         <span
-        //                             className='ml-2 text-[#FF8A57] cursor-pointer'
-        //                             onClick={() => handleEditClick("location")}
-        //                         >
-        //                             <i className='fas fa-edit'></i>
-        //                         </span>
-        //                     )}
-        //                 </div>
-        //             </>
-        //         )}
-        //     </div>
-        // </div>
     );
 };
 

@@ -4,12 +4,7 @@ import Sidebar from "@/components/SideBar/SideBar";
 import ProfileComponent from "@/components/Profile/Profile";
 
 const EditProfilePage = () => {
-    return (
-        <div className='flex'>
-            <Sidebar />
-            <ProfileComponent />
-        </div>
-    );
+    return <ProfileComponent />;
 };
 
 export default EditProfilePage;
