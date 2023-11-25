@@ -7,7 +7,6 @@ import {
     collection,
     query,
     limit,
-    where,
     getDocs,
 } from "firebase/firestore";
 import Link from "next/link";
@@ -18,8 +17,6 @@ import Image from "next/image";
 import {
     ShoppingCartIcon,
     CheckCircleIcon,
-    AcademicCapIcon,
-    UserIcon,
     TruckIcon,
     SwitchHorizontalIcon,
     ArrowNarrowRightIcon,

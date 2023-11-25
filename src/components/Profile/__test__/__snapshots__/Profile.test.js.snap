@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="p-6 sm:p-10 space-y-6"
+>
+  <div
+    className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between"
+  >
+    <div
+      className="mr-6"
+    >
+      <h1
+        className="text-4xl font-semibold mb-2"
+      >
+        Welcome 
+         
+      </h1>
+      <h2
+        className="text-gray-600 ml-0.5"
+      >
+        Student at 
+      </h2>
+    </div>
+    <div
+      className="flex flex-wrap items-start justify-end -mb-3"
+    >
+      <a
+        href="/editprofile"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <button
+          className="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3"
+        >
+          <svg
+            aria-hidden="true"
+            className="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+            />
+          </svg>
+          Edit profile
+        </button>
+      </a>
+    </div>
+  </div>
+  <section
+    className="grid md:grid-cols-2 xl:grid-cols-4 gap-6"
+  >
+    <div
+      className="flex items-center p-8 bg-white shadow rounded-lg"
+    >
+      <div
+        className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-600 bg-purple-100 rounded-full mr-6"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+          />
+          <path
+            d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"
+          />
+        </svg>
+      </div>
+      <div>
+        <span
+          className="block text-2xl font-bold"
+        >
+           
+          0
+        </span>
+        <span
+          className="block text-gray-500"
+        >
+          Products ordered
+        </span>
+      </div>
+    </div>
+    <div
+      className="flex items-center p-8 bg-white shadow rounded-lg"
+    >
+      <div
+        className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-green-600 bg-green-100 rounded-full mr-6"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div>
+        <span
+          className="block text-2xl font-bold"
+        >
+          0
+        </span>
+        <span
+          className="block text-gray-500"
+        >
+          Products sold
+        </span>
+      </div>
+    </div>
+    <div
+      className="flex items-center p-8 bg-white shadow rounded-lg"
+    >
+      <div
+        className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-yellow-600 bg-yellow-100 rounded-full mr-6"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"
+          />
+        </svg>
+      </div>
+      <div>
+        <span
+          className="block text-2xl font-bold"
+        >
+          0
+        </span>
+        <span
+          className="block text-gray-500"
+        >
+          Products borrowed
+        </span>
+      </div>
+    </div>
+    <div
+      className="flex items-center p-8 bg-white shadow rounded-lg"
+    >
+      <div
+        className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+          />
+        </svg>
+      </div>
+      <div>
+        <span
+          className="block text-2xl font-bold"
+        >
+          0
+        </span>
+        <span
+          className="block text-gray-500"
+        >
+          Products added to cart
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="grid md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6"
+  >
+    <div
+      className="flex flex-col md:col-span-2 md:row-span-2 bg-white shadow rounded-lg"
+    >
+      <div
+        className="px-6 py-5 font-semibold border-b border-gray-100"
+      >
+        Personal information
+      </div>
+      <div
+        className="p-4 flex-grow flex flex-col md:flex-row items-start"
+      >
+        <div
+          className="flex flex-col m-10 lg:w-[60%] md:w-60 md:mr-4 flex-grow justify-center"
+        >
+          <p
+            className="text-lg font-semibold text-[#585785] mb-2"
+          >
+            Name:
+            <span
+              className="text-base text-gray-500"
+            >
+               
+               
+            </span>
+          </p>
+          <p
+            className="text-lg font-semibold text-[#585785] mb-2"
+          >
+            Email:
+            <span
+              className="text-base text-gray-500"
+            >
+               
+            </span>
+          </p>
+          <p
+            className="text-lg font-semibold text-[#585785] mb-2"
+          >
+            Phone:
+            <span
+              className="text-base text-gray-500"
+            >
+               
+            </span>
+          </p>
+          <p
+            className="text-lg font-semibold text-[#585785] mb-2"
+          >
+            School:
+            <span
+              className="text-base text-gray-500"
+            >
+               
+            </span>
+          </p>
+          <p
+            className="text-lg font-semibold text-[#585785] mb-2"
+          >
+            Address:
+            <span
+              className="text-base text-gray-500"
+            >
+               
+              , 
+            </span>
+          </p>
+        </div>
+        <div
+          className="mt-4 md:mt-0 md:ml-0 md:w-[40%] lg:w-[40%]"
+        >
+          <img
+            alt="Default Profile Picture"
+            className="h-52 w-52 rounded object-cover border border-gray-200"
+            data-nimg="1"
+            decoding="async"
+            height={52}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="/_next/image?url=%2Fimages%2Fprofile.jpg&w=128&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Fprofile.jpg&w=64&q=75 1x, /_next/image?url=%2Fimages%2Fprofile.jpg&w=128&q=75 2x"
+            style={
+              Object {
+                "color": "transparent",
+              }
+            }
+            width={52}
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="flex flex-col col-span-2 justify-start md:justify-end"
+    >
+      <a
+        className="flex items-center mb-2 ml-auto text-[#7874F2] hover:text-[#FF8A57]"
+        href="/mylistings"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="mr-2"
+        >
+          Your Transactions: Sales and Loans
+        </span>
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </a>
+      <a
+        className="flex items-center mb-2 ml-auto text-[#7874F2] hover:text-[#FF8A57]"
+        href="/myorders"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <span
+          className="mr-2"
+        >
+          Your Acquisitions: Purchases and Borrowings
+        </span>
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </a>
+    </div>
+    <div
+      className="flex flex-col row-span-3 bg-white shadow rounded-lg"
+    >
+      <div
+        className="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100"
+      >
+        <span>
+          Owners of products that interested you
+        </span>
+      </div>
+      <div
+        className="overflow-y-auto"
+        style={
+          Object {
+            "maxHeight": "24rem",
+          }
+        }
+      >
+        <ul
+          className="p-6 space-y-6"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-col row-span-3 bg-white shadow rounded-lg"
+    >
+      <div
+        className="px-6 py-5 font-semibold border-b border-gray-100"
+      >
+        Students interested in your products
+      </div>
+      <div
+        className="overflow-y-auto"
+        style={
+          Object {
+            "maxHeight": "24rem",
+          }
+        }
+      >
+        <ul
+          className="p-6 space-y-6"
+        />
+      </div>
+    </div>
+  </section>
+</main>
+`;
