@@ -11,11 +11,11 @@ export default function OurTeam({ t }) {
             title: "Front-end Developer",
             bio: "An enthusiastic front-end developer with a deep love for coding and an insatiable curiosity for exploring and mastering new technologies.",
             github: "https://github.com/hocine1212",
-            linkedin: "www.linkedin.com/in/hocine12",
+            linkedin: "https://www.linkedin.com/in/hocine12/",
         },
         {
             id: 2,
-            image: "/images/tewfik.png",
+            image: "/images/",
             title: "Front-end Developer",
             name: "Benarba Tewfik",
             bio: "Passionate frontend developer from Algeria, always eager to embrace new challenges and learn the latest in web development.",
@@ -47,9 +47,8 @@ export default function OurTeam({ t }) {
             title: "Front-end Developer",
             name: "Khaoula AOURRA",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
-            github: "https://github.com/khaoulasara/AOURRAkhaoula",
-            linkedin:
-                "https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1",
+            github: "https://github.com/khaoulasara",
+            linkedin: "https://www.linkedin.com/in/khaoula-aourra-2214a31b9/",
         },
         {
             id: 6,
@@ -78,7 +77,7 @@ export default function OurTeam({ t }) {
                     return (
                         <div
                             key={id}
-                            className='shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
+                            className='shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
                         >
                             <div className='flex justify-center items-center'>
                                 <Image

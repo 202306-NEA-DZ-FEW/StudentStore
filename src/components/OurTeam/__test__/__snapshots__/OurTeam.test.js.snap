@@ -22,7 +22,7 @@ exports[`renders correctly 1`] = `
     className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 md:w-full lg:grid-cols-3 lg:w-[90%] xl:w-[70%] mx-auto place-items-center gap-4 xl:gap-8 "
   >
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
@@ -87,7 +87,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-2xl text-[#0a66c2] icon"
-          href="www.linkedin.com/in/hocine12"
+          href="https://www.linkedin.com/in/hocine12/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -115,7 +115,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
@@ -128,8 +128,8 @@ exports[`renders correctly 1`] = `
           loading="lazy"
           onError={[Function]}
           onLoad={[Function]}
-          src="/_next/image?url=%2Fimages%2Ftewfik.png&w=256&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Ftewfik.png&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftewfik.png&w=256&q=75 2x"
+          src="/_next/image?url=%2Fimages%2F&w=256&q=75"
+          srcSet="/_next/image?url=%2Fimages%2F&w=128&q=75 1x, /_next/image?url=%2Fimages%2F&w=256&q=75 2x"
           style={
             Object {
               "color": "transparent",
@@ -208,7 +208,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
@@ -301,7 +301,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
@@ -394,7 +394,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
@@ -432,7 +432,7 @@ exports[`renders correctly 1`] = `
       >
         <a
           className="text-2xl text-black icon"
-          href="https://github.com/khaoulasara/AOURRAkhaoula"
+          href="https://github.com/khaoulasara"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -459,7 +459,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-2xl text-[#0a66c2] icon"
-          href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
+          href="https://www.linkedin.com/in/khaoula-aourra-2214a31b9/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -487,7 +487,7 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
+      className="shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white"
     >
       <div
         className="flex justify-center items-center"
