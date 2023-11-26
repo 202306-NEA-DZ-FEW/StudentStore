@@ -6,6 +6,7 @@ import { useAuth } from "@/context/AuthContext.js";
 import { CartContext } from "@/context/CartContext.js";
 import { useContext } from "react";
 import Link from "next/link";
+import Loader from "../Loader/Loader.jsx";
 
 const ProductDetails = ({ productId }) => {
     const { addItemToCart } = useContext(CartContext);
@@ -64,7 +65,7 @@ const ProductDetails = ({ productId }) => {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     return (

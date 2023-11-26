@@ -8,6 +8,7 @@ import ListingCard from "@/components/listingcard/ListingCard";
 import SideBar from "@/components/SideBar/SideBar";
 
 import { auth, db } from "@/util/firebase";
+import Loader from "@/components/Loader/Loader";
 
 const MyListings = () => {
     const [userListings, setUserListings] = useState([]);
@@ -73,7 +74,7 @@ const MyListings = () => {
             <SideBar t={t} router={route} />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
-                    <p>Loading....</p>
+                    <Loader />
                 ) : (
                     <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4 mx-auto sm:mx-4'>
                         {userListings.map((listing) => (

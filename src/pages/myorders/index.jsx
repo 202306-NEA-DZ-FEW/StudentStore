@@ -3,6 +3,7 @@ import SideBar from "@/components/SideBar/SideBar";
 import OrderCard from "@/components/OrderCard/OrderCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
+import Loader from "@/components/Loader/Loader";
 
 const MyOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
@@ -65,7 +66,7 @@ const MyOrders = () => {
             <SideBar />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
-                    <p>Loading....</p>
+                    <Loader />
                 ) : (
                     <>
                         {userOrders.map((order) => (
