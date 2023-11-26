@@ -128,8 +128,8 @@ exports[`renders correctly 1`] = `
           loading="lazy"
           onError={[Function]}
           onLoad={[Function]}
-          src="/_next/image?url=%2Fimages%2Ftewfik.png&w=256&q=75"
-          srcSet="/_next/image?url=%2Fimages%2Ftewfik.png&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftewfik.png&w=256&q=75 2x"
+          src="/_next/image?url=%2Fimages%2F&w=256&q=75"
+          srcSet="/_next/image?url=%2Fimages%2F&w=128&q=75 1x, /_next/image?url=%2Fimages%2F&w=256&q=75 2x"
           style={
             Object {
               "color": "transparent",

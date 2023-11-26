@@ -20,7 +20,6 @@ import {
 function AboutUs() {
     const { t } = useTranslation("aboutus");
     const controls = useAnimation();
-
     const handleScroll = () => {
         const scrollY = window.scrollY || window.pageYOffset;
         const sectionOffset = document.getElementById(
@@ -62,7 +61,7 @@ function AboutUs() {
                 </motion.div>
             </motion.div>
             {/* faq section */}
-            <Faq />
+            <Faq t={t} />
         </div>
     );
 }

@@ -13,5 +13,16 @@
     "Front-end Developer": "Front-end Developer",
     "Fullstack Developer": "Fullstack Developer",
     "Computer Scientist": "Computer Scientist",
-    "Technologies Used": "Technologies Used"
+    "Technologies Used": "Technologies Used",
+    "Frequently asked questions": "Frequently asked questions",
+    "question1": "What is the Student Store website?",
+    "question2": "How does the Student Store promote a sense ofcommunity?",
+    "question3": "Can I buy and sell both new and used items on the Student Store?",
+    "question4": "How does the borrowing duration work on the Student Store?",
+    "question5": "Is there a limit on the number of items astudent can borrow simultaneously?",
+    "answer1": "The Student Store is an online marketplace exclusively designed for students. It provides aplatform for buying, selling, and borrowing affordable new or used items such as electronics,games, and study materials.",
+    "answer2": "The website encourages users to list real information about their products, fostering a sense of community and trust among students. This promotes transparency and helps users make informed decisions.",
+    "answer3": "Yes, the platform allows users to buy and sell both new and used items. This flexibility provides students with affordable options and encourages sustainability through the reuse of products.",
+    "answer4": "The borrowing duration is the period for which a student can use the item. It ranges from one day to 15 days, providing flexibility based on individual needs.",
+    "answer5": "The platform doesn&apos;t impose a strict limit on the number of items a student can borrow simultaneously. However, it&apos;s advisable to be mindful of your capacity to manage multiple borrowed items responsibly."
 }

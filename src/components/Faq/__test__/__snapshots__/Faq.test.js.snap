@@ -2,39 +2,35 @@
 
 exports[`renders correctly 1`] = `
 <div
-  class="max-w-screen-xl mx-auto px-5 mb-10"
+  className="max-w-screen-xl mx-auto px-5 mb-10"
+  dir="ltr"
 >
   <div
-    class="flex flex-col items-center"
+    className="flex flex-col items-center"
   >
     <h2
-      class="font-bold text-5xl mt-5 tracking-tight"
+      className="font-bold text-5xl mt-5 tracking-tight"
     >
-      FAQ
+      Frequently asked questions
     </h2>
-    <p
-      class="text-neutral-500 text-xl mt-3"
-    >
-      Frequenty asked questions
-    </p>
   </div>
   <div
-    class="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8"
+    className="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8"
   >
     <div
-      class="py-5"
+      className="py-5"
     >
       <details
-        class="group"
+        className="group"
       >
         <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
+          className="flex justify-between items-center font-medium cursor-pointer list-none"
         >
           <span>
-            What is the Student Store website?
+            question1
           </span>
           <span
-            class="transition group-open:rotate-180"
+            className="transition group-open:rotate-180"
           >
             <svg
               fill="none"
@@ -54,26 +50,26 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
         >
-          The Student Store is an online marketplace exclusively designed for students. It provides a platform for buying, selling, and borrowing affordable new or used items such as electronics, games, and study materials.
+          answer1
         </p>
       </details>
     </div>
     <div
-      class="py-5"
+      className="py-5"
     >
       <details
-        class="group"
+        className="group"
       >
         <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
+          className="flex justify-between items-center font-medium cursor-pointer list-none"
         >
           <span>
-            How does the Student Store promote a sense of community?
+            question2
           </span>
           <span
-            class="transition group-open:rotate-180"
+            className="transition group-open:rotate-180"
           >
             <svg
               fill="none"
@@ -93,26 +89,26 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
         >
-          The website encourages users to list real information about their products, fostering a sense of community and trust among students. This promotes transparency and helps users make informed decisions.
+          answer2
         </p>
       </details>
     </div>
     <div
-      class="py-5"
+      className="py-5"
     >
       <details
-        class="group"
+        className="group"
       >
         <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
+          className="flex justify-between items-center font-medium cursor-pointer list-none"
         >
           <span>
-            Can I buy and sell both new and used items on the Student Store?
+            question3
           </span>
           <span
-            class="transition group-open:rotate-180"
+            className="transition group-open:rotate-180"
           >
             <svg
               fill="none"
@@ -132,26 +128,26 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
         >
-          Yes, the platform allows users to buy and sell both new and used items. This flexibility provides students with affordable options and encourages sustainability through the reuse of products.
+          answer3
         </p>
       </details>
     </div>
     <div
-      class="py-5"
+      className="py-5"
     >
       <details
-        class="group"
+        className="group"
       >
         <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
+          className="flex justify-between items-center font-medium cursor-pointer list-none"
         >
           <span>
-            How does the borrowing duration work on the Student Store?
+            question4
           </span>
           <span
-            class="transition group-open:rotate-180"
+            className="transition group-open:rotate-180"
           >
             <svg
               fill="none"
@@ -171,26 +167,26 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
         >
-          The borrowing duration is the period for which a student can use the item. It ranges from one day to 15 days, providing flexibility based on individual needs.
+          answer4
         </p>
       </details>
     </div>
     <div
-      class="py-5"
+      className="py-5"
     >
       <details
-        class="group"
+        className="group"
       >
         <summary
-          class="flex justify-between items-center font-medium cursor-pointer list-none"
+          className="flex justify-between items-center font-medium cursor-pointer list-none"
         >
           <span>
-            Is there a limit on the number of items a student can borrow simultaneously?
+            question5
           </span>
           <span
-            class="transition group-open:rotate-180"
+            className="transition group-open:rotate-180"
           >
             <svg
               fill="none"
@@ -210,9 +206,9 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          class="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
         >
-          The platform doesn't impose a strict limit on the number of items a student can borrow simultaneously. However, it's advisable to be mindful of your capacity to manage multiple borrowed items responsibly.
+          answer5
         </p>
       </details>
     </div>

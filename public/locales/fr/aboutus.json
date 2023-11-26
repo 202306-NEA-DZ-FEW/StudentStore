@@ -13,5 +13,16 @@
     "Front-end Developer": "Développeur Front-end",
     "Fullstack Developer": "Développeur Fullstack",
     "Computer Scientist": "Informaticien",
-    "Technologies Used": "Technologies Utilisées"
+    "Technologies Used": "Technologies Utilisées",
+    "Frequently asked questions": "Questions fréquemment posées",
+    "question1": "Qu'est-ce que le site Student Store?",
+    "question2": "Comment le Student Store favorise-t-il un sentiment de communauté?",
+    "question3": "Puis-je acheter et vendre à la fois des articles neufs et d'occasion sur le Student Store?",
+    "question4": "Comment fonctionne la durée d'emprunt sur le Student Store?",
+    "question5": "Y a-t-il une limite au nombre d'articles qu'un étudiant peut emprunter simultanément?",
+    "answer1": "Student Store est une place de marché en ligne exclusivement conçue pour les étudiants. Il offre une plateforme pour acheter, vendre et emprunter des articles neufs ou d'occasion tels que des appareils électroniques, des jeux et des matériaux d'étude à des prix abordables.",
+    "answer2": "Le site encourage les utilisateurs à fournir des informations réelles sur leurs produits, favorisant ainsi un sentiment de communauté et de confiance entre les étudiants. Cela promeut la transparence et aide les utilisateurs à prendre des décisions éclairées.",
+    "answer3": "Oui, la plateforme permet aux utilisateurs d'acheter et de vendre à la fois des articles neufs et d'occasion. Cette flexibilité offre aux étudiants des options abordables et encourage la durabilité grâce à la réutilisation des produits",
+    "answer4": "La durée d'emprunt est la période pendant laquelle un étudiant peut utiliser l'article. Elle va d'un jour à 15 jours, offrant ainsi une flexibilité en fonction des besoins individuels.",
+    "answer5": "La plateforme n'impose pas de limite stricte au nombre d'articles qu'un étudiant peut emprunter simultanément. Cependant, il est recommandé de faire preuve de prudence et de gérer de manière responsable plusieurs articles empruntés."
 }
