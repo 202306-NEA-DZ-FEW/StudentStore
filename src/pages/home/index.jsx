@@ -7,7 +7,6 @@ import EventCard from "@/components/EventCard/EventCard";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import LatestProducts from "@/components/LatestProducts/LatestProducts";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
-import ProfileComponent from "@/components/Profile/Profile";
 
 export default function HomePage() {
     const { t } = useTranslation("home");
@@ -16,7 +15,7 @@ export default function HomePage() {
         <div className=''>
             <HeroSection />
             <LatestProducts t={t} />
-            <ProfileComponent />
+            {/* <ProfileComponent /> */}
             <EventCard t={t} />
             <TestimonialsSection t={t} />
         </div>
