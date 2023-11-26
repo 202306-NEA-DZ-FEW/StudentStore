@@ -8,7 +8,7 @@ export default function Faq({ t }) {
             dir={route.locale === "ar" ? "rtl" : "ltr"}
         >
             <div className='flex flex-col items-center'>
-                <h2 className='font-bold text-5xl mt-5 tracking-tight'>
+                <h2 className='font-bold text-5xl mt-5 text-center tracking-tight'>
                     {t("Frequently asked questions")}
                 </h2>
             </div>

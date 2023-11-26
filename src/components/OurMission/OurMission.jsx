@@ -17,7 +17,7 @@ export default function OurMission({ t }) {
                     <h1 className='text-4xl text-[#32314D] font-bold'>
                         {t("Our Mission")}
                     </h1>
-                    <p className='text-center text-[#32314D] md:text-md lg:text-lg leading-8 md:leading-5 '>
+                    <p className='text-center text-[#32314D] md:text-md lg:text-lg'>
                         {t("Student Store")}
                     </p>
                 </div>
