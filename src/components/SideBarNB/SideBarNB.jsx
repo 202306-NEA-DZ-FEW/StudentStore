@@ -1,10 +1,23 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { BiSolidCategory, BiSolidDonateBlood } from "react-icons/bi";
+import { FaChevronDown, FaHome } from "react-icons/fa";
+import { SiSellfy } from "react-icons/si";
 
 import { useAuth } from "@/context/AuthContext";
 
 const SidebarNB = ({ isOpen, closeSidebar, t }) => {
     const route = useRouter();
     const { currentUser } = useAuth();
+    function dropdown() {
+        document.querySelector("#submenu").classList.toggle("hidden");
+        document.querySelector("#arrow").classList.toggle("rotate-0");
+    }
+    dropdown();
+
+    function openSidebar() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+    }
     return (
         // <div
         //     className={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-all duration-700 ${
@@ -205,7 +218,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                             TailwindCSS
                         </h1>
                         <i
-                            class='bi bi-x cursor-pointer ml-28 lg:hidden'
+                            className='bi bi-x cursor-pointer ml-28 lg:hidden'
                             onclick='openSidebar()'
                         ></i>
                     </div>
@@ -219,47 +232,149 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                         class='text-[15px] ml-4 w-full bg-transparent focus:outline-none'
                     />
                 </div>
-                <div class='p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
-                    <i class='bi bi-house-door-fill'></i>
-                    <span class='text-[15px] ml-4 text-gray-200 font-bold'>
+                <div class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
+                    <span className='text-white'>
+                        <FaHome color='white' />
+                    </span>
+                    <span class='text-[15px] ml-2 text-gray-200 font-bold'>
                         Home
                     </span>
                 </div>
-                <div class='p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
-                    <i class='bi bi-bookmark-fill'></i>
-                    <span class='text-[15px] ml-4 text-gray-200 font-bold'>
-                        Bookmark
+                <div class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
+                    <SiSellfy />
+                    <span class='text-[15px] ml-2 text-gray-200 font-bold'>
+                        {t("Sell")}
+                    </span>
+                </div>
+                <div class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
+                    <BiSolidDonateBlood />
+
+                    <span class='text-[15px] ml-2 text-gray-200 font-bold'>
+                        {t("Donate")}
                     </span>
                 </div>
                 <div class='my-4 bg-gray-600 h-[1px]'></div>
                 <div
-                    class='p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'
-                    onclick='dropdown()'
+                    class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'
+                    onClick={dropdown}
                 >
-                    <i class='bi bi-chat-left-text-fill'></i>
+                    <BiSolidCategory />
                     <div class='flex justify-between w-full items-center'>
-                        <span class='text-[15px] ml-4 text-gray-200 font-bold'>
-                            Chatbox
+                        <span class='text-[15px] ml-2 text-gray-200 font-bold'>
+                            {t("Categories")}
                         </span>
                         <span class='text-sm rotate-180' id='arrow'>
-                            <i class='bi bi-chevron-down'></i>
+                            <FaChevronDown />
                         </span>
                     </div>
                 </div>
-                <div
-                    class='text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold'
+                <ul
+                    class='text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-semibold'
                     id='submenu'
                 >
-                    <h1 class='cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1'>
-                        Social
-                    </h1>
-                    <h1 class='cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1'>
-                        Personal
-                    </h1>
-                    <h1 class='cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1'>
-                        Friends
-                    </h1>
-                </div>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link href='/products'>{t("All products")}</Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "electronics" },
+                            }}
+                            className='capitalize'
+                        >
+                            {t("Electronics")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "books" },
+                            }}
+                            className='capitalize '
+                        >
+                            {t("Books")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "gaming" },
+                            }}
+                            className='capitalize '
+                        >
+                            {t("Gaming")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "clothes" },
+                            }}
+                            className='capitalize '
+                        >
+                            {t("Clothes")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "shoes" },
+                            }}
+                            className='capitalize '
+                        >
+                            {t("Shoes")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "food" },
+                            }}
+                            className='capitalize'
+                        >
+                            {t("Food")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "transportation" },
+                            }}
+                            className='capitalize'
+                        >
+                            {t("Transportation")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "furniture" },
+                            }}
+                            className='capitalize'
+                        >
+                            {t("Furniture")}
+                        </Link>
+                    </li>
+                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                        <Link
+                            href={{
+                                pathname: "/products",
+                                query: { category: "other" },
+                            }}
+                            className='capitalize'
+                        >
+                            {t("Other")}
+                        </Link>
+                    </li>
+                </ul>
                 <div class='p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
                     <i class='bi bi-box-arrow-in-right'></i>
                     <span class='text-[15px] ml-4 text-gray-200 font-bold'>
