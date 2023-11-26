@@ -3,12 +3,14 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useEffect, useState } from "react";
+import { ArrowNarrowRightIcon } from "@heroicons/react/solid";
 
 import ListingCard from "@/components/listingcard/ListingCard";
 import SideBar from "@/components/SideBar/SideBar";
 
 import { auth, db } from "@/util/firebase";
-import Loader from "@/components/Loader/Loader";
+import Image from "next/image";
+import Link from "next/link";
 
 const MyListings = () => {
     const [userListings, setUserListings] = useState([]);
@@ -52,7 +54,6 @@ const MyListings = () => {
                         }
                     );
 
-                    // Cleanup listener when component unmounts
                     return () => {
                         unsubscribe();
                     };
@@ -71,11 +72,33 @@ const MyListings = () => {
 
     return (
         <div className='flex' dir={`${route?.locale === "ar" ? "rtl" : "ltr"}`}>
-            {!loading && <SideBar t={t} router={route} />}
-            <div className='flex flex-wrap justify-around items-start p-4 w-full h-full'>
-                {loading ? (
-                    <div className='flex items-center justify-center w-full h-full'>
-                        <Loader />
+            <SideBar t={t} router={route} />
+            <div className='flex flex-wrap justify-around items-start p-4'>
+                {userListings.length === 0 ? (
+                    <div className='w-full h-full flex flex-col items-center justify-center'>
+                        <p className='flex items-center mb-2 text-xl '>
+                            OOPS! Looks like you have not listed any products
+                            yet
+                        </p>
+                        <Link
+                            className='flex items-center mb-2'
+                            href='/listing'
+                        >
+                            {" "}
+                            <span className='flex items-center  text-[#FF8A57] '>
+                                Add your first product{" "}
+                            </span>
+                            <ArrowNarrowRightIcon className='h-6 w-6 text-[#FF8A57]' />
+                        </Link>
+                        <div className='relative mb-2'>
+                            <Image
+                                src='/images/notfound2.svg'
+                                alt='Empty List'
+                                className='object-center object-cover'
+                                width={800}
+                                height={800}
+                            />
+                        </div>
                     </div>
                 ) : (
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4 mx-auto sm:mx-4'>
