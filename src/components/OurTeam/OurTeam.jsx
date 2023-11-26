@@ -77,7 +77,7 @@ export default function OurTeam({ t }) {
                     return (
                         <div
                             key={id}
-                            className='shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] cursor-pointer text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
+                            className='shadow-lg hover:shadow-[#90EEE1] w-72 md:w-56 lg:w-72 flex p-5 gap-2 rounded-md text-[#575885] text-center transition duration-300 bg-white hover:bg-gradient-to-br from-[#7874F2] to-[#585785] card hover:text-white'
                         >
                             <div className='flex justify-center items-center'>
                                 <Image
