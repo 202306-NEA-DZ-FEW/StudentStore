@@ -49,7 +49,7 @@ function AboutUs() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={controls}
             >
-                <h1 className='text-3xl text-center font-bold'>
+                <h1 className='text-4xl text-center text-[#32314D] font-bold'>
                     {t("Technologies Used")}
                 </h1>
                 <motion.div className='flex flex-wrap justify-center items-center gap-8'>

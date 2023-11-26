@@ -2,14 +2,14 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="max-w-screen-xl mx-auto px-5 mb-20"
+  className="max-w-screen-xl mx-auto px-5 mb-20 text-[#32314D]"
   dir="ltr"
 >
   <div
     className="flex flex-col items-center"
   >
     <h2
-      className="font-bold text-5xl mt-5 text-center tracking-tight"
+      className="font-bold text-4xl mt-5 text-center tracking-tight"
     >
       Frequently asked questions
     </h2>
@@ -50,7 +50,7 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-700 mt-3 group-open:animate-fadeIn"
         >
           answer1
         </p>
@@ -89,7 +89,7 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-700 mt-3 group-open:animate-fadeIn"
         >
           answer2
         </p>
@@ -128,7 +128,7 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-700 mt-3 group-open:animate-fadeIn"
         >
           answer3
         </p>
@@ -167,7 +167,7 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-700 mt-3 group-open:animate-fadeIn"
         >
           answer4
         </p>
@@ -206,7 +206,7 @@ exports[`renders correctly 1`] = `
           </span>
         </summary>
         <p
-          className="text-neutral-600 mt-3 group-open:animate-fadeIn"
+          className="text-neutral-700 mt-3 group-open:animate-fadeIn"
         >
           answer5
         </p>

@@ -4,11 +4,11 @@ export default function Faq({ t }) {
     const route = useRouter();
     return (
         <div
-            className='max-w-screen-xl mx-auto px-5 mb-20'
+            className='max-w-screen-xl mx-auto px-5 mb-20 text-[#32314D]'
             dir={route.locale === "ar" ? "rtl" : "ltr"}
         >
             <div className='flex flex-col items-center'>
-                <h2 className='font-bold text-5xl mt-5 text-center tracking-tight'>
+                <h2 className='font-bold text-4xl mt-5 text-center tracking-tight'>
                     {t("Frequently asked questions")}
                 </h2>
             </div>
@@ -33,7 +33,7 @@ export default function Faq({ t }) {
                                 </svg>
                             </span>
                         </summary>
-                        <p className='text-neutral-600 mt-3 group-open:animate-fadeIn'>
+                        <p className='text-neutral-700 mt-3 group-open:animate-fadeIn'>
                             {t("answer1")}
                         </p>
                     </details>
@@ -58,7 +58,7 @@ export default function Faq({ t }) {
                                 </svg>
                             </span>
                         </summary>
-                        <p className='text-neutral-600 mt-3 group-open:animate-fadeIn'>
+                        <p className='text-neutral-700 mt-3 group-open:animate-fadeIn'>
                             {t("answer2")}
                         </p>
                     </details>
@@ -83,7 +83,7 @@ export default function Faq({ t }) {
                                 </svg>
                             </span>
                         </summary>
-                        <p className='text-neutral-600 mt-3 group-open:animate-fadeIn'>
+                        <p className='text-neutral-700 mt-3 group-open:animate-fadeIn'>
                             {t("answer3")}
                         </p>
                     </details>
@@ -108,7 +108,7 @@ export default function Faq({ t }) {
                                 </svg>
                             </span>
                         </summary>
-                        <p className='text-neutral-600 mt-3 group-open:animate-fadeIn'>
+                        <p className='text-neutral-700 mt-3 group-open:animate-fadeIn'>
                             {t("answer4")}
                         </p>
                     </details>
@@ -133,7 +133,7 @@ export default function Faq({ t }) {
                                 </svg>
                             </span>
                         </summary>
-                        <p className='text-neutral-600 mt-3 group-open:animate-fadeIn'>
+                        <p className='text-neutral-700 mt-3 group-open:animate-fadeIn'>
                             {t("answer5")}
                         </p>
                     </details>
