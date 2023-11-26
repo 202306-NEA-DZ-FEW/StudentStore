@@ -33,7 +33,7 @@
     "No products found.": "Aucun produit trouvé.",
     "Profile": "Profil",
     "Listings": "Listes",
-    "Logout": "Déconnecter",
+    "Logout": "Quitter",
     "Sign In": "Connecter",
     "Hello": "Salut",
     "Welcome to Student Store": "Bienvenue à notre site",
@@ -43,5 +43,7 @@
     "Item added to your cart.": "Article ajouté à votre panier.",
     "Item not found in your cart.": "Article non trouvé dans votre panier.",
     "Item removed from your cart.": "Article retiré de votre panier.",
-    "Add": "Ajouter"
+    "Add": "Ajouter",
+    "Sell": "Vendre",
+    "All products": "Tous les produits"
 }

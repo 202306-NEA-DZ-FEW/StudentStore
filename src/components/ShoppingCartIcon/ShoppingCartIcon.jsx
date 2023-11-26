@@ -2,14 +2,16 @@ import Link from "next/link";
 import { useContext } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 
+import { useAuth } from "@/context/AuthContext";
 import { CartContext } from "@/context/CartContext";
 
 const ShoppingCartIcon = () => {
     const { cartCount } = useContext(CartContext);
+    const { currentUser } = useAuth();
 
     return (
         <div>
-            <Link className='relative' href='/cart'>
+            <Link className='relative' href={currentUser ? "/cart" : "/signin"}>
                 <FiShoppingCart className="className=' text-[28px] text-[#8685a7] hover:text-orange-500 " />
 
                 {cartCount > 0 && (

@@ -17,7 +17,7 @@ function ProductCard({ product }) {
                         height={364}
                         width={288}
                         alt='Product'
-                        className='h-64 w-56 object-cover rounded-t-xl hover:scale-105 ease-in-out transform transition-transform duration-500'
+                        className='h-64 w-56 object-cover rounded-t-xl hover:scale-110 ease-in-out transform transition-transform duration-300'
                         loading='lazy'
                     />
                     <div className='absolute top-0 m-2  left-0 rounded-full '>

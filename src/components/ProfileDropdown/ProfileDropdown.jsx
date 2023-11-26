@@ -26,7 +26,7 @@ function ProfileDropdown({ t }) {
     return (
         <>
             {currentUser ? (
-                <div className='dropdown dropdown-end'>
+                <div className='relative dropdown  dropdown-end'>
                     <label
                         tabIndex={0}
                         onClick={toggleDropdown}
@@ -47,12 +47,16 @@ function ProfileDropdown({ t }) {
                     {isDropdownOpen && (
                         <ul
                             tabIndex={0}
-                            className='mt-1 z-[1] px-1 py-2 shadow menu menu-sm dropdown-content  text-black bg-[#F1F6FA] rounded-md w-22'
+                            className={` ${
+                                route.locale === "ar"
+                                    ? "absolute top-full  left-1/2 transform translate-x-1/4"
+                                    : ""
+                            } mt-1 z-[1] px-1  py-2 shadow menu menu-sm  dropdown-content w-20  text-black bg-[#F1F6FA] rounded-md`}
                         >
                             <li>
                                 <Link
-                                    href='/profile'
-                                    className='text-[#7874F2] font-semibold justify-between hover:text-grey'
+                                    href='#'
+                                    className='text-[#7874F2]  font-semibold  hover:text-grey'
                                 >
                                     {t("Profile")}
                                 </Link>
@@ -60,14 +64,14 @@ function ProfileDropdown({ t }) {
                             <li>
                                 <Link
                                     href='/mylistings'
-                                    className='text-[#7874F2] font-semibold  hover:text-grey'
+                                    className='text-[#7874F2]  font-semibold  hover:text-grey'
                                 >
                                     {t("Listings")}
                                 </Link>
                             </li>
                             <li>
                                 <button
-                                    className='text-[#7874F2] font-semibold   hover:text-grey'
+                                    className='text-[#7874F2]  font-semibold   hover:text-grey'
                                     onClick={handleLogout}
                                 >
                                     {t("Logout")}
