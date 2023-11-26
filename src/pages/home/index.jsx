@@ -15,7 +15,6 @@ export default function HomePage() {
         <div className=''>
             <HeroSection />
             <LatestProducts t={t} />
-            {/* <ProfileComponent /> */}
             <EventCard t={t} />
             <TestimonialsSection t={t} />
         </div>
