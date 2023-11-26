@@ -20,12 +20,11 @@ import {
 function AboutUs() {
     const { t } = useTranslation("aboutus");
     const controls = useAnimation();
-
     const handleScroll = () => {
         const scrollY = window.scrollY || window.pageYOffset;
         const sectionOffset = document.getElementById(
             "technologies-section"
-        ).offsetTop;
+        )?.offsetTop;
 
         if (scrollY > sectionOffset - window.innerHeight / 2) {
             controls.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
@@ -46,11 +45,13 @@ function AboutUs() {
             {/* how technology section */}
             <motion.div
                 id='technologies-section'
-                className='flex flex-col justify-center h-72 items-center p-5 gap-8'
+                className='flex flex-col justify-center h-96 sm:h-72 items-center p-5 gap-8'
                 initial={{ opacity: 0, y: 50 }}
                 animate={controls}
             >
-                <h1 className='text-3xl font-bold'>{t("Technologies Used")}</h1>
+                <h1 className='text-4xl text-center text-[#32314D] font-bold'>
+                    {t("Technologies Used")}
+                </h1>
                 <motion.div className='flex flex-wrap justify-center items-center gap-8'>
                     <SiNextdotjs className='text-7xl text-black' />
                     <SiFirebase className='text-7xl text-[#ffcc2f]' />
@@ -62,7 +63,7 @@ function AboutUs() {
                 </motion.div>
             </motion.div>
             {/* faq section */}
-            <Faq />
+            <Faq t={t} />
         </div>
     );
 }

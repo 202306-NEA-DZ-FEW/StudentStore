@@ -36,7 +36,7 @@ exports[`renders correctly 1`] = `
         Our Mission
       </h1>
       <p
-        className="text-center text-[#32314D] md:text-md lg:text-lg leading-8 md:leading-5 "
+        className="text-center text-[#32314D] md:text-md lg:text-lg"
       >
         Student Store
       </p>
