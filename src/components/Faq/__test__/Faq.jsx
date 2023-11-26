@@ -4,7 +4,7 @@ export default function Faq({ t }) {
     const route = useRouter();
     return (
         <div
-            className='max-w-screen-xl mx-auto px-5 mb-10'
+            className='max-w-screen-xl mx-auto px-5 mb-20'
             dir={route.locale === "ar" ? "rtl" : "ltr"}
         >
             <div className='flex flex-col items-center'>

@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="max-w-screen-xl mx-auto px-5 mb-10"
+  className="max-w-screen-xl mx-auto px-5 mb-20"
   dir="ltr"
 >
   <div
