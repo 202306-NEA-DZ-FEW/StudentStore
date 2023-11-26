@@ -10,11 +10,17 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import CartItem from "@/components/CartItem/CartItem";
 import OrderSummary from "@/components/OrderSummary/OrderSummary";
 
+import { useAuth } from "@/context/AuthContext";
 import { CartContext } from "@/context/CartContext";
 
 const Cart = () => {
     const { t } = useTranslation("cart");
     const route = useRouter();
+
+    const { currentUser } = useAuth();
+    if (!currentUser) {
+        route.push("/signin");
+    }
     const { cartItems, updateCartItem } = useContext(CartContext);
     const [borrowPrices, setBorrowPrices] = useState({});
     const calculateBorrowPrice = (item) => {
@@ -64,7 +70,7 @@ const Cart = () => {
         >
             {cartItems.length > 0 ? (
                 <div className='mx-auto   max-w-5xl  px-6 mb-10 md:space-x-6 xl:px-0'>
-                    <h1 className='text-gray-500 text-center ml-4   text-2xl font-bold  '>
+                    <h1 className='text-[#32314d] text-center ml-4   text-2xl font-bold  '>
                         {t("Your Cart")} ({cartItems.length})
                     </h1>
                 </div>

@@ -223,6 +223,9 @@ const Listing = () => {
             window.scrollTo(0, 0);
         }
     }, [isUploading]);
+    if (!currentUser) {
+        route.push("/signin");
+    }
 
     return (
         <div className='bg-[#F1F6FA] pb-6 pt-3  px-6 text-center lg:text-left'>

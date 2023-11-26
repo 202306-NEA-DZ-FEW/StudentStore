@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+import { useAuth } from "@/context/AuthContext";
+
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
@@ -12,11 +14,9 @@ import SidebarNB from "../SideBarNB/SideBarNB";
 import UnderBar from "../UnderBar/UnderBar";
 
 export default function Navbar({ t }) {
-    const [menuIcon, setIcon] = useState(false);
     const route = useRouter();
-    const handleSmallerScreenNavigation = () => {
-        setIcon(!menuIcon);
-    };
+    const { currentUser } = useAuth();
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const openSidebar = () => {
@@ -47,9 +47,9 @@ export default function Navbar({ t }) {
                         </Link>
                         <Link
                             className='text-[#585785]  rounded-md  hover:text-[#FF8A57]  transition-all duration-300  hover:underline hover:decoration-4 font-bold'
-                            href='/listing'
+                            href={currentUser ? "/listing" : "/signin"}
                         >
-                            {t("Add")}
+                            {t("Sell")}
                         </Link>
 
                         <Link
@@ -58,13 +58,6 @@ export default function Navbar({ t }) {
                         >
                             {t("Donate")}
                         </Link>
-
-                        {/* <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
-                            href='/aboutus'
-                        >
-                            {t("about_us")}
-                        </Link> */}
                     </div>
                     <div className='md:w-[25%] '>
                         <SearchBar t={t} />

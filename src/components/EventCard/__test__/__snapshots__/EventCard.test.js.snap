@@ -63,7 +63,6 @@ exports[`renders correctly 1`] = `
             <div
               className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
-               
               <svg
                 className=" flex items-center"
                 fill="currentColor"
@@ -83,7 +82,6 @@ exports[`renders correctly 1`] = `
                   d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
                 />
               </svg>
-               
               <p
                 className=" text-center text-medium font-small"
               >
@@ -91,9 +89,8 @@ exports[`renders correctly 1`] = `
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
+              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
             >
-               
               <a
                 href="https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1"
                 onClick={[Function]}
@@ -101,11 +98,8 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                 
                 interested
-                 
               </a>
-               
             </button>
           </footer>
         </article>
@@ -158,7 +152,6 @@ exports[`renders correctly 1`] = `
             <div
               className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
-               
               <svg
                 className=" flex items-center"
                 fill="currentColor"
@@ -178,7 +171,6 @@ exports[`renders correctly 1`] = `
                   d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
                 />
               </svg>
-               
               <p
                 className=" text-center text-medium font-small"
               >
@@ -186,9 +178,8 @@ exports[`renders correctly 1`] = `
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
+              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
             >
-               
               <a
                 href="https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch"
                 onClick={[Function]}
@@ -196,11 +187,8 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                 
                 interested
-                 
               </a>
-               
             </button>
           </footer>
         </article>
@@ -253,7 +241,6 @@ exports[`renders correctly 1`] = `
             <div
               className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
             >
-               
               <svg
                 className=" flex items-center"
                 fill="currentColor"
@@ -273,7 +260,6 @@ exports[`renders correctly 1`] = `
                   d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
                 />
               </svg>
-               
               <p
                 className=" text-center text-medium font-small"
               >
@@ -281,9 +267,8 @@ exports[`renders correctly 1`] = `
               </p>
             </div>
             <button
-              className="border-2 border-[#FF8A57] rounded-lg text-white shadow-sm hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto"
+              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
             >
-               
               <a
                 href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
                 onClick={[Function]}
@@ -291,11 +276,8 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                 
                 interested
-                 
               </a>
-               
             </button>
           </footer>
         </article>

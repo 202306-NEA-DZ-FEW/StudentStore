@@ -1,10 +1,10 @@
 import { collection, onSnapshot, query } from "firebase/firestore";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { ImSearch } from "react-icons/im";
 
 import { db } from "@/util/firebase";
-import Link from "next/link";
 
 const SearchBar = ({ t }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -66,9 +66,13 @@ const SearchBar = ({ t }) => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className='w-full py-1 text-[#585785] px-4 border-[#585785] border-2 dark:bg-white rounded-full   font-sm  focus:outline-none'
                 />
-                {/* <div className='absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500'dir={`${route.locale === "ar" ? "ltr" : "rtl"}`}>
+                <div
+                    className={`absolute  top-1/2 transform -translate-y-1/2 ${
+                        route.locale === "ar" ? "left-3" : "right-3"
+                    } text-gray-500`}
+                >
                     <ImSearch />
-                </div> */}
+                </div>
             </div>
 
             {showResultsContainer && (
