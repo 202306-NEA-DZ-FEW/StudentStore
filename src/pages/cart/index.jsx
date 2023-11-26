@@ -70,7 +70,7 @@ const Cart = () => {
         >
             {cartItems.length > 0 ? (
                 <div className='mx-auto   max-w-5xl  px-6 mb-10 md:space-x-6 xl:px-0'>
-                    <h1 className='text-gray-500 text-center ml-4   text-2xl font-bold  '>
+                    <h1 className='text-[#32314d] text-center ml-4   text-2xl font-bold  '>
                         {t("Your Cart")} ({cartItems.length})
                     </h1>
                 </div>
