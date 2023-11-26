@@ -38,7 +38,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     <div class=' text-[15px] ml-2'>
                         {currentUser ? (
                             <p
-                                className={`sm:text-lg  p-2 font-semibold text-[#585785] ${
+                                className={`sm:text-lg  p-2 font-semibold text-white ${
                                     route.locale === "ar" ? "mr-4" : ""
                                 } `}
                             >
