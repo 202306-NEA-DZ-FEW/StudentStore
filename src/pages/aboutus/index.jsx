@@ -25,7 +25,7 @@ function AboutUs() {
         const scrollY = window.scrollY || window.pageYOffset;
         const sectionOffset = document.getElementById(
             "technologies-section"
-        ).offsetTop;
+        )?.offsetTop;
 
         if (scrollY > sectionOffset - window.innerHeight / 2) {
             controls.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
