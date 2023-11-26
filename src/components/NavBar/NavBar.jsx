@@ -46,7 +46,7 @@ export default function Navbar({ t }) {
                             className='text-[#585785]  rounded-md  hover:text-[#FF8A57]  transition-all duration-300  hover:underline hover:decoration-4 font-bold'
                             href='/listing'
                         >
-                            {t("Add")}
+                            {t("Sell")}
                         </Link>
 
                         <Link
@@ -55,13 +55,6 @@ export default function Navbar({ t }) {
                         >
                             {t("Donate")}
                         </Link>
-
-                        {/* <Link
-                            className='text-[#585785]  hover:text-[#FF8A57] rounded-md hover:underline hover:decoration-4  break-keep inline-block font-bold'
-                            href='/aboutus'
-                        >
-                            {t("about_us")}
-                        </Link> */}
                     </div>
                     <div className='md:w-[25%] '>
                         <SearchBar t={t} />

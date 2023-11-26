@@ -31,7 +31,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
         <div
             class={`fixed top-0  ${
                 route.locale === "ar" ? "right-0" : "left-0"
-            } h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-gray-800 shadow-lg max-h-screen overflow-y-auto transition-all ease-in-out duration-700 ${isOpenClass} `}
+            } h-screen w-[60%] sm:w-[50%] md:hidden mx-auto bg-gray-800 shadow-lg max-h-screen overflow-y-auto transition-all ease-in-out duration-700 ${isOpenClass} `}
         >
             <div class='text-gray-100 text-xl'>
                 <div class='p-1 mt-1 flex justify-between items-center'>
