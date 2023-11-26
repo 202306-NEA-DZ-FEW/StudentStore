@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { BiSolidCategory, BiSolidDonateBlood } from "react-icons/bi";
 import { FaChevronDown, FaHome } from "react-icons/fa";
 import { SiSellfy } from "react-icons/si";
@@ -9,15 +10,27 @@ import { useAuth } from "@/context/AuthContext";
 const SidebarNB = ({ isOpen, closeSidebar, t }) => {
     const route = useRouter();
     const { currentUser } = useAuth();
-    function dropdown() {
-        document.querySelector("#submenu").classList.toggle("hidden");
-        document.querySelector("#arrow").classList.toggle("rotate-0");
-    }
-    dropdown();
+    const [isSubMenuHidden, setIsSubMenuHidden] = useState(false);
+    const [isArrowRotated, setIsArrowRotated] = useState(false);
+    const [isSidebarHidden, setIsSidebarHidden] = useState(false);
 
-    function openSidebar() {
-        document.querySelector(".sidebar").classList.toggle("hidden");
-    }
+    const toggleSubMenu = () => {
+        setIsSubMenuHidden((prev) => !prev);
+        setIsArrowRotated((prev) => !prev);
+    };
+
+    const toggleSidebar = () => {
+        setIsSidebarHidden((prev) => !prev);
+    };
+    // function dropdown() {
+    //     document.querySelector("#submenu").classList.toggle("hidden");
+    //     document.querySelector("#arrow").classList.toggle("rotate-0");
+    // }
+    // dropdown();
+
+    // function openSidebar() {
+    //     document.querySelector(".sidebar").classList.toggle("hidden");
+    // }
     return (
         // <div
         //     className={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-slate-200 shadow-lg transition-all duration-700 ${
@@ -205,12 +218,12 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
         // </div>
         <div>
             <span
-                class='absolute text-white text-4xl top-5 left-4 cursor-pointer'
-                onclick='openSidebar()'
+                class='absolute text-blue-300 text-4xl top-5 left-4 cursor-pointer'
+                onClick={toggleSidebar}
             >
-                <i class='bi bi-filter-left px-2 bg-gray-900 rounded-md'></i>
+                <i class='bi bi-filter-left px-2 bg-gray-600 rounded-md'></i>
             </span>
-            <div class='sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900'>
+            <div class='sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-700'>
                 <div class='text-gray-100 text-xl'>
                     <div class='p-2.5 mt-1 flex items-center'>
                         <i class='bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600'></i>
@@ -256,20 +269,27 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                 <div class='my-4 bg-gray-600 h-[1px]'></div>
                 <div
                     class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'
-                    onClick={dropdown}
+                    onClick={toggleSubMenu}
                 >
                     <BiSolidCategory />
                     <div class='flex justify-between w-full items-center'>
                         <span class='text-[15px] ml-2 text-gray-200 font-bold'>
                             {t("Categories")}
                         </span>
-                        <span class='text-sm rotate-180' id='arrow'>
+                        <span
+                            className={`text-sm ${
+                                isArrowRotated ? "rotate-180" : ""
+                            }`}
+                            id='arrow'
+                        >
                             <FaChevronDown />
                         </span>
                     </div>
                 </div>
                 <ul
-                    class='text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-semibold'
+                    className={`text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-semibold ${
+                        isSubMenuHidden ? "hidden" : ""
+                    }`}
                     id='submenu'
                 >
                     <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
