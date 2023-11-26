@@ -11,7 +11,7 @@ export default function OurTeam({ t }) {
             title: "Front-end Developer",
             bio: "An enthusiastic front-end developer with a deep love for coding and an insatiable curiosity for exploring and mastering new technologies.",
             github: "https://github.com/hocine1212",
-            linkedin: "www.linkedin.com/in/hocine12",
+            linkedin: "https://www.linkedin.com/in/hocine12/",
         },
         {
             id: 2,
@@ -47,9 +47,8 @@ export default function OurTeam({ t }) {
             title: "Front-end Developer",
             name: "Khaoula AOURRA",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
-            github: "https://github.com/khaoulasara/AOURRAkhaoula",
-            linkedin:
-                "https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1",
+            github: "https://github.com/khaoulasara",
+            linkedin: "https://www.linkedin.com/in/khaoula-aourra-2214a31b9/",
         },
         {
             id: 6,

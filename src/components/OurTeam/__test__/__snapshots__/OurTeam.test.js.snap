@@ -87,7 +87,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-2xl text-[#0a66c2] icon"
-          href="www.linkedin.com/in/hocine12"
+          href="https://www.linkedin.com/in/hocine12/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -432,7 +432,7 @@ exports[`renders correctly 1`] = `
       >
         <a
           className="text-2xl text-black icon"
-          href="https://github.com/khaoulasara/AOURRAkhaoula"
+          href="https://github.com/khaoulasara"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
@@ -459,7 +459,7 @@ exports[`renders correctly 1`] = `
         </a>
         <a
           className="text-2xl text-[#0a66c2] icon"
-          href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
+          href="https://www.linkedin.com/in/khaoula-aourra-2214a31b9/"
           onClick={[Function]}
           onMouseEnter={[Function]}
           onTouchStart={[Function]}
