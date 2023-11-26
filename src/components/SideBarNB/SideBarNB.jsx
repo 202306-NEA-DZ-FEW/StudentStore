@@ -35,7 +35,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
     return (
         <div className=''>
             <div
-                class={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-gray-800 shadow-lg transition-all duration-700 ${
+                class={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-gray-800 shadow-lg max-h-screen overflow-y-auto transition-all ease-in-out duration-700 ${
                     isOpen ? "left-0" : "-left-full"
                 } `}
             >
@@ -80,6 +80,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     <Link
                         href='/home'
                         class='text-[15px] ml-2 text-gray-200 font-bold'
+                        onClick={closeSidebar}
                     >
                         Home
                     </Link>
@@ -89,6 +90,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     <Link
                         href='/listing'
                         class='text-[15px] ml-2 text-gray-200 font-bold'
+                        onClick={closeSidebar}
                     >
                         {t("Sell")}
                     </Link>
@@ -99,6 +101,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     <Link
                         href='/donations'
                         class='text-[15px] ml-2 text-gray-200 font-bold'
+                        onClick={closeSidebar}
                     >
                         {t("Donate")}
                     </Link>
@@ -130,7 +133,9 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                     id='submenu'
                 >
                     <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
-                        <Link href='/products'>{t("All products")}</Link>
+                        <Link href='/products' onClick={closeSidebar}>
+                            {t("All products")}
+                        </Link>
                     </li>
                     <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
                         <Link
@@ -139,6 +144,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "electronics" },
                             }}
                             className='capitalize'
+                            onClick={closeSidebar}
                         >
                             {t("Electronics")}
                         </Link>
@@ -150,6 +156,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "books" },
                             }}
                             className='capitalize '
+                            onClick={closeSidebar}
                         >
                             {t("Books")}
                         </Link>
@@ -161,6 +168,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "gaming" },
                             }}
                             className='capitalize '
+                            onClick={closeSidebar}
                         >
                             {t("Gaming")}
                         </Link>
@@ -172,6 +180,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "clothes" },
                             }}
                             className='capitalize '
+                            onClick={closeSidebar}
                         >
                             {t("Clothes")}
                         </Link>
@@ -183,6 +192,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "shoes" },
                             }}
                             className='capitalize '
+                            onClick={closeSidebar}
                         >
                             {t("Shoes")}
                         </Link>
@@ -194,6 +204,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "food" },
                             }}
                             className='capitalize'
+                            onClick={closeSidebar}
                         >
                             {t("Food")}
                         </Link>
@@ -205,17 +216,19 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "transportation" },
                             }}
                             className='capitalize'
+                            onClick={closeSidebar}
                         >
                             {t("Transportation")}
                         </Link>
                     </li>
-                    <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
+                    <li className='cursor-pointer p-1 w-full hover:bg-blue-600 rounded-md mt-1'>
                         <Link
                             href={{
                                 pathname: "/products",
                                 query: { category: "furniture" },
                             }}
-                            className='capitalize'
+                            className='capitalize w-full'
+                            onClick={closeSidebar}
                         >
                             {t("Furniture")}
                         </Link>
@@ -227,6 +240,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                                 query: { category: "other" },
                             }}
                             className='capitalize'
+                            onClick={closeSidebar}
                         >
                             {t("Other")}
                         </Link>
