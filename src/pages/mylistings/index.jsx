@@ -72,9 +72,11 @@ const MyListings = () => {
     return (
         <div className='flex' dir={`${route?.locale === "ar" ? "rtl" : "ltr"}`}>
             <SideBar t={t} router={route} />
-            <div className='flex flex-wrap justify-around items-start p-4'>
+            <div className='flex flex-wrap justify-around items-start p-4  '>
                 {loading ? (
-                    <Loader />
+                    <div className='flex items-center justify-center w-[50%] h-[50%]'>
+                        <Loader />
+                    </div>
                 ) : (
                     <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 xl:grid-cols-4 mx-auto sm:mx-4'>
                         {userListings.map((listing) => (
