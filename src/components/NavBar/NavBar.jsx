@@ -12,11 +12,8 @@ import SidebarNB from "../SideBarNB/SideBarNB";
 import UnderBar from "../UnderBar/UnderBar";
 
 export default function Navbar({ t }) {
-    const [menuIcon, setIcon] = useState(false);
     const route = useRouter();
-    const handleSmallerScreenNavigation = () => {
-        setIcon(!menuIcon);
-    };
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const openSidebar = () => {

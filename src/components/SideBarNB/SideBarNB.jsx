@@ -18,12 +18,20 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
         setIsSubMenuHidden((prev) => !prev);
         setIsArrowRotated((prev) => !prev);
     };
+    const isRtl = route.locale === "ar";
+    const isOpenClass = isOpen
+        ? isRtl
+            ? "right-0"
+            : "left-0"
+        : isRtl
+        ? "-right-full"
+        : "-left-full";
 
     return (
         <div
-            class={`fixed top-0 left-0 h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-gray-800 shadow-lg max-h-screen overflow-y-auto transition-all ease-in-out duration-700 ${
-                isOpen ? "left-0" : "-left-full"
-            } `}
+            class={`fixed top-0  ${
+                route.locale === "ar" ? "right-0" : "left-0"
+            } h-screen w-[60%] sm:w-[40%] md:hidden mx-auto bg-gray-800 shadow-lg max-h-screen overflow-y-auto transition-all ease-in-out duration-700 ${isOpenClass} `}
         >
             <div class='text-gray-100 text-xl'>
                 <div class='p-1 mt-1 flex justify-between items-center'>
@@ -31,7 +39,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
                         {currentUser ? (
                             <p
                                 className={`sm:text-lg  p-2 font-semibold text-[#585785] ${
-                                    route.locale === "ar" ? "mr-16" : ""
+                                    route.locale === "ar" ? "mr-4" : ""
                                 } `}
                             >
                                 {`${t("Hello")}, ${
@@ -54,21 +62,25 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
 
             <div class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
                 <span className='text-white'>
-                    <FaHome color='white' />
+                    <FaHome />
                 </span>
                 <Link
                     href='/home'
-                    class='text-[15px] ml-2 text-gray-200 font-bold'
+                    class={`text-[15px]  ml-2 text-gray-200 font-bold ${
+                        route.locale === "ar" ? "mr-2" : ""
+                    }`}
                     onClick={closeSidebar}
                 >
-                    Home
+                    {t("Home")}
                 </Link>
             </div>
             <div class='p-1 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white'>
                 <SiSellfy />
                 <Link
                     href='/listing'
-                    class='text-[15px] ml-2 text-gray-200 font-bold'
+                    class={`text-[15px]  ml-2 text-gray-200 font-bold ${
+                        route.locale === "ar" ? "mr-2" : ""
+                    }`}
                     onClick={closeSidebar}
                 >
                     {t("Sell")}
@@ -79,7 +91,9 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
 
                 <Link
                     href='/donations'
-                    class='text-[15px] ml-2 text-gray-200 font-bold'
+                    class={`text-[15px]  ml-2 text-gray-200 font-bold ${
+                        route.locale === "ar" ? "mr-2" : ""
+                    }`}
                     onClick={closeSidebar}
                 >
                     {t("Donate")}
@@ -92,7 +106,11 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
             >
                 <BiSolidCategory />
                 <div class='flex justify-between w-full items-center'>
-                    <span class='text-[15px] ml-2 text-gray-200 font-bold'>
+                    <span
+                        class={`text-[15px]  ml-2 text-gray-200 font-bold ${
+                            route.locale === "ar" ? "mr-2" : ""
+                        }`}
+                    >
                         {t("Categories")}
                     </span>
                     <span
@@ -108,7 +126,7 @@ const SidebarNB = ({ isOpen, closeSidebar, t }) => {
             <ul
                 className={`text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-semibold ${
                     isSubMenuHidden ? "hidden" : ""
-                }`}
+                } ${route.locale === "ar" ? "text-right " : ""}`}
                 id='submenu'
             >
                 <li class='cursor-pointer p-1 hover:bg-blue-600 rounded-md mt-1'>
