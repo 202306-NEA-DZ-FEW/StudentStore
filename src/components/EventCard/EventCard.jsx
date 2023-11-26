@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 
 import Button from "../Buttons/Button";
@@ -72,24 +72,21 @@ const EventCard = ({ t }) => {
                                     </div>
                                     <footer className='flex lg:justify-around items-center lg:flex-row flex-col p-2 '>
                                         <div className='flex items-center space-x-2 justify-center text-center text-[#585785] mb-2'>
-                                            {" "}
                                             <FaCalendarAlt
                                                 size={20}
                                                 className=' flex items-center'
-                                            ></FaCalendarAlt>{" "}
+                                            ></FaCalendarAlt>
                                             <p className=' text-center text-medium font-small'>
                                                 {date}
                                             </p>
                                         </div>
-                                        <Button className='bg-[#585785] py-1 lg:px-2 border-none px-1 text-sm font-normal w-24 m-auto  '>
-                                            {" "}
+                                        <Button className='bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2  px-1 text-sm  w-24 m-auto  '>
                                             <Link
                                                 href={`${link}`}
                                                 target='_blank'
                                             >
-                                                {" "}
-                                                {t("interested")}{" "}
-                                            </Link>{" "}
+                                                {t("interested")}
+                                            </Link>
                                         </Button>
                                     </footer>
                                 </article>

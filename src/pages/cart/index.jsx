@@ -10,11 +10,17 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import CartItem from "@/components/CartItem/CartItem";
 import OrderSummary from "@/components/OrderSummary/OrderSummary";
 
+import { useAuth } from "@/context/AuthContext";
 import { CartContext } from "@/context/CartContext";
 
 const Cart = () => {
     const { t } = useTranslation("cart");
     const route = useRouter();
+
+    const { currentUser } = useAuth();
+    if (!currentUser) {
+        route.push("/signin");
+    }
     const { cartItems, updateCartItem } = useContext(CartContext);
     const [borrowPrices, setBorrowPrices] = useState({});
     const calculateBorrowPrice = (item) => {

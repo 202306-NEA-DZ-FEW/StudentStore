@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+import { useAuth } from "@/context/AuthContext";
+
 import Language from "../Language/Language";
 import Logo from "../Logo/Logo";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
@@ -13,6 +15,7 @@ import UnderBar from "../UnderBar/UnderBar";
 
 export default function Navbar({ t }) {
     const route = useRouter();
+    const { currentUser } = useAuth();
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -44,7 +47,7 @@ export default function Navbar({ t }) {
                         </Link>
                         <Link
                             className='text-[#585785]  rounded-md  hover:text-[#FF8A57]  transition-all duration-300  hover:underline hover:decoration-4 font-bold'
-                            href='/listing'
+                            href={currentUser ? "/listing" : "/signin"}
                         >
                             {t("Sell")}
                         </Link>
