@@ -38,8 +38,8 @@ function ProfileDropdown({ t }) {
                                     currentUser.photoURL ||
                                     "/images/profile.jpg"
                                 }
-                                width={20}
-                                height={20}
+                                width={220}
+                                height={220}
                                 alt='profile-pic'
                             />
                         </div>

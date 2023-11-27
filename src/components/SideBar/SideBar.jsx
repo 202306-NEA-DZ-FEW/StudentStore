@@ -1,4 +1,6 @@
-import { doc, getDoc } from "firebase/firestore";
+import { updateProfile } from "firebase/auth";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Image from "next/image.js";
 import Link from "next/link";
 import { useRouter } from "next/router.js";
@@ -16,7 +18,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useAuth } from "@/context/AuthContext.js";
 
-import { db } from "../../util/firebase.js";
+import { db, storage } from "../../util/firebase.js";
 
 const Sidebar = ({ t }) => {
     const [selectedLink, setSelectedLink] = useState(null);
@@ -79,6 +81,40 @@ const Sidebar = ({ t }) => {
         };
     }, []);
 
+    const handleImageChange = async (e) => {
+        const file = e.target.files[0];
+        console.log(file);
+
+        if (file) {
+            try {
+                // Create a reference to the storage location
+                const storageRef = ref(
+                    storage,
+                    `profile-images/${currentUser.uid}/${file.name}`
+                );
+                const snapshot = await uploadBytes(storageRef, file);
+
+                // Get the URL of the uploaded image
+                const imageUrl = await getDownloadURL(snapshot.ref);
+
+                // Update the user's profile with the new image URL
+                await updateProfile(currentUser, {
+                    photoURL: imageUrl,
+                });
+                // Update the user's profile in Firestore
+                const userDocRef = doc(db, "userinfo", currentUser.uid);
+                await updateDoc(userDocRef, { photo: imageUrl });
+
+                // Force a re-render to reflect the updated user information
+                setUserInfo({ ...userInfo, photoURL: imageUrl });
+            } catch (error) {
+                console.error("Error updating profile image:", error);
+            }
+        }
+    };
+
+    console.log(currentUser?.photoURL);
+
     return (
         <div
             className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
@@ -104,13 +140,22 @@ const Sidebar = ({ t }) => {
             )}
 
             <div className='flex flex-col items-center mt-10 mb-4 space-y-4'>
-                <Image
-                    src={currentUser?.photoURL || "/images/profile.jpg"}
-                    alt='profile-pic'
-                    width={80}
-                    height={80}
-                    className='w-25 h-25 rounded-full mb-2'
-                />
+                <label htmlFor='profileImageInput' className='cursor-pointer'>
+                    <Image
+                        src={currentUser?.photoURL || "/images/profile.jpg"}
+                        alt='profile-pic'
+                        width={220}
+                        height={220}
+                        className='w-24 object-cover h-24 rounded-full mb-2 cursor-pointer'
+                    />
+                    <input
+                        type='file'
+                        accept='image/*'
+                        id='profileImageInput'
+                        className='hidden'
+                        onChange={handleImageChange}
+                    />
+                </label>
                 {!collapsed && userInfo && (
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>

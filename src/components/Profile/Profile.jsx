@@ -1,26 +1,27 @@
-import React, { useContext, useState, useEffect } from "react";
-import { useAuth } from "@/context/AuthContext";
 import {
+    ArrowNarrowRightIcon,
+    CheckCircleIcon,
+    ShoppingCartIcon,
+    SwitchHorizontalIcon,
+    TruckIcon,
+} from "@heroicons/react/solid";
+import {
+    collection,
     doc,
     getDoc,
-    updateDoc,
-    collection,
-    query,
-    limit,
     getDocs,
+    limit,
+    query,
+    updateDoc,
 } from "firebase/firestore";
+import Image from "next/image";
 import Link from "next/link";
-import { db } from "@/util/firebase";
+import React, { useContext, useEffect, useState } from "react";
+
+import { useAuth } from "@/context/AuthContext";
 import { CartContext } from "@/context/CartContext";
 import { UserListingsContext } from "@/context/UserListingsContext";
-import Image from "next/image";
-import {
-    ShoppingCartIcon,
-    CheckCircleIcon,
-    TruckIcon,
-    SwitchHorizontalIcon,
-    ArrowNarrowRightIcon,
-} from "@heroicons/react/solid";
+import { db } from "@/util/firebase";
 
 <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -248,8 +249,8 @@ const ProfileComponent = () => {
                                     <Image
                                         src={userData?.photo}
                                         alt='User Profile'
-                                        height={52}
-                                        width={52}
+                                        height={300}
+                                        width={300}
                                         className='h-52 w-52 rounded object-cover border border-gray-200'
                                     />
                                 ) : (
