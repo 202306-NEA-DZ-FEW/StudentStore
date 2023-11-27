@@ -38,7 +38,7 @@ const Popup = dynamic(
 );
 
 const MapComponent = () => {
-    const [position, setPosition] = useState([36, 3]); // Hardcoded position [latitude, longitude]
+    const [position, setPosition] = useState([36.7525, 3.04197]); // Hardcoded position [latitude, longitude]
     const [city, setCity] = useState("Algiers"); // Hardcoded city
     const [country, setCountry] = useState("Algeria"); // Hardcoded country
     const [loading, setLoading] = useState(false); // No need to set it to true since data is hardcoded
@@ -56,7 +56,7 @@ const MapComponent = () => {
             <div className='border border-black rounded-lg w-9/12 h-3/6'>
                 <MapContainer
                     center={position}
-                    zoom={15}
+                    zoom={20}
                     style={{ width: "100%", height: "100%" }}
                     noSsr // Disable server-side rendering
                 >
