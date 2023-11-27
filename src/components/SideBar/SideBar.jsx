@@ -146,7 +146,9 @@ const Sidebar = ({ t }) => {
                         alt='profile-pic'
                         width={220}
                         height={220}
-                        className='w-24 object-cover h-24 rounded-full mb-2 cursor-pointer'
+                        className={`w-24 object-cover transition-all duration-500 ease-in-out ${
+                            collapsed ? "w-12 h-12" : "w-24 h-24"
+                        } rounded-full mb-2 cursor-pointer'`}
                     />
                     <input
                         type='file'
