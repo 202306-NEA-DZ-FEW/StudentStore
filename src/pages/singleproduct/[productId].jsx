@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
 import { useRouter } from "next/router";
 import { CartProvider } from "@/context/CartContext";
-// import MapComponent from "@/components/Map/Map";
+
+const MapComponent = dynamic(() => import("@/components/Map/Map"), {
+    ssr: false,
+});
 
 function SingleProduct() {
     const router = useRouter();
@@ -12,12 +16,11 @@ function SingleProduct() {
             <ProductDetails productId={productId} />
 
             {/* Conditionally render MapComponent based on screen size */}
-            {/* {productId && (
-                    <div className="hidden lg:block lg:mt-16 lg:relative lg:z-0">
-                  
-                        <MapComponent productId={productId} />
-                    </div>
-                )} */}
+            {productId && (
+                <div className='hidden lg:block  lg:relative lg:z-0'>
+                    <MapComponent productId={productId} />
+                </div>
+            )}
         </div>
     );
 }
