@@ -63,6 +63,12 @@ Only For Students
 -   User profile management
 -   Listing management
 -   Profile information page
+-   User's listings page
+-   User's orders page
+-   Cart management
+-   Checkout process
+-   Internationalization
+-   Responsive design
 
 ## Devices:
 
@@ -101,3 +107,4 @@ Re:Coded - NEA DZ FEW 2023
 ![my cart](image-6.png)
 ![checkout](image-7.png)
 ![profile](image-8.png)
+![my listings](image-9.png)
