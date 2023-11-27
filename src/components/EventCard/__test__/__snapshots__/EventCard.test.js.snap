@@ -17,6 +17,12 @@ exports[`renders correctly 1`] = `
     >
       <div
         className="p-4 w-120 h-120  flex-1"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateX(-50px) translateY(-50px) translateZ(0)",
+          }
+        }
       >
         <article
           className=" w-full   rounded-lg bg-white shadow-lg  "
@@ -106,6 +112,12 @@ exports[`renders correctly 1`] = `
       </div>
       <div
         className="p-4 w-120 h-120  flex-1"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateX(50px) translateY(-50px) translateZ(0)",
+          }
+        }
       >
         <article
           className=" w-full   rounded-lg bg-white shadow-lg  "
@@ -195,6 +207,12 @@ exports[`renders correctly 1`] = `
       </div>
       <div
         className="p-4 w-120 h-120  flex-1"
+        style={
+          Object {
+            "opacity": 0,
+            "transform": "translateX(-50px) translateY(-50px) translateZ(0)",
+          }
+        }
       >
         <article
           className=" w-full   rounded-lg bg-white shadow-lg  "

@@ -1,10 +1,15 @@
+import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
 import Button from "../Buttons/Button";
+
 const EventCard = ({ t }) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ triggerOnce: true });
     const data = [
         {
             id: 1,
@@ -38,18 +43,33 @@ const EventCard = ({ t }) => {
         },
     ];
     const [event, setEvent] = useState(data);
+    useEffect(() => {
+        if (inView) {
+            controls.start({ opacity: 1, x: 0, y: 0 });
+        }
+    }, [controls, inView]);
     return (
-        <section className='p-4'>
+        <section className='p-4' ref={ref}>
             <div className='flex flex-col justify-center items-center shadow-lg border-t-2 bg-gray-200 pt-10 pb-5'>
                 <h1 className='mb-10 text-3xl font-bold text-[#585785]'>
                     {t("Upcoming Events")}
                 </h1>
                 <div className='mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden'>
-                    {event.map((event, eventIndex) => {
+                    {event.map((event, i) => {
                         const { id, image, title, description, date, link } =
                             event;
                         return (
-                            <div key={id} className='p-4 w-120 h-120  flex-1'>
+                            <motion.div
+                                key={id}
+                                className='p-4 w-120 h-120  flex-1'
+                                initial={{
+                                    opacity: 0,
+                                    x: i % 2 === 0 ? -50 : 50,
+                                    y: -50,
+                                }}
+                                animate={controls}
+                                transition={{ duration: 0.8, delay: i * 0.7 }}
+                            >
                                 <article
                                     className={` w-full   rounded-lg bg-white shadow-lg  `}
                                 >
@@ -90,7 +110,7 @@ const EventCard = ({ t }) => {
                                         </Button>
                                     </footer>
                                 </article>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>
