@@ -14,6 +14,7 @@ const ProductDetails = ({ productId }) => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const { currentUser } = useAuth();
+    const [selectedPicture, setSelectedPicture] = useState(null);
 
     useEffect(() => {
         const fetchProductAndUserData = async () => {
@@ -27,6 +28,7 @@ const ProductDetails = ({ productId }) => {
                         id: productDoc.id,
                     };
                     setProductData(productData);
+                    setSelectedPicture(productData?.pictures[0]);
 
                     if (currentUser) {
                         const userRef = doc(
@@ -72,50 +74,59 @@ const ProductDetails = ({ productId }) => {
         <div
             style={{
                 margin: "80px ",
-                // "@media (max-width: 768px)": {
-                //     margin: "180px 80px 50px 100px", // Adjust these values for smaller screens
-                // },
             }}
             className='flex flex-col  sm:gap-6 sm:flex-col md:flex-col md:justify-center lg:flex-row lg:justify-between'
         >
             <div className='lg:p-12 md:p-10  grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
                 <div className='col-span-3 row-span-1 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4] border rounded-md border-[#979797]'>
                     <Image
-                        className='object-cover w-full h-full rounded-md '
-                        src={productData?.pictures[0]}
+                        className='object-cover w-full h-full rounded-md cursor-pointer'
+                        src={selectedPicture}
                         width={1600}
                         height={1000}
                         alt='product image'
+                        onClick={() =>
+                            setSelectedPicture(productData?.pictures[0])
+                        }
                     />
                 </div>
                 <div className=' col-span-3 row-span-1 md:w-[40%] lg:w-full rounded-md gap-1'>
                     <div className='flex justify-between gap-4 md:grid md:grid-cols-2 md:grid-rows-1 sm:gap-2 lg:flex'>
                         <div className='col-span-2 row-span-1 md:row-span-2 w-full bg-[#EEF2F4] h-20 sm:h-28 md:h-64 lg:h-28 border rounded-md border-[#979797] overflow-hidden'>
                             <Image
-                                className='object-cover w-full h-full rounded-md '
+                                className='object-cover w-full h-full rounded-md cursor-pointer'
                                 src={productData?.pictures[1]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
+                                onClick={() =>
+                                    setSelectedPicture(productData?.pictures[1])
+                                }
                             />
                         </div>
-
+                        {/* Render other small pictures similarly with onClick handler */}
                         <div className='w-full col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28 border rounded-md border-[#979797] overflow-hidden'>
                             <Image
-                                className='object-cover w-full h-full '
+                                className='object-cover w-full h-full cursor-pointer'
                                 src={productData?.pictures[2]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
+                                onClick={() =>
+                                    setSelectedPicture(productData?.pictures[2])
+                                }
                             />
                         </div>
                         <div className='col-span-1 row-span-1 bg-[#EEF2F4] h-20 sm:h-28 w-full border rounded-md border-[#979797] overflow-hidden lg:w-full'>
                             <Image
-                                className='object-cover w-full h-full '
+                                className='object-cover w-full h-full cursor-pointer'
                                 src={productData?.pictures[3]}
                                 width={1600}
                                 height={1000}
                                 alt='product image'
+                                onClick={() =>
+                                    setSelectedPicture(productData?.pictures[3])
+                                }
                             />
                         </div>
                     </div>
