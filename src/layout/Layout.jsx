@@ -7,6 +7,7 @@ import PageLoadProgressBar from "@/components/PageLoadProgressBar/PageLoadProgre
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "@/components/Loader/Loader";
+import Head from "next/head";
 export default function Layout({ children }) {
     const router = useRouter();
     const hideNavbarAndFooter = router.pathname === "/";
@@ -34,6 +35,14 @@ export default function Layout({ children }) {
     const { t } = useTranslation("common");
     return (
         <>
+            <Head>
+                <title>Student Store</title>
+                <meta
+                    name='description'
+                    content='A marketplace made for all students. Any student could sell or buy or even borrow any type of products like electronics, games, study books, all products supposed to be cheap and used in most cases.'
+                />
+                <link rel='icon' href='/favicon.ico' />
+            </Head>
             {/* <Navbar />
              */}
             {!hideNavbarAndFooter && <Navbar t={t} />}
