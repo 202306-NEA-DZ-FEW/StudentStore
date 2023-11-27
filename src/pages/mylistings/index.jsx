@@ -74,7 +74,7 @@ const MyListings = () => {
         <div className='flex' dir={`${route?.locale === "ar" ? "rtl" : "ltr"}`}>
             <SideBar t={t} router={route} />
             <div className='flex flex-wrap justify-around items-start p-4'>
-                {userListings.length === 0 ? (
+                {userListings.length === 0 && !loading ? (
                     <div className='w-full h-full flex flex-col items-center justify-center'>
                         <p className='flex items-center mb-2 text-xl '>
                             OOPS! Looks like you have not listed any products
