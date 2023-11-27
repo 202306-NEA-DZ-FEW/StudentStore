@@ -51,20 +51,28 @@ function EditForm({ t }) {
                 });
             }
 
-            // Update user data in Firestore
-            const userDocRef = doc(db, "userinfo", user.uid);
-            await updateDoc(userDocRef, {
-                name: userData.name,
-                surname: userData.surname,
-                email: userData.email,
-                phoneNumber: userData.phoneNumber,
-                password: userData.password,
-                city: userData.city,
-                country: userData.country,
-                zip: userData.zip,
-            });
+            const updateObject = {
+                ...(userData.name && { name: userData.name }),
+                ...(userData.surname && { surname: userData.surname }),
+                ...(userData.email && { email: userData.email }),
+                ...(userData.phoneNumber && {
+                    phoneNumber: userData.phoneNumber,
+                }),
+                ...(userData.password && { password: userData.password }),
+                ...(userData.city && { city: userData.city }),
+                ...(userData.country && { country: userData.country }),
+                ...(userData.zip && { zip: userData.zip }),
+            };
 
-            setSuccess(true);
+            // Update user data in Firestore if there are changes
+            if (Object.keys(updateObject).length > 0) {
+                const userDocRef = doc(db, "userinfo", user.uid);
+                await updateDoc(userDocRef, updateObject);
+                setSuccess(true);
+            } else {
+                setSuccess(false);
+                setError("You didn't make any changes.");
+            }
         } catch (error) {
             setError(
                 `${t("error updating user information:")} ` + error.message
