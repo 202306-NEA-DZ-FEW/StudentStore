@@ -4,11 +4,13 @@ import OrderCard from "@/components/OrderCard/OrderCard";
 import { db, auth } from "@/util/firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import Loader from "@/components/Loader/Loader";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const MyOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const { t } = useTranslation("myListings");
     useEffect(() => {
         const getCurrentUserId = () => {
             const user = auth.currentUser;
@@ -63,7 +65,7 @@ const MyOrders = () => {
 
     return (
         <div className='flex'>
-            <SideBar />
+            <SideBar t={t} />
             <div className='flex flex-wrap justify-around items-start p-4'>
                 {loading ? (
                     <Loader />
@@ -89,3 +91,11 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "myListings"])),
+            // Will be passed to the page component as props
+        },
+    };
+}
