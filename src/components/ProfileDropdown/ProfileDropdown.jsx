@@ -35,7 +35,7 @@ function ProfileDropdown({ t }) {
                         <div className='w-8 rounded-full'>
                             <Image
                                 src={
-                                    currentUser.photoURL ||
+                                    currentUser?.photoURL ||
                                     "/images/profile.jpg"
                                 }
                                 width={220}

@@ -7,6 +7,7 @@ import { useRouter } from "next/router.js";
 import React, { useEffect, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
+import { FaEdit } from "react-icons/fa";
 import { FiEdit3 } from "react-icons/fi";
 import {
     MdOutlineKeyboardDoubleArrowLeft,
@@ -25,6 +26,7 @@ const Sidebar = ({ t }) => {
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
     const { currentUser, logout } = useAuth();
+    const [loading, setLoading] = useState(false);
     const route = useRouter();
 
     useEffect(() => {
@@ -87,6 +89,7 @@ const Sidebar = ({ t }) => {
 
         if (file) {
             try {
+                setLoading(true);
                 // Create a reference to the storage location
                 const storageRef = ref(
                     storage,
@@ -109,11 +112,12 @@ const Sidebar = ({ t }) => {
                 setUserInfo({ ...userInfo, photoURL: imageUrl });
             } catch (error) {
                 console.error("Error updating profile image:", error);
+            } finally {
+                // Set loading back to false when the image upload is complete
+                setLoading(false);
             }
         }
     };
-
-    console.log(currentUser?.photoURL);
 
     return (
         <div
@@ -140,16 +144,30 @@ const Sidebar = ({ t }) => {
             )}
 
             <div className='flex flex-col items-center mt-10 mb-4 space-y-4'>
-                <label htmlFor='profileImageInput' className='cursor-pointer'>
+                <label
+                    htmlFor='profileImageInput'
+                    className={`relative cursor-pointer transition-all duration-500 ease-in-out ring ring-[#90eee1] hover:ring-[#54fce5] border  border-[#585785] hover:border-[#90eee1] ${
+                        collapsed ? "w-12 h-12" : "w-24 h-24"
+                    } rounded-full`}
+                >
                     <Image
                         src={currentUser?.photoURL || "/images/profile.jpg"}
                         alt='profile-pic'
                         width={220}
                         height={220}
-                        className={`w-24 object-cover transition-all duration-500 ease-in-out ${
+                        className={`object-cover transition-all duration-500 ease-in-out ${
                             collapsed ? "w-12 h-12" : "w-24 h-24"
-                        } rounded-full mb-2 cursor-pointer'`}
+                        } rounded-full mb-2 cursor-pointer  `}
                     />
+                    {loading && (
+                        <div
+                            className={`absolute inset-0  border  border-[#585785]  flex items-center justify-center bg-gray-500  rounded-full ${
+                                collapsed ? "w-12 h-12" : "w-24 h-24"
+                            }`}
+                        >
+                            <span className='loading loading-spinner loading-lg'></span>
+                        </div>
+                    )}
                     <input
                         type='file'
                         accept='image/*'
@@ -157,7 +175,12 @@ const Sidebar = ({ t }) => {
                         className='hidden'
                         onChange={handleImageChange}
                     />
+
+                    <span className='absolute -bottom-3 left-1/2 transform hover:text-[#24524b]  -translate-x-1/2  text-[#585785]'>
+                        <FaEdit className='inline' size={collapsed ? 12 : 24} />
+                    </span>
                 </label>
+
                 {!collapsed && userInfo && (
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>
