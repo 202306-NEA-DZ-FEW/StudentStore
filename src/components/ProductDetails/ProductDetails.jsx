@@ -216,7 +216,7 @@ const ProductDetails = ({ productId }) => {
                                     Please log in to get in touch with the owner
                                     of this product.{" "}
                                     <Link
-                                        href='/login'
+                                        href='/signin'
                                         className='text-[#7874F2]'
                                     >
                                         Log in
