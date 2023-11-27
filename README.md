@@ -1,27 +1,75 @@
 # Capstone project information
 
-## Project information
+## Project Title: Student Store
 
--   Project name: Student’s Store
--   Project description: A marketplace made for all students. Any student could sell or buy or even borrow any type of products like electronics, games, study books, all products supposed to be cheap and used in most cases.
--   Technology used: Nextjs, TailwindCSS, DaisyUi, Firebase, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
--   Team members: Benarba Tewfik, Hocine Benouddane, Katia Ghezali, Mounia Belkheir, Sami Babouche, Khaoula Aourra
--   Bootcamp: NEA DZ FEW 2023
+## WEBSITE DETAILS:
 
-## Installation
+**Outline and objective:**
 
-```shell
-npm install -g commitizen // Installs commitizen
-npx husky install         // Installs Husky
-chmod ug+x .husky/*       // Gives husky executable extension
-npm install               // Installs the node modules
-```
+The purpose of this website is to create a marketplace for students to sell, buy, or borrow cheap and used products. The objective is to provide a platform where students can easily list and fulfill their product needs.
 
-## Development process
+**Brief Concept:**
+The website is a marketplace exclusively designed for students. It facilitates the buying, selling, and borrowing of various products, including electronics, games, and study books. The focus is on affordability, with most products being cheap and used.
 
--   When commiting you will have to use `git cz` and then go through the process. Look at the first commit I made to know what that means.
--   The translation process is done using the i18next library. There's an example in the index.js file of how this is done. Check this github project for more info on how to use the i18next library: [i18next](https://github.com/i18next/next-i18next)
--   When writing commits, commitlinter library is used to make sure that your commits are consistent with the conventional commits. To learn more about it refer to the guidelines in Canvas or the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) site.
--   The `layout` folder contains the components that will be used in the layout of pages, so components like the header and footer will be placed there.
+**Target Audience:**
+Students of all ages, genders, and locations. The language of the platform is tailored for students.
 
-Good luck and happy coding :D
+**Three Words to Describe:**
+Only For Students
+
+**Content:**
+
+-   Student account creation and management
+-   Product listing and image upload
+-   Product browsing and filtering (e.g., by price)
+-   Donation page
+-   User profile management
+-   Listing management
+-   Profile information page
+
+**Devices:**
+
+-   Desktop
+-   Tablet
+-   Mobile
+
+**Technology Used:**
+
+Nextjs, TailwindCSS, DaisyUi, Firebase, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
+
+**Display Language:**
+
+-   English
+-   Arabic
+-   French
+
+**Project Contributors**
+
+-   Benarba Tewfik,
+-   Hocine Benouddane,
+-   Katia Ghezali,
+-   Mounia Belkheir,
+-   Sami Babouche,
+-   Khaoula Aourra
+
+**Bootcamp:**
+NEA DZ FEW 2023
+
+**Screenshots:**
+![splash](image.png)
+
+![sign up](image-1.png)
+
+![sign in](image-2.png)
+
+![home en](image-3.png)
+
+![home ar](image-4.png)
+
+![all products](image-5.png)
+
+![my cart](image-6.png)
+
+![checkout](image-7.png)
+
+![profile](image-8.png)
