@@ -53,7 +53,7 @@ export default function splashpage() {
                     <div className='w-full lg:min-w-[488px]'>
                         <TypingText
                             text='Empowering Futures, Connecting Students'
-                            speed={100}
+                            speed={50}
                         />
                     </div>
                     <div className='container mx-auto py-4 '>
