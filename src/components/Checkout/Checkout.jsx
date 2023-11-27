@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = () => {
     const [formData, setFormData] = useState({
@@ -30,6 +32,9 @@ const Checkout = () => {
             expiryDate: "",
             cvv: "",
         });
+
+        // Show success notification
+        toast.success("Payment done. Thank you for trusting us!");
     };
 
     return (
@@ -178,6 +183,9 @@ const Checkout = () => {
                     Place Order
                 </button>
             </form>
+
+            {/* Toastify container */}
+            <ToastContainer />
         </div>
     );
 };

@@ -153,5 +153,8 @@ exports[`renders correctly 1`] = `
       Place Order
     </button>
   </form>
+  <div
+    className="Toastify"
+  />
 </div>
 `;
