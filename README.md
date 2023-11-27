@@ -38,15 +38,11 @@ Only For Students
     - Website content available in English, Arabic, and French.
     - Enhance accessibility and inclusivity.
 6. **Responsive Design:**
-
     - Compatible with desktop, tablet, and mobile devices.
     - Unique user experience across various screen sizes.
-
 7. **Internationalization (i18n):**
-
     - Implement i18n for seamless translation of content.
     - Enhance the user experience for speakers of different languages.
-
 8. **Technology Stack:**
     - Nextjs for a fast and efficient frontend.
     - TailwindCSS for a modern and responsive design.
@@ -102,9 +98,9 @@ Re:Coded - NEA DZ FEW 2023
 ![sign up](image-1.png)
 ![sign in](image-2.png)
 ![home en](image-3.png)
-![home ar](image-4.png)
 ![all products](image-5.png)
 ![my cart](image-6.png)
 ![checkout](image-7.png)
 ![profile](image-8.png)
 ![my listings](image-9.png)
+![single product](image-10.png)
