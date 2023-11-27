@@ -8,7 +8,15 @@ jest.mock("../../../util/firebase", () => {
     };
 });
 
+jest.mock("next/router", () => ({
+    useRouter: () => ({
+        pathname: "/",
+        locale: "en",
+    }),
+}));
+const t = (key) => key;
+
 it("renders correctly", () => {
-    const tree = renderer.create(<EditForm />).toJSON();
+    const tree = renderer.create(<EditForm t={t} />).toJSON();
     expect(tree).toMatchSnapshot();
 });
