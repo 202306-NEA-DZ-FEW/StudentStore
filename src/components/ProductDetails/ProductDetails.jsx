@@ -71,12 +71,7 @@ const ProductDetails = ({ productId }) => {
     }
 
     return (
-        <div
-            style={{
-                margin: "80px ",
-            }}
-            className='flex flex-col  sm:gap-6 sm:flex-col md:flex-col md:justify-center lg:flex-row lg:justify-between'
-        >
+        <div className='flex flex-col lg:mt-[80px] lg:mb-[-700px] lg:mr-[80px] lg:ml-[80px] md:mb-[80px] md:mt-[80px] md:mr-[80px] md:ml-[80px] sm:mb-[80px] sm:mt-[80px] sm:mr-[80px] sm:ml-[80px] sm:gap-6 sm:flex-col md:flex-col md:justify-center lg:flex-row lg:justify-between'>
             <div className='lg:p-12 md:p-10  grid grid-cols-3 md:flex lg:grid lg:grid-rows-3 w-full sm:w-full md:w-full lg:w-2/3 justify-between gap-4'>
                 <div className='col-span-3 row-span-1 md:grid-rows-2 items-center justify-center overflow-hidden w-full lg:h-80 md:w-[60%] lg:w-full bg-[#EEF2F4] border rounded-md border-[#979797]'>
                     <Image
