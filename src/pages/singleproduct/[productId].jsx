@@ -12,7 +12,7 @@ function SingleProduct() {
     const { productId } = router.query;
 
     return (
-        <div className='relative p-4 sm:p-8 md:p-8 lg:p-12'>
+        <div className='relative p-4 sm:p-8 md:p-2 lg:p-2'>
             <ProductDetails productId={productId} />
 
             {/* Conditionally render MapComponent based on screen size */}
