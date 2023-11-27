@@ -301,7 +301,6 @@ const ProfileComponent = () => {
                                         className='flex items-center'
                                     >
                                         <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                            {/* Use an Image component or img tag to display the user's profile picture */}
                                             {user.photo ? (
                                                 <Image
                                                     src={user?.photo}
@@ -311,7 +310,6 @@ const ProfileComponent = () => {
                                                     height={40}
                                                 />
                                             ) : (
-                                                // You can use a default image or other fallback
                                                 <img
                                                     src='https://via.placeholder.com/40'
                                                     alt='Default Profile Picture'
@@ -343,7 +341,6 @@ const ProfileComponent = () => {
                                         className='flex items-center'
                                     >
                                         <div className='h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden'>
-                                            {/* Use an Image component or img tag to display the user's profile picture */}
                                             {user.photo ? (
                                                 <Image
                                                     src={user?.photo}
@@ -354,10 +351,12 @@ const ProfileComponent = () => {
                                                 />
                                             ) : (
                                                 // You can use a default image or other fallback
-                                                <img
+                                                <Image
                                                     src='https://via.placeholder.com/40'
                                                     alt='Default Profile Picture'
                                                     className='object-cover w-full h-full'
+                                                    width={40}
+                                                    height={40}
                                                 />
                                             )}
                                         </div>
