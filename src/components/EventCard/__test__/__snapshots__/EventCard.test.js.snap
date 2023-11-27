@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   className="p-4"
 >
   <div
-    className="flex flex-col justify-center items-center shadow-lg border-t-2 bg-gray-200 pt-10 pb-5"
+    className="flex flex-col justify-center items-center shadow-lg border-t-2 bg-gray-200 pt-10 pb-10"
   >
     <h1
       className="mb-10 text-3xl font-bold text-[#585785]"
@@ -13,10 +13,10 @@ exports[`renders correctly 1`] = `
       Upcoming Events
     </h1>
     <div
-      className="mx-auto  lg:flex-row flex-col text-center  flex items-center overflow-hidden"
+      className="mx-auto  lg:flex-row flex-col text-center flex items-center overflow-hidden gap-4"
     >
       <div
-        className="p-4 w-120 h-120  flex-1"
+        className="max-w-2xl mx-auto"
         style={
           Object {
             "opacity": 0,
@@ -24,79 +24,74 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <article
-          className=" w-full   rounded-lg bg-white shadow-lg  "
+        <div
+          className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
-          <header
-            className="pt-2 flex-shrink"
+          <img
+            alt="event image"
+            className="rounded-t-lg"
+            data-nimg="1"
+            decoding="async"
+            height={200}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fbookbuddies.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fbookbuddies.jpg&w=640&q=75 640w, /_next/image?url=%2Fbookbuddies.jpg&w=750&q=75 750w, /_next/image?url=%2Fbookbuddies.jpg&w=828&q=75 828w, /_next/image?url=%2Fbookbuddies.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fbookbuddies.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fbookbuddies.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fbookbuddies.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fbookbuddies.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={200}
+          />
+          <div
+            className="p-5"
           >
-            <h4
-              className=" font-bold md:text-lg text-[#585785] "
+            <h5
+              className="text-[#585785] capitalize font-bold text-2xl tracking-tight mb-2"
             >
               Book Buddies
-            </h4>
-          </header>
-          <div
-            className=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
-          >
-            <img
-              alt="Book Buddies"
-              className="object-cover  mx-auto block  rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={250}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2Fbookbuddies.jpg&w=640&q=75"
-              srcSet="/_next/image?url=%2Fbookbuddies.jpg&w=384&q=75 1x, /_next/image?url=%2Fbookbuddies.jpg&w=640&q=75 2x"
-              style={
-                Object {
-                  "color": "transparent",
-                }
-              }
-              width={275}
-            />
+            </h5>
             <p
-              className="  text-[#585785] "
+              className="font-normal text-[#585785] dark:text-gray-400 lg:h-[96px] xl:[85px]mb-3"
             >
               The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨
             </p>
-          </div>
-          <footer
-            className="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
-          >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
+              className="flex items-center justify-center gap-2 flex-col"
             >
-              <svg
-                className=" flex items-center"
-                fill="currentColor"
-                height={20}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
+              <div
+                className="flex justify-center gap-3"
+              >
+                <svg
+                  className="text-[#585785]"
+                  fill="currentColor"
+                  height={20}
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
                   }
-                }
-                viewBox="0 0 448 512"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-              <p
-                className=" text-center text-medium font-small"
-              >
-                Tuesday, 21 November
-              </p>
-            </div>
-            <button
-              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
-            >
+                  viewBox="0 0 448 512"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+                  />
+                </svg>
+                <p
+                  className="font-semibold text-[#585785]"
+                >
+                  Tuesday, 21 November
+                </p>
+              </div>
               <a
                 href="https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1"
                 onClick={[Function]}
@@ -104,14 +99,18 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                interested
+                <button
+                  className="border-2 shadow-sm hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] capitalize text-white hover:border-[#585785] hover:text-[#585785] hover:bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-300"
+                >
+                  interested
+                </button>
               </a>
-            </button>
-          </footer>
-        </article>
+            </div>
+          </div>
+        </div>
       </div>
       <div
-        className="p-4 w-120 h-120  flex-1"
+        className="max-w-2xl mx-auto"
         style={
           Object {
             "opacity": 0,
@@ -119,79 +118,74 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <article
-          className=" w-full   rounded-lg bg-white shadow-lg  "
+        <div
+          className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
-          <header
-            className="pt-2 flex-shrink"
+          <img
+            alt="event image"
+            className="rounded-t-lg"
+            data-nimg="1"
+            decoding="async"
+            height={200}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2FEvent.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2FEvent.jpg&w=640&q=75 640w, /_next/image?url=%2FEvent.jpg&w=750&q=75 750w, /_next/image?url=%2FEvent.jpg&w=828&q=75 828w, /_next/image?url=%2FEvent.jpg&w=1080&q=75 1080w, /_next/image?url=%2FEvent.jpg&w=1200&q=75 1200w, /_next/image?url=%2FEvent.jpg&w=1920&q=75 1920w, /_next/image?url=%2FEvent.jpg&w=2048&q=75 2048w, /_next/image?url=%2FEvent.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
+              }
+            }
+            width={200}
+          />
+          <div
+            className="p-5"
           >
-            <h4
-              className=" font-bold md:text-lg text-[#585785] "
+            <h5
+              className="text-[#585785] capitalize font-bold text-2xl tracking-tight mb-2"
             >
               The climate crisis
-            </h4>
-          </header>
-          <div
-            className=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
-          >
-            <img
-              alt="The climate crisis"
-              className="object-cover  mx-auto block  rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={250}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2FEvent.jpg&w=640&q=75"
-              srcSet="/_next/image?url=%2FEvent.jpg&w=384&q=75 1x, /_next/image?url=%2FEvent.jpg&w=640&q=75 2x"
-              style={
-                Object {
-                  "color": "transparent",
-                }
-              }
-              width={275}
-            />
+            </h5>
             <p
-              className="  text-[#585785] "
+              className="font-normal text-[#585785] dark:text-gray-400 lg:h-[96px] xl:[85px]mb-3"
             >
               Join us for a day's workshop to explore The Work that Reconnects. 🌏 Join students worldwide in shaping a sustainable future.
             </p>
-          </div>
-          <footer
-            className="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
-          >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
+              className="flex items-center justify-center gap-2 flex-col"
             >
-              <svg
-                className=" flex items-center"
-                fill="currentColor"
-                height={20}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
+              <div
+                className="flex justify-center gap-3"
+              >
+                <svg
+                  className="text-[#585785]"
+                  fill="currentColor"
+                  height={20}
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
                   }
-                }
-                viewBox="0 0 448 512"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-              <p
-                className=" text-center text-medium font-small"
-              >
-                Saturday, 16 December 
-              </p>
-            </div>
-            <button
-              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
-            >
+                  viewBox="0 0 448 512"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+                  />
+                </svg>
+                <p
+                  className="font-semibold text-[#585785]"
+                >
+                  Saturday, 16 December 
+                </p>
+              </div>
               <a
                 href="https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch"
                 onClick={[Function]}
@@ -199,14 +193,18 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                interested
+                <button
+                  className="border-2 shadow-sm hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] capitalize text-white hover:border-[#585785] hover:text-[#585785] hover:bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-300"
+                >
+                  interested
+                </button>
               </a>
-            </button>
-          </footer>
-        </article>
+            </div>
+          </div>
+        </div>
       </div>
       <div
-        className="p-4 w-120 h-120  flex-1"
+        className="max-w-2xl mx-auto"
         style={
           Object {
             "opacity": 0,
@@ -214,79 +212,74 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <article
-          className=" w-full   rounded-lg bg-white shadow-lg  "
+        <div
+          className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
-          <header
-            className="pt-2 flex-shrink"
-          >
-            <h4
-              className=" font-bold md:text-lg text-[#585785] "
-            >
-              Discover Photography!
-            </h4>
-          </header>
-          <div
-            className=" space-y-4 md:w-[60vw]   lg:w-[30vw] p-4 mb-0"
-          >
-            <img
-              alt="Discover Photography!"
-              className="object-cover  mx-auto block  rounded-md "
-              data-nimg="1"
-              decoding="async"
-              height={250}
-              loading="lazy"
-              onError={[Function]}
-              onLoad={[Function]}
-              src="/_next/image?url=%2Fphotography.jpg&w=640&q=75"
-              srcSet="/_next/image?url=%2Fphotography.jpg&w=384&q=75 1x, /_next/image?url=%2Fphotography.jpg&w=640&q=75 2x"
-              style={
-                Object {
-                  "color": "transparent",
-                }
+          <img
+            alt="event image"
+            className="rounded-t-lg"
+            data-nimg="1"
+            decoding="async"
+            height={200}
+            loading="lazy"
+            onError={[Function]}
+            onLoad={[Function]}
+            sizes="100vw"
+            src="/_next/image?url=%2Fphotography.jpg&w=3840&q=75"
+            srcSet="/_next/image?url=%2Fphotography.jpg&w=640&q=75 640w, /_next/image?url=%2Fphotography.jpg&w=750&q=75 750w, /_next/image?url=%2Fphotography.jpg&w=828&q=75 828w, /_next/image?url=%2Fphotography.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fphotography.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fphotography.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fphotography.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fphotography.jpg&w=3840&q=75 3840w"
+            style={
+              Object {
+                "color": "transparent",
+                "height": "auto",
+                "width": "100%",
               }
-              width={275}
-            />
+            }
+            width={200}
+          />
+          <div
+            className="p-5"
+          >
+            <h5
+              className="text-[#585785] capitalize font-bold text-2xl tracking-tight mb-2"
+            >
+              Discover Photography
+            </h5>
             <p
-              className="  text-[#585785] "
+              className="font-normal text-[#585785] dark:text-gray-400 lg:h-[96px] xl:[85px]mb-3"
             >
               Have you ever felt that you could be getting more from your digital camera? Would you like to unlock its full potential? 
             </p>
-          </div>
-          <footer
-            className="flex lg:justify-around items-center lg:flex-row flex-col p-2 "
-          >
             <div
-              className="flex items-center space-x-2 justify-center text-center text-[#585785] mb-2"
+              className="flex items-center justify-center gap-2 flex-col"
             >
-              <svg
-                className=" flex items-center"
-                fill="currentColor"
-                height={20}
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
+              <div
+                className="flex justify-center gap-3"
+              >
+                <svg
+                  className="text-[#585785]"
+                  fill="currentColor"
+                  height={20}
+                  stroke="currentColor"
+                  strokeWidth="0"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
                   }
-                }
-                viewBox="0 0 448 512"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-                />
-              </svg>
-              <p
-                className=" text-center text-medium font-small"
-              >
-                Saturday, 16 December 
-              </p>
-            </div>
-            <button
-              className="border-2 rounded-lg shadow-sm hover:bg-white hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] text-white hover:border-[#585785] font-semibold hover:text-[#585785] py-1 lg:px-2 px-1 text-sm w-24 m-auto"
-            >
+                  viewBox="0 0 448 512"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+                  />
+                </svg>
+                <p
+                  className="font-semibold text-[#585785]"
+                >
+                  Saturday, 16 December 
+                </p>
+              </div>
               <a
                 href="https://www.eventbrite.com/e/discover-photography-registration-36242436102?aff=ebdssbdestsearch&keep_tld=1"
                 onClick={[Function]}
@@ -294,11 +287,15 @@ exports[`renders correctly 1`] = `
                 onTouchStart={[Function]}
                 target="_blank"
               >
-                interested
+                <button
+                  className="border-2 shadow-sm hover:border-2 hover:duration-300 bg-[#585785] border-[#585785] capitalize text-white hover:border-[#585785] hover:text-[#585785] hover:bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center transition-all duration-300"
+                >
+                  interested
+                </button>
               </a>
-            </button>
-          </footer>
-        </article>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
