@@ -16,6 +16,7 @@ module.exports = {
             "graph.facebook.com",
             "images.unsplash.com",
             "avatars.githubusercontent.com",
+            "via.placeholder.com",
         ],
     },
 };
