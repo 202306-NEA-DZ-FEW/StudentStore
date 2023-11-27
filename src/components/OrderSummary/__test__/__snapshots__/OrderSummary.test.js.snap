@@ -56,11 +56,18 @@ exports[`renders correctly 1`] = `
       </p>
     </div>
   </div>
-  <button
-    className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 mt-6 w-full rounded-md font-medium text-blue-50"
+  <a
+    href="/checkout"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
-    Check out
-  </button>
+    <button
+      className="bg-[#FF8A57] border-2 border-[#FF8A57] py-2 px-14 shadow-sm text-md hover:bg-white hover:text-[#FF8A57] hover:border-2 hover:border-[#FF8A57] hover:duration-300 mt-6 w-full rounded-md font-medium text-blue-50"
+      onClick={[Function]}
+    >
+      Check out
+    </button>
+  </a>
 </div>
 `;

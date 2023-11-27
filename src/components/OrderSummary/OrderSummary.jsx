@@ -3,6 +3,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 import Button from "../Buttons/Button";
+import Link from "next/link";
 
 const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
     const route = useRouter();
@@ -56,12 +57,15 @@ const OrderSummary = ({ cartItems, subtotal, borrowPrices, t }) => {
                     </p>
                 </div>
             </div>
-            <Button
-                onClick={handleCheckout}
-                className='mt-6 w-full  rounded-md  font-medium text-blue-50 '
-            >
-                {t("Check out")}
-            </Button>
+
+            <Link href='/checkout'>
+                <Button
+                    onClick={handleCheckout}
+                    className='mt-6 w-full  rounded-md  font-medium text-blue-50 '
+                >
+                    {t("Check out")}
+                </Button>
+            </Link>
         </div>
     );
 };
