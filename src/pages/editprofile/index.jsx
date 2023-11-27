@@ -9,7 +9,7 @@ const EditProfilePage = () => {
         <div className='flex'>
             <Sidebar t={t} />
             <div className='flex-1 flex justify-center items-center p-4'>
-                <EditForm />
+                <EditForm t={t} />
             </div>
         </div>
     );

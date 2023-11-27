@@ -4,9 +4,10 @@ import { db } from "@/util/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { getAuth, updateProfile } from "firebase/auth";
 import Notification from "@/components/Notification/Notitification";
-function EditForm() {
+import { useRouter } from "next/router";
+function EditForm({ t }) {
     const auth = useAuth();
-
+    const route = useRouter();
     const [userData, setUserData] = useState({
         name: "",
         surname: "",
@@ -36,7 +37,7 @@ function EditForm() {
         e.preventDefault();
 
         if (userData.password !== userData.confirmPassword) {
-            setError("Password and confirm password do not match");
+            setError(`${t("password and confirm password do not match")} `);
             return;
         }
 
@@ -65,7 +66,9 @@ function EditForm() {
 
             setSuccess(true);
         } catch (error) {
-            setError("Error updating user information: " + error.message);
+            setError(
+                `${t("error updating user information:")} ` + error.message
+            );
         } finally {
             setLoading(false);
         }
@@ -73,13 +76,16 @@ function EditForm() {
 
     return (
         // component
-        <div className='flex justify-center items-center h-screen'>
+        <div
+            className='flex justify-center items-center h-screen'
+            dir={route.locale === "ar" ? "rtl" : "ltr"}
+        >
             <form className='w-full max-w-lg' onSubmit={handleSubmit}>
                 <div className='w-full px-3 mb-4'>
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                         type='text'
-                        placeholder='Name'
+                        placeholder={t("name")}
                         name='name'
                         value={userData.name}
                         onChange={handleChange}
@@ -90,7 +96,7 @@ function EditForm() {
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                         type='text'
-                        placeholder='Surname'
+                        placeholder={t("surname")}
                         name='surname'
                         value={userData.surname}
                         onChange={handleChange}
@@ -101,7 +107,7 @@ function EditForm() {
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                         type='text'
-                        placeholder='Email'
+                        placeholder={t("email")}
                         name='email'
                         value={userData.email}
                         onChange={handleChange}
@@ -112,7 +118,7 @@ function EditForm() {
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                         type='text'
-                        placeholder='Phone number'
+                        placeholder={t("phone number")}
                         name='phoneNumber'
                         value={userData.phoneNumber}
                         onChange={handleChange}
@@ -122,8 +128,8 @@ function EditForm() {
                 <div className='w-full px-3 mb-4'>
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
-                        type='text'
-                        placeholder='Password'
+                        type='password'
+                        placeholder={t("password")}
                         name='password'
                         value={userData.password}
                         onChange={handleChange}
@@ -133,8 +139,8 @@ function EditForm() {
                 <div className='w-full px-3 mb-4'>
                     <input
                         className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
-                        type='text'
-                        placeholder='Confirm Password'
+                        type='password'
+                        placeholder={t("confirm password")}
                         name='confirmPassword'
                         value={userData.confirmPassword}
                         onChange={handleChange}
@@ -147,12 +153,12 @@ function EditForm() {
                             className='block uppercase tracking-wide text-[#21567E] placeholder-[#21567E] text-xs font-bold mb-2'
                             htmlFor='grid-city'
                         >
-                            Address
+                            {t("address")}
                         </label>
                         <input
                             className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                             type='text'
-                            placeholder='City'
+                            placeholder={t("city")}
                             name='city'
                             value={userData.city}
                             onChange={handleChange}
@@ -161,15 +167,15 @@ function EditForm() {
 
                     <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
                         <label
-                            className='block uppercase tracking-wide text-transparent placeholder-[#21567E] text-xs font-bold mb-2'
+                            className='block uppercase tracking-wide text-[#21567E] placeholder-[#21567E] text-xs font-bold mb-2'
                             htmlFor='grid-country'
                         >
-                            Country
+                            {t("country")}
                         </label>
                         <input
                             className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                             type='text'
-                            placeholder='Country'
+                            placeholder={t("country")}
                             name='country'
                             value={userData.country}
                             onChange={handleChange}
@@ -178,15 +184,15 @@ function EditForm() {
 
                     <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
                         <label
-                            className='block uppercase tracking-wide text-transparent placeholder-[#21567E] text-xs font-bold mb-2'
+                            className='block uppercase tracking-wide text-[#21567E] placeholder-[#21567E] text-xs font-bold mb-2'
                             htmlFor='grid-zip'
                         >
-                            ZIP
+                            {t("zip")}
                         </label>
                         <input
                             className='appearance-none block w-full bg-fff text-[#21567E] placeholder-[#21567E] border border-[#21567E] rounded-md py-2 px-4 leading-tight focus:outline-none focus:bg-[#F1F6FA] focus:border-[#21567E] focus:border-2'
                             type='text'
-                            placeholder='ZIP'
+                            placeholder={t("zip")}
                             name='zip'
                             value={userData.zip}
                             onChange={handleChange}
@@ -211,14 +217,20 @@ function EditForm() {
                 {success && (
                     <Notification
                         type='success'
-                        message='Your information has been updated successfully'
+                        message={t(
+                            "your information has been updated successfully"
+                        )}
                         onClose={handleCloseNotification}
                     />
                 )}
 
                 <div className='flex justify-center items-center'>
-                    <button className='bg-[#FF8A57] hover:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 px-7 rounded'>
-                        Save Changes
+                    <button
+                        className={`bg-[#FF8A57] hover:bg-transparent hover:text-[#FF8A57] hover:border-[#FF8A57] border hover:border-2 text-white font-bold py-2 rounded ${
+                            route.locale === "fr" ? "px-0 w-64" : "px-7"
+                        }`}
+                    >
+                        {t("save changes")}
                     </button>
                 </div>
             </form>
