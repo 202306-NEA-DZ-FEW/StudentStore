@@ -17,7 +17,7 @@ function SingleProduct() {
 
             {/* Conditionally render MapComponent based on screen size */}
             {productId && (
-                <div className='hidden lg:block  lg:relative lg:z-0'>
+                <div className='hidden lg:block mt-0  lg:relative lg:z-0'>
                     <MapComponent productId={productId} />
                 </div>
             )}

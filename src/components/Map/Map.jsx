@@ -6,11 +6,12 @@ import "leaflet/dist/leaflet.css";
 import "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
+import Loader from "../Loader/Loader";
 
 const MapContainer = dynamic(
     () => import("react-leaflet").then((module) => module.MapContainer),
     {
-        loading: () => <p>Loading...</p>, // You can replace this with your loader component
+        loading: () => <Loader />, // You can replace this with your loader component
         ssr: false, // Disables server-side rendering
     }
 );
