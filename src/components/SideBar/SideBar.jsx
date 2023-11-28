@@ -1,10 +1,13 @@
-import { doc, getDoc } from "firebase/firestore";
+import { updateProfile } from "firebase/auth";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Image from "next/image.js";
 import Link from "next/link";
 import { useRouter } from "next/router.js";
 import React, { useEffect, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { BsClipboard2Fill, BsFillBoxSeamFill } from "react-icons/bs";
+import { FaEdit } from "react-icons/fa";
 import { FiEdit3 } from "react-icons/fi";
 import {
     MdOutlineKeyboardDoubleArrowLeft,
@@ -16,13 +19,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useAuth } from "@/context/AuthContext.js";
 
-import { db } from "../../util/firebase.js";
+import { db, storage } from "../../util/firebase.js";
 
 const Sidebar = ({ t }) => {
     const [selectedLink, setSelectedLink] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [collapsed, setCollapsed] = useState(false);
     const { currentUser, logout } = useAuth();
+    const [loading, setLoading] = useState(false);
     const route = useRouter();
 
     useEffect(() => {
@@ -79,6 +83,42 @@ const Sidebar = ({ t }) => {
         };
     }, []);
 
+    const handleImageChange = async (e) => {
+        const file = e.target.files[0];
+        console.log(file);
+
+        if (file) {
+            try {
+                setLoading(true);
+                // Create a reference to the storage location
+                const storageRef = ref(
+                    storage,
+                    `profile-images/${currentUser.uid}/${file.name}`
+                );
+                const snapshot = await uploadBytes(storageRef, file);
+
+                // Get the URL of the uploaded image
+                const imageUrl = await getDownloadURL(snapshot.ref);
+
+                // Update the user's profile with the new image URL
+                await updateProfile(currentUser, {
+                    photoURL: imageUrl,
+                });
+                // Update the user's profile in Firestore
+                const userDocRef = doc(db, "userinfo", currentUser.uid);
+                await updateDoc(userDocRef, { photo: imageUrl });
+
+                // Force a re-render to reflect the updated user information
+                setUserInfo({ ...userInfo, photoURL: imageUrl });
+            } catch (error) {
+                console.error("Error updating profile image:", error);
+            } finally {
+                // Set loading back to false when the image upload is complete
+                setLoading(false);
+            }
+        }
+    };
+
     return (
         <div
             className={`bg-gray-200 min-h-screen p-4 text-[#585785] flex flex-col ${
@@ -104,13 +144,43 @@ const Sidebar = ({ t }) => {
             )}
 
             <div className='flex flex-col items-center mt-10 mb-4 space-y-4'>
-                <Image
-                    src={currentUser?.photoURL || "/images/profile.jpg"}
-                    alt='profile-pic'
-                    width={80}
-                    height={80}
-                    className='w-25 h-25 rounded-full mb-2'
-                />
+                <label
+                    htmlFor='profileImageInput'
+                    className={`relative cursor-pointer transition-all duration-500 ease-in-out ring ring-[#90eee1] hover:ring-[#54fce5] border  border-[#585785] hover:border-[#90eee1] ${
+                        collapsed ? "w-12 h-12" : "w-24 h-24"
+                    } rounded-full`}
+                >
+                    <Image
+                        src={currentUser?.photoURL || "/images/profile.jpg"}
+                        alt='profile-pic'
+                        width={220}
+                        height={220}
+                        className={`object-cover transition-all duration-500 ease-in-out ${
+                            collapsed ? "w-12 h-12" : "w-24 h-24"
+                        } rounded-full mb-2 cursor-pointer  `}
+                    />
+                    {loading && (
+                        <div
+                            className={`absolute inset-0  border  border-[#585785]  flex items-center justify-center bg-gray-500  rounded-full ${
+                                collapsed ? "w-12 h-12" : "w-24 h-24"
+                            }`}
+                        >
+                            <span className='loading loading-spinner loading-lg'></span>
+                        </div>
+                    )}
+                    <input
+                        type='file'
+                        accept='image/*'
+                        id='profileImageInput'
+                        className='hidden'
+                        onChange={handleImageChange}
+                    />
+
+                    <span className='absolute -bottom-3 left-1/2 transform hover:text-[#24524b]  -translate-x-1/2  text-[#585785]'>
+                        <FaEdit className='inline' size={collapsed ? 12 : 24} />
+                    </span>
+                </label>
+
                 {!collapsed && userInfo && (
                     <div className='text-center'>
                         <h2 className='text-xl text-[#585785] font-bold mb-1'>{`${userInfo?.name} ${userInfo?.surname}`}</h2>

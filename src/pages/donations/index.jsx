@@ -1,6 +1,5 @@
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -58,7 +57,6 @@ function DonationsPage() {
                     isRTL={isRTL}
                 />
             </div>
-            <ToastContainer />
         </div>
     );
 }
