@@ -6,11 +6,13 @@ import { collection, onSnapshot, query, where } from "firebase/firestore";
 import Loader from "@/components/Loader/Loader";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Image from "next/image";
 
 const MyOrders = () => {
     const [userOrders, setUserOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const { t } = useTranslation("myListings");
+
     useEffect(() => {
         const getCurrentUserId = () => {
             const user = auth.currentUser;
@@ -71,18 +73,37 @@ const MyOrders = () => {
                     <Loader />
                 ) : (
                     <>
-                        {userOrders.map((order) => (
-                            <div
-                                key={order.id}
-                                className=' rounded-md overflow-hidden mb-4'
-                                style={{
-                                    flex: "1 0 calc(25% - 1rem)",
-                                    minWidth: "250px",
-                                }}
-                            >
-                                <OrderCard product={order} />
+                        {userOrders.length > 0 ? (
+                            userOrders.map((order) => (
+                                <div
+                                    key={order.id}
+                                    className='rounded-md overflow-hidden mb-4'
+                                    style={{
+                                        flex: "1 0 calc(25% - 1rem)",
+                                        minWidth: "250px",
+                                    }}
+                                >
+                                    <OrderCard product={order} />
+                                </div>
+                            ))
+                        ) : (
+                            <div className='flex flex-col items-center justify-center w-full h-full'>
+                                <div className='flex flex-col items-center lg:ml-80'>
+                                    <Image
+                                        src='/images/notfound1.svg'
+                                        alt='Placeholder'
+                                        width={600}
+                                        height={600}
+                                        style={{
+                                            maxHeight: "100vh",
+                                        }}
+                                    />
+                                    <p className='mt-4 text-lg font-bold'>
+                                        No orders available.
+                                    </p>
+                                </div>
                             </div>
-                        ))}
+                        )}
                     </>
                 )}
             </div>

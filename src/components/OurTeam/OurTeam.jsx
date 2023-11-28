@@ -24,10 +24,10 @@ export default function OurTeam({ t }) {
         },
         {
             id: 3,
-            image: "/images/",
+            image: "/images/katia.jpg",
             title: "Fullstack Developer",
             name: "Katia Ghezali",
-            bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
+            bio: "A web developer and artificial intelligence enthusiast!  Mixing creativity and programming to create innovative solutions! ",
             github: "https://github.com/KatiaGhezali",
             linkedin: "https://www.linkedin.com/in/katiaghezali/",
         },

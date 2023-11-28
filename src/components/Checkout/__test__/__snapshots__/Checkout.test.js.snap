@@ -1,153 +1,160 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<form
-  className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md"
+<div
+  className="p-20 flex flex-col"
 >
-  <h2
-    className="text-2xl font-semibold mb-4"
+  <form
+    className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md"
   >
-    Checkout
-  </h2>
-  <div
-    className="mb-4"
-  >
-    <label
-      className="block text-gray-700 font-medium"
-      htmlFor="fullName"
+    <h2
+      className="text-2xl font-semibold mb-4"
     >
-      Full Name
-    </label>
-    <input
-      className="mt-1 p-2 w-full border rounded-md"
-      id="fullName"
-      name="fullName"
-      onChange={[Function]}
-      required={true}
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    className="mb-4"
-  >
-    <label
-      className="block text-gray-700 font-medium"
-      htmlFor="address"
+      Checkout
+    </h2>
+    <div
+      className="mb-4"
     >
-      Address
-    </label>
-    <input
-      className="mt-1 p-2 w-full border rounded-md"
-      id="address"
-      name="address"
-      onChange={[Function]}
-      required={true}
-      type="text"
-      value=""
-    />
-  </div>
-  <div
-    className="grid grid-cols-2 gap-4 mb-4"
-  >
-    <div>
       <label
         className="block text-gray-700 font-medium"
-        htmlFor="city"
+        htmlFor="fullName"
       >
-        City
+        Full Name
       </label>
       <input
         className="mt-1 p-2 w-full border rounded-md"
-        id="city"
-        name="city"
+        id="fullName"
+        name="fullName"
         onChange={[Function]}
         required={true}
         type="text"
         value=""
       />
     </div>
-    <div>
-      <label
-        className="block text-gray-700 font-medium"
-        htmlFor="zipCode"
-      >
-        ZIP Code
-      </label>
-      <input
-        className="mt-1 p-2 w-full border rounded-md"
-        id="zipCode"
-        name="zipCode"
-        onChange={[Function]}
-        required={true}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="mb-4"
-  >
-    <label
-      className="block text-gray-700 font-medium"
-      htmlFor="cardNumber"
+    <div
+      className="mb-4"
     >
-      Card Number
-    </label>
-    <input
-      className="mt-1 p-2 w-full border rounded-md"
-      id="cardNumber"
-      name="cardNumber"
-      onChange={[Function]}
-      required={true}
-      type="text"
-      value=""
-    />
-  </div>
+      <label
+        className="block text-gray-700 font-medium"
+        htmlFor="address"
+      >
+        Address
+      </label>
+      <input
+        className="mt-1 p-2 w-full border rounded-md"
+        id="address"
+        name="address"
+        onChange={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="grid grid-cols-2 gap-4 mb-4"
+    >
+      <div>
+        <label
+          className="block text-gray-700 font-medium"
+          htmlFor="city"
+        >
+          City
+        </label>
+        <input
+          className="mt-1 p-2 w-full border rounded-md"
+          id="city"
+          name="city"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          className="block text-gray-700 font-medium"
+          htmlFor="zipCode"
+        >
+          ZIP Code
+        </label>
+        <input
+          className="mt-1 p-2 w-full border rounded-md"
+          id="zipCode"
+          name="zipCode"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="mb-4"
+    >
+      <label
+        className="block text-gray-700 font-medium"
+        htmlFor="cardNumber"
+      >
+        Card Number
+      </label>
+      <input
+        className="mt-1 p-2 w-full border rounded-md"
+        id="cardNumber"
+        name="cardNumber"
+        onChange={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="grid grid-cols-2 gap-4 mb-4"
+    >
+      <div>
+        <label
+          className="block text-gray-700 font-medium"
+          htmlFor="expiryDate"
+        >
+          Expiry Date
+        </label>
+        <input
+          className="mt-1 p-2 w-full border rounded-md"
+          id="expiryDate"
+          name="expiryDate"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          className="block text-gray-700 font-medium"
+          htmlFor="cvv"
+        >
+          CVV
+        </label>
+        <input
+          className="mt-1 p-2 w-full border rounded-md"
+          id="cvv"
+          name="cvv"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-300"
+      onClick={[Function]}
+      type="submit"
+    >
+      Place Order
+    </button>
+  </form>
   <div
-    className="grid grid-cols-2 gap-4 mb-4"
-  >
-    <div>
-      <label
-        className="block text-gray-700 font-medium"
-        htmlFor="expiryDate"
-      >
-        Expiry Date
-      </label>
-      <input
-        className="mt-1 p-2 w-full border rounded-md"
-        id="expiryDate"
-        name="expiryDate"
-        onChange={[Function]}
-        required={true}
-        type="text"
-        value=""
-      />
-    </div>
-    <div>
-      <label
-        className="block text-gray-700 font-medium"
-        htmlFor="cvv"
-      >
-        CVV
-      </label>
-      <input
-        className="mt-1 p-2 w-full border rounded-md"
-        id="cvv"
-        name="cvv"
-        onChange={[Function]}
-        required={true}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <button
-    className="bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring focus:border-purple-300"
-    onClick={[Function]}
-    type="submit"
-  >
-    Place Order
-  </button>
-</form>
+    className="Toastify"
+  />
+</div>
 `;
