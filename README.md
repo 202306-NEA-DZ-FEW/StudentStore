@@ -16,7 +16,7 @@ Students of all ages, genders, and locations. The language of the platform is ta
 
 ### Three Words to Describe:
 
-Only For Students
+Only For Students.
 
 ## Features and Functionality:
 
