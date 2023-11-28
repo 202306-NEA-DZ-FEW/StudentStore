@@ -15,7 +15,7 @@ export default function OurTeam({ t }) {
         },
         {
             id: 2,
-            image: "/images/",
+            image: "/images/tewfik.jpg",
             title: "Front-end Developer",
             name: "Benarba Tewfik",
             bio: "Passionate frontend developer from Algeria, always eager to embrace new challenges and learn the latest in web development.",
@@ -43,7 +43,7 @@ export default function OurTeam({ t }) {
         },
         {
             id: 5,
-            image: "/images/",
+            image: "/images/khaoula.jpg",
             title: "Front-end Developer",
             name: "Khaoula AOURRA",
             bio: "Hey, I'm Khaoula Aourra—a finance and banking grad turned tech enthusiast! I embraced the world of front-end development through Re-coded's boot camp. Excited to fuse financial savvy with tech skills and make a splash in this dynamic industry! 🚀",
