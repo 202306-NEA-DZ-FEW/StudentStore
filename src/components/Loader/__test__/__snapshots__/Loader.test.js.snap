@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="min-h-[80vh] flex items-center justify-center"
+  className="fixed top-0 left-0 h-screen w-screen flex items-center bg-[#e5e7eb] justify-center z-[999] "
 >
   <div
     className="mocked-grid-loader"
