@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function OurTeam({ t }) {
     const data = [
         {
@@ -85,6 +85,7 @@ export default function OurTeam({ t }) {
                                     width={100}
                                     height={100}
                                     className='w-32 h-32 border-[#575885] image border-2 rounded-full'
+                                    alt='profile picture'
                                 />
                             </div>
                             <h1 className='font-bold'>{t(`${name}`)}</h1>
