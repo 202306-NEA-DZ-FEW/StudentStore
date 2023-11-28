@@ -1,4 +1,3 @@
-import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,6 +11,8 @@ import {
     FaWallet,
 } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
+
+import { useAuth } from "@/context/AuthContext";
 
 function Footer({ t }) {
     const route = useRouter();
@@ -171,7 +172,7 @@ function Footer({ t }) {
                         background: "none",
                         border: "none",
                         cursor: "pointer",
-                        zIndex: 999,
+                        zIndex: 50,
                         margin: "8px",
                     }}
                     className='absolute scroll-arrow animate-bounce bottom-8 right-4 sm:bottom-4 text-[#FF8A57]'

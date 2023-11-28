@@ -28,6 +28,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
@@ -121,6 +122,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
@@ -128,8 +130,8 @@ exports[`renders correctly 1`] = `
           loading="lazy"
           onError={[Function]}
           onLoad={[Function]}
-          src="/_next/image?url=%2Fimages%2F&w=256&q=75"
-          srcSet="/_next/image?url=%2Fimages%2F&w=128&q=75 1x, /_next/image?url=%2Fimages%2F&w=256&q=75 2x"
+          src="/_next/image?url=%2Fimages%2Ftewfik.jpg&w=256&q=75"
+          srcSet="/_next/image?url=%2Fimages%2Ftewfik.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Ftewfik.jpg&w=256&q=75 2x"
           style={
             Object {
               "color": "transparent",
@@ -214,6 +216,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
@@ -307,6 +310,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
@@ -400,6 +404,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
@@ -407,8 +412,8 @@ exports[`renders correctly 1`] = `
           loading="lazy"
           onError={[Function]}
           onLoad={[Function]}
-          src="/_next/image?url=%2Fimages%2F&w=256&q=75"
-          srcSet="/_next/image?url=%2Fimages%2F&w=128&q=75 1x, /_next/image?url=%2Fimages%2F&w=256&q=75 2x"
+          src="/_next/image?url=%2Fimages%2Fkhaoula.jpg&w=256&q=75"
+          srcSet="/_next/image?url=%2Fimages%2Fkhaoula.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Fkhaoula.jpg&w=256&q=75 2x"
           style={
             Object {
               "color": "transparent",
@@ -493,6 +498,7 @@ exports[`renders correctly 1`] = `
         className="flex justify-center items-center"
       >
         <img
+          alt="profile picture"
           className="w-32 h-32 border-[#575885] image border-2 rounded-full"
           data-nimg="1"
           decoding="async"
