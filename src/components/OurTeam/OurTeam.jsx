@@ -15,7 +15,7 @@ export default function OurTeam({ t }) {
         },
         {
             id: 2,
-            image: "/images/",
+            image: "/images/tewfik.jpg",
             title: "Front-end Developer",
             name: "Benarba Tewfik",
             bio: "Passionate frontend developer from Algeria, always eager to embrace new challenges and learn the latest in web development.",

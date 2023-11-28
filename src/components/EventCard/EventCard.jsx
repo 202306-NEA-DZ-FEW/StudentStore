@@ -15,16 +15,6 @@ const EventCard = ({ t }) => {
     const data = [
         {
             id: 1,
-            image: "/bookbuddies.jpg",
-            title: t("Book Buddies"),
-            description: t(
-                "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨"
-            ),
-            date: t("Tuesday, 21 November"),
-            link: "https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1",
-        },
-        {
-            id: 2,
             image: "/Event.jpg",
             title: t("The climate crisis"),
             description: t(
@@ -32,6 +22,16 @@ const EventCard = ({ t }) => {
             ),
             date: t("Saturday, 16 December "),
             link: "https://www.eventbrite.com/e/how-to-be-human-in-the-time-of-the-climate-crisis-work-that-reconnects-tickets-747705686837?aff=ebdssbdestsearch",
+        },
+        {
+            id: 2,
+            image: "/bookbuddies.jpg",
+            title: t("Book Buddies"),
+            description: t(
+                "The buddies will read a book together and then spend time talking about the pictures, story and characters to help the story to come alive.📚✨"
+            ),
+            date: t("Tuesday, 21 November"),
+            link: "https://www.eventbrite.com/e/book-buddies-tickets-704664549637?aff=ebdssbdestsearch&keep_tld=1",
         },
         {
             id: 3,
