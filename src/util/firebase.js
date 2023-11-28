@@ -17,5 +17,5 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const imgDB = getStorage(app);
 // Initialize Firebase Authentication and get a reference to the service
-
+export const storage = getStorage(app);
 export const auth = getAuth(app);
